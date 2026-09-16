@@ -27,6 +27,10 @@ secrets/
 !.env.example
 .env.local
 
+# Client Repositories (クライアント個別サイト実装コード：独立リポジトリとして親から完全除外)
+clients/*/site/
+clients/*/site/**
+
 # OS & IDE
 .obsidian/workspace*.json
 
