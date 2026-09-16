@@ -1,0 +1,110 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/common/PageHeader.astro';
+---
+
+<Layout title="事業内容・サービス | ARCH CRAFT STUDIO">
+  <PageHeader 
+    title="SERVICES" 
+    subTitle="Architectural Design & Space Solutions"
+    bgImage="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1920&q=80"
+  />
+
+  <section class="py-20 px-6 max-w-6xl mx-auto space-y-24">
+    <!-- 01 -->
+    <div class="grid md:grid-cols-2 gap-12 items-center" data-animate="fade-up">
+      <div class="aspect-[4/3] bg-stone-200 overflow-hidden rounded-sm shadow-md">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80" alt="注文住宅・別荘設計" class="w-full h-full object-cover" />
+      </div>
+      <div class="space-y-4">
+        <span class="font-mono text-xs text-stone-400 tracking-widest block">Service 01</span>
+        <h2 class="font-serif-title text-2xl md:text-3xl font-medium text-stone-900 leading-snug">注文住宅・別荘の建築設計</h2>
+        <div class="w-10 h-px bg-stone-300"></div>
+        <p class="text-xs md:text-sm text-stone-600 leading-relaxed font-light">
+          敷地が持つ光、風、借景を丁寧に読み取り、そこに暮らす家族の動線と美意識を融合させた完全自由設計。耐震等級3・HEAT20 G2基準の高断熱を標準採用。
+        </p>
+        <p class="text-xs text-stone-500 font-mono">新築個人住宅 / リゾート別荘 / 二世帯住宅</p>
+      </div>
+    </div>
+
+    <!-- 02 -->
+    <div class="grid md:grid-cols-2 gap-12 items-center" data-animate="fade-up">
+      <div class="space-y-4 md:order-1 order-2">
+        <span class="font-mono text-xs text-stone-400 tracking-widest block">Service 02</span>
+        <h2 class="font-serif-title text-2xl md:text-3xl font-medium text-stone-900 leading-snug">マンション・戸建リノベーション</h2>
+        <div class="w-10 h-px bg-stone-300"></div>
+        <p class="text-xs md:text-sm text-stone-600 leading-relaxed font-light">
+          既存躯体を活かし、間取り再構成から配管更新、断熱・遮音改修まで一貫施工。ヴィンテージマンションを現代の快適な住空間へと再生します。
+        </p>
+        <p class="text-xs text-stone-500 font-mono">スケルトンリノベ / 断熱改修 / 物件購入同行</p>
+      </div>
+      <div class="aspect-[4/3] bg-stone-200 md:order-2 order-1 overflow-hidden rounded-sm shadow-md">
+        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1000&q=80" alt="フルリノベーション" class="w-full h-full object-cover" />
+      </div>
+    </div>
+
+    <!-- 03 -->
+    <div class="grid md:grid-cols-2 gap-12 items-center" data-animate="fade-up">
+      <div class="aspect-[4/3] bg-stone-200 overflow-hidden rounded-sm shadow-md">
+        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1000&q=80" alt="オーダー家具・インテリア設計" class="w-full h-full object-cover" />
+      </div>
+      <div class="space-y-4">
+        <span class="font-mono text-xs text-stone-400 tracking-widest block">Service 03</span>
+        <h2 class="font-serif-title text-2xl md:text-3xl font-medium text-stone-900 leading-snug">造作家具・空間スタイリング</h2>
+        <div class="w-10 h-px bg-stone-300"></div>
+        <p class="text-xs md:text-sm text-stone-600 leading-relaxed font-light">
+          空間にミリ単位で収まるオリジナルキッチンや壁面収納を自社設計。専属の家具職人と提携し、本物の素材でトータルコーディネート。
+        </p>
+        <p class="text-xs text-stone-500 font-mono">特注キッチン / 壁面造作 / 照明・カーテン計画</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 家づくりの流れ -->
+  <section class="py-20 px-6 bg-stone-100 border-t border-stone-200">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-12" data-animate="fade-up">
+        <span class="font-en-serif text-xs text-stone-400 tracking-[0.3em] uppercase block mb-1">Process</span>
+        <h2 class="font-serif-title text-2xl font-medium text-stone-900 tracking-widest">家づくりの流れ</h2>
+      </div>
+
+      <div class="space-y-4 text-xs" data-animate="fade-up">
+        <div class="bg-white p-5 border border-stone-200 rounded-sm flex gap-4 items-center">
+          <span class="font-mono text-lg font-bold text-stone-400">01</span>
+          <div>
+            <h3 class="font-bold text-stone-900">無料相談・ヒアリング</h3>
+            <p class="text-stone-500 font-light">暮らしの理想やご予算、土地条件を伺います。オンライン可。</p>
+          </div>
+        </div>
+        <div class="bg-white p-5 border border-stone-200 rounded-sm flex gap-4 items-center">
+          <span class="font-mono text-lg font-bold text-stone-400">02</span>
+          <div>
+            <h3 class="font-bold text-stone-900">敷地調査・基本プラン提案</h3>
+            <p class="text-stone-500 font-light">現地調査の上、模型やパースで初期プランをご提示します。</p>
+          </div>
+        </div>
+        <div class="bg-white p-5 border border-stone-200 rounded-sm flex gap-4 items-center">
+          <span class="font-mono text-lg font-bold text-stone-400">03</span>
+          <div>
+            <h3 class="font-bold text-stone-900">設計契約・詳細設計</h3>
+            <p class="text-stone-500 font-light">素材や造作家具まで細部の図面を綿密に作成します。</p>
+          </div>
+        </div>
+        <div class="bg-white p-5 border border-stone-200 rounded-sm flex gap-4 items-center">
+          <span class="font-mono text-lg font-bold text-stone-400">04</span>
+          <div>
+            <h3 class="font-bold text-stone-900">着工・現場監理・お引き渡し</h3>
+            <p class="text-stone-500 font-light">建築士が施工品質を直接チェック。検査後にお引き渡しとなります。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-10">
+        <a href="/contact/" class="inline-block px-8 py-3 bg-stone-900 text-white text-xs tracking-widest uppercase font-medium hover:bg-stone-800 transition">
+          無料相談を申し込む &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+

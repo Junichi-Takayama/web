@@ -1,0 +1,89 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHeader from '../../components/common/PageHeader.astro';
+
+export function getStaticPaths() {
+  return [
+    { params: { slug: 'sample-post' } },
+  ];
+}
+---
+
+<Layout title="無垢オーク材と大谷石のコントラスト | 建築日誌 | ARCH CRAFT STUDIO">
+  <PageHeader 
+    title="JOURNAL" 
+    subTitle="Architect's Notes"
+    bgImage="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1920&q=80"
+  />
+
+  <section class="py-20 px-6 max-w-6xl mx-auto">
+    <div class="grid lg:grid-cols-12 gap-12">
+      <!-- メインコンテンツ -->
+      <div class="lg:col-span-8 space-y-8" data-animate="fade-up">
+        <div>
+          <div class="flex items-center gap-3 text-xs mb-3">
+            <span class="text-stone-400 font-mono">2026.09.02</span>
+            <span class="px-2.5 py-0.5 bg-stone-900 text-white text-[10px] font-medium tracking-wider">現場レポート</span>
+          </div>
+          <h1 class="font-serif-title text-2xl md:text-3xl font-medium text-stone-900 leading-snug">
+            無垢オーク材と大谷石のコントラスト。鎌倉の現場より
+          </h1>
+        </div>
+
+        <div class="space-y-6 text-xs md:text-sm text-stone-600 leading-loose font-light">
+          <p>
+            現在、神奈川県鎌倉市で進行中の住宅プロジェクト。木工事が佳境を迎え、リビングの壁面に大谷石（おおやいし）を貼り込む作業が行われています。
+          </p>
+
+          <div class="aspect-[16/9] bg-stone-200 overflow-hidden rounded-sm my-6">
+            <img 
+              src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1000&q=80" 
+              alt="現場写真" 
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <h2 class="font-serif-title text-lg font-medium text-stone-900 border-b border-stone-300 pb-2">
+            自然素材が醸し出す「陰影」の深さ
+          </h2>
+          <p>
+            大谷石は栃木県宇都宮市で採掘される凝灰岩で、温かみのある多孔質な表情と柔らかな風合いが魅力です。今回は、挽き板オークの床材と組み合わせることで、木の温もりと石の重厚感が絶妙な緊張感を生み出しています。
+          </p>
+
+          <p>
+            日中は中庭からの自然光によって石の凹凸に繊細な陰影が走り、夜間はアッパーライトの間接照明によって幻想的な表情を見せてくれます。均一な工業製品にはない、自然物ならではの「不完全な美」を日常の中で感じていただければ幸いです。
+          </p>
+        </div>
+
+        <div class="pt-8 border-t border-stone-200">
+          <a href="/blog/" class="inline-flex items-center gap-2 px-6 py-2.5 bg-stone-100 hover:bg-stone-200 text-stone-800 text-xs tracking-wider transition">
+            <span>&larr;</span>
+            <span>記事一覧に戻る</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 右サイドバー -->
+      <aside class="lg:col-span-4 space-y-6">
+        <h3 class="font-serif-title text-sm font-medium text-stone-900 border-b border-stone-900 pb-2">最新のコラム</h3>
+        <div class="space-y-4 text-xs">
+          {[
+            { title: "「陰影を愉しむ」日本の美意識を宿した照明計画", img: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=200&q=80" },
+            { title: "築45年のヴィンテージマンションをスケルトンから再構築", img: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=200&q=80" },
+            { title: "経年美化を愉しむ、無垢材オイルフィニッシュのメンテナンス", img: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=200&q=80" },
+          ].map((item) => (
+            <div class="flex gap-3 items-center group cursor-pointer">
+              <div class="w-16 h-12 bg-stone-200 overflow-hidden rounded-sm flex-shrink-0">
+                <img src={item.img} alt="" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" />
+              </div>
+              <p class="font-medium text-stone-800 group-hover:text-stone-600 transition leading-snug line-clamp-2">
+                <a href="/blog/sample-post/">{item.title}</a>
+              </p>
+            </div>
+          ))}
+        </div>
+      </aside>
+    </div>
+  </section>
+</Layout>
+

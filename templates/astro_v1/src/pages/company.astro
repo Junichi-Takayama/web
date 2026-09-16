@@ -1,0 +1,46 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/common/PageHeader.astro';
+---
+
+<Layout title="会社概要 | 汎用工務店テンプレート">
+  <PageHeader title="会社概要" />
+
+  <section class="py-20 px-4 max-w-4xl mx-auto">
+    <div class="mb-8 border-b border-neutral-800 pb-2">
+      <h2 class="text-lg font-bold text-neutral-900">会社概要</h2>
+    </div>
+
+    <div class="border-t border-neutral-200 divide-y divide-neutral-200 text-xs">
+      <div class="grid grid-cols-1 md:grid-cols-4 py-4 px-2">
+        <dt class="font-bold text-neutral-800 md:col-span-1 py-1">商号</dt>
+        <dd class="text-neutral-600 md:col-span-3 py-1">株式会社〇〇</dd>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 py-4 px-2">
+        <dt class="font-bold text-neutral-800 md:col-span-1 py-1">創業</dt>
+        <dd class="text-neutral-600 md:col-span-3 py-1">2000年4月</dd>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 py-4 px-2">
+        <dt class="font-bold text-neutral-800 md:col-span-1 py-1">法人設立</dt>
+        <dd class="text-neutral-600 md:col-span-3 py-1">2000年4月7日</dd>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 py-4 px-2">
+        <dt class="font-bold text-neutral-800 md:col-span-1 py-1">資本金</dt>
+        <dd class="text-neutral-600 md:col-span-3 py-1">1000万円</dd>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 py-4 px-2">
+        <dt class="font-bold text-neutral-800 md:col-span-1 py-1">代表取締役</dt>
+        <dd class="text-neutral-600 md:col-span-3 py-1">苗字 名前</dd>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 py-4 px-2">
+        <dt class="font-bold text-neutral-800 md:col-span-1 py-1">所在地</dt>
+        <dd class="text-neutral-600 md:col-span-3 py-1">〒000-0000 新潟県新潟市西区1-1-1</dd>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 py-4 px-2">
+        <dt class="font-bold text-neutral-800 md:col-span-1 py-1">電話番号・FAX</dt>
+        <dd class="text-neutral-600 md:col-span-3 py-1">000-111-2222／000-111-2223</dd>
+      </div>
+    </div>
+  </section>
+</Layout>
+

@@ -1,0 +1,437 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="スタイルガイド & デザインシステム | ARCH CRAFT STUDIO"
+  description="ARCH CRAFT STUDIOのWebサイト共通デザインシステム、カラーパレット、タイポグラフィ、UIコンポーネント規約集です。"
+>
+  <!-- ヒーローセクション -->
+  <section class="py-20 md:py-24 px-6 bg-stone-900 text-white border-b border-stone-800">
+    <div class="max-w-6xl mx-auto">
+      <div class="inline-flex items-center gap-2 px-3 py-1 bg-stone-800 border border-stone-700 text-[11px] font-mono uppercase tracking-widest text-stone-300 mb-6">
+        <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+        Design System & UI Guidelines
+      </div>
+      <h1 class="font-serif-title text-3xl md:text-5xl font-medium tracking-wider mb-4">
+        ARCH CRAFT STUDIO スタイルガイド
+      </h1>
+      <p class="text-stone-400 text-xs md:text-sm max-w-2xl font-light leading-relaxed mb-6">
+        自然素材の静謐さと現代的なミニマリズムを両立させた統一感のあるWeb体験を体系化したデザインシステムです。
+      </p>
+      <div class="flex flex-wrap gap-2 text-xs font-mono">
+        <a href="#colors" class="px-3 py-1 bg-stone-800 hover:bg-stone-700 text-stone-200 border border-stone-700">01. Colors</a>
+        <a href="#typography" class="px-3 py-1 bg-stone-800 hover:bg-stone-700 text-stone-200 border border-stone-700">02. Typography</a>
+        <a href="#buttons" class="px-3 py-1 bg-stone-800 hover:bg-stone-700 text-stone-200 border border-stone-700">03. Buttons</a>
+        <a href="#badges" class="px-3 py-1 bg-stone-800 hover:bg-stone-700 text-stone-200 border border-stone-700">04. Badges</a>
+        <a href="#cards" class="px-3 py-1 bg-stone-800 hover:bg-stone-700 text-stone-200 border border-stone-700">05. Cards</a>
+        <a href="#forms" class="px-3 py-1 bg-stone-800 hover:bg-stone-700 text-stone-200 border border-stone-700">06. Forms</a>
+        <a href="#layout" class="px-3 py-1 bg-stone-800 hover:bg-stone-700 text-stone-200 border border-stone-700">07. Layout</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- メインコンテンツ -->
+  <div class="max-w-6xl mx-auto px-6 py-16 space-y-20">
+    <!-- 01. COLOR PALETTE -->
+    <section id="colors" class="space-y-6 scroll-mt-24">
+      <div class="border-b border-stone-200 pb-3">
+        <span class="text-xs font-mono tracking-widest text-stone-400 uppercase">Section 01</span>
+        <h2 class="font-serif-title text-2xl font-medium text-stone-900 mt-1">Color Palette / カラーパレット</h2>
+        <p class="text-xs text-stone-500 font-light mt-1">石や木などの自然素材を想起させるウォームグレー（Stone系）を基調としています。</p>
+      </div>
+      <div>
+        <h3 class="text-xs font-semibold tracking-wider text-stone-700 uppercase font-mono mb-3">Primary & Neutrals</h3>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
+          <div class="bg-white p-3 border border-stone-200 rounded shadow-sm">
+            <div class="h-12 bg-stone-950 rounded mb-2"></div>
+            <p class="text-xs font-bold text-stone-900">Stone 950</p>
+            <p class="text-[10px] font-mono text-stone-400">#0c0a09</p>
+          </div>
+          <div class="bg-white p-3 border border-stone-200 rounded shadow-sm">
+            <div class="h-12 bg-stone-900 rounded mb-2"></div>
+            <p class="text-xs font-bold text-stone-900">Stone 900</p>
+            <p class="text-[10px] font-mono text-stone-400">#1c1917</p>
+          </div>
+          <div class="bg-white p-3 border border-stone-200 rounded shadow-sm">
+            <div class="h-12 bg-stone-700 rounded mb-2"></div>
+            <p class="text-xs font-bold text-stone-900">Stone 700</p>
+            <p class="text-[10px] font-mono text-stone-400">#44403c</p>
+          </div>
+          <div class="bg-white p-3 border border-stone-200 rounded shadow-sm">
+            <div class="h-12 bg-stone-400 rounded mb-2"></div>
+            <p class="text-xs font-bold text-stone-900">Stone 400</p>
+            <p class="text-[10px] font-mono text-stone-400">#a8a29e</p>
+          </div>
+          <div class="bg-white p-3 border border-stone-200 rounded shadow-sm">
+            <div class="h-12 bg-stone-200 rounded mb-2 border border-stone-300"></div>
+            <p class="text-xs font-bold text-stone-900">Stone 200</p>
+            <p class="text-[10px] font-mono text-stone-400">#e7e5e4</p>
+          </div>
+          <div class="bg-white p-3 border border-stone-200 rounded shadow-sm">
+            <div class="h-12 bg-stone-50 rounded mb-2 border border-stone-200"></div>
+            <p class="text-xs font-bold text-stone-900">Stone 50</p>
+            <p class="text-[10px] font-mono text-stone-400">#fafaf9</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3 class="text-xs font-semibold tracking-wider text-stone-700 uppercase font-mono mb-3">Accent & Functional Colors</h3>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div class="bg-white p-3 border border-stone-200 rounded shadow-sm">
+            <div class="h-12 bg-amber-800 rounded mb-2"></div>
+            <p class="text-xs font-bold text-stone-900">Wood / Amber</p>
+            <p class="text-[10px] font-mono text-stone-400">amber-800</p>
+          </div>
+          <div class="bg-white p-3 border border-stone-200 rounded shadow-sm">
+            <div class="h-12 bg-emerald-600 rounded mb-2"></div>
+            <p class="text-xs font-bold text-stone-900">Plant / Green</p>
+            <p class="text-[10px] font-mono text-stone-400">emerald-600</p>
+          </div>
+          <div class="bg-white p-3 border border-stone-200 rounded shadow-sm">
+            <div class="h-12 bg-amber-500 rounded mb-2"></div>
+            <p class="text-xs font-bold text-stone-900">Warning / Alert</p>
+            <p class="text-[10px] font-mono text-stone-400">amber-500</p>
+          </div>
+          <div class="bg-white p-3 border border-stone-200 rounded shadow-sm">
+            <div class="h-12 bg-rose-700 rounded mb-2"></div>
+            <p class="text-xs font-bold text-stone-900">Error / Red</p>
+            <p class="text-[10px] font-mono text-stone-400">rose-700</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02. TYPOGRAPHY -->
+    <section id="typography" class="space-y-6 scroll-mt-24">
+      <div class="border-b border-stone-200 pb-3">
+        <span class="text-xs font-mono tracking-widest text-stone-400 uppercase">Section 02</span>
+        <h2 class="font-serif-title text-2xl font-medium text-stone-900 mt-1">Typography / 書体・文字階層</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="bg-white p-5 border border-stone-200 rounded space-y-2">
+          <span class="text-[10px] font-mono text-stone-400 uppercase">和文明朝体</span>
+          <p class="text-xs font-semibold text-stone-800">Shippori Mincho / Noto Serif JP</p>
+          <div class="py-3 border-y border-stone-100 font-serif-title text-xl text-stone-900">
+            光と風を紡ぐ、永く愛される住まい。
+          </div>
+          <p class="text-[11px] text-stone-500 font-mono">.font-serif-title（見出し）</p>
+        </div>
+        <div class="bg-white p-5 border border-stone-200 rounded space-y-2">
+          <span class="text-[10px] font-mono text-stone-400 uppercase">欧文セリフ体</span>
+          <p class="text-xs font-semibold text-stone-800">Cormorant Garamond</p>
+          <div class="py-3 border-y border-stone-100 font-en-serif text-2xl text-stone-900 tracking-wider">
+            Timeless Craftsmanship
+          </div>
+          <p class="text-[11px] text-stone-500 font-mono">.font-en-serif（英字見出し・ラベル）</p>
+        </div>
+        <div class="bg-white p-5 border border-stone-200 rounded space-y-2">
+          <span class="text-[10px] font-mono text-stone-400 uppercase">和文ゴシック体</span>
+          <p class="text-xs font-semibold text-stone-800">Noto Sans JP</p>
+          <div class="py-3 border-y border-stone-100 font-sans text-xs leading-relaxed text-stone-700">
+            視覚的ノイズを削ぎ落とし、生活の美しさを際立たせる空間設計。
+          </div>
+          <p class="text-[11px] text-stone-500 font-mono">font-sans（本文・UI標準）</p>
+        </div>
+      </div>
+      <div class="bg-white border border-stone-200 rounded divide-y divide-stone-100 overflow-hidden">
+        <div class="p-4">
+          <span class="font-mono text-[10px] text-stone-400 block mb-1">Heading 1 / Page Title</span>
+          <h1 class="font-serif-title text-2xl md:text-3xl font-medium text-stone-900 tracking-wider">施工事例・建築プロジェクト一覧</h1>
+        </div>
+        <div class="p-4">
+          <span class="font-mono text-[10px] text-stone-400 block mb-1">Heading 2 / Section Title</span>
+          <h2 class="font-serif-title text-xl font-medium text-stone-900">家づくりの流れと大切にしている価値</h2>
+        </div>
+        <div class="p-4">
+          <span class="font-mono text-[10px] text-stone-400 block mb-1">Body Text / 本文標準 (text-xs md:text-sm leading-loose)</span>
+          <p class="text-xs md:text-sm text-stone-600 font-light leading-loose">
+            無垢フローリングや漆喰壁など、経年変化によって表情を増す自然素材を厳選。断熱性能や耐震性能といった目に見えない基本性能を高めることで、四季を通じて快適で安全な暮らしを提供します。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03. BUTTONS & LINKS -->
+    <section id="buttons" class="space-y-6 scroll-mt-24">
+      <div class="border-b border-stone-200 pb-3">
+        <span class="text-xs font-mono tracking-widest text-stone-400 uppercase">Section 03</span>
+        <h2 class="font-serif-title text-2xl font-medium text-stone-900 mt-1">Buttons & Links / ボタン・リンクUI</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-5 border border-stone-200 rounded space-y-4">
+          <h3 class="text-xs font-mono uppercase tracking-wider text-stone-400">Button Variants</h3>
+          <div>
+            <span class="text-[11px] font-mono text-stone-500 block mb-2">Primary Button</span>
+            <div class="flex items-center gap-3 flex-wrap">
+              <a href="#buttons" class="px-5 py-2.5 bg-stone-900 hover:bg-stone-800 text-white text-xs tracking-widest uppercase font-medium transition shadow-sm active:scale-95">
+                Primary Action
+              </a>
+              <a href="#buttons" class="px-3.5 py-1.5 bg-stone-900 text-white text-[11px] tracking-widest uppercase font-medium">
+                Small
+              </a>
+            </div>
+          </div>
+          <div class="pt-3 border-t border-stone-100">
+            <span class="text-[11px] font-mono text-stone-500 block mb-2">Outline Button</span>
+            <div class="flex items-center gap-3 flex-wrap">
+              <a href="#buttons" class="px-5 py-2.5 border border-stone-900 text-stone-900 hover:bg-stone-900 hover:text-white text-xs tracking-widest uppercase font-medium transition active:scale-95">
+                Outline Action
+              </a>
+              <a href="#buttons" class="px-5 py-2.5 border border-stone-300 text-stone-700 hover:border-stone-900 text-xs tracking-widest uppercase font-medium transition">
+                Light Border
+              </a>
+            </div>
+          </div>
+          <div class="pt-3 border-t border-stone-100">
+            <span class="text-[11px] font-mono text-stone-500 block mb-2">Hero CTA</span>
+            <div class="p-3 bg-stone-900 rounded flex items-center gap-3">
+              <a href="#buttons" class="px-5 py-2.5 bg-stone-100 hover:bg-white text-stone-900 text-xs tracking-widest uppercase font-bold transition shadow hover:scale-105">
+                View Projects
+              </a>
+              <a href="#buttons" class="px-5 py-2.5 border border-white/60 text-white text-xs tracking-widest uppercase font-medium hover:bg-white/10 transition">
+                Contact Us
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white p-5 border border-stone-200 rounded space-y-4">
+          <h3 class="text-xs font-mono uppercase tracking-wider text-stone-400">Text Links & Icons</h3>
+          <div>
+            <span class="text-[11px] font-mono text-stone-500 block mb-2">Arrow Link</span>
+            <a href="#buttons" class="group inline-flex items-center gap-2 text-xs font-medium text-stone-900 tracking-wider">
+              <span>施工事例の全一覧を見る</span>
+              <svg class="w-4 h-4 transform group-hover:translate-x-1.5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+            </a>
+          </div>
+          <div class="pt-3 border-t border-stone-100">
+            <span class="text-[11px] font-mono text-stone-500 block mb-2">Underline Link</span>
+            <a href="#buttons" class="inline-block text-xs text-stone-700 tracking-wider hover:text-stone-950 pb-0.5 border-b border-stone-400 hover:border-stone-900 transition">
+              会社概要・設計思想について詳しく知る &rarr;
+            </a>
+          </div>
+          <div class="pt-3 border-t border-stone-100">
+            <span class="text-[11px] font-mono text-stone-500 block mb-2">Circular Icon Buttons</span>
+            <div class="flex items-center gap-3">
+              <button class="w-8 h-8 rounded-full border border-stone-300 flex items-center justify-center text-stone-700 hover:bg-stone-900 hover:text-white transition" aria-label="Prev">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+              </button>
+              <button class="w-8 h-8 rounded-full border border-stone-300 flex items-center justify-center text-stone-700 hover:bg-stone-900 hover:text-white transition" aria-label="Next">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04. BADGES & TAGS -->
+    <section id="badges" class="space-y-6 scroll-mt-24">
+      <div class="border-b border-stone-200 pb-3">
+        <span class="text-xs font-mono tracking-widest text-stone-400 uppercase">Section 04</span>
+        <h2 class="font-serif-title text-2xl font-medium text-stone-900 mt-1">Badges & Tags / バッジ・タグ</h2>
+      </div>
+      <div class="bg-white p-6 border border-stone-200 rounded space-y-6">
+        <div>
+          <h4 class="text-xs font-mono uppercase tracking-wider text-stone-400 mb-2">Category Tags</h4>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2.5 py-1 bg-stone-100 text-stone-700 text-xs rounded-sm">#新築注文住宅</span>
+            <span class="px-2.5 py-1 bg-stone-100 text-stone-700 text-xs rounded-sm">#平屋</span>
+            <span class="px-2.5 py-1 bg-stone-100 text-stone-700 text-xs rounded-sm">#中庭のある暮らし</span>
+            <span class="px-2.5 py-1 bg-stone-100 text-stone-700 text-xs rounded-sm">#自然素材</span>
+            <span class="px-2.5 py-1 bg-stone-100 text-stone-700 text-xs rounded-sm">#リノベーション</span>
+          </div>
+        </div>
+        <div class="pt-4 border-t border-stone-100">
+          <h4 class="text-xs font-mono uppercase tracking-wider text-stone-400 mb-2">Event Status Badges</h4>
+          <div class="flex flex-wrap gap-3 items-center">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-medium rounded-full">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+              予約受付中
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-amber-50 text-amber-800 border border-amber-200 text-xs font-medium rounded-full">
+              <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+              残席わずか
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-stone-100 text-stone-500 border border-stone-200 text-xs font-medium rounded-full">
+              受付終了
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-stone-900 text-white text-xs font-medium rounded-full">
+              Featured / 注目
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05. CARDS -->
+    <section id="cards" class="space-y-6 scroll-mt-24">
+      <div class="border-b border-stone-200 pb-3">
+        <span class="text-xs font-mono tracking-widest text-stone-400 uppercase">Section 05</span>
+        <h2 class="font-serif-title text-2xl font-medium text-stone-900 mt-1">Card Components / カードUI</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- 施工事例カード -->
+        <div class="bg-white border border-stone-200 overflow-hidden group shadow-sm">
+          <div class="aspect-[4/3] bg-stone-100 relative overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" 
+              alt="施工事例サンプル" 
+              class="w-full h-full object-cover group-hover:scale-105 transition duration-500 ease-out"
+            />
+            <span class="absolute top-3 left-3 bg-stone-900/80 backdrop-blur-sm text-white text-[10px] font-mono px-2 py-0.5 uppercase tracking-wider">
+              Residential
+            </span>
+          </div>
+          <div class="p-5 space-y-2">
+            <div class="flex items-center justify-between text-[11px] text-stone-400 font-mono">
+              <span>Tokyo, Setagaya</span>
+              <span>2026.04</span>
+            </div>
+            <h3 class="font-serif-title text-base font-medium text-stone-900 group-hover:text-stone-600 transition">
+              光と風が通り抜ける吹き抜けの家
+            </h3>
+            <p class="text-xs text-stone-500 line-clamp-2 font-light leading-relaxed">
+              南向きの大開口サッシと中庭が織りなす開放感。自然素材をふんだんに取り入れた都市型住宅。
+            </p>
+            <div class="pt-2 border-t border-stone-100 flex items-center justify-between text-xs">
+              <span class="text-stone-400 text-[11px]">延床: 112㎡</span>
+              <span class="font-medium text-stone-900 group-hover:translate-x-1 transition-transform">Detail &rarr;</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 記事・見学会カード -->
+        <div class="bg-white p-6 border border-stone-200 flex flex-col justify-between shadow-sm">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="px-2 py-0.5 bg-stone-900 text-white text-[10px] font-mono uppercase">Event</span>
+              <span class="text-[11px] font-mono text-stone-400">2026.09.20</span>
+            </div>
+            <h3 class="font-serif-title text-base font-medium text-stone-900">
+              世田谷区・完成住宅見学会のご案内【完全予約制】
+            </h3>
+            <p class="text-xs text-stone-500 font-light leading-relaxed">
+              プライバシーと開放感を両立した都市型住宅。2日間限定で施主様のご厚意による特別公開を実施します。
+            </p>
+            <div class="p-3 bg-stone-50 border border-stone-200 text-xs text-stone-700 space-y-1">
+              <p><span class="font-medium text-stone-900">開催日時:</span> 9月20日(土)・21日(日)</p>
+              <p><span class="font-medium text-stone-900">開催場所:</span> 東京都世田谷区奥沢</p>
+            </div>
+          </div>
+          <div class="pt-4 mt-2 border-t border-stone-100">
+            <a href="#cards" class="w-full block text-center py-2 bg-stone-900 text-white text-xs tracking-wider uppercase font-medium hover:bg-stone-800 transition">
+              予約枠を確認する
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06. FORMS -->
+    <section id="forms" class="space-y-6 scroll-mt-24">
+      <div class="border-b border-stone-200 pb-3">
+        <span class="text-xs font-mono tracking-widest text-stone-400 uppercase">Section 06</span>
+        <h2 class="font-serif-title text-2xl font-medium text-stone-900 mt-1">Form Elements / フォームUI</h2>
+      </div>
+      <div class="bg-white p-6 border border-stone-200 rounded max-w-2xl space-y-5">
+        <div class="space-y-1.5">
+          <label class="block text-xs font-medium text-stone-800">
+            お名前 <span class="text-rose-600 font-normal">※必須</span>
+          </label>
+          <input 
+            type="text" 
+            placeholder="山田 太郎" 
+            class="w-full px-3.5 py-2 bg-stone-50 border border-stone-300 text-xs text-stone-900 placeholder-stone-400 focus:outline-none focus:border-stone-900 focus:bg-white transition"
+          />
+        </div>
+        <div class="space-y-1.5">
+          <label class="block text-xs font-medium text-stone-800">
+            メールアドレス <span class="text-rose-600 font-normal">※必須</span>
+          </label>
+          <input 
+            type="email" 
+            value="sample@example.com" 
+            class="w-full px-3.5 py-2 bg-white border border-stone-900 text-xs text-stone-900 focus:outline-none ring-1 ring-stone-900"
+          />
+          <p class="text-[10px] text-stone-400">※フォーカス時表示スタイル</p>
+        </div>
+        <div class="space-y-1.5">
+          <label class="block text-xs font-medium text-stone-800">ご相談種別</label>
+          <select class="w-full px-3.5 py-2 bg-stone-50 border border-stone-300 text-xs text-stone-900 focus:outline-none focus:border-stone-900">
+            <option>新築住宅の設計について</option>
+            <option>戸建て・マンションのリノベーション</option>
+            <option>店舗・オフィスの空間デザイン</option>
+          </select>
+        </div>
+        <div class="space-y-1.5">
+          <label class="block text-xs font-medium text-stone-800">ご相談内容</label>
+          <textarea 
+            rows="3" 
+            placeholder="ご計画の時期やご要望を自由にご記入ください。"
+            class="w-full px-3.5 py-2 bg-stone-50 border border-stone-300 text-xs text-stone-900 placeholder-stone-400 focus:outline-none focus:border-stone-900"
+          ></textarea>
+        </div>
+        <div>
+          <button type="button" class="px-8 py-3 bg-stone-900 hover:bg-stone-800 text-white text-xs tracking-widest uppercase font-medium transition shadow-sm">
+            送信内容を確認する
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07. LAYOUT & SPACING -->
+    <section id="layout" class="space-y-6 scroll-mt-24">
+      <div class="border-b border-stone-200 pb-3">
+        <span class="text-xs font-mono tracking-widest text-stone-400 uppercase">Section 07</span>
+        <h2 class="font-serif-title text-2xl font-medium text-stone-900 mt-1">Spacing & Layout / 余白・規約</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-white p-5 border border-stone-200 rounded space-y-3">
+          <h3 class="text-xs font-mono uppercase tracking-wider text-stone-400">Container Max Widths</h3>
+          <div class="space-y-2 text-xs">
+            <div class="flex justify-between p-2 bg-stone-50 border border-stone-200">
+              <span class="font-mono font-medium text-stone-800">max-w-7xl (1280px)</span>
+              <span class="text-stone-500">ヘッダー・フッター</span>
+            </div>
+            <div class="flex justify-between p-2 bg-stone-50 border border-stone-200">
+              <span class="font-mono font-medium text-stone-800">max-w-6xl (1152px)</span>
+              <span class="text-stone-500">主要一覧グリッド</span>
+            </div>
+            <div class="flex justify-between p-2 bg-stone-50 border border-stone-200">
+              <span class="font-mono font-medium text-stone-800">max-w-4xl (896px)</span>
+              <span class="text-stone-500">コンセプト・概要</span>
+            </div>
+            <div class="flex justify-between p-2 bg-stone-50 border border-stone-200">
+              <span class="font-mono font-medium text-stone-800">max-w-2xl (672px)</span>
+              <span class="text-stone-500">本文・フォーム</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white p-5 border border-stone-200 rounded space-y-3">
+          <h3 class="text-xs font-mono uppercase tracking-wider text-stone-400">Vertical Spacing</h3>
+          <div class="space-y-2 text-xs">
+            <div class="flex justify-between p-2 bg-stone-50 border border-stone-200">
+              <span class="font-mono font-medium text-stone-800">py-24 (96px)</span>
+              <span class="text-stone-500">主要セクション余白</span>
+            </div>
+            <div class="flex justify-between p-2 bg-stone-50 border border-stone-200">
+              <span class="font-mono font-medium text-stone-800">py-16 (64px)</span>
+              <span class="text-stone-500">サブセクション・タブレット</span>
+            </div>
+            <div class="flex justify-between p-2 bg-stone-50 border border-stone-200">
+              <span class="font-mono font-medium text-stone-800">gap-6 / gap-8</span>
+              <span class="text-stone-500">グリッド間隔</span>
+            </div>
+            <div class="flex justify-between p-2 bg-stone-50 border border-stone-200">
+              <span class="font-mono font-medium text-stone-800">px-4 / px-6</span>
+              <span class="text-stone-500">左右画面端パディング</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>

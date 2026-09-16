@@ -1,0 +1,225 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHeader from '../../components/common/PageHeader.astro';
+
+export function getStaticPaths() {
+  return [
+    { params: { slug: 'sample-project' } },
+  ];
+}
+
+// サンプル事例画像＆キャプションデータ
+const slides = [
+  { id: 1, title: '外観ファサード', image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80', caption: '1. 外観：杉板張りとガルバリウム鋼板が調和する端正なファサード' },
+  { id: 2, title: 'リビング吹き抜け', image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80', caption: '2. リビング：天井高5.2mの大開口から自然光が降り注ぐLDK' },
+  { id: 3, title: 'ダイニング・キッチン', image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=80', caption: '3. ダイニング：モールテックス天板の特注アイランドキッチン' },
+  { id: 4, title: '中庭コートヤード', image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80', caption: '4. 中庭：リビングとフラットに繋がるプライベートウッドデッキ' },
+  { id: 5, title: '主寝室', image: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=80', caption: '5. 主寝室：間接照明と珪藻土の塗り壁が演出する静寂の空間' },
+  { id: 6, title: '造作洗面サニタリー', image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1200&q=80', caption: '6. サニタリー：大谷石と真鍮水栓をあしらったオリジナル造作洗面台' },
+];
+---
+
+<Layout title="中庭を囲む光のコートハウス | 施工事例 | ARCH CRAFT STUDIO">
+  <PageHeader 
+    title="PROJECT DETAIL" 
+    subTitle="Courtyard House in Setagaya"
+    bgImage={slides[0].image}
+  />
+
+  <section class="py-20 px-4 max-w-4xl mx-auto space-y-12">
+    <!-- タイトル＆導入テキスト -->
+    <div class="space-y-2" data-animate="fade-up">
+      <span class="font-mono text-xs text-stone-400 uppercase tracking-widest">New Construction / Residence</span>
+      <h1 class="font-serif-title text-2xl md:text-3xl font-medium text-stone-900">中庭を囲む光のコートハウス</h1>
+      <p class="text-xs text-stone-500 font-mono">東京都世田谷区 / 竣工: 2026年3月 / 延床面積: 135.20㎡ / 設計: 高山 潤一</p>
+    </div>
+
+    <!-- メインギャラリー（インタラクティブスライダー） -->
+    <div class="space-y-3" id="work-slider-container" data-animate="fade-up">
+      <!-- メインビジュアルエリア -->
+      <div class="relative bg-stone-900 aspect-[16/9] overflow-hidden rounded-sm shadow-md group">
+        <!-- スライドコンテナ -->
+        <div id="slider-track" class="flex h-full transition-transform duration-500 ease-out">
+          {slides.map((slide) => (
+            <div class="w-full h-full flex-shrink-0 relative select-none">
+              <img src={slide.image} alt={slide.title} class="w-full h-full object-cover" />
+            </div>
+          ))}
+        </div>
+
+        <!-- カウンターバッジ -->
+        <div class="absolute top-4 right-4 z-20 bg-black/60 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-mono tracking-wider">
+          <span id="current-slide-num">1</span> / <span>{slides.length}</span>
+        </div>
+
+        <!-- 左右コントロールボタン -->
+        <button id="prev-slide-btn" class="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-black/50 text-white rounded-full flex items-center justify-center hover:bg-black/80 transition duration-200 focus:outline-none" aria-label="前の写真">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+        </button>
+        <button id="next-slide-btn" class="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-black/50 text-white rounded-full flex items-center justify-center hover:bg-black/80 transition duration-200 focus:outline-none" aria-label="次の写真">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+        </button>
+      </div>
+
+      <!-- 写真説明キャプション -->
+      <div class="bg-stone-100 p-3 rounded-sm text-center">
+        <p id="slider-caption" class="text-xs text-stone-700 font-medium transition-opacity duration-300">
+          {slides[0].caption}
+        </p>
+      </div>
+
+      <!-- サムネイル 6列 -->
+      <div class="grid grid-cols-3 sm:grid-cols-6 gap-2 pt-2">
+        {slides.map((slide, index) => (
+          <button
+            class="thumb-item aspect-[4/3] bg-stone-800 relative rounded-sm overflow-hidden focus:outline-none transition-all duration-200 opacity-60 hover:opacity-100 border-2 border-transparent"
+            data-index={index}
+            aria-label={`写真 ${index + 1} を開く`}
+          >
+            <img src={slide.image} alt={slide.title} class="w-full h-full object-cover" />
+          </button>
+        ))}
+      </div>
+    </div>
+
+    <!-- 物件情報テーブル -->
+    <div class="space-y-4" data-animate="fade-up">
+      <h2 class="text-sm font-bold text-stone-900 border-b border-stone-900 pb-2">物件概要</h2>
+      <div class="border-t border-stone-200 divide-y divide-stone-200 text-xs">
+        <div class="grid grid-cols-1 md:grid-cols-4 py-3 px-2 bg-stone-50/50">
+          <dt class="font-medium text-stone-800 md:col-span-1">所在地</dt>
+          <dd class="text-stone-600 md:col-span-3">東京都世田谷区</dd>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-4 py-3 px-2 bg-stone-50/50">
+          <dt class="font-medium text-stone-800 md:col-span-1">構造・規模</dt>
+          <dd class="text-stone-600 md:col-span-3">木造軸組工法（SE構法） 地上2階建て</dd>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-4 py-3 px-2 bg-stone-50/50">
+          <dt class="font-medium text-stone-800 md:col-span-1">敷地・延床面積</dt>
+          <dd class="text-stone-600 md:col-span-3">敷地: 165.40㎡（50.03坪） / 延床: 135.20㎡（40.89坪）</dd>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-4 py-3 px-2 bg-stone-50/50">
+          <dt class="font-medium text-stone-800 md:col-span-1">性能・仕様</dt>
+          <dd class="text-stone-600 md:col-span-3">耐震等級3（許容応力度計算） / 断熱等性能等級6（HEAT20 G2） / C値 0.4</dd>
+        </div>
+      </div>
+    </div>
+
+    <!-- コンセプト -->
+    <div class="space-y-3" data-animate="fade-up">
+      <h2 class="text-sm font-bold text-stone-900 border-b border-stone-900 pb-2">設計コンセプト</h2>
+      <p class="text-xs text-stone-600 leading-relaxed font-light">
+        閑静な住宅街において、周囲からの視線を遮りながら豊かな光と自然を取り込むため、中庭（コートヤード）を中心としたコの字型のプランニングを採用しました。LDKと中庭の段差を無くすことで内と外が一体化し、都心にいながら自然の潤いを感じられる空間を創出しています。
+      </p>
+    </div>
+
+    <!-- 設計士からのメッセージ -->
+    <div class="space-y-3" data-animate="fade-up">
+      <h2 class="text-sm font-bold text-stone-900 border-b border-stone-900 pb-2">担当建築士より</h2>
+      <p class="text-xs text-stone-600 leading-relaxed font-light">
+        「クライアントが好まれる北欧のヴィンテージ家具と美しく調和するよう、床にはオーク三層無垢材、壁面には左官職人による大谷石調の塗り壁を施しました。光の陰影が時間とともに表情を変える、静謐で飽きのこない空間を目指しました。」（一級建築士 高山 潤一）
+      </p>
+    </div>
+
+    <div class="text-center pt-8 border-t border-stone-200">
+      <a href="/works/" class="inline-flex items-center gap-2 px-8 py-3 bg-stone-900 text-white text-xs tracking-widest uppercase font-medium hover:bg-stone-800 transition shadow-sm">
+        <span>&larr;</span>
+        <span>施工事例一覧に戻る</span>
+      </a>
+    </div>
+  </section>
+</Layout>
+
+<!-- スライダー制御スクリプト -->
+<script is:inline define:vars={{ slides }}>
+  document.addEventListener('DOMContentLoaded', () => {
+    const track = document.getElementById('slider-track');
+    const currentNumEl = document.getElementById('current-slide-num');
+    const captionEl = document.getElementById('slider-caption');
+    const prevBtn = document.getElementById('prev-slide-btn');
+    const nextBtn = document.getElementById('next-slide-btn');
+    const thumbs = document.querySelectorAll('.thumb-item');
+
+    let currentIndex = 0;
+    const total = slides.length;
+
+    function updateSlider(index) {
+      if (index < 0) index = total - 1;
+      if (index >= total) index = 0;
+      currentIndex = index;
+
+      // トラック位置移動
+      if (track) {
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+      }
+
+      // カウンター更新
+      if (currentNumEl) {
+        currentNumEl.textContent = String(currentIndex + 1);
+      }
+
+      // キャプションフェード切替
+      if (captionEl) {
+        captionEl.style.opacity = '0';
+        setTimeout(() => {
+          captionEl.textContent = slides[currentIndex].caption;
+          captionEl.style.opacity = '1';
+        }, 150);
+      }
+
+      // サムネイルアクティブ状態更新
+      thumbs.forEach((thumb, i) => {
+        if (i === currentIndex) {
+          thumb.classList.add('ring-2', 'ring-neutral-800', 'border-neutral-800', 'opacity-100');
+          thumb.classList.remove('opacity-60', 'border-transparent');
+        } else {
+          thumb.classList.remove('ring-2', 'ring-neutral-800', 'border-neutral-800', 'opacity-100');
+          thumb.classList.add('opacity-60', 'border-transparent');
+        }
+      });
+    }
+
+    // 初期化
+    updateSlider(0);
+
+    // イベント登録
+    prevBtn?.addEventListener('click', () => updateSlider(currentIndex - 1));
+    nextBtn?.addEventListener('click', () => updateSlider(currentIndex + 1));
+
+    thumbs.forEach((thumb) => {
+      thumb.addEventListener('click', () => {
+        const idx = parseInt(thumb.getAttribute('data-index') || '0', 10);
+        updateSlider(idx);
+      });
+    });
+
+    // キーボード操作対応
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') updateSlider(currentIndex - 1);
+      if (e.key === 'ArrowRight') updateSlider(currentIndex + 1);
+    });
+
+    // タッチ・スワイプ対応
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const container = document.getElementById('work-slider-container');
+
+    container?.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    container?.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, { passive: true });
+
+    function handleSwipe() {
+      const diff = touchStartX - touchEndX;
+      if (Math.abs(diff) > 40) {
+        if (diff > 0) updateSlider(currentIndex + 1); // 左スワイプ（次へ）
+        else updateSlider(currentIndex - 1); // 右スワイプ（前へ）
+      }
+    }
+  });
+</script>
+

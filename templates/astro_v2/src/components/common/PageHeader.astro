@@ -1,0 +1,25 @@
+---
+interface Props {
+  title: string;
+  subTitle?: string;
+  bgImage?: string;
+}
+
+const { 
+  title, 
+  subTitle = "ARCH CRAFT STUDIO",
+  bgImage = "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80"
+} = Astro.props;
+---
+
+<section class="relative bg-stone-900 text-white py-24 md:py-32 px-4 overflow-hidden">
+  <div class="absolute inset-0 z-0">
+    <img src={bgImage} alt="" class="w-full h-full object-cover opacity-25" />
+    <div class="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/60 to-transparent"></div>
+  </div>
+  <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-8 text-center" data-animate="fade-up">
+    <span class="font-en-serif text-sm tracking-[0.3em] text-stone-300 uppercase block mb-3">{subTitle}</span>
+    <h1 class="font-serif-title text-3xl md:text-5xl font-medium tracking-widest">{title}</h1>
+  </div>
+</section>
+

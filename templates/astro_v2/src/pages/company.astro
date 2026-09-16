@@ -1,0 +1,93 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/common/PageHeader.astro';
+---
+
+<Layout title="会社概要・思想 | ARCH CRAFT STUDIO">
+  <PageHeader 
+    title="ABOUT US" 
+    subTitle="Our Philosophy & Company Overview"
+    bgImage="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1920&q=80"
+  />
+
+  <!-- 代表メッセージ -->
+  <section class="py-24 px-6 max-w-4xl mx-auto">
+    <div class="grid md:grid-cols-12 gap-12 items-center mb-20" data-animate="fade-up">
+      <div class="md:col-span-5">
+        <div class="aspect-[3/4] bg-stone-200 overflow-hidden rounded-sm shadow-md">
+          <img 
+            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" 
+            alt="代表建築士 高山 潤一" 
+            class="w-full h-full object-cover grayscale contrast-125"
+          />
+        </div>
+        <p class="text-xs text-stone-500 font-mono mt-3">代表取締役・一級建築士 / 高山 潤一</p>
+      </div>
+      <div class="md:col-span-7 space-y-6">
+        <span class="font-en-serif text-xs text-stone-400 tracking-[0.3em] uppercase block">Message</span>
+        <h2 class="font-serif-title text-2xl md:text-3xl font-medium text-stone-900 leading-snug">
+          流行を追うのではなく、<br />風景の一部となる建築を。
+        </h2>
+        <div class="w-10 h-px bg-stone-300"></div>
+        <p class="text-xs md:text-sm text-stone-600 leading-relaxed font-light text-justify">
+          私たちが目指すのは、完成した瞬間が最も美しい建築ではありません。10年、30年、50年と時を重ねるごとに味わいを深め、住まう人の人生や記憶と共に豊かになっていく器です。
+        </p>
+        <p class="text-xs md:text-sm text-stone-600 leading-relaxed font-light text-justify">
+          土地の気候風土を読み解き、自然光の角度や風の通り道を計算し、無垢の木や石といった本物の素材で織りなす空間。ただ便利であること以上の「静けさと心地よさ」をご提案し続けます。
+        </p>
+      </div>
+    </div>
+
+    <!-- 会社概要テーブル -->
+    <div data-animate="fade-up">
+      <div class="mb-8 border-b border-stone-800 pb-3 flex justify-between items-baseline">
+        <h2 class="font-serif-title text-xl font-medium text-stone-900 tracking-wider">会社概要</h2>
+        <span class="font-mono text-xs text-stone-400">CORPORATE DATA</span>
+      </div>
+
+      <div class="border-t border-stone-200 divide-y divide-stone-200 text-xs">
+        <div class="grid grid-cols-1 md:grid-cols-4 py-4 px-2">
+          <dt class="font-medium text-stone-800 md:col-span-1 py-1">商号</dt>
+          <dd class="text-stone-600 md:col-span-3 py-1 font-light">ARCH CRAFT STUDIO 株式会社（アーキ・クラフト・スタジオ）</dd>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-4 py-4 px-2">
+          <dt class="font-medium text-stone-800 md:col-span-1 py-1">設立</dt>
+          <dd class="text-stone-600 md:col-span-3 py-1 font-light">2012年4月（創業 2008年）</dd>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-4 py-4 px-2">
+          <dt class="font-medium text-stone-800 md:col-span-1 py-1">代表取締役</dt>
+          <dd class="text-stone-600 md:col-span-3 py-1 font-light">高山 潤一（一級建築士 大臣登録 第000000号）</dd>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-4 py-4 px-2">
+          <dt class="font-medium text-stone-800 md:col-span-1 py-1">所在地</dt>
+          <dd class="text-stone-600 md:col-span-3 py-1 font-light">
+            〒107-0062 東京都港区南青山5-10-2 STUDIO AOYAMA 3F<br />
+            （東京メトロ 表参道駅 B3出口より徒歩4分）
+          </dd>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-4 py-4 px-2">
+          <dt class="font-medium text-stone-800 md:col-span-1 py-1">連絡先</dt>
+          <dd class="text-stone-600 md:col-span-3 py-1 font-light">TEL: 03-6400-0000 / FAX: 03-6400-0001</dd>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-4 py-4 px-2">
+          <dt class="font-medium text-stone-800 md:col-span-1 py-1">許認可・登録</dt>
+          <dd class="text-stone-600 md:col-span-3 py-1 font-light">
+            一級建築士事務所 東京都知事登録 第00000号<br />
+            建設業許可 東京都知事（特-00）第000000号
+          </dd>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-4 py-4 px-2">
+          <dt class="font-medium text-stone-800 md:col-span-1 py-1">事業内容</dt>
+          <dd class="text-stone-600 md:col-span-3 py-1 font-light leading-relaxed">
+            1. 個人住宅・別荘・集合住宅の建築設計・監理<br />
+            2. マンション・戸建住宅のフルリノベーション設計・施工<br />
+            3. オーダー家具・インテリアプロダクトの企画・製作・販売<br />
+            4. 店舗・オフィスの空間デザインおよびブランディング
+          </dd>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+

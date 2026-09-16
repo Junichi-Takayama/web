@@ -1,0 +1,229 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHeader from '../../components/common/PageHeader.astro';
+
+export function getStaticPaths() {
+  return [
+    { params: { slug: 'sample-project' } },
+  ];
+}
+
+// サンプル事例画像＆キャプションデータ
+const slides = [
+  { id: 1, title: '外観', caption: '1. 外観：自然光を取り込むシンプルモダンなファサード design' },
+  { id: 2, title: 'リビング', caption: '2. リビング：開放感あふれる吹抜けと無垢材の温もり' },
+  { id: 3, title: 'ダイニング', caption: '3. ダイニング：家族が集うオープンキッチンと造作家具' },
+  { id: 4, title: '和室', caption: '4. 和室：伝統とモダンが調和する小上がり和室スペース' },
+  { id: 5, title: '主寝室', caption: '5. 主寝室：落ち着いたトーンの照明と間接光の寝室' },
+  { id: 6, title: '洗面スペース', caption: '6. サニタリー：清潔感のあるタイル貼りの造作洗面台' },
+  { id: 7, title: 'ウッドデッキ', caption: '7. ウッドデッキ：インナーテラスとしても活用できる中庭' },
+  { id: 8, title: '夜景外観', caption: '8. 夜景外観：あたたかい室内光がこぼれる夜の表情' },
+];
+---
+
+<Layout title="施工事例詳細 | 汎用工務店テンプレート">
+  <PageHeader title="施工事例" />
+
+  <section class="py-20 px-4 max-w-4xl mx-auto space-y-12">
+    <!-- タイトル＆導入テキスト -->
+    <div class="space-y-2" data-animate="fade-up">
+      <h1 class="text-2xl font-bold text-neutral-800">自然素材と光が調和するシンプルモダンの家</h1>
+      <p class="text-xs text-neutral-600">新潟市西区 / 竣工: 2026年 / 延床面積: 120㎡</p>
+    </div>
+
+    <!-- メインギャラリー（インタラクティブスライダー） -->
+    <div class="space-y-3" id="work-slider-container" data-animate="fade-up">
+      <!-- メインビジュアルエリア -->
+      <div class="relative bg-neutral-900 aspect-[16/9] overflow-hidden rounded-sm shadow-md group">
+        <!-- スライドコンテナ -->
+        <div id="slider-track" class="flex h-full transition-transform duration-500 ease-out">
+          {slides.map((slide, index) => (
+            <div class="w-full h-full flex-shrink-0 flex items-center justify-center relative bg-neutral-800 border-r border-neutral-900 select-none">
+              <!-- 画像ダミー背景プレースホルダー -->
+              <div class="absolute inset-0 bg-neutral-800 flex flex-col items-center justify-center text-neutral-400 p-4">
+                <span class="text-xs tracking-widest uppercase mb-2">IMAGE {index + 1}</span>
+                <span class="text-lg font-bold text-neutral-200">{slide.title}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- カウンターバッジ -->
+        <div class="absolute top-4 right-4 z-20 bg-black/60 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-mono tracking-wider">
+          <span id="current-slide-num">1</span> / <span>{slides.length}</span>
+        </div>
+
+        <!-- 左右コントロールボタン -->
+        <button id="prev-slide-btn" class="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-black/50 text-white rounded-full flex items-center justify-center hover:bg-black/80 transition duration-200 focus:outline-none" aria-label="前の写真">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+        </button>
+        <button id="next-slide-btn" class="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-black/50 text-white rounded-full flex items-center justify-center hover:bg-black/80 transition duration-200 focus:outline-none" aria-label="次の写真">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+        </button>
+      </div>
+
+      <!-- 写真説明キャプション -->
+      <div class="bg-neutral-100 p-3 rounded text-center">
+        <p id="slider-caption" class="text-xs text-neutral-700 font-medium transition-opacity duration-300">
+          {slides[0].caption}
+        </p>
+      </div>
+
+      <!-- サムネイル 8列 -->
+      <div class="grid grid-cols-4 sm:grid-cols-8 gap-2 pt-2">
+        {slides.map((_, index) => (
+          <button
+            class="thumb-item aspect-square bg-neutral-800 relative rounded overflow-hidden focus:outline-none transition-all duration-200 opacity-60 hover:opacity-100 border-2 border-transparent"
+            data-index={index}
+            aria-label={`写真 ${index + 1} を開く`}
+          >
+            <div class="w-full h-full flex items-center justify-center text-[10px] text-neutral-300 font-bold bg-neutral-700">
+              {index + 1}
+            </div>
+          </button>
+        ))}
+      </div>
+    </div>
+
+    <!-- 物件情報テーブル -->
+    <div class="space-y-4" data-animate="fade-up">
+      <h2 class="text-sm font-bold text-neutral-800 border-b border-neutral-800 pb-2">物件情報</h2>
+      <div class="border-t border-neutral-200 divide-y divide-neutral-200 text-xs">
+        <div class="grid grid-cols-1 md:grid-cols-4 py-3 px-2 bg-neutral-50">
+          <dt class="font-bold text-neutral-800 md:col-span-1">所在地</dt>
+          <dd class="text-neutral-600 md:col-span-3">新潟県新潟市西区</dd>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-4 py-3 px-2 bg-neutral-50">
+          <dt class="font-bold text-neutral-800 md:col-span-1">家族構成</dt>
+          <dd class="text-neutral-600 md:col-span-3">夫婦 ＋ 子供2人</dd>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-4 py-3 px-2 bg-neutral-50">
+          <dt class="font-bold text-neutral-800 md:col-span-1">敷地面積</dt>
+          <dd class="text-neutral-600 md:col-span-3">185.20㎡（56.02坪）</dd>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-4 py-3 px-2 bg-neutral-50">
+          <dt class="font-bold text-neutral-800 md:col-span-1">延床面積</dt>
+          <dd class="text-neutral-600 md:col-span-3">120.50㎡（36.45坪）</dd>
+        </div>
+      </div>
+    </div>
+
+    <!-- コンセプト -->
+    <div class="space-y-3" data-animate="fade-up">
+      <h2 class="text-sm font-bold text-neutral-800 border-b border-neutral-800 pb-2">コンセプト</h2>
+      <p class="text-xs text-neutral-600 leading-relaxed">
+        敷地の南側に高窓を設けることで、一日を通して明るい自然光がLDK全体に行き渡るよう設計しました。内装には杉の無垢フローリングと珪藻土の塗り壁を採用し、調湿性と優しい質感をプラス。家事を効率化する回遊動線もポイントです。
+      </p>
+    </div>
+
+    <!-- 施主様からのメッセージ -->
+    <div class="space-y-3" data-animate="fade-up">
+      <h2 class="text-sm font-bold text-neutral-800 border-b border-neutral-800 pb-2">施主様からのメッセージ</h2>
+      <p class="text-xs text-neutral-600 leading-relaxed">
+        「予算の中でどこまで希望を叶えられるか不安でしたが、設計士さんが親身に相談に乗ってくれました。実際に住み始めてから、木の香りと吹き抜けの開放感に毎日癒されています。冬暖かく夏涼しい快適さにも大満足です。」
+      </p>
+    </div>
+
+    <!-- 設計士からのメッセージ -->
+    <div class="space-y-3" data-animate="fade-up">
+      <h2 class="text-sm font-bold text-neutral-800 border-b border-neutral-800 pb-2">設計士からのメッセージ</h2>
+      <p class="text-xs text-neutral-600 leading-relaxed">
+        「ご家族の生活スタイルを詳しくヒアリングし、プライバシーを守りつつ開放感を追求しました。無駄のないミニマルなデザインの中に、素材の質感が映える空間に仕上がっています。」
+      </p>
+    </div>
+  </section>
+</Layout>
+
+<!-- スライダー制御スクリプト -->
+<script is:inline define:vars={{ slides }}>
+  document.addEventListener('DOMContentLoaded', () => {
+    const track = document.getElementById('slider-track');
+    const currentNumEl = document.getElementById('current-slide-num');
+    const captionEl = document.getElementById('slider-caption');
+    const prevBtn = document.getElementById('prev-slide-btn');
+    const nextBtn = document.getElementById('next-slide-btn');
+    const thumbs = document.querySelectorAll('.thumb-item');
+
+    let currentIndex = 0;
+    const total = slides.length;
+
+    function updateSlider(index) {
+      if (index < 0) index = total - 1;
+      if (index >= total) index = 0;
+      currentIndex = index;
+
+      // トラック位置移動
+      if (track) {
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+      }
+
+      // カウンター更新
+      if (currentNumEl) {
+        currentNumEl.textContent = String(currentIndex + 1);
+      }
+
+      // キャプションフェード切替
+      if (captionEl) {
+        captionEl.style.opacity = '0';
+        setTimeout(() => {
+          captionEl.textContent = slides[currentIndex].caption;
+          captionEl.style.opacity = '1';
+        }, 150);
+      }
+
+      // サムネイルアクティブ状態更新
+      thumbs.forEach((thumb, i) => {
+        if (i === currentIndex) {
+          thumb.classList.add('ring-2', 'ring-neutral-800', 'border-neutral-800', 'opacity-100');
+          thumb.classList.remove('opacity-60', 'border-transparent');
+        } else {
+          thumb.classList.remove('ring-2', 'ring-neutral-800', 'border-neutral-800', 'opacity-100');
+          thumb.classList.add('opacity-60', 'border-transparent');
+        }
+      });
+    }
+
+    // 初期化
+    updateSlider(0);
+
+    // イベント登録
+    prevBtn?.addEventListener('click', () => updateSlider(currentIndex - 1));
+    nextBtn?.addEventListener('click', () => updateSlider(currentIndex + 1));
+
+    thumbs.forEach((thumb) => {
+      thumb.addEventListener('click', () => {
+        const idx = parseInt(thumb.getAttribute('data-index') || '0', 10);
+        updateSlider(idx);
+      });
+    });
+
+    // キーボード操作対応
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') updateSlider(currentIndex - 1);
+      if (e.key === 'ArrowRight') updateSlider(currentIndex + 1);
+    });
+
+    // タッチ・スワイプ対応
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const container = document.getElementById('work-slider-container');
+
+    container?.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    container?.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, { passive: true });
+
+    function handleSwipe() {
+      const diff = touchStartX - touchEndX;
+      if (Math.abs(diff) > 40) {
+        if (diff > 0) updateSlider(currentIndex + 1); // 左スワイプ（次へ）
+        else updateSlider(currentIndex - 1); // 右スワイプ（前へ）
+      }
+    }
+  });
+</script>
+

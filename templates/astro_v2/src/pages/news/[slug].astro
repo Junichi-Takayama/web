@@ -1,0 +1,68 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHeader from '../../components/common/PageHeader.astro';
+
+export function getStaticPaths() {
+  return [
+    { params: { slug: '2026-08-24-sample' } },
+  ];
+}
+---
+
+<Layout title="【見学会】世田谷・中庭を囲む平屋住宅 完成見学会 | ARCH CRAFT STUDIO">
+  <PageHeader 
+    title="NEWS DETAIL" 
+    subTitle="Event & Information"
+  />
+
+  <section class="py-20 px-6 max-w-3xl mx-auto space-y-10">
+    <div class="border-b border-stone-200 pb-6 space-y-3" data-animate="fade-up">
+      <div class="flex items-center gap-3 text-xs">
+        <span class="text-stone-400 font-mono text-[11px]">2026.09.05</span>
+        <span class="px-2.5 py-0.5 bg-stone-900 text-white text-[10px] font-medium tracking-wider">見学会</span>
+      </div>
+      <h1 class="font-serif-title text-2xl md:text-3xl font-medium text-stone-900 leading-snug">
+        【完全予約制】世田谷区・中庭を囲む平屋住宅の完成見学会を開催いたします（9/20〜9/23）
+      </h1>
+    </div>
+
+    <div class="text-xs md:text-sm text-stone-600 leading-loose space-y-6 font-light" data-animate="fade-up">
+      <div class="aspect-[16/9] overflow-hidden rounded-sm bg-stone-200 mb-6">
+        <img 
+          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" 
+          alt="世田谷の家 見学会" 
+          class="w-full h-full object-cover"
+        />
+      </div>
+
+      <p>
+        この度、お施主様のご厚意により、東京都世田谷区にて竣工いたしました注文住宅の完成見学会を【4日間限定・完全予約制】にて開催いたします。
+      </p>
+      
+      <div class="bg-stone-100 p-6 rounded-sm border border-stone-200 space-y-3 text-xs">
+        <p class="font-bold text-stone-900 text-sm">見学会 概要</p>
+        <p>・日時：2026年9月20日(土) 〜 9月23日(火・祝) 10:00〜17:00</p>
+        <p>・場所：東京都世田谷区（ご予約確定後に詳細住所をお送りいたします）</p>
+        <p>・規模：木造2階建て / 延床面積 135.20㎡</p>
+        <p>・性能：耐震等級3 / HEAT20 G2 / C値 0.4</p>
+      </div>
+
+      <p>
+        中庭を中心とした採光計画や、オーク無垢床と大谷石左官壁の上質な質感、専属家具職人による特注アイランドキッチンなど、ARCH CRAFT STUDIO の設計思想を実際にご体感いただける貴重な機会です。
+      </p>
+    </div>
+
+    <div class="pt-8 border-t border-stone-200 flex justify-between items-center">
+      <a href="/news/" class="inline-flex items-center gap-2 px-6 py-2.5 bg-stone-100 hover:bg-stone-200 text-stone-800 text-xs tracking-wider transition">
+        <span>&larr;</span>
+        <span>お知らせ一覧に戻る</span>
+      </a>
+      <a href="/contact/" class="inline-flex items-center gap-2 px-6 py-2.5 bg-stone-900 hover:bg-stone-800 text-white text-xs tracking-wider transition shadow-sm">
+        <span>見学会を予約する</span>
+        <span>&rarr;</span>
+      </a>
+    </div>
+  </section>
+</Layout>
+
+

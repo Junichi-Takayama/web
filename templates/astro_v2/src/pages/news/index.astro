@@ -1,0 +1,75 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHeader from '../../components/common/PageHeader.astro';
+
+const newsList = [
+  {
+    date: "2026.09.05",
+    category: "見学会",
+    title: "【完全予約制】世田谷区・中庭を囲む平屋住宅の完成見学会を開催いたします（9/20〜9/23）",
+    slug: "2026-08-24-sample"
+  },
+  {
+    date: "2026.08.28",
+    category: "メディア",
+    title: "建築デザイン誌『MODERN LIVING』2026年9月号に「軽井沢の別荘プロジェクト」が掲載されました",
+    slug: "2026-08-24-sample"
+  },
+  {
+    date: "2026.08.10",
+    category: "お知らせ",
+    title: "2026年度グッドデザイン賞の一次審査を通過いたしました",
+    slug: "2026-08-24-sample"
+  },
+  {
+    date: "2026.07.25",
+    category: "お知らせ",
+    title: "夏季休業期間のお知らせ（8月12日〜8月16日）",
+    slug: "2026-08-24-sample"
+  },
+  {
+    date: "2026.07.01",
+    category: "見学会",
+    title: "【構造見学会】耐震等級3・HEAT20 G2断熱施工の現場構造見学会（神奈川県鎌倉市）",
+    slug: "2026-08-24-sample"
+  },
+  {
+    date: "2026.06.15",
+    category: "メディア",
+    title: "Webマガジン『ArchDaily Japan』に代表・高山潤一のインタビュー記事が公開されました",
+    slug: "2026-08-24-sample"
+  }
+];
+---
+
+<Layout title="お知らせ・メディア | ARCH CRAFT STUDIO">
+  <PageHeader 
+    title="NEWS" 
+    subTitle="Information & Media Coverage"
+    bgImage="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1920&q=80"
+  />
+
+  <section class="py-24 px-6 max-w-4xl mx-auto">
+    <div class="border-t border-b border-stone-200 divide-y divide-stone-200 mb-12 bg-white shadow-sm rounded-sm" data-animate="fade-up">
+      {newsList.map((item) => (
+        <div class="py-5 px-6 flex flex-col sm:flex-row sm:items-center gap-4 text-xs hover:bg-stone-50 transition-colors">
+          <span class="text-stone-400 font-mono text-[11px] w-24 flex-shrink-0">{item.date}</span>
+          <span class="px-2.5 py-0.5 bg-stone-900 text-white text-[10px] font-medium tracking-wider w-fit">
+            {item.category}
+          </span>
+          <a href={`/news/${item.slug}/`} class="text-stone-800 font-medium hover:text-stone-600 transition flex-grow">
+            {item.title}
+          </a>
+        </div>
+      ))}
+    </div>
+
+    <!-- ページネーション -->
+    <div class="flex items-center justify-center gap-2 text-xs font-mono">
+      <span class="w-10 h-10 bg-stone-900 text-white flex items-center justify-center font-bold">1</span>
+      <a href="#" class="w-10 h-10 border border-stone-300 flex items-center justify-center hover:bg-stone-100 transition">2</a>
+    </div>
+  </section>
+</Layout>
+
+

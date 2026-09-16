@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+}
+
+.font-serif-title {
+  font-family: 'Shippori Mincho', serif;
+}
+
+/* ==========================================================================
+   Scroll Animation Classes (IntersectionObserver)
+   ========================================================================== */
+
+/* 基本スタイル：初期状態（非表示） */
+[data-animate] {
+  opacity: 0;
+  will-change: transform, opacity;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-animate="fade-up"] {
+  transform: translateY(30px);
+}
+
+[data-animate="fade-in"] {
+  transform: translateY(0);
+}
+
+[data-animate="slide-left"] {
+  transform: translateX(-40px);
+}
+
+[data-animate="slide-right"] {
+  transform: translateX(40px);
+}
+
+[data-animate="scale-up"] {
+  transform: scale(0.95);
+}
+
+/* 画面内に入った時の発火状態 */
+[data-animate].is-visible {
+  opacity: 1;
+  transform: translateY(0) translateX(0) scale(1);
+}
+
+/* ディレイ（遅延）の設定 */
+[data-delay="100"] { transition-delay: 0.1s; }
+[data-delay="150"] { transition-delay: 0.15s; }
+[data-delay="200"] { transition-delay: 0.2s; }
+[data-delay="300"] { transition-delay: 0.3s; }
+[data-delay="400"] { transition-delay: 0.4s; }
+[data-delay="500"] { transition-delay: 0.5s; }
+
+/* ヘッダーのスクロール時シャドウ＆アニメーション */
+header {
+  transition: all 0.3s ease;
+}
+
+header.is-scrolled {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+

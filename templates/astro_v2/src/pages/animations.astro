@@ -1,0 +1,343 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="インタラクション・アニメーション見本帳 | ARCH CRAFT STUDIO">
+  <!-- タイトルセクション -->
+  <section class="py-24 px-6 text-center bg-stone-900 text-white">
+    <span class="font-en-serif text-xs tracking-[0.3em] uppercase text-stone-400 block mb-2">Interaction & Motion Library</span>
+    <h1 class="font-serif-title text-3xl md:text-5xl font-medium tracking-wider mb-4">
+      スクロール連動・モーション見本帳
+    </h1>
+    <p class="text-xs md:text-sm text-stone-400 max-w-xl mx-auto font-light leading-relaxed">
+      画面を下へスクロールしながら各演出をお確かめください。<br>
+      基本のフェードインから、Apple製品ページのようなスクロール率連動のズーム・色変化まで実演しています。
+    </p>
+    <div class="mt-8 flex justify-center">
+      <div class="animate-bounce text-stone-500 flex flex-col items-center gap-1 text-[10px] tracking-widest uppercase font-mono">
+        <span>Scroll Down</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- PATTERN 1: フェードイン 3種 -->
+  <section class="py-24 px-6 max-w-5xl mx-auto space-y-20">
+    <div class="border-b border-stone-200 pb-4">
+      <span class="text-[11px] font-mono text-stone-400 tracking-widest block uppercase">Pattern 01</span>
+      <h2 class="font-serif-title text-xl md:text-2xl font-medium text-stone-900">
+        スクロール出現系 3パターン（画面内検知）
+      </h2>
+    </div>
+
+    <!-- 1-A: フェードアップ -->
+    <div class="space-y-4">
+      <div class="flex items-center gap-2">
+        <span class="px-2 py-0.5 bg-stone-900 text-white text-[10px] font-mono">1-A</span>
+        <h3 class="text-sm font-medium text-stone-800">上品なフェードアップ（Fade Up）</h3>
+      </div>
+      <p class="text-xs text-stone-500 font-light">下からフワッと浮き上がりながら現れる、最も汎用性が高く上品な基本演出。</p>
+      <div class="p-8 bg-white border border-stone-200 shadow-sm rounded-sm reveal-fade-up">
+        <h4 class="font-medium text-stone-900 text-sm">空間の余白を大切にする設計</h4>
+        <p class="text-xs text-stone-500 font-light mt-1">視覚的ノイズを削ぎ落とし、住まう人の気配と自然光を受け止めます。</p>
+      </div>
+    </div>
+
+    <!-- 1-B: 順次遅延 -->
+    <div class="space-y-4">
+      <div class="flex items-center gap-2">
+        <span class="px-2 py-0.5 bg-stone-900 text-white text-[10px] font-mono">1-B</span>
+        <h3 class="text-sm font-medium text-stone-800">カードの順次遅延出現（Stagger Effect）</h3>
+      </div>
+      <p class="text-xs text-stone-500 font-light">複数のカードが、左から右へ「ト・ト・トン」と時間差で出現します。</p>
+      <div class="grid sm:grid-cols-3 gap-6">
+        {[
+          { step: "Step 01", title: "対話とヒアリング", desc: "理想の暮らしをじっくり伺います。" },
+          { step: "Step 02", title: "基本プラン提示", desc: "光と風の通り道を提案します。" },
+          { step: "Step 03", title: "素材と詳細設計", desc: "無垢材や石材のサンプルに触れます。" }
+        ].map((item, i) => (
+          <div class="p-6 bg-white border border-stone-200 shadow-sm rounded-sm reveal-stagger" style={`transition-delay: ${i * 150}ms;`}>
+            <span class="text-[10px] font-mono text-stone-400 block mb-2">{item.step}</span>
+            <h4 class="font-medium text-stone-900 text-sm mb-2">{item.title}</h4>
+            <p class="text-xs text-stone-500 font-light leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- 1-C: カーテンワイプ -->
+    <div class="space-y-4">
+      <div class="flex items-center gap-2">
+        <span class="px-2 py-0.5 bg-stone-900 text-white text-[10px] font-mono">1-C</span>
+        <h3 class="text-sm font-medium text-stone-800">画像カーテンワイプ（Curtain Reveal）</h3>
+      </div>
+      <p class="text-xs text-stone-500 font-light">カバー幕がスーッと横に引けて、写真が現れるギャラリー特有の演出。</p>
+      <div class="grid sm:grid-cols-2 gap-6">
+        <div class="curtain-container aspect-[16/10] relative overflow-hidden rounded-sm shadow-md">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="建築写真" class="w-full h-full object-cover curtain-image" />
+          <div class="curtain-overlay bg-stone-900 absolute inset-0 z-10"></div>
+        </div>
+        <div class="curtain-container aspect-[16/10] relative overflow-hidden rounded-sm shadow-md">
+          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" alt="インテリア写真" class="w-full h-full object-cover curtain-image" />
+          <div class="curtain-overlay bg-stone-900 absolute inset-0 z-10" style="transition-delay: 200ms;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ==========================================
+       SECTION 2: Apple風 スクロール連動
+       （スクロール量に合わせてズーム拡大＆3Dチルト＆背景反転）
+  ========================================== -->
+  <section id="apple-section" class="relative h-[250vh] bg-stone-100 transition-colors duration-700 ease-out">
+    <!-- 固定ビューポート -->
+    <div class="sticky top-0 h-screen flex flex-col items-center justify-center overflow-hidden px-6">
+      
+      <!-- テキスト変化エリア -->
+      <div class="text-center z-20 mb-6 transition-all duration-300 pointer-events-none" id="apple-text">
+        <span class="apple-sub font-mono text-xs tracking-[0.4em] uppercase text-stone-500 block mb-2">
+          Scroll-Linked Transformation
+        </span>
+        <h2 class="apple-title font-serif-title text-3xl md:text-5xl font-medium tracking-tight text-stone-900 transition-colors duration-500">
+          圧倒的な没入感をつくる。
+        </h2>
+        <p class="apple-desc text-xs md:text-sm text-stone-500 mt-3 max-w-md mx-auto font-light transition-colors duration-500">
+          スクロール率に合わせて、画面背景が漆黒へと染まり、建築モデルが立体的に拡大します。
+        </p>
+      </div>
+
+      <!-- スクロール連動で拡大・傾きが変化するオブジェクト枠 -->
+      <div 
+        id="apple-card" 
+        class="w-[320px] sm:w-[500px] md:w-[720px] aspect-[16/10] bg-stone-900 rounded-lg overflow-hidden shadow-2xl relative will-change-transform border border-stone-700"
+        style="transform: perspective(1000px) scale(0.75) rotateX(15deg) rotateY(-5deg);"
+      >
+        <img 
+          id="apple-card-img"
+          src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80" 
+          alt="Villa Architectural Detail" 
+          class="w-full h-full object-cover brightness-90 transition-all duration-300"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
+          <div>
+            <span class="px-2 py-0.5 bg-white/20 backdrop-blur-md text-white text-[10px] font-mono uppercase tracking-widest rounded-full">
+              Karuizawa Villa Concept
+            </span>
+            <h3 class="text-white font-serif-title text-lg md:text-xl font-medium mt-2">
+              自然と調和する、有機的コンクリート造
+            </h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- スクロール進行度バー -->
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 w-48 h-1 bg-stone-300 rounded-full overflow-hidden z-20">
+        <div id="apple-progress" class="h-full bg-stone-900 transition-all duration-75 w-0"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PATTERN 3: カウントアップ -->
+  <section class="py-32 px-6 bg-stone-900 text-white">
+    <div class="max-w-5xl mx-auto">
+      <div class="border-b border-stone-800 pb-4 mb-16">
+        <span class="text-[11px] font-mono text-stone-400 tracking-widest block uppercase">Pattern 03</span>
+        <h2 class="font-serif-title text-xl md:text-2xl font-medium text-stone-100">
+          カウントアップ数値（実績・スペック訴求）
+        </h2>
+      </div>
+
+      <div class="grid sm:grid-cols-3 gap-12 text-center" id="counter-section">
+        <div class="space-y-2">
+          <div class="font-en-serif text-5xl md:text-6xl font-light text-stone-100 tracking-tight">
+            <span class="count-target" data-count="180">0</span><span class="text-2xl text-stone-400 font-sans ml-1">+</span>
+          </div>
+          <div class="text-xs uppercase tracking-widest text-stone-400 font-mono">Projects Completed</div>
+          <p class="text-xs text-stone-500 font-light pt-2">注文住宅・別荘の累計実績</p>
+        </div>
+
+        <div class="space-y-2">
+          <div class="font-en-serif text-5xl md:text-6xl font-light text-stone-100 tracking-tight">
+            <span class="count-target" data-count="98">0</span><span class="text-2xl text-stone-400 font-sans ml-1">%</span>
+          </div>
+          <div class="text-xs uppercase tracking-widest text-stone-400 font-mono">Satisfaction Rate</div>
+          <p class="text-xs text-stone-500 font-light pt-2">お引き渡し後アンケート満足度</p>
+        </div>
+
+        <div class="space-y-2">
+          <div class="font-en-serif text-5xl md:text-6xl font-light text-stone-100 tracking-tight">
+            <span class="count-target" data-count="32">0</span><span class="text-2xl text-stone-400 font-sans ml-1">Awards</span>
+          </div>
+          <div class="text-xs uppercase tracking-widest text-stone-400 font-mono">Design Awards</div>
+          <p class="text-xs text-stone-500 font-light pt-2">グッドデザイン賞等の受賞歴</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- フッター直前の案内 -->
+  <section class="py-20 px-6 text-center bg-stone-100">
+    <h3 class="font-serif-title text-xl font-medium text-stone-900 mb-3">
+      「このアニメーションをあのページに入れたい」
+    </h3>
+    <p class="text-xs text-stone-600 max-w-md mx-auto font-light mb-6">
+      パーツ化されたコードをコピー、またはAIに指定するだけで、どのページにも即座に組み込むことができます。
+    </p>
+    <a href="/" class="inline-flex items-center gap-2 px-6 py-3 bg-stone-900 text-white text-xs tracking-widest uppercase hover:bg-stone-800 transition">
+      <span>トップページに戻る</span>
+      <span>&rarr;</span>
+    </a>
+  </section>
+
+</Layout>
+<style>
+  /* 1-A: フェードアップ */
+  .reveal-fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal-fade-up.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* 1-B: 順次遅延 */
+  .reveal-stagger {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal-stagger.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* 1-C: カーテンワイプ */
+  .curtain-overlay {
+    transform: scaleX(1);
+    transform-origin: right;
+    transition: transform 1.1s cubic-bezier(0.77, 0, 0.175, 1);
+  }
+  .curtain-container.is-visible .curtain-overlay {
+    transform: scaleX(0);
+  }
+  .curtain-image {
+    transform: scale(1.15);
+    transition: transform 1.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .curtain-container.is-visible .curtain-image {
+    transform: scale(1);
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // 1. フェード＆カーテン出現検知
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -60px 0px', threshold: 0.15 });
+
+    document.querySelectorAll('.reveal-fade-up, .reveal-stagger, .curtain-container').forEach(el => {
+      revealObserver.observe(el);
+    });
+
+    // 2. Apple風 スクロール連動 (Scroll-Linked)
+    const appleSection = document.getElementById('apple-section');
+    const appleCard = document.getElementById('apple-card');
+    const appleCardImg = document.getElementById('apple-card-img');
+    const appleProgress = document.getElementById('apple-progress');
+    const appleTitle = document.querySelector('.apple-title');
+    const appleDesc = document.querySelector('.apple-desc');
+
+    if (appleSection && appleCard) {
+      window.addEventListener('scroll', () => {
+        const rect = appleSection.getBoundingClientRect();
+        const sectionHeight = appleSection.offsetHeight - window.innerHeight;
+        let progress = -rect.top / sectionHeight;
+        progress = Math.max(0, Math.min(1, progress));
+
+        if (appleProgress) {
+          appleProgress.style.width = `${progress * 100}%`;
+        }
+
+        // 背景色変化
+        if (progress > 0.15) {
+          appleSection.style.backgroundColor = '#0c0a09';
+          if (appleTitle) {
+            appleTitle.classList.add('text-white');
+            appleTitle.classList.remove('text-stone-900');
+          }
+          if (appleDesc) {
+            appleDesc.classList.add('text-stone-400');
+            appleDesc.classList.remove('text-stone-500');
+          }
+        } else {
+          appleSection.style.backgroundColor = '#f5f5f4';
+          if (appleTitle) {
+            appleTitle.classList.remove('text-white');
+            appleTitle.classList.add('text-stone-900');
+          }
+          if (appleDesc) {
+            appleDesc.classList.remove('text-stone-400');
+            appleDesc.classList.add('text-stone-500');
+          }
+        }
+
+        // 3Dチルト・スケール拡大
+        const scale = 0.75 + (progress * 0.45);
+        const rotateX = 15 - (progress * 15);
+        const rotateY = -5 + (progress * 5);
+
+        appleCard.style.transform = `perspective(1000px) scale(${scale}) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        
+        if (appleCardImg) {
+          appleCardImg.style.filter = `brightness(${0.85 + progress * 0.25}) saturate(${1 + progress * 0.2})`;
+        }
+      }, { passive: true });
+    }
+
+    // 3. カウントアップ
+    const counterSection = document.getElementById('counter-section');
+    let counted = false;
+
+    if (counterSection) {
+      const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !counted) {
+            counted = true;
+            document.querySelectorAll('.count-target').forEach(el => {
+              const target = parseInt(el.getAttribute('data-count') || '0', 10);
+              const duration = 1500;
+              const startTime = performance.now();
+
+              const updateCount = (currentTime: number) => {
+                const elapsed = currentTime - startTime;
+                const rate = Math.min(elapsed / duration, 1);
+                const easeRate = 1 - (1 - rate) * (1 - rate);
+                const current = Math.floor(easeRate * target);
+                el.textContent = current.toString();
+
+                if (rate < 1) {
+                  requestAnimationFrame(updateCount);
+                } else {
+                  el.textContent = target.toString();
+                }
+              };
+              requestAnimationFrame(updateCount);
+            });
+          }
+        });
+      }, { threshold: 0.3 });
+
+      counterObserver.observe(counterSection);
+    }
+  });
+</script>
+
