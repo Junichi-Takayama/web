@@ -24,6 +24,7 @@ credentials.*
 secrets/
 .env
 .env.*
+!.env.example
 .env.local
 
 # OS & IDE

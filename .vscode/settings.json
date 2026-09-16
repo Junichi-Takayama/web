@@ -1,0 +1,44 @@
+{
+  "markdown.marp.themes": [
+    "templates/marp/theme.css"
+  ],
+  "markdown.marp.enableHtml": true,
+
+  // --- タブ渋滞防止設定 ---
+  // タブの最大数を制限（指定数を超えたら古いタブを自動でクローズ）
+  "workbench.editor.limit.enabled": true,
+  "workbench.editor.limit.value": 3,
+  "workbench.editor.limit.perEditorGroup": true,
+
+  // プレビューモードを強制（ファイルを開くたびにタブが増殖するのを防ぐ）
+  "workbench.editor.enablePreview": true,
+  "workbench.editor.enablePreviewFromQuickOpen": true,
+  "workbench.editor.enablePreviewFromCodeNavigation": true,
+
+  // 空になったエディタグループは自動で閉じる
+  "workbench.editor.closeEmptyEditorGroups": true,
+
+  // --- 案件管理（Cline用）ウィンドウ識別カラー（目に優しい落ち着いたテラコッタ/ウォームアンバー） ---
+  "workbench.colorCustomizations": {
+    // タイトルバー（最上部：彩度を抑えたシックなダークテラコッタ）
+    "titleBar.activeBackground": "#452618",
+    "titleBar.activeForeground": "#ecd8cc",
+    "titleBar.inactiveBackground": "#2a1810",
+    "titleBar.inactiveForeground": "#8c766b",
+
+    // アクティビティバー（左端アイコン列：目に刺さらないディープウォームトーン）
+    "activityBar.background": "#331c12",
+    "activityBar.foreground": "#ecd8cc",
+    "activityBar.inactiveForeground": "#8c766b",
+    "activityBarBadge.background": "#9c4e23",
+    "activityBarBadge.foreground": "#ffffff",
+
+    // ステータスバー（最下部）
+    "statusBar.background": "#2e1910",
+    "statusBar.foreground": "#ecd8cc",
+    "statusBar.noFolderBackground": "#2e1910",
+
+    // ウィンドウ外枠ライン（ギラつかない上品なアクセントライン）
+    "window.activeBorder": "#8a441e"
+  }
+}
