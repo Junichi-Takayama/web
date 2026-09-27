@@ -28,17 +28,17 @@ const {
 <section class="py-20 md:py-28 px-6 bg-stone-50 border-t border-b border-stone-200">
   <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
     <!-- プロフィール画像 -->
-    <div class="space-y-4 text-center md:text-left group cursor-default">
-      <div class="aspect-square max-w-[280px] mx-auto md:mx-0 overflow-hidden rounded-sm bg-stone-200 shadow-sm group-hover:shadow-xl transition-shadow duration-500">
+    <div class="space-y-4 text-center md:text-left">
+      <div class="aspect-square max-w-[280px] mx-auto md:mx-0 overflow-hidden rounded-sm bg-stone-200 shadow-sm">
         <img 
           src={imageSrc} 
           alt={imageAlt} 
-          class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" 
+          class="w-full h-full object-cover grayscale" 
           loading="lazy" 
         />
       </div>
       <div>
-        <p class="font-serif-title text-lg font-bold text-stone-900 group-hover:text-stone-700 transition-colors">{name}</p>
+        <p class="font-serif-title text-lg font-bold text-stone-900">{name}</p>
         <p class="text-[11px] text-stone-500 font-mono tracking-wider mt-0.5">{signatureTitle}</p>
       </div>
     </div>

@@ -47,11 +47,11 @@ const {
           </thead>
           <tbody class="divide-y divide-stone-200 font-light">
             {rows.map((row) => (
-              <tr class="hover:bg-stone-100/70 transition-colors duration-150 group">
-                <td class="p-4 font-medium text-stone-900 bg-stone-50/50 group-hover:bg-stone-100/50 transition-colors">{row.item}</td>
-                <td class="p-4 text-stone-500 leading-relaxed group-hover:text-stone-700 transition-colors">{row.traditional}</td>
-                <td class="p-4 bg-stone-50 font-medium text-stone-900 leading-relaxed border-l border-r border-stone-200 group-hover:bg-stone-100/80 transition-colors">
-                  <span class="text-stone-900 font-bold mr-1 inline-block group-hover:scale-110 transition-transform">✓</span> {row.arcraft}
+              <tr>
+                <td class="p-4 font-medium text-stone-900 bg-stone-50/50">{row.item}</td>
+                <td class="p-4 text-stone-500 leading-relaxed">{row.traditional}</td>
+                <td class="p-4 bg-stone-50 font-medium text-stone-900 leading-relaxed border-l border-r border-stone-200">
+                  <span class="text-stone-900 font-bold mr-1 inline-block">✓</span> {row.arcraft}
                 </td>
               </tr>
             ))}

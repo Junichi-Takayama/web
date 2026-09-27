@@ -35,17 +35,17 @@ const {
 
     <div class="relative border-l border-stone-200 ml-4 md:ml-32 space-y-10 pl-6 md:pl-8">
       {items.map((item) => (
-        <div class="relative group p-3 -m-3 rounded-sm hover:bg-stone-50/70 transition-colors duration-200 cursor-default">
+        <div class="relative p-3 -m-3">
           <!-- タイムラインの丸ポチ -->
-          <div class="absolute -left-[31px] md:-left-[39px] top-4 w-3.5 h-3.5 rounded-full bg-stone-900 border-4 border-white shadow-xs group-hover:scale-125 group-hover:bg-amber-600 transition-all duration-300"></div>
+          <div class="absolute -left-[31px] md:-left-[39px] top-4 w-3.5 h-3.5 rounded-full bg-stone-900 border-4 border-white shadow-xs"></div>
 
           <!-- 年月表示（モバイルは上、PCは左側） -->
-          <div class="md:absolute md:-left-36 md:top-3 md:text-right font-mono text-xs text-stone-500 font-semibold mb-1 md:mb-0 group-hover:text-stone-900 transition-colors">
+          <div class="md:absolute md:-left-36 md:top-3 md:text-right font-mono text-xs text-stone-500 font-semibold mb-1 md:mb-0">
             {item.year}{item.month ? `.${item.month}` : ''}
           </div>
 
           <div class="space-y-1">
-            <h3 class="font-serif-title text-base font-bold text-stone-900 group-hover:text-stone-700 transition-colors">
+            <h3 class="font-serif-title text-base font-bold text-stone-900">
               {item.title}
             </h3>
             <p class="text-xs text-stone-600 font-light leading-relaxed">

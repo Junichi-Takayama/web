@@ -36,9 +36,9 @@ const {
     {metaList && (
       <div class="pt-8 border-t border-stone-800 grid grid-cols-2 sm:grid-cols-3 gap-6 font-mono text-xs">
         {metaList.map((m) => (
-          <div class="p-3 -m-3 rounded-xs hover:bg-stone-800/60 transition-colors duration-200 cursor-default group">
-            <span class="text-stone-500 group-hover:text-stone-400 block text-[10px] tracking-widest transition-colors">{m.label}</span>
-            <span class="text-stone-200 group-hover:text-white font-medium transition-colors">{m.value}</span>
+          <div>
+            <span class="text-stone-500 block text-[10px] tracking-widest">{m.label}</span>
+            <span class="text-stone-200 font-medium">{m.value}</span>
           </div>
         ))}
       </div>

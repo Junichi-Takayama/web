@@ -47,14 +47,14 @@ const {
         </thead>
         <tbody class="divide-y divide-stone-200 font-light">
           {items.map((row) => (
-            <tr class="hover:bg-stone-100/70 transition-colors duration-150 group">
-              <td class="p-3.5 font-medium text-stone-900 group-hover:text-stone-950 transition-colors">{row.feature}</td>
-              <td class="p-3.5 text-stone-400 font-mono text-[10px] group-hover:text-stone-600 transition-colors">{row.category}</td>
+            <tr>
+              <td class="p-3.5 font-medium text-stone-900">{row.feature}</td>
+              <td class="p-3.5 text-stone-400 font-mono text-[10px]">{row.category}</td>
               <td class="p-3.5 text-center">
-                {row.basePlan ? <span class="text-stone-900 font-bold inline-block group-hover:scale-110 transition-transform">●</span> : <span class="text-stone-300">ー</span>}
+                {row.basePlan ? <span class="text-stone-900 font-bold inline-block">●</span> : <span class="text-stone-300">ー</span>}
               </td>
-              <td class="p-3.5 text-center bg-stone-50 group-hover:bg-stone-100/50 transition-colors">
-                {row.partnerPlan ? <span class="text-stone-900 font-bold inline-block group-hover:scale-110 transition-transform">●</span> : <span class="text-stone-300">ー</span>}
+              <td class="p-3.5 text-center bg-stone-50">
+                {row.partnerPlan ? <span class="text-stone-900 font-bold inline-block">●</span> : <span class="text-stone-300">ー</span>}
               </td>
             </tr>
           ))}

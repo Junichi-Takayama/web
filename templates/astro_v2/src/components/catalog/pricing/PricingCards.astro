@@ -71,15 +71,15 @@ const {
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
       {plans.map((plan) => (
-        <div class={`group p-8 rounded-sm shadow-sm flex flex-col justify-between border hover:-translate-y-1.5 hover:shadow-xl transition-all duration-300 ${
+        <div class={`p-8 rounded-sm shadow-sm flex flex-col justify-between border ${
           plan.highlight 
-            ? 'bg-stone-900 text-white border-stone-800 shadow-md ring-1 ring-stone-900 hover:border-stone-700' 
-            : 'bg-white text-stone-900 border-stone-300 hover:border-stone-400'
+            ? 'bg-stone-900 text-white border-stone-800 shadow-md ring-1 ring-stone-900' 
+            : 'bg-white text-stone-900 border-stone-300'
         }`}>
           <div class="space-y-6">
             <div class="flex items-center justify-between">
-              <span class={`font-mono text-[10px] tracking-widest uppercase px-2 py-0.5 rounded-sm transition-colors ${
-                plan.highlight ? 'bg-stone-800 text-stone-200 group-hover:bg-stone-700' : 'bg-stone-100 text-stone-600 group-hover:bg-stone-200'
+              <span class={`font-mono text-[10px] tracking-widest uppercase px-2 py-0.5 rounded-sm ${
+                plan.highlight ? 'bg-stone-800 text-stone-200' : 'bg-stone-100 text-stone-600'
               }`}>
                 {plan.badge}
               </span>
