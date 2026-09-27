@@ -48,16 +48,19 @@ const {
     <h3 class="font-serif-title text-xl md:text-2xl font-medium text-stone-900">{title}</h3>
   </div>
 
-  <!-- タブボタン切り替え（Alpineや軽量JS、CSS切り替え用） -->
-  <div class="border border-stone-200 rounded-sm bg-white overflow-hidden shadow-xs">
-    <div class="flex border-b border-stone-200 bg-stone-50 overflow-x-auto text-xs font-medium">
+  <!-- タブボタン切り替えコンテナ -->
+  <div class="tab-container border border-stone-200 rounded-sm bg-white overflow-hidden shadow-xs">
+    <div class="flex border-b border-stone-200 bg-stone-50 overflow-x-auto text-xs font-medium" role="tablist">
       {tabs.map((tab, idx) => (
         <button 
           type="button" 
-          class={`relative px-6 py-3.5 border-r border-stone-200 whitespace-nowrap transition-all duration-200 cursor-pointer ${
+          role="tab"
+          aria-selected={idx === 0 ? "true" : "false"}
+          data-tab-id={tab.id}
+          class={`tab-button relative px-6 py-3.5 border-r border-stone-200 whitespace-nowrap transition-all duration-200 cursor-pointer ${
             idx === 0 
               ? 'bg-white font-bold text-stone-900 border-b-2 border-b-stone-900 shadow-2xs' 
-              : 'text-stone-600 hover:text-stone-900 hover:bg-stone-100 after:content-[\'\'] after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-stone-400 after:transition-all after:duration-300'
+              : 'text-stone-600 hover:text-stone-900 hover:bg-stone-100/80'
           }`}
         >
           <span>{tab.label}</span>
@@ -65,24 +68,82 @@ const {
       ))}
     </div>
 
-    <!-- コンテンツ表示エリア（1つ目のタブ内容を標準表示） -->
-    <div class="p-8 space-y-4">
-      <h4 class="font-serif-title text-lg font-bold text-stone-900">
-        {tabs[0].title}
-      </h4>
-      <p class="text-xs text-stone-600 font-light leading-relaxed">
-        {tabs[0].description}
-      </p>
-      <div class="pt-4 border-t border-stone-100">
-        <ul class="space-y-2 text-xs text-stone-700 font-light">
-          {tabs[0].points.map((pt) => (
-            <li class="flex items-center gap-2">
-              <span class="text-stone-900 font-bold">✓</span>
-              <span>{pt}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
+    <!-- コンテンツ表示エリア（タブ切り替え対応） -->
+    <div class="p-8">
+      {tabs.map((tab, idx) => (
+        <div 
+          data-panel-id={tab.id} 
+          role="tabpanel"
+          class={`tab-panel space-y-4 transition-opacity duration-300 ${idx === 0 ? 'block opacity-100' : 'hidden opacity-0'}`}
+        >
+          <h4 class="font-serif-title text-lg font-bold text-stone-900">
+            {tab.title}
+          </h4>
+          <p class="text-xs text-stone-600 font-light leading-relaxed">
+            {tab.description}
+          </p>
+          <div class="pt-4 border-t border-stone-100">
+            <ul class="space-y-2 text-xs text-stone-700 font-light">
+              {tab.points.map((pt) => (
+                <li class="flex items-center gap-2">
+                  <span class="text-stone-900 font-bold">✓</span>
+                  <span>{pt}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))}
     </div>
   </div>
 </div>
+
+<script>
+  function initTabs() {
+    const containers = document.querySelectorAll('.tab-container');
+
+    containers.forEach((container) => {
+      if (container.getAttribute('data-initialized') === 'true') return;
+      container.setAttribute('data-initialized', 'true');
+
+      const buttons = container.querySelectorAll<HTMLButtonElement>('.tab-button');
+      const panels = container.querySelectorAll<HTMLElement>('.tab-panel');
+
+      buttons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const targetId = btn.getAttribute('data-tab-id');
+          if (!targetId) return;
+
+          // ボタン状態更新
+          buttons.forEach((b) => {
+            const isTarget = b === btn;
+            b.setAttribute('aria-selected', isTarget ? 'true' : 'false');
+            if (isTarget) {
+              b.className = 'tab-button relative px-6 py-3.5 border-r border-stone-200 whitespace-nowrap transition-all duration-200 cursor-pointer bg-white font-bold text-stone-900 border-b-2 border-b-stone-900 shadow-2xs';
+            } else {
+              b.className = 'tab-button relative px-6 py-3.5 border-r border-stone-200 whitespace-nowrap transition-all duration-200 cursor-pointer text-stone-600 hover:text-stone-900 hover:bg-stone-100/80';
+            }
+          });
+
+          // パネル表示更新
+          panels.forEach((p) => {
+            const panelId = p.getAttribute('data-panel-id');
+            if (panelId === targetId) {
+              p.classList.remove('hidden');
+              requestAnimationFrame(() => {
+                p.classList.remove('opacity-0');
+                p.classList.add('opacity-100');
+              });
+            } else {
+              p.classList.add('hidden', 'opacity-0');
+              p.classList.remove('opacity-100');
+            }
+          });
+        });
+      });
+    });
+  }
+
+  initTabs();
+  document.addEventListener('astro:page-load', initTabs);
+</script>
