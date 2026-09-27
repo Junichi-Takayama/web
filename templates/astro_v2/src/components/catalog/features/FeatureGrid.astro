@@ -1,4 +1,6 @@
 ---
+import Icon from '../../common/Icon.astro';
+
 export interface FeatureItem {
   icon?: string;
   tag: string;
@@ -21,25 +23,27 @@ const {
   columns = 3,
   features = [
     {
-      icon: "⚡",
+      icon: "zap",
       tag: "SPEED",
       title: "0秒台の超高速表示",
       description: "最新の静的生成エンジンAstroとグローバルCDNにより、重いデータベース通信を排除し即座に表示されます。"
     },
     {
-      icon: "🔒",
+      icon: "shield-check",
       tag: "SECURITY",
       title: "生涯メンテナンスフリー",
       description: "WordPressのように更新で崩れる心配やプラグイン脆弱性のリスクがなく、一度作れば修理費ゼロで稼働します。"
     },
     {
-      icon: "📱",
+      icon: "smartphone",
       tag: "USABILITY",
       title: "スマホから直感更新",
       description: "複雑な管理画面を覚える必要はありません。SNSのようにスマホから写真とテキストを入力するだけで反映されます。"
     }
   ]
 } = Astro.props;
+
+const knownIcons = ['zap', 'shield-check', 'lock', 'smartphone', 'phone', 'mail', 'chat', 'home', 'calendar', 'check'];
 ---
 
 <section class="py-20 md:py-28 px-6 bg-white">
@@ -56,7 +60,13 @@ const {
       {features.map((f) => (
         <div class="p-8 border border-stone-200 rounded-sm bg-stone-50/50 space-y-4">
           <div class="flex items-center justify-between">
-            <span class="text-2xl">{f.icon}</span>
+            <div class="w-10 h-10 rounded-sm bg-stone-100 flex items-center justify-center text-stone-800">
+              {f.icon && knownIcons.includes(f.icon) ? (
+                <Icon name={f.icon} class="w-5 h-5 text-stone-900" strokeWidth={1.75} />
+              ) : (
+                <span class="text-xl">{f.icon}</span>
+              )}
+            </div>
             <span class="font-mono text-[10px] text-stone-400 uppercase tracking-widest">{f.tag}</span>
           </div>
           <h3 class="font-serif-title text-lg font-bold text-stone-900 leading-snug">
