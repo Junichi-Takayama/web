@@ -3,86 +3,117 @@ import Layout from '../layouts/Layout.astro';
 import PageHeader from '../components/common/PageHeader.astro';
 ---
 
-<Layout title="会社概要・思想 | ARCH CRAFT STUDIO">
+<Layout title="ArCraftの想い・運営概要 | ArCraft（アルクラフト）">
   <PageHeader 
-    title="ABOUT US" 
-    subTitle="Our Philosophy & Company Overview"
-    bgImage="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1920&q=80"
+    title="ABOUT ARCRAFT" 
+    subTitle="Our Philosophy & Partnership"
+    bgImage="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80"
   />
 
   <!-- 代表メッセージ -->
   <section class="py-24 px-6 max-w-4xl mx-auto">
-    <div class="grid md:grid-cols-12 gap-12 items-center mb-20" data-animate="fade-up">
+    <div class="grid md:grid-cols-12 gap-12 items-center mb-24" data-animate="fade-up">
       <div class="md:col-span-5">
         <div class="aspect-[3/4] bg-stone-200 overflow-hidden rounded-sm shadow-md">
           <img 
             src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" 
-            alt="代表建築士 高山 潤一" 
+            alt="ディレクター 高山 潤一" 
             class="w-full h-full object-cover grayscale contrast-125"
           />
         </div>
-        <p class="text-xs text-stone-500 font-mono mt-3">代表取締役・一級建築士 / 高山 潤一</p>
+        <p class="text-xs text-stone-500 font-mono mt-3">ディレクター / 高山 潤一（Takayama Junichi）</p>
       </div>
       <div class="md:col-span-7 space-y-6">
         <span class="font-en-serif text-xs text-stone-400 tracking-[0.3em] uppercase block">Message</span>
         <h2 class="font-serif-title text-2xl md:text-3xl font-medium text-stone-900 leading-snug">
-          流行を追うのではなく、<br />風景の一部となる建築を。
+          「作って終わり」の時代は、<br />もう終わりにしたい。
         </h2>
         <div class="w-10 h-px bg-stone-300"></div>
         <p class="text-xs md:text-sm text-stone-600 leading-relaxed font-light text-justify">
-          私たちが目指すのは、完成した瞬間が最も美しい建築ではありません。10年、30年、50年と時を重ねるごとに味わいを深め、住まう人の人生や記憶と共に豊かになっていく器です。
+          多くの地方中小企業や工務店が、100万円以上かけて作ったWebサイトの「保守放置」や「更新崩れの恐怖」に苦しんでいます。制作会社が撤退し、古いサーバーのまま放置されたサイトは、いつ壊れてもおかしくない時限爆弾です。
         </p>
         <p class="text-xs md:text-sm text-stone-600 leading-relaxed font-light text-justify">
-          土地の気候風土を読み解き、自然光の角度や風の通り道を計算し、無垢の木や石といった本物の素材で織りなす空間。ただ便利であること以上の「静けさと心地よさ」をご提案し続けます。
+          私たちが提案するのは、単なる見た目のリニューアルではありません。最新のWeb技術（Astro × microCMS）によって二度と壊れない頑牢なエンジンへと載せ替え、公開後も毎月同じ歩幅で寄り添うパートナーシップです。貴社の大切な会社資産を、確かな技術で守り育てます。
         </p>
       </div>
     </div>
 
-    <!-- 会社概要テーブル -->
+    <!-- 4つの想い詳細 -->
+    <div class="mb-24 space-y-8" data-animate="fade-up">
+      <div class="border-b border-stone-800 pb-3 flex justify-between items-baseline">
+        <h2 class="font-serif-title text-xl font-medium text-stone-900 tracking-wider">ブランド名「ArCraft」に込めた4つの想い</h2>
+        <span class="font-mono text-xs text-stone-400">BRAND IDENTITY</span>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 text-xs">
+        <div class="p-6 bg-stone-100 border border-stone-200 rounded-sm space-y-2">
+          <span class="font-mono text-stone-400 text-[11px] block">01 / ARTEK</span>
+          <h3 class="font-bold text-stone-900 text-sm">建築・用の美の思想（Artek）</h3>
+          <p class="text-stone-600 leading-relaxed font-light">
+            冷たいデジタルではなく、巨匠アルヴァ・アアルトの思想のように、地域で真面目にものづくりを続ける企業の温もりと信頼に寄り添う設計を行います。
+          </p>
+        </div>
+
+        <div class="p-6 bg-stone-100 border border-stone-200 rounded-sm space-y-2">
+          <span class="font-mono text-stone-400 text-[11px] block">02 / CRAFT</span>
+          <h3 class="font-bold text-stone-900 text-sm">妥協なきクラフトマンシップ（Craft）</h3>
+          <p class="text-stone-600 leading-relaxed font-light">
+            地域を支える技術やこだわりに敬意を払い、妥協のない強固な設計技術（Astro × Cloudflare）でミリ単位の品質を追求して構築します。
+          </p>
+        </div>
+
+        <div class="p-6 bg-stone-100 border border-stone-200 rounded-sm space-y-2">
+          <span class="font-mono text-stone-400 text-[11px] block">03 / ARUK</span>
+          <h3 class="font-bold text-stone-900 text-sm">納品で終わらない伴走（歩く）</h3>
+          <p class="text-stone-600 leading-relaxed font-light">
+            都市部の会社に多い「納品完了・検収で終了」型を排し、公開後も専任担当として毎月の解析・改善を同じ歩幅で歩み続けます。
+          </p>
+        </div>
+
+        <div class="p-6 bg-stone-100 border border-stone-200 rounded-sm space-y-2">
+          <span class="font-mono text-stone-400 text-[11px] block">04 / RAFT</span>
+          <h3 class="font-bold text-stone-900 text-sm">資産の救出と連帯（Raft / 筏）</h3>
+          <p class="text-stone-600 leading-relaxed font-light">
+            古いサーバーの危機から会社資産を安全な新大陸へ救出。同じ船に乗るクルーとして、荒波を乗り越え持続的な成長を支えます。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 事業概要テーブル -->
     <div data-animate="fade-up">
       <div class="mb-8 border-b border-stone-800 pb-3 flex justify-between items-baseline">
-        <h2 class="font-serif-title text-xl font-medium text-stone-900 tracking-wider">会社概要</h2>
-        <span class="font-mono text-xs text-stone-400">CORPORATE DATA</span>
+        <h2 class="font-serif-title text-xl font-medium text-stone-900 tracking-wider">サービス運営概要</h2>
+        <span class="font-mono text-xs text-stone-400">SERVICE OVERVIEW</span>
       </div>
 
       <div class="border-t border-stone-200 divide-y divide-stone-200 text-xs">
         <div class="grid grid-cols-1 md:grid-cols-4 py-4 px-2">
-          <dt class="font-medium text-stone-800 md:col-span-1 py-1">商号</dt>
-          <dd class="text-stone-600 md:col-span-3 py-1 font-light">ARCH CRAFT STUDIO 株式会社（アーキ・クラフト・スタジオ）</dd>
+          <dt class="font-medium text-stone-800 md:col-span-1 py-1">サービス名称</dt>
+          <dd class="text-stone-600 md:col-span-3 py-1 font-light">ArCraft（アルクラフト）</dd>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-4 py-4 px-2">
-          <dt class="font-medium text-stone-800 md:col-span-1 py-1">設立</dt>
-          <dd class="text-stone-600 md:col-span-3 py-1 font-light">2012年4月（創業 2008年）</dd>
+          <dt class="font-medium text-stone-800 md:col-span-1 py-1">統括ディレクター</dt>
+          <dd class="text-stone-600 md:col-span-3 py-1 font-light">高山 潤一（Takayama Junichi）</dd>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-4 py-4 px-2">
-          <dt class="font-medium text-stone-800 md:col-span-1 py-1">代表取締役</dt>
-          <dd class="text-stone-600 md:col-span-3 py-1 font-light">高山 潤一（一級建築士 大臣登録 第000000号）</dd>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-4 py-4 px-2">
-          <dt class="font-medium text-stone-800 md:col-span-1 py-1">所在地</dt>
-          <dd class="text-stone-600 md:col-span-3 py-1 font-light">
-            〒107-0062 東京都港区南青山5-10-2 STUDIO AOYAMA 3F<br />
-            （東京メトロ 表参道駅 B3出口より徒歩4分）
-          </dd>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-4 py-4 px-2">
-          <dt class="font-medium text-stone-800 md:col-span-1 py-1">連絡先</dt>
-          <dd class="text-stone-600 md:col-span-3 py-1 font-light">TEL: 03-6400-0000 / FAX: 03-6400-0001</dd>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-4 py-4 px-2">
-          <dt class="font-medium text-stone-800 md:col-span-1 py-1">許認可・登録</dt>
-          <dd class="text-stone-600 md:col-span-3 py-1 font-light">
-            一級建築士事務所 東京都知事登録 第00000号<br />
-            建設業許可 東京都知事（特-00）第000000号
-          </dd>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-4 py-4 px-2">
-          <dt class="font-medium text-stone-800 md:col-span-1 py-1">事業内容</dt>
+          <dt class="font-medium text-stone-800 md:col-span-1 py-1">事業領域</dt>
           <dd class="text-stone-600 md:col-span-3 py-1 font-light leading-relaxed">
-            1. 個人住宅・別荘・集合住宅の建築設計・監理<br />
-            2. マンション・戸建住宅のフルリノベーション設計・施工<br />
-            3. オーダー家具・インテリアプロダクトの企画・製作・販売<br />
-            4. 店舗・オフィスの空間デザインおよびブランディング
+            地方中小企業・工務店向け ストック型Web制作・保守運用エンジン提供<br />
+            ・超高速静的Webサイト（Astro）の設計・開発<br />
+            ・ヘッドレスCMS（microCMS）の設計・導入支援<br />
+            ・Google Analytics 4（GA4）アクセス解析に基づく月次伴走支援<br />
+            ・Cloudflareエッジインフラへの安全移設・ドメイン管理
+          </dd>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-4 py-4 px-2">
+          <dt class="font-medium text-stone-800 md:col-span-1 py-1">対応エリア</dt>
+          <dd class="text-stone-600 md:col-span-3 py-1 font-light">全国対応（オンライン完結 / 必要に応じた対面ヒアリング対応）</dd>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-4 py-4 px-2">
+          <dt class="font-medium text-stone-800 md:col-span-1 py-1">お問い合わせ</dt>
+          <dd class="text-stone-600 md:col-span-3 py-1 font-light">
+            Webサイト上の専用フォームより「Webサイト無料診断」をご利用ください。
           </dd>
         </div>
       </div>

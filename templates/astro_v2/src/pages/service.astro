@@ -3,27 +3,32 @@ import Layout from '../layouts/Layout.astro';
 import PageHeader from '../components/common/PageHeader.astro';
 ---
 
-<Layout title="事業内容・サービス | ARCH CRAFT STUDIO">
+<Layout title="サービス・料金プラン | ArCraft（アルクラフト）">
   <PageHeader 
-    title="SERVICES" 
-    subTitle="Architectural Design & Space Solutions"
-    bgImage="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1920&q=80"
+    title="SERVICES & PLANS" 
+    subTitle="Web Engine Replacement & Partnership Support"
+    bgImage="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80"
   />
 
+  <!-- 3大サービス領域 -->
   <section class="py-20 px-6 max-w-6xl mx-auto space-y-24">
     <!-- 01 -->
     <div class="grid md:grid-cols-2 gap-12 items-center" data-animate="fade-up">
-      <div class="aspect-[4/3] bg-stone-200 overflow-hidden rounded-sm shadow-md">
-        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80" alt="注文住宅・別荘設計" class="w-full h-full object-cover" />
+      <div class="aspect-[4/3] bg-stone-900 text-stone-200 p-8 rounded-sm shadow-md flex flex-col justify-center font-mono">
+        <span class="text-xs text-emerald-400 font-bold mb-2">● ARCHITECTURE</span>
+        <h3 class="text-xl font-bold text-white mb-4">Astro × Cloudflare</h3>
+        <p class="text-xs text-stone-400 font-sans leading-relaxed">
+          アクセス時の重い計算を不要にする静的サイト生成（SSG）。世界最高水準のCDNにより、スマホでも0秒台で瞬時に描画します。
+        </p>
       </div>
       <div class="space-y-4">
         <span class="font-mono text-xs text-stone-400 tracking-widest block">Service 01</span>
-        <h2 class="font-serif-title text-2xl md:text-3xl font-medium text-stone-900 leading-snug">注文住宅・別荘の建築設計</h2>
+        <h2 class="font-serif-title text-2xl md:text-3xl font-medium text-stone-900 leading-snug">Webエンジン換装・次世代再構築</h2>
         <div class="w-10 h-px bg-stone-300"></div>
         <p class="text-xs md:text-sm text-stone-600 leading-relaxed font-light">
-          敷地が持つ光、風、借景を丁寧に読み取り、そこに暮らす家族の動線と美意識を融合させた完全自由設計。耐震等級3・HEAT20 G2基準の高断熱を標準採用。
+          既存サイトのデザインや掲載テキスト、写真資産を活かしながら、WordPressなどの旧来システムから最先端の超高速Webエンジンへと中身を全面載せ替え。スマホ閲覧時の表示遅延による離脱を解消します。
         </p>
-        <p class="text-xs text-stone-500 font-mono">新築個人住宅 / リゾート別荘 / 二世帯住宅</p>
+        <p class="text-xs text-stone-500 font-mono">エンジン換装 / スマホ最適化 / 画像自動WebP化 / SEO構造化</p>
       </div>
     </div>
 
@@ -31,77 +36,151 @@ import PageHeader from '../components/common/PageHeader.astro';
     <div class="grid md:grid-cols-2 gap-12 items-center" data-animate="fade-up">
       <div class="space-y-4 md:order-1 order-2">
         <span class="font-mono text-xs text-stone-400 tracking-widest block">Service 02</span>
-        <h2 class="font-serif-title text-2xl md:text-3xl font-medium text-stone-900 leading-snug">マンション・戸建リノベーション</h2>
+        <h2 class="font-serif-title text-2xl md:text-3xl font-medium text-stone-900 leading-snug">専用ヘッドレスCMS設計（microCMS）</h2>
         <div class="w-10 h-px bg-stone-300"></div>
         <p class="text-xs md:text-sm text-stone-600 leading-relaxed font-light">
-          既存躯体を活かし、間取り再構成から配管更新、断熱・遮音改修まで一貫施工。ヴィンテージマンションを現代の快適な住空間へと再生します。
+          難解で多機能すぎるWordPressの管理画面を卒業。貴社に必要な入力項目（お知らせ・施工事例・採用情報など）だけに絞り込んだ専用の入力画面を設計。専門知識不要で、誰でも数分で迷わず安全に更新できます。
         </p>
-        <p class="text-xs text-stone-500 font-mono">スケルトンリノベ / 断熱改修 / 物件購入同行</p>
+        <p class="text-xs text-stone-500 font-mono">microCMS構築 / スマホ投稿対応 / 改ざん防止 / 自動再生成</p>
       </div>
-      <div class="aspect-[4/3] bg-stone-200 md:order-2 order-1 overflow-hidden rounded-sm shadow-md">
-        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1000&q=80" alt="フルリノベーション" class="w-full h-full object-cover" />
+      <div class="aspect-[4/3] bg-stone-100 border border-stone-300 p-8 rounded-sm shadow-md md:order-2 order-1 flex flex-col justify-center">
+        <div class="bg-white p-5 border border-stone-200 rounded shadow-sm space-y-3 text-xs">
+          <span class="px-2 py-0.5 bg-stone-900 text-white text-[10px] font-mono">CMS Dashboard</span>
+          <p class="font-bold text-stone-800 text-sm">必要な項目だけのシンプル設計</p>
+          <p class="text-stone-500 text-[11px] leading-relaxed">
+            タイトル入力・本文入力・画像選択の3ステップ。余計な設定やプラグインによる崩れは二度と発生しません。
+          </p>
+        </div>
       </div>
     </div>
 
     <!-- 03 -->
     <div class="grid md:grid-cols-2 gap-12 items-center" data-animate="fade-up">
-      <div class="aspect-[4/3] bg-stone-200 overflow-hidden rounded-sm shadow-md">
-        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1000&q=80" alt="オーダー家具・インテリア設計" class="w-full h-full object-cover" />
+      <div class="aspect-[4/3] bg-stone-900 text-stone-200 p-8 rounded-sm shadow-md flex flex-col justify-center">
+        <span class="font-mono text-xs text-stone-400 tracking-widest mb-2 block">PARTNERSHIP</span>
+        <h3 class="text-xl font-serif-title font-medium text-white mb-3">成果へと歩む月次伴走</h3>
+        <p class="text-xs text-stone-400 leading-relaxed font-light">
+          「作って終わり」の制作会社ではありません。貴社の専任Web担当者として、毎月の数値分析と更新作業を代行します。
+        </p>
       </div>
       <div class="space-y-4">
         <span class="font-mono text-xs text-stone-400 tracking-widest block">Service 03</span>
-        <h2 class="font-serif-title text-2xl md:text-3xl font-medium text-stone-900 leading-snug">造作家具・空間スタイリング</h2>
+        <h2 class="font-serif-title text-2xl md:text-3xl font-medium text-stone-900 leading-snug">月次伴走サポート＆アクセス改善</h2>
         <div class="w-10 h-px bg-stone-300"></div>
         <p class="text-xs md:text-sm text-stone-600 leading-relaxed font-light">
-          空間にミリ単位で収まるオリジナルキッチンや壁面収納を自社設計。専属の家具職人と提携し、本物の素材でトータルコーディネート。
+          Google Analytics 4（GA4）をもとに閲覧傾向や反響元をまとめた月次レポートをご提出。新着情報の代行投稿や細かなテキスト修正、サーバー稼働監視まで、貴社に寄り添ってワンストップで支え続けます。
         </p>
-        <p class="text-xs text-stone-500 font-mono">特注キッチン / 壁面造作 / 照明・カーテン計画</p>
+        <p class="text-xs text-stone-500 font-mono">GA4月次レポート / 更新代行 / サーバー安全監視 / 改善相談</p>
       </div>
     </div>
   </section>
 
-  <!-- 家づくりの流れ -->
-  <section class="py-20 px-6 bg-stone-100 border-t border-stone-200">
+  <!-- 料金プラン詳細 -->
+  <section id="plans" class="py-20 px-6 bg-stone-100 border-t border-b border-stone-200 scroll-mt-20">
+    <div class="max-w-5xl mx-auto space-y-12">
+      <div class="text-center" data-animate="fade-up">
+        <span class="font-en-serif text-xs text-stone-400 tracking-[0.3em] uppercase block mb-1">Pricing</span>
+        <h2 class="font-serif-title text-2xl md:text-3xl font-medium text-stone-900 tracking-widest">提供プラン・料金体系</h2>
+        <p class="text-xs text-stone-500 mt-2 font-light">初期費用を大幅に抑え、生涯修理費ゼロを実現</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8" data-animate="fade-up">
+        <!-- 基本プラン -->
+        <div class="bg-white p-8 border border-stone-300 rounded-sm shadow-sm space-y-6 flex flex-col justify-between">
+          <div class="space-y-4">
+            <span class="font-mono text-xs text-stone-500 uppercase tracking-widest block">BASE PLAN</span>
+            <h3 class="font-serif-title text-xl font-bold text-stone-900">Webエンジン換装＆リニューアル</h3>
+            <div class="py-3 border-t border-b border-stone-200">
+              <span class="text-xs text-stone-500 block">標準提供価格（税抜）</span>
+              <span class="font-mono text-3xl font-bold text-stone-900">500,000</span>
+              <span class="text-xs text-stone-600">円〜（上限目安 800,000円）</span>
+            </div>
+            <ul class="text-xs text-stone-600 space-y-2.5 font-light">
+              <li>✓ <strong>安全救出・完全移設</strong>：既存サイトからCloudflare新基盤へ</li>
+              <li>✓ <strong>超高速再構築</strong>：Astroエンジンによるスマホ最適化</li>
+              <li>✓ <strong>専用CMS導入</strong>：お知らせ・実績専用フォーム設計</li>
+              <li>✓ <strong>資産完全引継ぎ</strong>：既存文章・写真・実績の自動WebP化</li>
+              <li>✓ <strong>SEO・フォーム</strong>：メタ構造最適化・問い合わせ実装</li>
+            </ul>
+          </div>
+          <a href="/contact/" class="block text-center py-3 bg-stone-900 text-white font-medium text-xs tracking-widest uppercase hover:bg-stone-800 transition">
+            基本プランを相談する
+          </a>
+        </div>
+
+        <!-- 月次伴走プラン -->
+        <div class="bg-stone-900 text-white p-8 border border-stone-800 rounded-sm shadow-lg space-y-6 flex flex-col justify-between">
+          <div class="space-y-4">
+            <span class="font-mono text-xs text-stone-400 uppercase tracking-widest block">PARTNERSHIP PLAN</span>
+            <h3 class="font-serif-title text-xl font-bold text-white">月次伴走サポートプラン</h3>
+            <div class="py-3 border-t border-b border-stone-800">
+              <span class="text-xs text-stone-400 block">月額定額費用（税抜）</span>
+              <span class="font-mono text-3xl font-bold text-white">20,000</span>
+              <span class="text-xs text-stone-300">円〜（目安 30,000円/月）</span>
+            </div>
+            <ul class="text-xs text-stone-300 space-y-2.5 font-light">
+              <li>✓ <strong>GA4アクセス解析レポート</strong>：閲覧状況や反響元を毎月可視化</li>
+              <li>✓ <strong>コンテンツ更新代行・修正</strong>：新着情報・実績の投稿代行を迅速対応</li>
+              <li>✓ <strong>ドメイン・インフラ安全監視</strong>：DNSやホスティングの安全な稼働をプロが継続管理</li>
+            </ul>
+          </div>
+          <a href="/contact/" class="block text-center py-3 bg-stone-100 text-stone-900 font-bold text-xs tracking-widest uppercase hover:bg-white transition">
+            月次伴走を相談する
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 導入の流れ (5ステップ) -->
+  <section id="process" class="py-20 px-6 scroll-mt-20">
     <div class="max-w-3xl mx-auto">
       <div class="text-center mb-12" data-animate="fade-up">
         <span class="font-en-serif text-xs text-stone-400 tracking-[0.3em] uppercase block mb-1">Process</span>
-        <h2 class="font-serif-title text-2xl font-medium text-stone-900 tracking-widest">家づくりの流れ</h2>
+        <h2 class="font-serif-title text-2xl font-medium text-stone-900 tracking-widest">ご相談から公開までの5ステップ</h2>
       </div>
 
       <div class="space-y-4 text-xs" data-animate="fade-up">
         <div class="bg-white p-5 border border-stone-200 rounded-sm flex gap-4 items-center">
           <span class="font-mono text-lg font-bold text-stone-400">01</span>
           <div>
-            <h3 class="font-bold text-stone-900">無料相談・ヒアリング</h3>
-            <p class="text-stone-500 font-light">暮らしの理想やご予算、土地条件を伺います。オンライン可。</p>
+            <h3 class="font-bold text-stone-900">現状診断（無料実施）</h3>
+            <p class="text-stone-500 font-light">表示速度・セキュリティ・ドメイン契約状況を客観レポート。</p>
           </div>
         </div>
         <div class="bg-white p-5 border border-stone-200 rounded-sm flex gap-4 items-center">
           <span class="font-mono text-lg font-bold text-stone-400">02</span>
           <div>
-            <h3 class="font-bold text-stone-900">敷地調査・基本プラン提案</h3>
-            <p class="text-stone-500 font-light">現地調査の上、模型やパースで初期プランをご提示します。</p>
+            <h3 class="font-bold text-stone-900">構成ご提案・お見積もり</h3>
+            <p class="text-stone-500 font-light">貴社の強みが伝わる構成案と、明確で無駄のない見積もりをご提示。</p>
           </div>
         </div>
         <div class="bg-white p-5 border border-stone-200 rounded-sm flex gap-4 items-center">
           <span class="font-mono text-lg font-bold text-stone-400">03</span>
           <div>
-            <h3 class="font-bold text-stone-900">設計契約・詳細設計</h3>
-            <p class="text-stone-500 font-light">素材や造作家具まで細部の図面を綿密に作成します。</p>
+            <h3 class="font-bold text-stone-900">テスト構築・実機体感</h3>
+            <p class="text-stone-500 font-light">テスト環境にて0秒台の表示速度と管理画面の使い勝手を実機で確認。</p>
           </div>
         </div>
         <div class="bg-white p-5 border border-stone-200 rounded-sm flex gap-4 items-center">
           <span class="font-mono text-lg font-bold text-stone-400">04</span>
           <div>
-            <h3 class="font-bold text-stone-900">着工・現場監理・お引き渡し</h3>
-            <p class="text-stone-500 font-light">建築士が施工品質を直接チェック。検査後にお引き渡しとなります。</p>
+            <h3 class="font-bold text-stone-900">安全本番公開（時限爆弾解除）</h3>
+            <p class="text-stone-500 font-light">DNS切り替えにより旧サーバーから新インフラへ安全に移設公開。</p>
+          </div>
+        </div>
+        <div class="bg-stone-900 text-white p-5 border border-stone-800 rounded-sm flex gap-4 items-center">
+          <span class="font-mono text-lg font-bold text-stone-500">05</span>
+          <div>
+            <h3 class="font-bold text-white">月次伴走・継続改善</h3>
+            <p class="text-stone-300 font-light">GA4月次レポートをもとに、同じ歩幅でアクセスと成果を支え続けます。</p>
           </div>
         </div>
       </div>
 
-      <div class="text-center mt-10">
-        <a href="/contact/" class="inline-block px-8 py-3 bg-stone-900 text-white text-xs tracking-widest uppercase font-medium hover:bg-stone-800 transition">
-          無料相談を申し込む &rarr;
+      <div class="text-center mt-12">
+        <a href="/contact/" class="inline-block px-10 py-3.5 bg-stone-900 text-white text-xs tracking-widest uppercase font-medium hover:bg-stone-800 transition shadow-md">
+          Webサイト無料診断を申し込む &rarr;
         </a>
       </div>
     </div>
