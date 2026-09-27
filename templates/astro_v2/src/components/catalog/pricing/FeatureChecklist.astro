@@ -1,0 +1,65 @@
+---
+export interface ChecklistItem {
+  feature: string;
+  category: string;
+  basePlan: boolean;
+  partnerPlan: boolean;
+}
+
+export interface Props {
+  eyebrow?: string;
+  title?: string;
+  items?: ChecklistItem[];
+}
+
+const {
+  eyebrow = "Plan Specifications",
+  title = "プラン別 提供機能チェックリスト",
+  items = [
+    { feature: "既存サイト原稿・画像の完全救出・移設", category: "制作・換装", basePlan: true, partnerPlan: true },
+    { feature: "Astroエンジンによる超高速化（Lighthouse 90+）", category: "制作・換装", basePlan: true, partnerPlan: true },
+    { feature: "専用microCMS管理画面の初期構築", category: "制作・換装", basePlan: true, partnerPlan: true },
+    { feature: "お問い合わせフォーム・reCAPTCHAスパム保護", category: "制作・換装", basePlan: true, partnerPlan: true },
+    { feature: "GA4アクセス解析月次レポート作成・提出", category: "月次伴走", basePlan: false, partnerPlan: true },
+    { feature: "お知らせ・施工事例の代理入稿（月3回まで）", category: "月次伴走", basePlan: false, partnerPlan: true },
+    { feature: "文言・写真の緊急差し替え・修正（無制限）", category: "月次伴走", basePlan: false, partnerPlan: true },
+    { feature: "独自ドメイン・DNS・サーバー稼働24時間監視", category: "月次伴走", basePlan: false, partnerPlan: true }
+  ]
+} = Astro.props;
+---
+
+<div class="max-w-4xl mx-auto space-y-6">
+  <div class="text-left md:text-center space-y-2">
+    <span class="font-mono text-xs text-stone-400 tracking-widest uppercase block">{eyebrow}</span>
+    <h3 class="font-serif-title text-lg sm:text-xl md:text-2xl font-medium text-stone-900">{title}</h3>
+  </div>
+
+  <div class="border border-stone-200 rounded-sm overflow-hidden bg-white shadow-xs">
+    <div class="overflow-x-auto">
+      <table class="w-full text-xs text-left border-collapse">
+        <thead>
+          <tr class="bg-stone-50 border-b border-stone-200 font-mono text-[11px] text-stone-700">
+            <th class="p-3.5">機能・サービス項目</th>
+            <th class="p-3.5 text-stone-500 w-24">分類</th>
+            <th class="p-3.5 text-center w-28">基本プラン</th>
+            <th class="p-3.5 text-center w-28 bg-stone-100 font-bold">月次伴走</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-stone-200 font-light">
+          {items.map((row) => (
+            <tr>
+              <td class="p-3.5 font-medium text-stone-900">{row.feature}</td>
+              <td class="p-3.5 text-stone-400 font-mono text-[10px]">{row.category}</td>
+              <td class="p-3.5 text-center">
+                {row.basePlan ? <span class="text-stone-900 font-bold inline-block">●</span> : <span class="text-stone-300">ー</span>}
+              </td>
+              <td class="p-3.5 text-center bg-stone-50">
+                {row.partnerPlan ? <span class="text-stone-900 font-bold inline-block">●</span> : <span class="text-stone-300">ー</span>}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

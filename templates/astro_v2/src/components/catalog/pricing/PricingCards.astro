@@ -1,0 +1,138 @@
+---
+export interface PlanItem {
+  badge?: string;
+  name: string;
+  price: string;
+  priceNote: string;
+  description: string;
+  features: string[];
+  ctaLabel: string;
+  ctaHref: string;
+  highlight?: boolean;
+}
+
+export interface Props {
+  eyebrow?: string;
+  title?: string;
+  subtitle?: string;
+  plans?: PlanItem[];
+}
+
+const {
+  eyebrow = "Transparent Pricing",
+  title = "明瞭でシンプルな料金体系",
+  subtitle = "後から高額な追加費用が発生しない、必要十分な2つの基本プランをご用意しています。",
+  plans = [
+    {
+      badge: "BASE PLAN",
+      name: "Webエンジン換装＆リニューアル",
+      price: "500,000",
+      priceNote: "円〜（税抜 / 目安〜800,000円）",
+      description: "既存の原稿や画像を活かし、壊れない超高速Astro基盤へ移行。",
+      features: [
+        "既存サイト資産の完全安全移設",
+        "Astroエンジンによるスマホ超高速化",
+        "microCMS専用管理画面の導入",
+        "画像の自動WebP最適化",
+        "SEO内部構造・問い合わせフォーム設計"
+      ],
+      ctaLabel: "基本プランを相談する",
+      ctaHref: "#contact",
+      highlight: false
+    },
+    {
+      badge: "PARTNERSHIP / 人気",
+      name: "月次伴走サポートプラン",
+      price: "20,000",
+      priceNote: "円〜 / 月（税抜 / 目安30,000円）",
+      description: "GA4アクセス解析レポート提出と、新着情報の更新代行・安全監視。",
+      features: [
+        "GA4月次アクセス解析レポート提出",
+        "新着情報・制作事例の更新代行",
+        "テキスト修正・画像差し替え迅速対応",
+        "ドメイン・DNS・サーバー安全監視",
+        "Web活用・集客施策の個別相談"
+      ],
+      ctaLabel: "月次伴走を申し込む",
+      ctaHref: "#contact",
+      highlight: true
+    }
+  ]
+} = Astro.props;
+---
+
+<section class="py-20 md:py-28 px-6 bg-stone-100 border-t border-b border-stone-200">
+  <div class="max-w-5xl mx-auto space-y-12">
+    <div class="text-left md:text-center max-w-2xl mx-auto space-y-3">
+      <span class="font-mono text-xs text-stone-400 tracking-widest uppercase block">{eyebrow}</span>
+      <h2 class="font-serif-title text-xl sm:text-2xl md:text-3xl font-medium text-stone-900 tracking-wide">{title}</h2>
+      <p class="text-xs text-stone-500 font-light leading-relaxed">{subtitle}</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+      {plans.map((plan) => (
+        <div class={`p-8 rounded-sm shadow-sm flex flex-col justify-between border ${
+          plan.highlight 
+            ? 'bg-stone-900 text-white border-stone-800 shadow-md ring-1 ring-stone-900' 
+            : 'bg-white text-stone-900 border-stone-300'
+        }`}>
+          <div class="space-y-6">
+            <div class="flex items-center justify-between">
+              <span class={`font-mono text-[10px] tracking-widest uppercase px-2 py-0.5 rounded-sm ${
+                plan.highlight ? 'bg-stone-800 text-stone-200' : 'bg-stone-100 text-stone-600'
+              }`}>
+                {plan.badge}
+              </span>
+            </div>
+
+            <div>
+              <h3 class={`font-serif-title text-lg sm:text-xl font-medium ${plan.highlight ? 'text-white' : 'text-stone-900'}`}>
+                {plan.name}
+              </h3>
+              <p class={`text-xs mt-2 font-light leading-relaxed ${plan.highlight ? 'text-stone-300' : 'text-stone-600'}`}>
+                {plan.description}
+              </p>
+            </div>
+
+            <div class={`py-4 border-t border-b ${plan.highlight ? 'border-stone-800' : 'border-stone-200'}`}>
+              <div class="flex items-baseline gap-1">
+                <span class="font-mono text-3xl font-bold">{plan.price}</span>
+                <span class={`text-xs ${plan.highlight ? 'text-stone-400' : 'text-stone-500'}`}>{plan.priceNote}</span>
+              </div>
+            </div>
+
+            <ul class={`space-y-2.5 text-xs font-light ${plan.highlight ? 'text-stone-300' : 'text-stone-600'}`}>
+              {plan.features.map((feat) => (
+                <li class="flex items-start gap-2">
+                  <span class={`font-bold ${plan.highlight ? 'text-white' : 'text-stone-900'}`}>✓</span>
+                  <span>{feat}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="pt-8">
+            <a 
+              href={plan.ctaHref} 
+              class={`group/btn relative overflow-hidden flex items-center justify-center gap-2 text-center py-3.5 px-6 text-xs font-bold tracking-widest uppercase rounded-sm border transition-colors duration-300 active:scale-[0.98] ${
+                plan.highlight 
+                  ? 'bg-stone-100 text-stone-900 border-stone-100 hover:text-white' 
+                  : 'bg-stone-900 text-white border-stone-900 hover:text-stone-900'
+              }`}
+            >
+              <!-- 左から右へ色が満ちて反転するアニメーションフィラー -->
+              <span 
+                class={`absolute inset-0 w-0 group-hover/btn:w-full transition-[width] duration-300 ease-out z-0 pointer-events-none ${
+                  plan.highlight ? 'bg-stone-900' : 'bg-white'
+                }`}
+                aria-hidden="true"
+              ></span>
+              <span class="relative z-10 transition-colors duration-300">{plan.ctaLabel}</span>
+              <span class="relative z-10 inline-block transition-all duration-300 group-hover/btn:translate-x-2">&rarr;</span>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

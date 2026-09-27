@@ -1,0 +1,70 @@
+---
+export interface BenefitItem {
+  number: string;
+  badge: string;
+  title: string;
+  description: string;
+}
+
+export interface Props {
+  eyebrow?: string;
+  title?: string;
+  subtitle?: string;
+  benefits?: BenefitItem[];
+}
+
+const {
+  eyebrow = "Key Advantages",
+  title = "ArCraftが選ばれる3つの理由",
+  subtitle = "従来の制作会社の「作りっぱなし」や「ブラックボックス化」を排した透明な設計思想。",
+  benefits = [
+    {
+      number: "01",
+      badge: "超高速",
+      title: "Google推奨の0秒台レスポンス",
+      description: "静的HTML事前生成により、サーバー処理待ち時間をゼロに。モバイルユーザーを待たせません。"
+    },
+    {
+      number: "02",
+      badge: "高セキュリティ",
+      title: "WordPressのハッキングリスク皆無",
+      description: "公開サーバー上にデータベースを持たないため、不正アクセスや改ざんの標的になりません。"
+    },
+    {
+      number: "03",
+      badge: "定額伴走",
+      title: "困ったときにいつでも相談できる安心感",
+      description: "毎月のGA4アクセス解析レポート提出と、日常的なテキスト修正・新着更新代行がセットです。"
+    }
+  ]
+} = Astro.props;
+---
+
+<section class="py-16 md:py-24 px-6 bg-stone-900 text-white">
+  <div class="max-w-6xl mx-auto space-y-12">
+    <div class="text-left md:text-center max-w-2xl mx-auto space-y-3">
+      <span class="font-mono text-xs text-stone-400 tracking-widest uppercase block">{eyebrow}</span>
+      <h2 class="font-serif-title text-xl sm:text-2xl md:text-3xl font-medium tracking-wide text-white">{title}</h2>
+      <p class="text-xs md:text-sm text-stone-400 font-light leading-relaxed">{subtitle}</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {benefits.map((b) => (
+        <div class="p-8 border border-stone-800 bg-stone-950/60 rounded-sm space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="font-mono text-xs text-stone-500 font-bold">{b.number}</span>
+            <span class="px-2 py-0.5 bg-stone-800 text-stone-300 text-[10px] font-mono tracking-wider rounded-sm">
+              {b.badge}
+            </span>
+          </div>
+          <h3 class="font-serif-title text-base md:text-lg font-medium text-white leading-snug">
+            {b.title}
+          </h3>
+          <p class="text-xs text-stone-400 font-light leading-relaxed">
+            {b.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

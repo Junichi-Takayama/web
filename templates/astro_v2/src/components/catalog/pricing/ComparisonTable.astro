@@ -1,0 +1,63 @@
+---
+export interface ComparisonRow {
+  item: string;
+  traditional: string;
+  arcraft: string;
+}
+
+export interface Props {
+  eyebrow?: string;
+  title?: string;
+  subtitle?: string;
+  rows?: ComparisonRow[];
+}
+
+const {
+  eyebrow = "Difference & Value",
+  title = "従来のWeb制作会社 vs ArCraft",
+  subtitle = "初期構築だけでなく、運用・セキュリティ・表示速度の観点から比較してください。",
+  rows = [
+    { item: "基本アプローチ", traditional: "新規デザイン重視（1から作り直し）", arcraft: "既存資産を活かしたWeb基盤換装" },
+    { item: "初期費用", traditional: "100万〜150万円〜", arcraft: "50万円〜（上限目安80万円）" },
+    { item: "スマホ表示速度", traditional: "2〜4秒（読み込み待ちで離脱リスク）", arcraft: "0秒台（瞬時に表示され離脱ゼロへ）" },
+    { item: "システムの保守", traditional: "WordPress更新で画面崩れ・ハッキング恐怖", arcraft: "静的生成のため二度と壊れず修理費ゼロ" },
+    { item: "新着・事例の更新", traditional: "WordPressの複雑なUIに苦戦", arcraft: "microCMSのシンプル専用フォームで迷わない" },
+    { item: "公開後のサポート", traditional: "作って終わり（毎月数万払っても放置）", arcraft: "毎月GA4数値レポート＋更新代行伴走" }
+  ]
+} = Astro.props;
+---
+
+<section class="py-20 md:py-28 px-6 bg-white">
+  <div class="max-w-4xl mx-auto space-y-12">
+    <div class="text-left md:text-center max-w-2xl mx-auto space-y-3">
+      <span class="font-mono text-xs text-stone-400 tracking-widest uppercase block">{eyebrow}</span>
+      <h2 class="font-serif-title text-xl sm:text-2xl md:text-3xl font-medium text-stone-900 tracking-wide">{title}</h2>
+      <p class="text-xs text-stone-600 font-light leading-relaxed">{subtitle}</p>
+    </div>
+
+    <div class="border border-stone-200 rounded-sm overflow-hidden shadow-sm">
+      <div class="overflow-x-auto">
+        <table class="w-full text-xs text-left border-collapse">
+          <thead>
+            <tr class="border-b border-stone-200 bg-stone-100 font-mono text-[11px] text-stone-700">
+              <th class="p-4 w-1/4">比較項目</th>
+              <th class="p-4 w-3/8 text-stone-500">従来の一般的な制作会社</th>
+              <th class="p-4 w-3/8 bg-stone-900 text-white font-bold">ArCraft（当社）</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-stone-200 font-light">
+            {rows.map((row) => (
+              <tr>
+                <td class="p-4 font-medium text-stone-900 bg-stone-50/50">{row.item}</td>
+                <td class="p-4 text-stone-500 leading-relaxed">{row.traditional}</td>
+                <td class="p-4 bg-stone-50 font-medium text-stone-900 leading-relaxed border-l border-r border-stone-200">
+                  <span class="text-stone-900 font-bold mr-1 inline-block">✓</span> {row.arcraft}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

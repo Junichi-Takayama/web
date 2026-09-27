@@ -1,0 +1,76 @@
+---
+export interface Props {
+  eyebrow?: string;
+  title?: string;
+  highlightText?: string;
+  description?: string;
+  primaryCtaLabel?: string;
+  primaryCtaHref?: string;
+  secondaryCtaLabel?: string;
+  secondaryCtaHref?: string;
+  badges?: string[];
+}
+
+const {
+  eyebrow = "Next-Generation Solution",
+  title = "地方中小企業のための、",
+  highlightText = "壊れない超高速Web基盤",
+  description = "表示速度0秒台と、生涯メンテナンスフリーな安全運用。作って終わりにせず、事業の成長を横で支え続けます。",
+  primaryCtaLabel = "無料診断を申し込む",
+  primaryCtaHref = "#contact",
+  secondaryCtaLabel = "サービス概要を見る",
+  secondaryCtaHref = "#service",
+  badges = ["表示速度 0秒台", "WordPress不要", "月次改善伴走"]
+} = Astro.props;
+---
+
+<section class="py-24 md:py-32 px-6 bg-gradient-to-b from-stone-100 to-white text-center relative overflow-hidden">
+  <div class="max-w-4xl mx-auto space-y-8 relative z-10">
+    <!-- 上部アイブロウ -->
+    <div class="inline-flex items-center gap-2 px-3 py-1 bg-stone-200/80 border border-stone-300 rounded-full text-[11px] font-mono tracking-widest text-stone-700">
+      <span class="w-1.5 h-1.5 rounded-full bg-stone-900"></span>
+      {eyebrow}
+    </div>
+
+    <!-- メイン見出し -->
+    <h1 class="font-serif-title text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-stone-900 leading-snug md:leading-[1.2] tracking-wide">
+      <span class="inline-block">{title}</span><br class="hidden sm:inline" />
+      <span class="inline-block border-b-2 border-stone-900 pb-1 mt-1 sm:mt-0">{highlightText}</span>
+    </h1>
+
+    <!-- 説明文 -->
+    <p class="text-xs md:text-sm text-stone-600 font-light leading-relaxed max-w-2xl mx-auto">
+      {description}
+    </p>
+
+    <!-- アクションボタン -->
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+      <a 
+        href={primaryCtaHref} 
+        class="group w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-stone-900 text-white font-medium text-xs tracking-widest uppercase hover:bg-stone-800 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] transition-all duration-200 rounded-sm"
+      >
+        <span>{primaryCtaLabel}</span>
+        <span class="inline-block transition-transform duration-200 group-hover:translate-x-1.5">&rarr;</span>
+      </a>
+      {secondaryCtaLabel && (
+        <a 
+          href={secondaryCtaHref} 
+          class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 bg-white border border-stone-300 text-stone-800 font-medium text-xs tracking-widest uppercase hover:bg-stone-900 hover:text-white hover:border-stone-900 hover:shadow-md active:scale-[0.98] transition-all duration-300 rounded-sm"
+        >
+          {secondaryCtaLabel}
+        </a>
+      )}
+    </div>
+
+    <!-- バッジ群 -->
+    {badges && badges.length > 0 && (
+      <div class="flex flex-wrap items-center justify-center gap-3 pt-6 border-t border-stone-200/60 text-[11px] text-stone-500 font-light">
+        {badges.map((badge) => (
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-white border border-stone-200 rounded-sm shadow-xs">
+            <span class="text-stone-900 font-bold">✓</span> {badge}
+          </span>
+        ))}
+      </div>
+    )}
+  </div>
+</section>

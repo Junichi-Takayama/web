@@ -1,0 +1,61 @@
+---
+export interface Props {
+  eyebrow?: string;
+  title?: string;
+  lead?: string;
+  primaryButtonLabel?: string;
+  primaryButtonHref?: string;
+  secondaryButtonLabel?: string;
+  secondaryButtonHref?: string;
+  contactNote?: string;
+}
+
+const {
+  eyebrow = "Next Action",
+  title = "まずは、貴社サイトの現状を客観的な数値で把握しませんか？",
+  lead = "表示速度やサーバー安全性、現在のWordPress更新リスクを調査する「Webサイト無料診断レポート」をお届けします。強引な営業は一切行いません。",
+  primaryButtonLabel = "Webサイト無料診断を申し込む",
+  primaryButtonHref = "/contact/",
+  secondaryButtonLabel = "サービス概要・料金を見る",
+  secondaryButtonHref = "/service/",
+  contactNote = "お電話（平日 9:00〜18:00）またはオンラインZOOM相談も可能です。"
+} = Astro.props;
+---
+
+<section class="py-20 md:py-28 px-6 bg-stone-900 text-white relative overflow-hidden">
+  <div class="max-w-4xl mx-auto text-center space-y-8 relative z-10">
+    <span class="font-mono text-xs text-stone-400 tracking-widest uppercase block">
+      {eyebrow}
+    </span>
+    <h2 class="font-serif-title text-xl sm:text-2xl md:text-3xl font-medium tracking-wide leading-snug text-white max-w-2xl mx-auto">
+      {title}
+    </h2>
+    <p class="text-xs md:text-sm text-stone-300 font-light leading-relaxed max-w-xl mx-auto">
+      {lead}
+    </p>
+
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+      <a 
+        href={primaryButtonHref} 
+        class="group w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-stone-100 text-stone-900 font-bold text-xs tracking-widest uppercase hover:bg-white hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] transition-all duration-200 rounded-sm"
+      >
+        <span>{primaryButtonLabel}</span>
+        <span class="inline-block transition-transform duration-200 group-hover:translate-x-1.5">&rarr;</span>
+      </a>
+      {secondaryButtonLabel && (
+        <a 
+          href={secondaryButtonHref} 
+          class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 border border-stone-700 text-stone-300 hover:text-white hover:border-stone-400 hover:bg-stone-800 hover:shadow-md active:scale-[0.98] font-medium text-xs tracking-widest uppercase transition-all duration-200 rounded-sm"
+        >
+          {secondaryButtonLabel}
+        </a>
+      )}
+    </div>
+
+    {contactNote && (
+      <p class="text-[11px] text-stone-500 font-light">
+        {contactNote}
+      </p>
+    )}
+  </div>
+</section>

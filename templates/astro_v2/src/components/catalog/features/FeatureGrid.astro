@@ -1,0 +1,90 @@
+---
+import Icon from '../../common/Icon.astro';
+
+export interface FeatureItem {
+  icon?: string;
+  tag: string;
+  title: string;
+  description: string;
+}
+
+export interface Props {
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+  features?: FeatureItem[];
+  columns?: 3 | 4;
+}
+
+const {
+  eyebrow = "Core Strengths",
+  title = "選ばれる3つの技術革新と特徴",
+  description = "ただ新しいだけでなく、中小企業の現場で本当に使い続けられる実用性と強固な基盤を提供します。",
+  columns = 3,
+  features = [
+    {
+      icon: "zap",
+      tag: "SPEED",
+      title: "0秒台の超高速表示",
+      description: "最新の静的生成エンジンAstroとグローバルCDNにより、重いデータベース通信を排除し即座に表示されます。"
+    },
+    {
+      icon: "shield-check",
+      tag: "SECURITY",
+      title: "生涯メンテナンスフリー",
+      description: "WordPressのように更新で崩れる心配やプラグイン脆弱性のリスクがなく、一度作れば修理費ゼロで稼働します。"
+    },
+    {
+      icon: "smartphone",
+      tag: "USABILITY",
+      title: "スマホから直感更新",
+      description: "複雑な管理画面を覚える必要はありません。SNSのようにスマホから写真とテキストを入力するだけで反映されます。"
+    }
+  ]
+} = Astro.props;
+
+const knownIcons = ['zap', 'shield-check', 'lock', 'smartphone', 'phone', 'mail', 'chat', 'home', 'calendar', 'check'];
+---
+
+<section class="py-20 md:py-28 px-6 bg-white">
+  <div class="max-w-6xl mx-auto space-y-12">
+    <!-- ヘッダー -->
+    <div class="text-left md:text-center max-w-2xl mx-auto space-y-3">
+      <span class="font-mono text-xs text-stone-400 tracking-widest uppercase block">{eyebrow}</span>
+      <h2 class="font-serif-title text-xl sm:text-2xl md:text-3xl font-medium text-stone-900 tracking-wide">
+        {title === "選ばれる3つの技術革新と特徴" ? (
+          <>
+            <span class="inline-block">選ばれる3つの技術革新</span><span class="inline-block">と特徴</span>
+          </>
+        ) : (
+          title
+        )}
+      </h2>
+      <p class="text-xs md:text-sm text-stone-600 font-light leading-relaxed">{description}</p>
+    </div>
+
+    <!-- グリッド -->
+    <div class={`grid grid-cols-1 md:grid-cols-${columns} gap-8`}>
+      {features.map((f) => (
+        <div class="p-8 border border-stone-200 rounded-sm bg-stone-50/50 space-y-4">
+          <div class="flex items-center justify-between">
+            <div class="w-10 h-10 rounded-sm bg-stone-100 flex items-center justify-center text-stone-800">
+              {f.icon && knownIcons.includes(f.icon) ? (
+                <Icon name={f.icon} class="w-5 h-5 text-stone-900" strokeWidth={1.75} />
+              ) : (
+                <span class="text-xl">{f.icon}</span>
+              )}
+            </div>
+            <span class="font-mono text-[10px] text-stone-400 uppercase tracking-widest">{f.tag}</span>
+          </div>
+          <h3 class="font-serif-title text-base md:text-lg font-medium text-stone-900 leading-snug">
+            {f.title}
+          </h3>
+          <p class="text-xs text-stone-600 font-light leading-relaxed">
+            {f.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

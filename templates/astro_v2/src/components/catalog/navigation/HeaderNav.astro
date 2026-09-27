@@ -1,0 +1,80 @@
+---
+export interface NavItem {
+  label: string;
+  href: string;
+  badge?: string;
+}
+
+export interface Props {
+  brandName?: string;
+  brandSub?: string;
+  logoHref?: string;
+  navItems?: NavItem[];
+  ctaLabel?: string;
+  ctaHref?: string;
+}
+
+const {
+  brandName = "BrandName",
+  brandSub = "Creative Studio",
+  logoHref = "/",
+  navItems = [
+    { label: "Home", href: "/" },
+    { label: "Services", href: "#services" },
+    { label: "About", href: "#about" },
+    { label: "Works", href: "#works" },
+    { label: "Contact", href: "#contact" }
+  ],
+  ctaLabel = "無料相談を予約",
+  ctaHref = "#contact"
+} = Astro.props;
+---
+
+<header class="w-full bg-white/90 backdrop-blur-md border-b border-stone-200 sticky top-0 z-40 transition-colors">
+  <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+    <!-- ロゴ -->
+    <a href={logoHref} class="flex items-baseline gap-2 group">
+      <span class="font-serif-title text-xl font-medium tracking-wider text-stone-900 group-hover:text-stone-600 transition">
+        {brandName}
+      </span>
+      <span class="text-[10px] text-stone-400 font-mono tracking-widest uppercase hidden sm:inline">
+        {brandSub}
+      </span>
+    </a>
+
+    <!-- デスクトップナビ -->
+    <nav class="hidden md:flex items-center gap-6">
+      {navItems.map((item) => (
+        <a 
+          href={item.href} 
+          class="text-xs font-medium text-stone-700 hover:text-stone-950 transition-colors relative py-1.5 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-[2px] after:bg-stone-900 after:transition-all after:duration-300"
+        >
+          {item.label}
+          {item.badge && (
+            <span class="ml-1.5 px-1.5 py-0.5 text-[9px] bg-stone-900 text-white rounded-full">
+              {item.badge}
+            </span>
+          )}
+        </a>
+      ))}
+    </nav>
+
+    <!-- 右側CTA -->
+    <div class="hidden sm:flex items-center gap-3">
+      <a 
+        href={ctaHref} 
+        class="group inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-stone-900 text-white text-xs font-medium tracking-wider hover:bg-stone-800 hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] transition-all rounded-sm shadow-xs"
+      >
+        <span>{ctaLabel}</span>
+        <span class="inline-block transition-transform duration-200 group-hover:translate-x-1">&rarr;</span>
+      </a>
+    </div>
+
+    <!-- モバイルハンバーガーボタン（ダミー表示） -->
+    <button type="button" aria-label="メニューを開く" class="md:hidden p-2 text-stone-700 hover:text-stone-900 hover:bg-stone-100 rounded-sm transition-colors cursor-pointer">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16m-7 6h7"></path>
+      </svg>
+    </button>
+  </div>
+</header>

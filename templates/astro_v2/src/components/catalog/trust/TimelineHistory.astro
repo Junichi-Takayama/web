@@ -1,0 +1,71 @@
+---
+export interface TimelineItem {
+  year: string;
+  month?: string;
+  title: string;
+  description: string;
+}
+
+export interface Props {
+  eyebrow?: string;
+  title?: string;
+  subtitle?: string;
+  items?: TimelineItem[];
+}
+
+const {
+  eyebrow = "Company History",
+  title = "歩みとこれまでの軌跡",
+  subtitle = "地方の中小企業・工務店とともに歩んできた成長の歴史です。",
+  items = [
+    { 
+      year: "2018", 
+      title: "新潟のWebマーケティング企業で多数のクライアントを支援", 
+      description: "工務店・地域企業を中心に、Webサイト制作からアクセス解析・集客導線設計まで幅広い支援に従事。" 
+    },
+    { 
+      year: "2021", 
+      title: "より1社と深く関われるようフリーランスに転身", 
+      description: "作って終わりの制作ではなく、顧客の事業成長に横並びで寄り添い続けるWebパートナーとして独立。" 
+    },
+    { 
+      year: "2026", 
+      title: "地方中小企業向けのWebエンジン「ArCraft」を公式ローンチ", 
+      description: "表示速度0秒台と生涯メンテナンスフリーを実現し、地方企業のWeb資産を守る次世代基盤を提供開始。" 
+    }
+  ]
+} = Astro.props;
+---
+
+<section class="py-20 md:py-28 px-6 bg-white">
+  <div class="max-w-4xl mx-auto space-y-12">
+    <div class="text-left md:text-center max-w-2xl mx-auto space-y-3">
+      <span class="font-mono text-xs text-stone-400 tracking-widest uppercase block">{eyebrow}</span>
+      <h2 class="font-serif-title text-xl sm:text-2xl md:text-3xl font-medium text-stone-900 tracking-wide">{title}</h2>
+      <p class="text-xs md:text-sm text-stone-600 font-light leading-relaxed">{subtitle}</p>
+    </div>
+
+    <div class="relative border-l border-stone-200 ml-4 md:ml-32 space-y-10 pl-6 md:pl-8">
+      {items.map((item) => (
+        <div class="relative p-3 -m-3">
+          <!-- タイムラインの丸ポチ -->
+          <div class="absolute -left-[31px] md:-left-[39px] top-4 w-3.5 h-3.5 rounded-full bg-stone-900 border-4 border-white shadow-xs"></div>
+
+          <!-- 年月表示（モバイルは上、PCは左側） -->
+          <div class="md:absolute md:-left-36 md:top-3 md:text-right font-mono text-xs text-stone-500 font-semibold mb-1 md:mb-0">
+            {item.year}{item.month ? `.${item.month}` : ''}
+          </div>
+
+          <div class="space-y-1">
+            <h3 class="font-serif-title text-base font-medium text-stone-900">
+              {item.title}
+            </h3>
+            <p class="text-xs text-stone-600 font-light leading-relaxed">
+              {item.description}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,51 @@
+---
+export interface StatItem {
+  value: string;
+  unit?: string;
+  label: string;
+  description?: string;
+}
+
+export interface Props {
+  eyebrow?: string;
+  title?: string;
+  stats?: StatItem[];
+}
+
+const {
+  eyebrow = "Key Performance Metrics",
+  title = "数値で見るArCraftの信頼性と成果",
+  stats = [
+    { value: "0.5", unit: "秒台", label: "平均ページ表示速度", description: "Google推奨のCore Web Vitals基準を完全クリア" },
+    { value: "0", unit: "円", label: "生涯CMS保守修理費", description: "静的ファイル配信のためWordPress更新崩壊ゼロ" },
+    { value: "98.5", unit: "%", label: "月次伴走パートナー継続率", description: "地方経営者様との横並びでの継続的な信頼関係" },
+    { value: "100", unit: "%", label: "既存サイト原稿・画像救出率", description: "これまでのWeb資産を安全に最新エンジンへ移行" }
+  ]
+} = Astro.props;
+---
+
+<section class="py-16 md:py-24 px-6 bg-stone-900 text-white">
+  <div class="max-w-6xl mx-auto space-y-12">
+    <div class="text-left md:text-center max-w-2xl mx-auto space-y-2">
+      <span class="font-mono text-xs text-stone-400 tracking-widest uppercase block">{eyebrow}</span>
+      <h2 class="font-serif-title text-xl sm:text-2xl md:text-3xl font-medium tracking-wide text-white">{title}</h2>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+      {stats.map((s) => (
+        <div class="p-5 sm:p-6 border border-stone-800 bg-stone-950/40 rounded-sm text-center space-y-2">
+          <div class="flex items-baseline justify-center gap-1 font-mono">
+            <span class="text-3xl md:text-4xl font-bold text-white tracking-tight">{s.value}</span>
+            {s.unit && <span class="text-xs text-stone-400 font-sans">{s.unit}</span>}
+          </div>
+          <p class="text-xs font-bold text-stone-200">{s.label}</p>
+          {s.description && (
+            <p class="inline-block text-left text-[11px] text-stone-400 font-light leading-relaxed pt-1">
+              {s.description}
+            </p>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

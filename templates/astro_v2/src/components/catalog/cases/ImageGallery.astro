@@ -1,0 +1,76 @@
+---
+export interface GalleryImage {
+  src: string;
+  alt: string;
+  caption?: string;
+}
+
+export interface Props {
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+  images?: GalleryImage[];
+}
+
+const {
+  eyebrow = "Visual Gallery",
+  title = "静謐な空間と用の美を宿すギャラリー",
+  description = "洗練された建築設計やクラフトマンシップが伝わる高解像度ギャラリーです。",
+  images = [
+    {
+      src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
+      alt: "光が差し込むリビング",
+      caption: "自然光を取り込む吹き抜け設計"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80",
+      alt: "現代的なオープンキッチン",
+      caption: "手仕事が生きるオーダーメイドキッチン"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?auto=format&fit=crop&w=800&q=80",
+      alt: "落ち着きのある和モダンな個室",
+      caption: "無垢材と障子の静謐な調和"
+    }
+  ]
+} = Astro.props;
+---
+
+<section class="py-20 md:py-28 px-6 bg-white">
+  <div class="max-w-6xl mx-auto space-y-12">
+    <div class="text-left md:text-center max-w-2xl mx-auto space-y-3">
+      <span class="font-mono text-xs text-stone-400 tracking-widest uppercase block">{eyebrow}</span>
+      <h2 class="font-serif-title text-xl sm:text-2xl md:text-3xl font-medium text-stone-900 tracking-wide">
+        {title === "静謐な空間と用の美を宿すギャラリー" ? (
+          <>
+            <span class="inline-block">静謐な空間と</span><span class="inline-block">用の美を宿すギャラリー</span>
+          </>
+        ) : (
+          title
+        )}
+      </h2>
+      <p class="text-xs md:text-sm text-stone-600 font-light leading-relaxed">{description}</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {images.map((img) => (
+        <div class="space-y-3">
+          <div class="aspect-4/3 overflow-hidden rounded-sm bg-stone-100 shadow-xs">
+            <img 
+              src={img.src} 
+              alt={img.alt} 
+              class="w-full h-full object-cover" 
+              loading="lazy" 
+            />
+          </div>
+          {img.caption && (
+            <p class="text-xs text-stone-500 font-light flex items-center gap-1.5">
+              <span class="w-1 h-1 rounded-full bg-stone-400"></span>
+              <span>{img.caption}</span>
+            </p>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

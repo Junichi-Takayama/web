@@ -1,0 +1,67 @@
+---
+export interface StepItem {
+  step: string;
+  name: string;
+  title: string;
+  description: string;
+  badge?: string;
+}
+
+export interface Props {
+  eyebrow?: string;
+  title?: string;
+  subtitle?: string;
+  steps?: StepItem[];
+}
+
+const {
+  eyebrow = "Implementation Process",
+  title = "ご相談から本番公開・伴走までの5ステップ",
+  subtitle = "既存サイトを停止させることなく、テスト環境で安全に構築・移行を進めます。",
+  steps = [
+    { step: "01", name: "現状診断・ヒアリング", title: "無料診断レポートの作成", description: "現行サイトの表示速度、サーバー状況、引き継ぐべきデータ（原稿・写真）を調査・整理します。" },
+    { step: "02", name: "構成・お見積り提示", title: "最適な移行プランのご提案", description: "換装範囲、必要な管理画面項目、スケジュールを確定し、上限目安を含めた明瞭見積をご提示します。" },
+    { step: "03", name: "テスト構築・データ移行", title: "安全なテスト環境での構築", description: "現行サイトを動かしたまま、Cloudflareプレビュー環境で新基盤を構築。管理画面の操作性も事前にお試しいただけます。" },
+    { step: "04", name: "本番切り替え（公開）", title: "ダウンタイムほぼゼロでの公開", description: "DNSの切り替えを行い、新基盤へ移行。検索順位を落とさないようリダイレクト設定も万全に行います。" },
+    { step: "05", name: "月次伴走サポート開始", title: "GA4レポートと継続改善", description: "公開後は毎月アクセス解析レポートをご提出。新着情報の更新代行やサーバー監視で貴社を支え続けます。", badge: "推奨" }
+  ]
+} = Astro.props;
+---
+
+<section class="py-20 md:py-28 px-6 bg-stone-50 border-t border-b border-stone-200">
+  <div class="max-w-4xl mx-auto space-y-12">
+    <div class="text-left md:text-center max-w-2xl mx-auto space-y-3">
+      <span class="font-mono text-xs text-stone-400 tracking-widest uppercase block">{eyebrow}</span>
+      <h2 class="font-serif-title text-xl sm:text-2xl md:text-3xl font-medium text-stone-900 tracking-wide">{title}</h2>
+      <p class="text-xs md:text-sm text-stone-600 font-light leading-relaxed">{subtitle}</p>
+    </div>
+
+    <div class="space-y-4">
+      {steps.map((s) => (
+        <div class="bg-white p-6 sm:p-7 border border-stone-200 rounded-sm shadow-xs flex flex-col sm:flex-row sm:items-start gap-5">
+          <div class="flex items-center gap-3 sm:w-36 flex-shrink-0">
+            <span class="font-mono text-2xl font-bold text-stone-900 leading-none">{s.step}</span>
+            <span class="font-mono text-[10px] text-stone-400 uppercase tracking-widest">STEP</span>
+          </div>
+
+          <div class="space-y-1.5 flex-grow">
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-mono text-stone-500 uppercase tracking-wider">{s.name}</span>
+              {s.badge && (
+                <span class="px-2 py-0.2 bg-stone-900 text-white text-[9px] font-mono tracking-wider rounded-xs">
+                  {s.badge}
+                </span>
+              )}
+            </div>
+            <h3 class="font-serif-title text-base font-medium text-stone-900">
+              {s.title}
+            </h3>
+            <p class="text-xs text-stone-600 font-light leading-relaxed">
+              {s.description}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

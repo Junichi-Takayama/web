@@ -1,0 +1,73 @@
+---
+export interface Props {
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+  imageSrc?: string;
+  imageAlt?: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+  statNumber?: string;
+  statLabel?: string;
+}
+
+const {
+  eyebrow = "Performance First",
+  title = "技術の先にある、確かな信頼と成果を。",
+  description = "旧来のCMSによる表示遅延や脆弱性から解放され、直感的な操作と驚異的なスピードを貴社のWebサイトに実装します。",
+  imageSrc = "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80",
+  imageAlt = "オフィス空間とビジネスミーティング",
+  ctaLabel = "個別相談を申し込む",
+  ctaHref = "#contact",
+  statNumber = "0.5s",
+  statLabel = "平均表示スピード"
+} = Astro.props;
+---
+
+<section class="py-20 md:py-28 px-6 bg-white overflow-hidden">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <!-- テキスト側 -->
+    <div class="space-y-6">
+      <span class="font-mono text-xs text-stone-400 tracking-widest uppercase block">
+        {eyebrow}
+      </span>
+      <h1 class="font-serif-title text-2xl sm:text-3xl md:text-5xl font-medium text-stone-900 leading-snug md:leading-tight">
+        {title}
+      </h1>
+      <p class="text-xs md:text-sm text-stone-600 font-light leading-relaxed">
+        {description}
+      </p>
+
+      <div class="pt-4 flex flex-wrap items-center gap-6">
+        <a 
+          href={ctaHref} 
+          class="group inline-flex items-center gap-2 px-8 py-3.5 bg-stone-900 text-white font-medium text-xs tracking-widest uppercase hover:bg-stone-800 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] transition-all duration-200 rounded-sm shadow-sm"
+        >
+          <span>{ctaLabel}</span>
+          <span class="inline-block transition-transform duration-200 group-hover:translate-x-1.5">&rarr;</span>
+        </a>
+
+        {statNumber && (
+          <div class="pl-6 border-l border-stone-200">
+            <span class="block font-mono text-2xl font-bold text-stone-900 leading-none">{statNumber}</span>
+            <span class="text-[10px] text-stone-400 uppercase tracking-wider">{statLabel}</span>
+          </div>
+        )}
+      </div>
+    </div>
+
+    <!-- 画像側 -->
+    <div class="relative">
+      <div class="aspect-4/3 overflow-hidden rounded-sm bg-stone-100 shadow-md">
+        <img 
+          src={imageSrc} 
+          alt={imageAlt} 
+          class="w-full h-full object-cover grayscale"
+          loading="lazy"
+        />
+      </div>
+      <!-- 装飾枠 -->
+      <div class="absolute -bottom-4 -right-4 w-full h-full border border-stone-300 -z-10 rounded-sm hidden sm:block"></div>
+    </div>
+  </div>
+</section>
