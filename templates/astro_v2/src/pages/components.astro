@@ -1520,28 +1520,58 @@ import Icon from '../components/common/Icon.astro';
     </div>
   </section>
 
-  <!-- クリップボードコピー用スクリプト -->
+  <!-- クリップボードコピー用スタイル＆スクリプト -->
+  <style>
+    .copy-btn:focus {
+      outline: none;
+    }
+    .copy-btn:focus-visible {
+      outline: 2px solid #a8a29e;
+      outline-offset: 1px;
+    }
+    :global(.copy-btn.is-copied) {
+      background-color: #1c1917 !important;
+      color: #ffffff !important;
+      border-color: #1c1917 !important;
+    }
+    :global(.copy-btn.is-copied svg) {
+      stroke: #ffffff !important;
+    }
+  </style>
+
   <script is:inline>
     document.addEventListener('DOMContentLoaded', () => {
       const copyButtons = document.querySelectorAll('.copy-btn');
+      const buttonTimers = new WeakMap();
+
       copyButtons.forEach(btn => {
+        const textEl = btn.querySelector('.copy-text');
+        const originalText = textEl ? textEl.textContent : '';
+
         btn.addEventListener('click', async () => {
           const text = btn.getAttribute('data-copy');
           if (!text) return;
           try {
             await navigator.clipboard.writeText(text);
-            const textEl = btn.querySelector('.copy-text');
-            const originalText = textEl ? textEl.textContent : '';
+
             if (textEl) {
               textEl.textContent = 'コピー完了!';
             }
-            btn.classList.add('bg-stone-900', 'text-white');
-            setTimeout(() => {
+            btn.classList.add('is-copied');
+
+            if (buttonTimers.has(btn)) {
+              clearTimeout(buttonTimers.get(btn));
+            }
+
+            const timerId = setTimeout(() => {
               if (textEl) {
                 textEl.textContent = originalText;
               }
-              btn.classList.remove('bg-stone-900', 'text-white');
+              btn.classList.remove('is-copied');
+              buttonTimers.delete(btn);
             }, 1800);
+
+            buttonTimers.set(btn, timerId);
           } catch (err) {
             console.error('クリップボードのコピーに失敗しました:', err);
           }
