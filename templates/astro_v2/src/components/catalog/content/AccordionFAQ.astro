@@ -38,10 +38,10 @@ const {
 
 <section class="py-20 md:py-28 px-6 bg-white">
   <div class="max-w-3xl mx-auto space-y-12">
-    <div class="text-center space-y-3">
+    <div class="text-left md:text-center space-y-3">
       <span class="font-mono text-xs text-stone-400 tracking-widest uppercase block">{eyebrow}</span>
-      <h2 class="font-serif-title text-2xl md:text-3xl font-medium text-stone-900 tracking-wide">{title}</h2>
-      <p class="text-xs text-stone-600 font-light leading-relaxed">{subtitle}</p>
+      <h2 class="font-serif-title text-xl sm:text-2xl md:text-3xl font-medium text-stone-900 tracking-wide">{title}</h2>
+      <p class="text-xs md:text-sm text-stone-600 font-light leading-relaxed">{subtitle}</p>
     </div>
 
     <!-- ネイティブdetailsを使用したアコーディオン（スムーズアニメーション付き） -->
@@ -50,7 +50,7 @@ const {
         <details class="faq-item group py-3">
           <summary class="flex items-center justify-between cursor-pointer list-none text-xs sm:text-sm font-medium text-stone-900 select-none p-3 -mx-3 rounded-sm hover:bg-stone-50/80 transition-colors">
             <span class="flex items-start gap-3">
-              <span class="font-serif-title text-base font-bold text-stone-400 group-hover:text-stone-900 transition-colors">Q.</span>
+              <span class="font-serif-title text-base font-medium text-stone-400 group-hover:text-stone-900 transition-colors">Q.</span>
               <span class="pt-0.5 group-hover:text-stone-700 transition-colors">{faq.question}</span>
             </span>
             <span class="faq-icon ml-4 w-6 h-6 rounded-full flex items-center justify-center bg-stone-100 group-hover:bg-stone-900 group-hover:text-white text-stone-500 text-[10px] transition-all duration-300 group-open:rotate-180 flex-shrink-0">

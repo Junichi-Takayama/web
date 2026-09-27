@@ -43,7 +43,7 @@ const {
 ---
 
 <div class="max-w-4xl mx-auto space-y-8">
-  <div class="text-center space-y-2">
+  <div class="text-left md:text-center space-y-2">
     <span class="font-mono text-xs text-stone-400 tracking-widest uppercase block">{eyebrow}</span>
     <h3 class="font-serif-title text-xl md:text-2xl font-medium text-stone-900">{title}</h3>
   </div>
@@ -76,7 +76,7 @@ const {
           role="tabpanel"
           class={`tab-panel space-y-4 transition-opacity duration-300 ${idx === 0 ? 'block opacity-100' : 'hidden opacity-0'}`}
         >
-          <h4 class="font-serif-title text-lg font-bold text-stone-900">
+          <h4 class="font-serif-title text-base md:text-lg font-medium text-stone-900">
             {tab.title}
           </h4>
           <p class="text-xs text-stone-600 font-light leading-relaxed">
