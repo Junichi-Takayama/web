@@ -8,14 +8,16 @@ export function getStaticPaths() {
   ];
 }
 
-// サンプル事例画像＆キャプションデータ
+// サンプル事例画像＆キャプションデータ（横長・縦長両対応）
 const slides = [
   { id: 1, title: '外観ファサード', image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80', caption: '1. 外観：杉板張りとガルバリウム鋼板が調和する端正なファサード' },
   { id: 2, title: 'リビング吹き抜け', image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80', caption: '2. リビング：天井高5.2mの大開口から自然光が降り注ぐLDK' },
-  { id: 3, title: 'ダイニング・キッチン', image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=80', caption: '3. ダイニング：モールテックス天板の特注アイランドキッチン' },
-  { id: 4, title: '中庭コートヤード', image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80', caption: '4. 中庭：リビングとフラットに繋がるプライベートウッドデッキ' },
-  { id: 5, title: '主寝室', image: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=80', caption: '5. 主寝室：間接照明と珪藻土の塗り壁が演出する静寂の空間' },
-  { id: 6, title: '造作洗面サニタリー', image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1200&q=80', caption: '6. サニタリー：大谷石と真鍮水栓をあしらったオリジナル造作洗面台' },
+  { id: 3, title: '階段・吹き抜け（縦構図）', image: 'https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=800&q=80', caption: '3. 階段・吹き抜け（縦構図写真）：2階へと視線が抜けるスケルトン階段とハイサイドライト' },
+  { id: 4, title: 'ダイニング・キッチン', image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=80', caption: '4. ダイニング：モールテックス天板の特注アイランドキッチン' },
+  { id: 5, title: '中庭コートヤード', image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80', caption: '5. 中庭：リビングとフラットに繋がるプライベートウッドデッキ' },
+  { id: 6, title: '通り土間・坪庭（縦構図）', image: 'https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&ar=2:3&w=800&q=80', caption: '6. 通り土間（縦構図写真）：視線が奥へと伸びる陰影豊かな縦長空間設計' },
+  { id: 7, title: '主寝室', image: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=80', caption: '7. 主寝室：間接照明と珪藻土の塗り壁が演出する静寂の空間' },
+  { id: 8, title: '造作洗面サニタリー', image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1200&q=80', caption: '8. サニタリー：大谷石と真鍮水栓をあしらったオリジナル造作洗面台' },
 ];
 ---
 
@@ -41,8 +43,20 @@ const slides = [
         <!-- スライドコンテナ -->
         <div id="slider-track" class="flex h-full transition-transform duration-500 ease-out">
           {slides.map((slide) => (
-            <div class="w-full h-full flex-shrink-0 relative select-none">
-              <img src={slide.image} alt={slide.title} class="w-full h-full object-cover" />
+            <div class="w-full h-full flex-shrink-0 relative select-none flex items-center justify-center bg-stone-950 overflow-hidden">
+              <!-- 背景ブラー（縦長写真や異なる画角が入った際、左右余白を上品かつ自然に馴染ませる） -->
+              <img 
+                src={slide.image} 
+                alt="" 
+                aria-hidden="true" 
+                class="absolute inset-0 w-full h-full object-cover blur-xl opacity-35 scale-110 pointer-events-none" 
+              />
+              <!-- メイン写真（写真本来の構図・天地を一切切らずに美しく収める） -->
+              <img 
+                src={slide.image} 
+                alt={slide.title} 
+                class="relative z-10 max-w-full max-h-full object-contain mx-auto shadow-2xl" 
+              />
             </div>
           ))}
         </div>
@@ -68,8 +82,8 @@ const slides = [
         </p>
       </div>
 
-      <!-- サムネイル 6列 -->
-      <div class="grid grid-cols-3 sm:grid-cols-6 gap-2 pt-2">
+      <!-- サムネイル 8列 -->
+      <div class="grid grid-cols-4 sm:grid-cols-8 gap-2 pt-2">
         {slides.map((slide, index) => (
           <button
             class="thumb-item aspect-[4/3] bg-stone-800 relative rounded-sm overflow-hidden focus:outline-none transition-all duration-200 opacity-60 hover:opacity-100 border-2 border-transparent"
