@@ -37,14 +37,15 @@ const {
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
       <a 
         href={primaryButtonHref} 
-        class="w-full sm:w-auto px-8 py-3.5 bg-stone-100 text-stone-900 font-bold text-xs tracking-widest uppercase hover:bg-white transition shadow-sm rounded-sm"
+        class="group w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-stone-100 text-stone-900 font-bold text-xs tracking-widest uppercase hover:bg-white hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] transition-all duration-200 rounded-sm"
       >
-        {primaryButtonLabel} &rarr;
+        <span>{primaryButtonLabel}</span>
+        <span class="inline-block transition-transform duration-200 group-hover:translate-x-1.5">&rarr;</span>
       </a>
       {secondaryButtonLabel && (
         <a 
           href={secondaryButtonHref} 
-          class="w-full sm:w-auto px-8 py-3.5 border border-stone-700 text-stone-300 hover:text-white hover:border-stone-500 font-medium text-xs tracking-widest uppercase transition rounded-sm"
+          class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 border border-stone-700 text-stone-300 hover:text-white hover:border-stone-400 hover:bg-stone-800 hover:shadow-md active:scale-[0.98] font-medium text-xs tracking-widest uppercase transition-all duration-200 rounded-sm"
         >
           {secondaryButtonLabel}
         </a>

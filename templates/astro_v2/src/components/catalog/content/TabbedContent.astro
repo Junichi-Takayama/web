@@ -54,7 +54,11 @@ const {
       {tabs.map((tab, idx) => (
         <button 
           type="button" 
-          class={`px-6 py-3.5 border-r border-stone-200 text-stone-700 hover:text-stone-900 whitespace-nowrap transition-colors flex items-center gap-2 ${idx === 0 ? 'bg-white font-bold border-b-2 border-b-stone-900' : ''}`}
+          class={`relative px-6 py-3.5 border-r border-stone-200 whitespace-nowrap transition-all duration-200 cursor-pointer ${
+            idx === 0 
+              ? 'bg-white font-bold text-stone-900 border-b-2 border-b-stone-900 shadow-2xs' 
+              : 'text-stone-600 hover:text-stone-900 hover:bg-stone-100 after:content-[\'\'] after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-stone-400 after:transition-all after:duration-300'
+          }`}
         >
           <span>{tab.label}</span>
         </button>

@@ -47,17 +47,17 @@ const {
     <!-- ネイティブdetailsを使用したアコーディオン -->
     <div class="divide-y divide-stone-200 border-t border-b border-stone-200">
       {faqs.map((faq) => (
-        <details class="group py-5 transition-colors">
-          <summary class="flex items-center justify-between cursor-pointer list-none text-xs sm:text-sm font-medium text-stone-900 group-hover:text-stone-600 select-none">
+        <details class="group py-3 transition-colors">
+          <summary class="flex items-center justify-between cursor-pointer list-none text-xs sm:text-sm font-medium text-stone-900 select-none p-3 -mx-3 rounded-sm hover:bg-stone-50/80 transition-colors">
             <span class="flex items-start gap-3">
-              <span class="font-serif-title text-base font-bold text-stone-400">Q.</span>
-              <span class="pt-0.5">{faq.question}</span>
+              <span class="font-serif-title text-base font-bold text-stone-400 group-hover:text-stone-900 transition-colors">Q.</span>
+              <span class="pt-0.5 group-hover:text-stone-700 transition-colors">{faq.question}</span>
             </span>
-            <span class="ml-4 text-stone-400 transition-transform group-open:rotate-180 flex-shrink-0">
+            <span class="ml-4 w-6 h-6 rounded-full flex items-center justify-center bg-stone-100 group-hover:bg-stone-900 group-hover:text-white text-stone-500 text-[10px] transition-all duration-300 group-open:rotate-180 flex-shrink-0">
               ▼
             </span>
           </summary>
-          <div class="pt-4 pl-7 pr-4 text-xs text-stone-600 font-light leading-relaxed">
+          <div class="pt-3 pb-3 pl-8 pr-4 text-xs text-stone-600 font-light leading-relaxed">
             <p>{faq.answer}</p>
           </div>
         </details>

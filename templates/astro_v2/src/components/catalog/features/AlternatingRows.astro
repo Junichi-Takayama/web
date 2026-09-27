@@ -75,9 +75,9 @@ const {
               {row.details && (
                 <ul class="space-y-2 text-xs text-stone-700 font-light pt-2">
                   {row.details.map((d) => (
-                    <li class="flex items-center gap-2">
+                    <li class="flex items-center gap-2 hover:translate-x-1 transition-transform duration-200 cursor-default">
                       <span class="w-1.5 h-1.5 rounded-full bg-stone-900"></span>
-                      {d}
+                      <span>{d}</span>
                     </li>
                   ))}
                 </ul>
@@ -85,12 +85,12 @@ const {
             </div>
 
             <!-- 画像側 -->
-            <div class={`relative ${isEven ? 'lg:col-start-1' : ''}`}>
-              <div class="aspect-16/10 rounded-sm overflow-hidden bg-stone-100 shadow-md">
+            <div class={`relative group ${isEven ? 'lg:col-start-1' : ''}`}>
+              <div class="aspect-16/10 rounded-sm overflow-hidden bg-stone-100 shadow-md group-hover:shadow-xl transition-shadow duration-500">
                 <img 
                   src={row.imageSrc} 
                   alt={row.imageAlt} 
-                  class="w-full h-full object-cover hover:scale-102 transition duration-500" 
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
                   loading="lazy" 
                 />
               </div>

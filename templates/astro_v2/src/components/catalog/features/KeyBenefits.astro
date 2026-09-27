@@ -50,17 +50,17 @@ const {
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       {benefits.map((b) => (
-        <div class="p-8 border border-stone-800 bg-stone-950/60 rounded-sm space-y-4 hover:border-stone-700 transition">
+        <div class="group p-8 border border-stone-800 bg-stone-950/60 rounded-sm space-y-4 hover:border-stone-600 hover:bg-stone-950 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 cursor-default">
           <div class="flex items-center justify-between">
-            <span class="font-mono text-xs text-stone-500 font-bold">{b.number}</span>
-            <span class="px-2 py-0.5 bg-stone-800 text-stone-300 text-[10px] font-mono tracking-wider rounded-sm">
+            <span class="font-mono text-xs text-stone-500 font-bold group-hover:text-stone-300 transition-colors">{b.number}</span>
+            <span class="px-2 py-0.5 bg-stone-800 text-stone-300 text-[10px] font-mono tracking-wider rounded-sm group-hover:bg-stone-700 group-hover:text-white transition-colors">
               {b.badge}
             </span>
           </div>
-          <h3 class="font-serif-title text-lg font-bold text-white leading-snug">
+          <h3 class="font-serif-title text-lg font-bold text-white leading-snug group-hover:text-stone-100 transition-colors">
             {b.title}
           </h3>
-          <p class="text-xs text-stone-400 font-light leading-relaxed">
+          <p class="text-xs text-stone-400 font-light leading-relaxed group-hover:text-stone-300 transition-colors">
             {b.description}
           </p>
         </div>

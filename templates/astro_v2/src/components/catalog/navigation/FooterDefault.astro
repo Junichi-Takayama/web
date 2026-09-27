@@ -71,8 +71,9 @@ const {
           <ul class="space-y-2 text-xs">
             {col.links.map((link) => (
               <li>
-                <a href={link.href} class="hover:text-white transition-colors">
-                  {link.label}
+                <a href={link.href} class="group inline-flex items-center gap-1.5 text-stone-400 hover:text-white transition-all duration-200 hover:translate-x-1">
+                  <span class="text-[10px] text-stone-600 group-hover:text-stone-300 transition-colors">&rsaquo;</span>
+                  <span>{link.label}</span>
                 </a>
               </li>
             ))}
@@ -85,7 +86,7 @@ const {
     <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-stone-500 font-light">
       <div class="flex flex-wrap items-center gap-4">
         {policyLinks.map((p) => (
-          <a href={p.href} class="hover:text-stone-300 transition-colors">
+          <a href={p.href} class="hover:text-stone-200 underline decoration-stone-800 hover:decoration-stone-500 underline-offset-4 transition-all">
             {p.label}
           </a>
         ))}

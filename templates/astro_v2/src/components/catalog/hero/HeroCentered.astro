@@ -47,14 +47,15 @@ const {
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
       <a 
         href={primaryCtaHref} 
-        class="w-full sm:w-auto px-8 py-3.5 bg-stone-900 text-white font-medium text-xs tracking-widest uppercase hover:bg-stone-800 transition shadow-sm rounded-sm"
+        class="group w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-stone-900 text-white font-medium text-xs tracking-widest uppercase hover:bg-stone-800 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] transition-all duration-200 rounded-sm"
       >
-        {primaryCtaLabel} &rarr;
+        <span>{primaryCtaLabel}</span>
+        <span class="inline-block transition-transform duration-200 group-hover:translate-x-1.5">&rarr;</span>
       </a>
       {secondaryCtaLabel && (
         <a 
           href={secondaryCtaHref} 
-          class="w-full sm:w-auto px-8 py-3.5 bg-white border border-stone-300 text-stone-800 font-medium text-xs tracking-widest uppercase hover:bg-stone-50 transition rounded-sm"
+          class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 bg-white border border-stone-300 text-stone-800 font-medium text-xs tracking-widest uppercase hover:bg-stone-900 hover:text-white hover:border-stone-900 hover:shadow-md active:scale-[0.98] transition-all duration-300 rounded-sm"
         >
           {secondaryCtaLabel}
         </a>
@@ -65,7 +66,7 @@ const {
     {badges && badges.length > 0 && (
       <div class="flex flex-wrap items-center justify-center gap-3 pt-6 border-t border-stone-200/60 text-[11px] text-stone-500 font-light">
         {badges.map((badge) => (
-          <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-white border border-stone-200 rounded-sm shadow-xs">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-white border border-stone-200 rounded-sm shadow-xs hover:border-stone-400 hover:shadow-sm transition-all cursor-default">
             <span class="text-stone-900 font-bold">✓</span> {badge}
           </span>
         ))}
