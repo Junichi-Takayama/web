@@ -8,54 +8,72 @@ const projects = [
     location: "東京都世田谷区",
     type: "新築注文住宅 / 木造2階",
     image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
-    slug: "sample-project"
+    slug: "sample-project",
+    tag: "建築・施工事例"
   },
   {
     title: "古材とモルタルが織りなす空間再生",
     location: "神奈川県鎌倉市",
     type: "フルリノベーション / RC造",
     image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80",
-    slug: "sample-project"
+    slug: "sample-project",
+    tag: "建築・施工事例"
   },
   {
     title: "木立と溶け合う森のテラスヴィラ",
     location: "長野県軽井沢町",
     type: "別荘建築 / 木造平屋",
     image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80",
-    slug: "sample-project"
+    slug: "sample-project",
+    tag: "建築・施工事例"
   },
   {
     title: "スキップフロアで繋がる都市型狭小住宅",
     location: "東京都目黒区",
     type: "新築注文住宅 / 混構造3階",
     image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80",
-    slug: "sample-project"
+    slug: "sample-project",
+    tag: "建築・施工事例"
   },
   {
     title: "大開口リビングと借景を楽しむ平屋",
     location: "千葉県南房総市",
     type: "セカンドハウス / 木造平屋",
     image: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80",
-    slug: "sample-project"
+    slug: "sample-project",
+    tag: "建築・施工事例"
   },
   {
     title: "ヴィンテージ北欧家具と暮らす家",
     location: "神奈川県逗子市",
     type: "フルリノベーション / RC造",
     image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80",
-    slug: "sample-project"
+    slug: "sample-project",
+    tag: "建築・施工事例"
   }
 ];
 ---
 
-<Layout title="施工事例・実績 | ARCH CRAFT STUDIO">
+<Layout title="制作実績・施工事例 | ArCraft（アルクラフト）">
   <PageHeader 
     title="WORKS" 
-    subTitle="Selected Architecture & Interior Projects"
-    bgImage="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80"
+    subTitle="Architecture & Web Engineering Showcase"
+    bgImage="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=80"
   />
 
-  <section class="py-24 px-6 max-w-6xl mx-auto">
+  <section class="py-20 md:py-24 px-6 max-w-6xl mx-auto">
+    <!-- イントロダクション -->
+    <div class="max-w-2xl mx-auto text-left md:text-center mb-16 space-y-4" data-animate="fade-up">
+      <span class="text-xs font-mono text-stone-400 uppercase tracking-widest block">Featured Showcase</span>
+      <h2 class="font-serif-title text-xl sm:text-2xl md:text-3xl font-medium text-stone-900 leading-snug">
+        美しさと機能を両立する<br class="hidden sm:inline" />事例テンプレート
+      </h2>
+      <p class="text-xs sm:text-sm text-stone-600 leading-relaxed font-light">
+        ArCraft上で稼働する高機能な事例・施工実績のショーケースです。画像スライダー、スペック仕様表、設計コンセプトなど、専門知識がなくてもリッチに訴求できる投稿構造を備えています。
+      </p>
+    </div>
+
+    <!-- グリッド一覧 -->
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16" data-animate="fade-up">
       {projects.map((item) => (
         <article class="space-y-3 group">
@@ -65,17 +83,20 @@ const projects = [
               alt={item.title} 
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
             />
-            <span class="absolute top-3 left-3 bg-stone-900/80 text-white text-[10px] px-2 py-0.5 tracking-wider">
+            <span class="absolute top-3 left-3 bg-stone-900/80 text-white text-[10px] px-2.5 py-0.5 tracking-wider backdrop-blur-sm">
               {item.location}
             </span>
           </a>
           <div class="space-y-1">
-            <span class="text-[11px] text-stone-400 font-mono block">{item.type}</span>
-            <h2 class="font-serif-title font-medium text-sm text-stone-900 leading-snug group-hover:text-stone-600 transition">
+            <div class="flex items-center gap-2">
+              <span class="text-[10px] px-2 py-0.5 bg-stone-100 text-stone-600 font-mono">{item.tag}</span>
+              <span class="text-[11px] text-stone-400 font-mono">{item.type}</span>
+            </div>
+            <h3 class="font-serif-title font-medium text-sm text-stone-900 leading-snug group-hover:text-stone-600 transition">
               <a href={`/works/${item.slug}/`}>
                 {item.title}
               </a>
-            </h2>
+            </h3>
           </div>
         </article>
       ))}
@@ -85,10 +106,9 @@ const projects = [
     <div class="flex items-center justify-center gap-2 text-xs font-mono">
       <span class="w-10 h-10 bg-stone-900 text-white flex items-center justify-center font-bold">1</span>
       <a href="#" class="w-10 h-10 border border-stone-300 flex items-center justify-center hover:bg-stone-100 transition">2</a>
-      <span class="px-2 text-stone-400">...</span>
-      <a href="#" class="w-10 h-10 border border-stone-300 flex items-center justify-center hover:bg-stone-100 transition">5</a>
     </div>
   </section>
 </Layout>
+
 
 
