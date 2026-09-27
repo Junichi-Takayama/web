@@ -1,0 +1,295 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// 1. Navigation
+import HeaderNav from '../components/catalog/navigation/HeaderNav.astro';
+import MegaMenu from '../components/catalog/navigation/MegaMenu.astro';
+import FooterDefault from '../components/catalog/navigation/FooterDefault.astro';
+
+// 2. Hero
+import HeroCentered from '../components/catalog/hero/HeroCentered.astro';
+import HeroSplit from '../components/catalog/hero/HeroSplit.astro';
+import HeroMinimal from '../components/catalog/hero/HeroMinimal.astro';
+
+// 3. Features & Problems
+import ProblemCards from '../components/catalog/features/ProblemCards.astro';
+import FeatureGrid from '../components/catalog/features/FeatureGrid.astro';
+import AlternatingRows from '../components/catalog/features/AlternatingRows.astro';
+import KeyBenefits from '../components/catalog/features/KeyBenefits.astro';
+
+// 4. Pricing & Comparison
+import PricingCards from '../components/catalog/pricing/PricingCards.astro';
+import ComparisonTable from '../components/catalog/pricing/ComparisonTable.astro';
+import FeatureChecklist from '../components/catalog/pricing/FeatureChecklist.astro';
+
+// 5. Cases & Gallery
+import CaseStudies from '../components/catalog/cases/CaseStudies.astro';
+import BentoGrid from '../components/catalog/cases/BentoGrid.astro';
+import ImageGallery from '../components/catalog/cases/ImageGallery.astro';
+
+// 6. Trust & About
+import ProfileMessage from '../components/catalog/trust/ProfileMessage.astro';
+import TimelineHistory from '../components/catalog/trust/TimelineHistory.astro';
+import StatCounters from '../components/catalog/trust/StatCounters.astro';
+
+// 7. Content & FAQ
+import AccordionFAQ from '../components/catalog/content/AccordionFAQ.astro';
+import TabbedContent from '../components/catalog/content/TabbedContent.astro';
+import ProcessSteps from '../components/catalog/content/ProcessSteps.astro';
+
+// 8. CTA & Forms
+import LeadCTA from '../components/catalog/cta/LeadCTA.astro';
+import ContactForm from '../components/catalog/cta/ContactForm.astro';
+import FloatingCTA from '../components/catalog/cta/FloatingCTA.astro';
+---
+
+<Layout 
+  title="汎用共通25種 UIコンポーネントカタログ | ArCraft"
+  description="地方工務店・中小企業向けWeb制作に特化した、高再利用性・超高速Astroコンポーネント群（全25種）のインタラクティブカタログです。"
+>
+  <section class="py-20 px-6 bg-stone-900 text-white border-b border-stone-800">
+    <div class="max-w-6xl mx-auto space-y-6">
+      <div class="inline-flex items-center gap-2 px-3 py-1 bg-stone-800 border border-stone-700 text-[11px] font-mono uppercase tracking-widest text-stone-300">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        ArCraft Component Library (25 Components)
+      </div>
+      <h1 class="font-serif-title text-3xl md:text-5xl font-medium tracking-wider">
+        汎用共通25種 UIコンポーネントカタログ
+      </h1>
+      <p class="text-stone-400 text-xs md:text-sm max-w-2xl font-light leading-relaxed">
+        地方中小企業・工務店案件のあらゆる要求に応える、TypeScript完全対応・Tailwind CSS統合済みの高再利用性コンポーネントライブラリです。
+      </p>
+
+      <div class="flex flex-wrap gap-2 text-xs font-mono pt-4">
+        <a href="#cat-nav" class="px-3 py-1 bg-stone-800 hover:bg-stone-700 text-stone-200 border border-stone-700">01. Navigation</a>
+        <a href="#cat-hero" class="px-3 py-1 bg-stone-800 hover:bg-stone-700 text-stone-200 border border-stone-700">02. Hero</a>
+        <a href="#cat-features" class="px-3 py-1 bg-stone-800 hover:bg-stone-700 text-stone-200 border border-stone-700">03. Features</a>
+        <a href="#cat-pricing" class="px-3 py-1 bg-stone-800 hover:bg-stone-700 text-stone-200 border border-stone-700">04. Pricing</a>
+        <a href="#cat-cases" class="px-3 py-1 bg-stone-800 hover:bg-stone-700 text-stone-200 border border-stone-700">05. Cases</a>
+        <a href="#cat-trust" class="px-3 py-1 bg-stone-800 hover:bg-stone-700 text-stone-200 border border-stone-700">06. Trust</a>
+        <a href="#cat-content" class="px-3 py-1 bg-stone-800 hover:bg-stone-700 text-stone-200 border border-stone-700">07. Content</a>
+        <a href="#cat-cta" class="px-3 py-1 bg-stone-800 hover:bg-stone-700 text-stone-200 border border-stone-700">08. CTA</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="max-w-7xl mx-auto px-6 py-16 space-y-24">
+    <!-- 01. NAVIGATION -->
+    <section id="cat-nav" class="space-y-10 scroll-mt-24">
+      <div class="border-b border-stone-300 pb-3">
+        <span class="text-xs font-mono tracking-widest text-stone-400 uppercase">Category 01</span>
+        <h2 class="font-serif-title text-2xl font-bold text-stone-900 mt-1">ナビゲーション・ヘッダー系 (3種)</h2>
+      </div>
+      <div class="space-y-3">
+        <h3 class="font-mono text-sm font-bold text-stone-900">#01 HeaderNav.astro</h3>
+        <div class="border border-stone-200 rounded-sm overflow-hidden bg-stone-50 p-2">
+          <HeaderNav brandName="ArCraft" brandSub="Architecture Engine" />
+        </div>
+      </div>
+      <div class="space-y-3">
+        <h3 class="font-mono text-sm font-bold text-stone-900">#02 MegaMenu.astro</h3>
+        <div class="border border-stone-200 rounded-sm overflow-hidden bg-stone-100 p-6">
+          <MegaMenu />
+        </div>
+      </div>
+      <div class="space-y-3">
+        <h3 class="font-mono text-sm font-bold text-stone-900">#03 FooterDefault.astro</h3>
+        <div class="border border-stone-200 rounded-sm overflow-hidden shadow-xs">
+          <FooterDefault brandName="ArCraft Engine" />
+        </div>
+      </div>
+
+    <!-- 02. HERO -->
+    <section id="cat-hero" class="space-y-10 scroll-mt-24">
+      <div class="border-b border-stone-300 pb-3">
+        <span class="text-xs font-mono tracking-widest text-stone-400 uppercase">Category 02</span>
+        <h2 class="font-serif-title text-2xl font-bold text-stone-900 mt-1">ヒーロー・ファーストビュー系 (3種)</h2>
+      </div>
+      <div class="space-y-3">
+        <h3 class="font-mono text-sm font-bold text-stone-900">#04 HeroCentered.astro</h3>
+        <div class="border border-stone-200 rounded-sm overflow-hidden shadow-xs">
+          <HeroCentered />
+        </div>
+      </div>
+      <div class="space-y-3">
+        <h3 class="font-mono text-sm font-bold text-stone-900">#05 HeroSplit.astro</h3>
+        <div class="border border-stone-200 rounded-sm overflow-hidden shadow-xs">
+          <HeroSplit />
+        </div>
+      </div>
+      <div class="space-y-3">
+        <h3 class="font-mono text-sm font-bold text-stone-900">#06 HeroMinimal.astro</h3>
+        <div class="border border-stone-200 rounded-sm overflow-hidden shadow-xs">
+          <HeroMinimal />
+        </div>
+      </div>
+    </section>
+
+    <!-- 03. FEATURES -->
+    <section id="cat-features" class="space-y-10 scroll-mt-24">
+      <div class="border-b border-stone-300 pb-3">
+        <span class="text-xs font-mono tracking-widest text-stone-400 uppercase">Category 03</span>
+        <h2 class="font-serif-title text-2xl font-bold text-stone-900 mt-1">課題・特徴・強み系 (4種)</h2>
+      </div>
+      <div class="space-y-3">
+        <h3 class="font-mono text-sm font-bold text-stone-900">#07 ProblemCards.astro</h3>
+        <div class="border border-stone-200 rounded-sm overflow-hidden shadow-xs">
+          <ProblemCards />
+        </div>
+      </div>
+      <div class="space-y-3">
+        <h3 class="font-mono text-sm font-bold text-stone-900">#08 FeatureGrid.astro</h3>
+        <div class="border border-stone-200 rounded-sm overflow-hidden shadow-xs">
+          <FeatureGrid />
+        </div>
+      </div>
+      <div class="space-y-3">
+        <h3 class="font-mono text-sm font-bold text-stone-900">#09 AlternatingRows.astro</h3>
+        <div class="border border-stone-200 rounded-sm overflow-hidden shadow-xs">
+          <AlternatingRows />
+        </div>
+      </div>
+      <div class="space-y-3">
+        <h3 class="font-mono text-sm font-bold text-stone-900">#10 KeyBenefits.astro</h3>
+        <div class="border border-stone-200 rounded-sm overflow-hidden shadow-xs">
+          <KeyBenefits />
+        </div>
+      </div>
+    </section>
+
+    <!-- 04. PRICING -->
+    <section id="cat-pricing" class="space-y-10 scroll-mt-24">
+      <div class="border-b border-stone-300 pb-3">
+        <span class="text-xs font-mono tracking-widest text-stone-400 uppercase">Category 04</span>
+        <h2 class="font-serif-title text-2xl font-bold text-stone-900 mt-1">料金・比較表系 (3種)</h2>
+      </div>
+      <div class="space-y-3">
+        <h3 class="font-mono text-sm font-bold text-stone-900">#11 PricingCards.astro</h3>
+        <div class="border border-stone-200 rounded-sm overflow-hidden shadow-xs">
+          <PricingCards />
+        </div>
+      </div>
+      <div class="space-y-3">
+        <h3 class="font-mono text-sm font-bold text-stone-900">#12 ComparisonTable.astro</h3>
+        <div class="border border-stone-200 rounded-sm overflow-hidden shadow-xs">
+          <ComparisonTable />
+        </div>
+      </div>
+      <div class="space-y-3">
+        <h3 class="font-mono text-sm font-bold text-stone-900">#13 FeatureChecklist.astro</h3>
+        <div class="border border-stone-200 rounded-sm overflow-hidden bg-stone-50 p-6 shadow-xs">
+          <FeatureChecklist />
+        </div>
+      </div>
+    </section>
+
+    <!-- 05. CASES -->
+    <section id="cat-cases" class="space-y-10 scroll-mt-24">
+      <div class="border-b border-stone-300 pb-3">
+        <span class="text-xs font-mono tracking-widest text-stone-400 uppercase">Category 05</span>
+        <h2 class="font-serif-title text-2xl font-bold text-stone-900 mt-1">実績・事例・ギャラリー系 (3種)</h2>
+      </div>
+      <div class="space-y-3">
+        <h3 class="font-mono text-sm font-bold text-stone-900">#14 CaseStudies.astro</h3>
+        <div class="border border-stone-200 rounded-sm overflow-hidden shadow-xs">
+          <CaseStudies />
+        </div>
+      </div>
+      <div class="space-y-3">
+        <h3 class="font-mono text-sm font-bold text-stone-900">#15 BentoGrid.astro</h3>
+        <div class="border border-stone-200 rounded-sm overflow-hidden shadow-xs">
+          <BentoGrid />
+        </div>
+      </div>
+      <div class="space-y-3">
+        <h3 class="font-mono text-sm font-bold text-stone-900">#16 ImageGallery.astro</h3>
+        <div class="border border-stone-200 rounded-sm overflow-hidden shadow-xs">
+          <ImageGallery />
+        </div>
+      </div>
+    </section>
+    <!-- 06. TRUST -->
+    <section id="cat-trust" class="space-y-10 scroll-mt-24">
+      <div class="border-b border-stone-300 pb-3">
+        <span class="text-xs font-mono tracking-widest text-stone-400 uppercase">Category 06</span>
+        <h2 class="font-serif-title text-2xl font-bold text-stone-900 mt-1">信頼性・会社・メッセージ系 (3種)</h2>
+      </div>
+      <div class="space-y-3">
+        <h3 class="font-mono text-sm font-bold text-stone-900">#17 ProfileMessage.astro</h3>
+        <div class="border border-stone-200 rounded-sm overflow-hidden shadow-xs">
+          <ProfileMessage />
+        </div>
+      </div>
+      <div class="space-y-3">
+        <h3 class="font-mono text-sm font-bold text-stone-900">#18 TimelineHistory.astro</h3>
+        <div class="border border-stone-200 rounded-sm overflow-hidden shadow-xs">
+          <TimelineHistory />
+        </div>
+      </div>
+      <div class="space-y-3">
+        <h3 class="font-mono text-sm font-bold text-stone-900">#19 StatCounters.astro</h3>
+        <div class="border border-stone-200 rounded-sm overflow-hidden shadow-xs">
+          <StatCounters />
+        </div>
+      </div>
+    </section>
+
+    <!-- 07. CONTENT -->
+    <section id="cat-content" class="space-y-10 scroll-mt-24">
+      <div class="border-b border-stone-300 pb-3">
+        <span class="text-xs font-mono tracking-widest text-stone-400 uppercase">Category 07</span>
+        <h2 class="font-serif-title text-2xl font-bold text-stone-900 mt-1">FAQ・コンテンツ・フロー系 (3種)</h2>
+      </div>
+      <div class="space-y-3">
+        <h3 class="font-mono text-sm font-bold text-stone-900">#20 AccordionFAQ.astro</h3>
+        <div class="border border-stone-200 rounded-sm overflow-hidden shadow-xs">
+          <AccordionFAQ />
+        </div>
+      </div>
+      <div class="space-y-3">
+        <h3 class="font-mono text-sm font-bold text-stone-900">#21 TabbedContent.astro</h3>
+        <div class="border border-stone-200 rounded-sm overflow-hidden bg-stone-50 p-6 shadow-xs">
+          <TabbedContent />
+        </div>
+      </div>
+      <div class="space-y-3">
+        <h3 class="font-mono text-sm font-bold text-stone-900">#22 ProcessSteps.astro</h3>
+        <div class="border border-stone-200 rounded-sm overflow-hidden shadow-xs">
+          <ProcessSteps />
+        </div>
+      </div>
+    </section>
+    <!-- 08. CTA & FORMS -->
+    <section id="cat-cta" class="space-y-10 scroll-mt-24">
+      <div class="border-b border-stone-300 pb-3">
+        <span class="text-xs font-mono tracking-widest text-stone-400 uppercase">Category 08</span>
+        <h2 class="font-serif-title text-2xl font-bold text-stone-900 mt-1">CTA・フォーム系 (3種)</h2>
+      </div>
+      <div class="space-y-3">
+        <h3 class="font-mono text-sm font-bold text-stone-900">#23 LeadCTA.astro</h3>
+        <div class="border border-stone-200 rounded-sm overflow-hidden shadow-xs">
+          <LeadCTA />
+        </div>
+      </div>
+      <div class="space-y-3">
+        <h3 class="font-mono text-sm font-bold text-stone-900">#24 ContactForm.astro</h3>
+        <div class="border border-stone-200 rounded-sm overflow-hidden bg-stone-100 p-6 sm:p-10 shadow-xs">
+          <ContactForm />
+        </div>
+      </div>
+      <div class="space-y-3">
+        <h3 class="font-mono text-sm font-bold text-stone-900">#25 FloatingCTA.astro（プレビュー表示）</h3>
+        <div class="border border-stone-200 rounded-sm overflow-hidden bg-stone-100 p-6 text-center">
+          <p class="text-xs text-stone-500 mb-3">※実機スマートフォン閲覧時に画面最下部へ追従固定表示されます（本ページでも画面下部に稼働中）。</p>
+          <div class="max-w-md mx-auto border border-stone-300 rounded-md p-3 bg-white shadow-xs">
+            <div class="flex items-center gap-2">
+              <a href="tel:000-000-0000" class="flex-1 py-2 bg-stone-100 text-stone-800 text-xs font-bold rounded-sm border border-stone-300">📞 お電話で相談</a>
+              <a href="#cat-cta" class="flex-2 py-2 bg-stone-900 text-white text-xs font-bold rounded-sm">✉️ 無料診断・相談</a>
+            </div>
+          </div>
+        </div>
+        <FloatingCTA />
+      </div>
+    </section>
+  </div>
+</Layout>

@@ -1,0 +1,47 @@
+---
+export interface Props {
+  category?: string;
+  title?: string;
+  lead?: string;
+  metaList?: { label: string; value: string }[];
+}
+
+const {
+  category = "Philosophy & Craftsmanship",
+  title = "用の美を宿す、静謐で堅牢なWebアーキテクチャ。",
+  lead = "華美な装飾を削ぎ落とし、読みやすさと表示速度の本質を突き詰めたWebサイト制作を提供します。",
+  metaList = [
+    { label: "FOUNDED", value: "2026" },
+    { label: "LOCATION", value: "TOKYO / REMOTE" },
+    { label: "SPECIALTY", value: "ASTRO / HEADLESS CMS" }
+  ]
+} = Astro.props;
+---
+
+<section class="py-20 md:py-28 px-6 bg-stone-900 text-stone-100 border-b border-stone-800">
+  <div class="max-w-5xl mx-auto space-y-12">
+    <div class="space-y-4">
+      <span class="font-mono text-xs text-stone-400 tracking-widest uppercase block">
+        {category}
+      </span>
+      <h1 class="font-serif-title text-3xl md:text-5xl font-medium tracking-wide leading-snug text-white max-w-3xl">
+        {title}
+      </h1>
+      <p class="text-xs md:text-sm text-stone-300 font-light leading-relaxed max-w-2xl pt-2">
+        {lead}
+      </p>
+    </div>
+
+    <!-- メタ情報バー -->
+    {metaList && (
+      <div class="pt-8 border-t border-stone-800 grid grid-cols-2 sm:grid-cols-3 gap-6 font-mono text-xs">
+        {metaList.map((m) => (
+          <div>
+            <span class="text-stone-500 block text-[10px] tracking-widest">{m.label}</span>
+            <span class="text-stone-200 font-medium">{m.value}</span>
+          </div>
+        ))}
+      </div>
+    )}
+  </div>
+</section>

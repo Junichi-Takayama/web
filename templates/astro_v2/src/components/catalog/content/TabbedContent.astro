@@ -1,0 +1,84 @@
+---
+export interface TabItem {
+  id: string;
+  label: string;
+  title: string;
+  description: string;
+  points: string[];
+}
+
+export interface Props {
+  eyebrow?: string;
+  title?: string;
+  tabs?: TabItem[];
+}
+
+const {
+  eyebrow = "Selectable Solutions",
+  title = "業種別・課題別の導入アプローチ",
+  tabs = [
+    {
+      id: "builders",
+      label: "工務店・建築業",
+      title: "作品の美しさを損なわない0秒表示と施工事例の即時投稿",
+      description: "重い高画質写真を自動的にWebP圧縮し、スマホでも瞬時に高解像度ギャラリーを表示。現場監督や営業が現場から施工写真を即時投稿できます。",
+      points: ["スマホから外出先で写真アップロード", "HEAT20や耐震等級等の性能スペック表テンプレート", "見学会・イベント予約フォーム完備"]
+    },
+    {
+      id: "manufacturing",
+      label: "製造業・BtoB",
+      title: "技術力と製品スペックを正確に伝える堅牢なコーポレート基盤",
+      description: "設備の仕様や技術情報を整理し、BtoBの取引先や採用応募者に信頼感を与えるWebサイトを構築します。",
+      points: ["主要設備一覧・保有技術の構造化表示", "PDFカタログダウンロード機能", "SSL＆DNSセキュリティ完全防護"]
+    },
+    {
+      id: "professional",
+      label: "士業・専門サービス",
+      title: "安心感と専門性を醸成するミニマルで誠実なデザイン",
+      description: "過剰な装飾を排し、相談者が求めている解決策と費用体系をクリアに提示。SSL暗号化と高セキュリティでお問い合わせを保護します。",
+      points: ["明瞭な料金体系テーブル", "初回相談受付カレンダー導線", "プライバシーポリシー・セキュリティ基準準拠"]
+    }
+  ]
+} = Astro.props;
+---
+
+<div class="max-w-4xl mx-auto space-y-8">
+  <div class="text-center space-y-2">
+    <span class="font-mono text-xs text-stone-400 tracking-widest uppercase block">{eyebrow}</span>
+    <h3 class="font-serif-title text-xl md:text-2xl font-medium text-stone-900">{title}</h3>
+  </div>
+
+  <!-- タブボタン切り替え（Alpineや軽量JS、CSS切り替え用） -->
+  <div class="border border-stone-200 rounded-sm bg-white overflow-hidden shadow-xs">
+    <div class="flex border-b border-stone-200 bg-stone-50 overflow-x-auto text-xs font-medium">
+      {tabs.map((tab, idx) => (
+        <button 
+          type="button" 
+          class={`px-6 py-3.5 border-r border-stone-200 text-stone-700 hover:text-stone-900 whitespace-nowrap transition-colors flex items-center gap-2 ${idx === 0 ? 'bg-white font-bold border-b-2 border-b-stone-900' : ''}`}
+        >
+          <span>{tab.label}</span>
+        </button>
+      ))}
+    </div>
+
+    <!-- コンテンツ表示エリア（1つ目のタブ内容を標準表示） -->
+    <div class="p-8 space-y-4">
+      <h4 class="font-serif-title text-lg font-bold text-stone-900">
+        {tabs[0].title}
+      </h4>
+      <p class="text-xs text-stone-600 font-light leading-relaxed">
+        {tabs[0].description}
+      </p>
+      <div class="pt-4 border-t border-stone-100">
+        <ul class="space-y-2 text-xs text-stone-700 font-light">
+          {tabs[0].points.map((pt) => (
+            <li class="flex items-center gap-2">
+              <span class="text-stone-900 font-bold">✓</span>
+              <span>{pt}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

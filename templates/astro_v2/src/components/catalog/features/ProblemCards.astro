@@ -1,0 +1,80 @@
+---
+export interface ProblemItem {
+  number: string;
+  title: string;
+  description: string;
+  badge?: string;
+}
+
+export interface Props {
+  eyebrow?: string;
+  sectionTitle?: string;
+  lead?: string;
+  problems?: ProblemItem[];
+}
+
+const {
+  eyebrow = "Current Challenges",
+  sectionTitle = "地方の中小企業が直面する4つのWeb課題",
+  lead = "「作って終わり」「更新が怖い」「表示が遅い」といった問題は、貴社だけでなく多くの企業が抱えています。",
+  problems = [
+    {
+      number: "01",
+      title: "制作会社が撤退・放置されたまま",
+      description: "担当者が辞めたり制作会社と疎遠になり、セキュリティ更新が何年も止まったまま放置されていませんか？",
+      badge: "時限爆弾化"
+    },
+    {
+      number: "02",
+      title: "WordPress更新で崩れるのが怖い",
+      description: "本体やプラグインを更新すると画面が真っ白になる恐怖から、長年アップデートを放置してしまっている。",
+      badge: "塩漬け状態"
+    },
+    {
+      number: "03",
+      title: "スマホでの表示が遅く見込み客が離脱",
+      description: "アクセスから表示まで3秒以上かかり、スマートフォンの顧客が問い合わせる前に離脱してしまっている。",
+      badge: "機会損失"
+    },
+    {
+      number: "04",
+      title: "他社見積もりが高額で二の足を踏む",
+      description: "少しの修正やリニューアルでも100〜150万円を提示され、費用対効果が見合わず身動きが取れなくなっている。",
+      badge: "予算超過"
+    }
+  ]
+} = Astro.props;
+---
+
+<section class="py-20 md:py-28 px-6 bg-stone-50 border-t border-b border-stone-200">
+  <div class="max-w-6xl mx-auto space-y-12">
+    <!-- ヘッダー -->
+    <div class="text-center max-w-2xl mx-auto space-y-3">
+      <span class="font-mono text-xs text-stone-400 tracking-widest uppercase block">{eyebrow}</span>
+      <h2 class="font-serif-title text-2xl md:text-4xl font-medium text-stone-900 tracking-wide">{sectionTitle}</h2>
+      <p class="text-xs md:text-sm text-stone-600 font-light leading-relaxed">{lead}</p>
+    </div>
+
+    <!-- カードグリッド -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {problems.map((p) => (
+        <div class="bg-white p-6 sm:p-8 border border-stone-200 rounded-sm shadow-xs hover:border-stone-400 transition-colors space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="font-mono text-xs text-stone-400 font-semibold">{p.number}</span>
+            {p.badge && (
+              <span class="px-2 py-0.5 bg-rose-50 text-rose-700 border border-rose-200 text-[10px] font-medium tracking-wider">
+                {p.badge}
+              </span>
+            )}
+          </div>
+          <h3 class="font-serif-title text-lg font-bold text-stone-900 leading-snug">
+            {p.title}
+          </h3>
+          <p class="text-xs text-stone-600 font-light leading-relaxed">
+            {p.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

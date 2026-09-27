@@ -1,0 +1,49 @@
+---
+export interface Props {
+  telNumber?: string;
+  telDisplay?: string;
+  contactHref?: string;
+  contactLabel?: string;
+  lineHref?: string;
+}
+
+const {
+  telNumber = "000-000-0000",
+  telDisplay = "お電話で相談",
+  contactHref = "/contact/",
+  contactLabel = "無料診断・相談",
+  lineHref = ""
+} = Astro.props;
+---
+
+<div class="fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-t border-stone-200 px-4 py-2.5 shadow-lg md:hidden">
+  <div class="flex items-center gap-2 max-w-md mx-auto">
+    {telNumber && (
+      <a 
+        href={`tel:${telNumber}`} 
+        class="flex-1 flex items-center justify-center gap-1.5 py-2.5 bg-stone-100 text-stone-800 text-xs font-bold rounded-sm border border-stone-300 active:bg-stone-200"
+      >
+        <span>📞</span>
+        <span>{telDisplay}</span>
+      </a>
+    )}
+    {lineHref && (
+      <a 
+        href={lineHref} 
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex-1 flex items-center justify-center gap-1.5 py-2.5 bg-emerald-600 text-white text-xs font-bold rounded-sm hover:bg-emerald-700 active:bg-emerald-800 shadow-sm"
+      >
+        <span>💬</span>
+        <span>LINE相談</span>
+      </a>
+    )}
+    <a 
+      href={contactHref} 
+      class="flex-2 flex items-center justify-center gap-1.5 py-2.5 bg-stone-900 text-white text-xs font-bold rounded-sm hover:bg-stone-800 active:bg-stone-950 shadow-sm"
+    >
+      <span>✉️</span>
+      <span>{contactLabel}</span>
+    </a>
+  </div>
+</div>

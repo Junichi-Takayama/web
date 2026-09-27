@@ -1,0 +1,86 @@
+---
+export interface MegaSubItem {
+  title: string;
+  description: string;
+  href: string;
+}
+
+export interface MegaCategory {
+  category: string;
+  items: MegaSubItem[];
+}
+
+export interface Props {
+  triggerLabel?: string;
+  categories?: MegaCategory[];
+  featuredTitle?: string;
+  featuredDesc?: string;
+  featuredHref?: string;
+}
+
+const {
+  triggerLabel = "ソリューション一覧",
+  categories = [
+    {
+      category: "Web制作・開発",
+      items: [
+        { title: "コーポレートサイト制作", description: "超高速表示と信頼感を両立する標準仕様", href: "#" },
+        { title: "WordPress移行・リプレイス", description: "既存資産を壊さず安全に新基盤へ移設", href: "#" }
+      ]
+    },
+    {
+      category: "保守・伴走運用",
+      items: [
+        { title: "GA4アクセス解析レポート", description: "月次の数値可視化と改善提案", href: "#" },
+        { title: "更新代行・インフラ監視", description: "日常的な変更や障害対応をワンストップ化", href: "#" }
+      ]
+    }
+  ],
+  featuredTitle = "【無料】Webサイト健康診断",
+  featuredDesc = "貴社サイトの表示速度・保守リスク・SEO課題を客観的にレポートします。",
+  featuredHref = "#contact"
+} = Astro.props;
+---
+
+<div class="w-full bg-white border border-stone-200 rounded-sm shadow-lg p-6 max-w-4xl mx-auto">
+  <div class="flex items-center gap-2 mb-4 pb-3 border-b border-stone-100">
+    <span class="w-2 h-2 rounded-full bg-stone-900"></span>
+    <span class="font-mono text-xs text-stone-500 uppercase tracking-widest">{triggerLabel}</span>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <!-- カテゴリ別カラム -->
+    {categories.map((cat) => (
+      <div class="space-y-4">
+        <h4 class="text-xs font-bold text-stone-900 tracking-wider pb-1 border-b border-stone-200">
+          {cat.category}
+        </h4>
+        <div class="space-y-3">
+          {cat.items.map((item) => (
+            <a href={item.href} class="block group">
+              <span class="text-xs font-medium text-stone-800 group-hover:text-stone-600 flex items-center justify-between">
+                {item.title}
+                <span class="text-stone-400 group-hover:translate-x-0.5 transition-transform text-[10px]">&rarr;</span>
+              </span>
+              <p class="text-[11px] text-stone-500 font-light mt-0.5 leading-relaxed">
+                {item.description}
+              </p>
+            </a>
+          ))}
+        </div>
+      </div>
+    ))}
+
+    <!-- 特集・バナー枠 -->
+    <div class="bg-stone-50 border border-stone-200 p-4 rounded-sm flex flex-col justify-between">
+      <div class="space-y-2">
+        <span class="px-2 py-0.5 bg-stone-900 text-white text-[9px] font-mono tracking-widest uppercase">Recommend</span>
+        <h4 class="text-xs font-bold text-stone-900">{featuredTitle}</h4>
+        <p class="text-[11px] text-stone-600 font-light leading-relaxed">{featuredDesc}</p>
+      </div>
+      <a href={featuredHref} class="mt-4 block text-center py-2 bg-stone-900 text-white text-xs font-medium hover:bg-stone-800 transition">
+        詳しく見る &rarr;
+      </a>
+    </div>
+  </div>
+</div>

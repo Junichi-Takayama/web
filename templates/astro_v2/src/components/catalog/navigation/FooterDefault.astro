@@ -1,0 +1,96 @@
+---
+export interface FooterLink {
+  label: string;
+  href: string;
+}
+
+export interface FooterColumn {
+  title: string;
+  links: FooterLink[];
+}
+
+export interface Props {
+  brandName?: string;
+  description?: string;
+  columns?: FooterColumn[];
+  copyright?: string;
+  policyLinks?: FooterLink[];
+}
+
+const {
+  brandName = "Company Name",
+  description = "地方中小企業のための確かな技術と、横に並んで歩むWebパートナーシップ。",
+  columns = [
+    {
+      title: "Navigation",
+      links: [
+        { label: "トップページ", href: "/" },
+        { label: "サービス案内", href: "#services" },
+        { label: "会社概要・想い", href: "#about" },
+        { label: "制作実績", href: "#works" }
+      ]
+    },
+    {
+      title: "Service",
+      links: [
+        { label: "高速Webエンジン換装", href: "#" },
+        { label: "専用ヘッドレスCMS設計", href: "#" },
+        { label: "月次伴走サポート", href: "#" },
+        { label: "Webサイト無料診断", href: "#" }
+      ]
+    }
+  ],
+  copyright = "© 2026 Company Name Inc. All rights reserved.",
+  policyLinks = [
+    { label: "プライバシーポリシー", href: "/privacy/" },
+    { label: "利用規約", href: "#" },
+    { label: "サイトマップ", href: "#" }
+  ]
+} = Astro.props;
+---
+
+<footer class="bg-stone-900 text-stone-300 pt-16 pb-12 border-t border-stone-800">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-stone-800">
+      <!-- 会社・ブランド情報 -->
+      <div class="md:col-span-2 space-y-4">
+        <h3 class="font-serif-title text-xl text-white font-medium tracking-wider">
+          {brandName}
+        </h3>
+        <p class="text-xs text-stone-400 font-light leading-relaxed max-w-md">
+          {description}
+        </p>
+      </div>
+
+      <!-- ナビゲーション列 -->
+      {columns.map((col) => (
+        <div class="space-y-3">
+          <h4 class="text-xs font-mono tracking-widest text-stone-400 uppercase font-semibold">
+            {col.title}
+          </h4>
+          <ul class="space-y-2 text-xs">
+            {col.links.map((link) => (
+              <li>
+                <a href={link.href} class="hover:text-white transition-colors">
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <!-- コピーライト & ポリシー -->
+    <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-stone-500 font-light">
+      <div class="flex flex-wrap items-center gap-4">
+        {policyLinks.map((p) => (
+          <a href={p.href} class="hover:text-stone-300 transition-colors">
+            {p.label}
+          </a>
+        ))}
+      </div>
+      <p class="font-mono">{copyright}</p>
+    </div>
+  </div>
+</footer>

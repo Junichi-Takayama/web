@@ -1,0 +1,103 @@
+---
+export interface RowItem {
+  number: string;
+  tag: string;
+  title: string;
+  description: string;
+  details?: string[];
+  imageSrc: string;
+  imageAlt: string;
+}
+
+export interface Props {
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+  rows?: RowItem[];
+}
+
+const {
+  eyebrow = "Detailed Architecture",
+  title = "深く、精密に設計されたWebソリューション",
+  description = "デザイン・エンジニアリング・継続的運用の3領域から、中小企業のWeb資産を最大化します。",
+  rows = [
+    {
+      number: "01",
+      tag: "ENGINE REPLACEMENT",
+      title: "既存サイト資産を活かしたWeb基盤換装",
+      description: "これまで蓄積してきた施工事例やブログ記事、ドメインの評価を落とすことなく、最新のAstroエンジンへ安全に移設します。",
+      details: ["SEO評価を落とさないリダイレクト設計", "画像の次世代フォーマット（WebP/AVIF）自動変換", "表示速度90点以上のパフォーマンス保証"],
+      imageSrc: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=80",
+      imageAlt: "データ分析とWeb換装"
+    },
+    {
+      number: "02",
+      tag: "HEADLESS CMS",
+      title: "現場スタッフが迷わず使える専用管理画面",
+      description: "WordPressのようにプラグイン更新で画面が崩れる恐怖はありません。必要な入力項目だけに絞り込んだ専用フォームを用意します。",
+      details: ["スマホから外出先でも写真アップロード可能", "下書きプレビュー機能で誤投稿を防止", "記事公開と同時に数秒で自動静的ビルド"],
+      imageSrc: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=80",
+      imageAlt: "シンプルな管理画面ダッシュボード"
+    }
+  ]
+} = Astro.props;
+---
+
+<section class="py-20 md:py-28 px-6 bg-white space-y-20">
+  <div class="max-w-6xl mx-auto space-y-16">
+    <!-- ヘッダー -->
+    <div class="text-center max-w-2xl mx-auto space-y-3">
+      <span class="font-mono text-xs text-stone-400 tracking-widest uppercase block">{eyebrow}</span>
+      <h2 class="font-serif-title text-2xl md:text-3xl font-medium text-stone-900 tracking-wide">{title}</h2>
+      <p class="text-xs text-stone-600 font-light leading-relaxed">{description}</p>
+    </div>
+
+    <!-- 交互行 -->
+    <div class="space-y-16 lg:space-y-24">
+      {rows.map((row, index) => {
+        const isEven = index % 2 === 1;
+        return (
+          <div class={`grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center ${isEven ? 'lg:grid-flow-dense' : ''}`}>
+            <!-- テキスト側 -->
+            <div class={`space-y-6 ${isEven ? 'lg:col-start-2' : ''}`}>
+              <div class="flex items-center gap-3">
+                <span class="font-mono text-xs text-stone-400 font-bold">{row.number}</span>
+                <span class="font-mono text-[10px] text-stone-500 uppercase tracking-widest px-2 py-0.5 bg-stone-100 rounded-sm">
+                  {row.tag}
+                </span>
+              </div>
+              <h3 class="font-serif-title text-2xl md:text-3xl font-medium text-stone-900 leading-snug">
+                {row.title}
+              </h3>
+              <p class="text-xs md:text-sm text-stone-600 font-light leading-relaxed">
+                {row.description}
+              </p>
+              {row.details && (
+                <ul class="space-y-2 text-xs text-stone-700 font-light pt-2">
+                  {row.details.map((d) => (
+                    <li class="flex items-center gap-2">
+                      <span class="w-1.5 h-1.5 rounded-full bg-stone-900"></span>
+                      {d}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+
+            <!-- 画像側 -->
+            <div class={`relative ${isEven ? 'lg:col-start-1' : ''}`}>
+              <div class="aspect-16/10 rounded-sm overflow-hidden bg-stone-100 shadow-md">
+                <img 
+                  src={row.imageSrc} 
+                  alt={row.imageAlt} 
+                  class="w-full h-full object-cover hover:scale-102 transition duration-500" 
+                  loading="lazy" 
+                />
+              </div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</section>

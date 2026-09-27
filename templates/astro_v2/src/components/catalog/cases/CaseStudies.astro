@@ -1,0 +1,89 @@
+---
+export interface CaseItem {
+  client: string;
+  category: string;
+  title: string;
+  metric: string;
+  metricLabel: string;
+  imageSrc: string;
+  href: string;
+}
+
+export interface Props {
+  eyebrow?: string;
+  title?: string;
+  subtitle?: string;
+  cases?: CaseItem[];
+}
+
+const {
+  eyebrow = "Proven Results",
+  title = "導入事例・改善実績",
+  subtitle = "WordPressからの脱却により、表示速度と問い合わせ獲得率が劇的に改善した実例です。",
+  cases = [
+    {
+      client: "加藤淳設計事務所 様",
+      category: "建築設計事務所",
+      title: "WordPressからAstroへの全面換装で、表示速度0.6秒台を達成し作品写真の閲覧性が劇的に向上。",
+      metric: "0.6s",
+      metricLabel: "スマホ表示速度",
+      imageSrc: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
+      href: "#"
+    },
+    {
+      client: "地域密着型工務店 A社 様",
+      category: "工務店・リノベーション",
+      title: "プラグイン崩壊の不安から解放され、営業スタッフが現場から施工写真を即時投稿可能に。",
+      metric: "180%",
+      metricLabel: "施工事例PV増",
+      imageSrc: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80",
+      href: "#"
+    }
+  ]
+} = Astro.props;
+---
+
+<section class="py-20 md:py-28 px-6 bg-stone-50 border-t border-b border-stone-200">
+  <div class="max-w-6xl mx-auto space-y-12">
+    <div class="text-center max-w-2xl mx-auto space-y-3">
+      <span class="font-mono text-xs text-stone-400 tracking-widest uppercase block">{eyebrow}</span>
+      <h2 class="font-serif-title text-2xl md:text-3xl font-medium text-stone-900 tracking-wide">{title}</h2>
+      <p class="text-xs text-stone-600 font-light leading-relaxed">{subtitle}</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {cases.map((c) => (
+        <a href={c.href} class="bg-white border border-stone-200 rounded-sm overflow-hidden shadow-xs hover:shadow-md transition group block">
+          <div class="aspect-16/9 bg-stone-100 overflow-hidden relative">
+            <img 
+              src={c.imageSrc} 
+              alt={c.client} 
+              class="w-full h-full object-cover group-hover:scale-103 transition duration-500" 
+              loading="lazy" 
+            />
+            <div class="absolute top-3 left-3 bg-stone-900/80 backdrop-blur-xs text-white px-2.5 py-1 text-[10px] font-mono tracking-wider rounded-xs">
+              {c.category}
+            </div>
+          </div>
+
+          <div class="p-6 space-y-4">
+            <span class="font-mono text-xs text-stone-400 font-semibold block">{c.client}</span>
+            <h3 class="font-serif-title text-base font-bold text-stone-900 leading-snug group-hover:text-stone-600 transition">
+              {c.title}
+            </h3>
+
+            <div class="pt-3 border-t border-stone-100 flex items-center justify-between">
+              <div>
+                <span class="font-mono text-xl font-bold text-stone-900">{c.metric}</span>
+                <span class="text-[10px] text-stone-400 ml-1.5">{c.metricLabel}</span>
+              </div>
+              <span class="text-xs text-stone-400 font-medium group-hover:translate-x-1 transition-transform">
+                詳細を読む &rarr;
+              </span>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

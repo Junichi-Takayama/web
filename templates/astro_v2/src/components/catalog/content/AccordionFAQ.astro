@@ -1,0 +1,67 @@
+---
+export interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+export interface Props {
+  eyebrow?: string;
+  title?: string;
+  subtitle?: string;
+  faqs?: FAQItem[];
+}
+
+const {
+  eyebrow = "Frequently Asked Questions",
+  title = "よくあるご質問",
+  subtitle = "導入や既存サイトからの乗り換えについて、よくいただくご質問にお答えします。",
+  faqs = [
+    {
+      question: "現在WordPressを使っていますが、記事や画像は引き継げますか？",
+      answer: "はい、可能です。これまでに投稿されたお知らせ、施工事例、ブログ記事、および画像データを安全にエクスポートし、新しいmicroCMS環境へ移行いたします。URL構造も極力維持し、SEO評価を損なわないよう移設します。"
+    },
+    {
+      question: "パソコン操作が苦手ですが、自分でお知らせや施工事例を更新できますか？",
+      answer: "ご安心ください。WordPressのように複雑な管理画面ではなく、スマートフォンからSNS感覚で写真とテキストを入力するだけの専用画面をご用意します。また、月次伴走プランでは代理投稿も承っております。"
+    },
+    {
+      question: "月次伴走プランは必ず加入しなければなりませんか？",
+      answer: "必須ではございません。基本換装プランのみ（買い切り）での納品も可能です。ただし、地方中小企業様の実情として『社内にWeb担当者がおらず更新が滞る』ケースが多いため、月次レポートと更新代行がセットになった伴走プランを強く推奨しております。"
+    },
+    {
+      question: "他社で作成したサイトのサーバー放置やトラブルも相談できますか？",
+      answer: "はい、多くのご相談をいただいております。『制作会社が廃業した』『担当者と連絡がつかなくなった』といった状態でも、まず無料診断にて現状のドメインやサーバー状況を客観的に調査・レポートいたします。"
+    }
+  ]
+} = Astro.props;
+---
+
+<section class="py-20 md:py-28 px-6 bg-white">
+  <div class="max-w-3xl mx-auto space-y-12">
+    <div class="text-center space-y-3">
+      <span class="font-mono text-xs text-stone-400 tracking-widest uppercase block">{eyebrow}</span>
+      <h2 class="font-serif-title text-2xl md:text-3xl font-medium text-stone-900 tracking-wide">{title}</h2>
+      <p class="text-xs text-stone-600 font-light leading-relaxed">{subtitle}</p>
+    </div>
+
+    <!-- ネイティブdetailsを使用したアコーディオン -->
+    <div class="divide-y divide-stone-200 border-t border-b border-stone-200">
+      {faqs.map((faq) => (
+        <details class="group py-5 transition-colors">
+          <summary class="flex items-center justify-between cursor-pointer list-none text-xs sm:text-sm font-medium text-stone-900 group-hover:text-stone-600 select-none">
+            <span class="flex items-start gap-3">
+              <span class="font-serif-title text-base font-bold text-stone-400">Q.</span>
+              <span class="pt-0.5">{faq.question}</span>
+            </span>
+            <span class="ml-4 text-stone-400 transition-transform group-open:rotate-180 flex-shrink-0">
+              ▼
+            </span>
+          </summary>
+          <div class="pt-4 pl-7 pr-4 text-xs text-stone-600 font-light leading-relaxed">
+            <p>{faq.answer}</p>
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
