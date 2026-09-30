@@ -52,7 +52,7 @@ const {
     <div class="text-left md:text-center max-w-2xl mx-auto space-y-3">
       <span class="font-mono text-xs text-stone-400 tracking-widest uppercase block">{eyebrow}</span>
       <h2 class="font-serif-title text-xl sm:text-2xl md:text-3xl font-medium text-stone-900 tracking-wide">{sectionTitle}</h2>
-      <p class="text-xs md:text-sm text-stone-600 font-light leading-relaxed">{lead}</p>
+      <p class="text-sm sm:text-base text-stone-600 font-light leading-relaxed">{lead}</p>
     </div>
 
     <!-- カードグリッド -->
@@ -62,15 +62,15 @@ const {
           <div class="flex items-center justify-between">
             <span class="font-mono text-xs text-stone-400 font-semibold">{p.number}</span>
             {p.badge && (
-              <span class="px-2 py-0.5 bg-rose-50 text-rose-700 border border-rose-200 text-[10px] font-medium tracking-wider">
+              <span class="px-2 py-0.5 bg-rose-50 text-rose-700 border border-rose-200 text-xs font-medium tracking-wider">
                 {p.badge}
               </span>
             )}
           </div>
-          <h3 class="font-serif-title text-base md:text-lg font-medium text-stone-900 leading-snug">
+          <h3 class="font-serif-title text-lg sm:text-xl font-medium text-stone-900 leading-snug">
             {p.title}
           </h3>
-          <p class="text-xs text-stone-600 font-light leading-relaxed">
+          <p class="text-sm sm:text-base text-stone-600 font-light leading-relaxed">
             {p.description}
           </p>
         </div>

@@ -50,7 +50,7 @@ const {
 
   <!-- タブボタン切り替えコンテナ -->
   <div class="tab-container border border-stone-200 rounded-sm bg-white overflow-hidden shadow-xs">
-    <div class="flex border-b border-stone-200 bg-stone-50 overflow-x-auto text-xs font-medium" role="tablist">
+    <div class="flex border-b border-stone-200 bg-stone-50 overflow-x-auto text-sm font-medium" role="tablist">
       {tabs.map((tab, idx) => (
         <button 
           type="button" 
@@ -76,14 +76,14 @@ const {
           role="tabpanel"
           class={`tab-panel space-y-4 transition-opacity duration-300 ${idx === 0 ? 'block opacity-100' : 'hidden opacity-0'}`}
         >
-          <h4 class="font-serif-title text-base md:text-lg font-medium text-stone-900">
+          <h4 class="font-serif-title text-lg sm:text-xl font-medium text-stone-900">
             {tab.title}
           </h4>
-          <p class="text-xs text-stone-600 font-light leading-relaxed">
+          <p class="text-sm sm:text-base text-stone-600 font-light leading-relaxed">
             {tab.description}
           </p>
           <div class="pt-4 border-t border-stone-100">
-            <ul class="space-y-2 text-xs text-stone-700 font-light">
+            <ul class="space-y-2.5 text-sm text-stone-700 font-light">
               {tab.points.map((pt) => (
                 <li class="flex items-center gap-2">
                   <span class="text-stone-900 font-bold">✓</span>
