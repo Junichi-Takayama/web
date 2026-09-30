@@ -52,14 +52,14 @@ import Icon from '../components/common/Icon.astro';
   <!-- ヒーローセクション -->
   <section class="py-20 px-6 bg-stone-900 text-white border-b border-stone-800">
     <div class="max-w-6xl mx-auto space-y-6">
-      <div class="inline-flex items-center gap-2 px-3 py-1 bg-stone-800 border border-stone-700 text-[11px] font-mono uppercase tracking-widest text-stone-300">
+      <div class="inline-flex items-center gap-2 px-3 py-1 bg-stone-800 border border-stone-700 text-xs font-mono uppercase tracking-widest text-stone-300">
         <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
         ArCraft Component Library (25 Components)
       </div>
       <h1 class="font-serif-title text-3xl md:text-5xl font-medium tracking-wider">
         汎用共通25種 UIコンポーネントカタログ
       </h1>
-      <p class="text-stone-400 text-xs md:text-sm max-w-3xl font-light leading-relaxed">
+      <p class="text-stone-300 text-sm md:text-base max-w-3xl font-light leading-relaxed">
         地方工務店・中小企業案件のあらゆる要求に応える、TypeScript完全対応・Tailwind CSS統合済みの高再利用性コンポーネント群です。各パーツの名称やタグをワンクリックでコピーでき、用途・推奨シーンを確認しながらスムーズにサイト設計・実装へ転用いただけます。
       </p>
 
@@ -90,10 +90,10 @@ import Icon from '../components/common/Icon.astro';
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-stone-300/80">
             <div class="flex flex-wrap items-center gap-2 min-w-0">
               <span class="text-xs font-mono font-bold px-2 py-0.5 bg-stone-900 text-white rounded-xs">#01</span>
-              <h3 class="font-mono text-sm sm:text-base font-bold text-stone-900 break-all">HeaderNav.astro</h3>
+              <h3 class="font-mono text-base sm:text-lg font-bold text-stone-900 break-all">HeaderNav.astro</h3>
               <button 
                 type="button" 
-                class="copy-btn shrink-0 inline-flex items-center gap-1 px-2.5 py-1 text-xs font-mono text-stone-600 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-xs transition-colors"
+                class="copy-btn shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-medium text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-sm transition-all"
                 data-copy="HeaderNav.astro"
                 title="ファイル名をコピー"
               >
@@ -103,33 +103,33 @@ import Icon from '../components/common/Icon.astro';
             </div>
             <button 
               type="button" 
-              class="copy-btn shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3 py-1 text-xs font-mono text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-xs transition-colors"
+              class="copy-btn shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 text-xs font-mono font-medium text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-sm transition-all"
               data-copy={'<HeaderNav brandName="ArCraft" brandSub="Architecture Engine" />'}
               title="タグをコピー"
             >
               <span class="copy-text">&lt;HeaderNav /&gt; タグコピー</span>
             </button>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-stone-600 pt-3">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 text-sm">
             <div class="space-y-1">
-              <span class="font-bold text-stone-900 flex items-center gap-1.5">
+              <span class="text-xs font-bold text-stone-900 flex items-center gap-2 uppercase tracking-wide">
                 <span class="w-1.5 h-1.5 rounded-full bg-stone-400"></span>コンポーネント概要
               </span>
-              <p class="text-stone-600 leading-relaxed pl-3">
+              <p class="text-stone-700 text-sm leading-relaxed pl-3.5 font-light">
                 ブランドロゴ、主要ナビリンク（デスクトップ横並び）、およびスマホ用ハンバーガーメニュー開閉を備えたレスポンシブ共通ヘッダー。
               </p>
             </div>
             <div class="space-y-1">
-              <span class="font-bold text-stone-900 flex items-center gap-1.5">
+              <span class="text-xs font-bold text-stone-900 flex items-center gap-2 uppercase tracking-wide">
                 <span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span>主な用途・推奨シーン
               </span>
-              <p class="text-stone-600 leading-relaxed pl-3">
+              <p class="text-stone-700 text-sm leading-relaxed pl-3.5 font-light">
                 あらゆるコーポレートサイト、工務店サイト、サービスサイトの基本グローバルナビゲーション。ページ共通テンプレート（Layout）に配置。
               </p>
             </div>
           </div>
         </div>
-        <div class="text-[11px] font-mono font-bold text-stone-400 uppercase tracking-widest flex items-center gap-1.5 pl-1 pt-1">
+        <div class="text-xs font-mono font-bold text-stone-500 uppercase tracking-widest flex items-center gap-2 pl-1 pt-2">
           <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
           実動プレビュー (Live Component)
         </div>
@@ -143,10 +143,10 @@ import Icon from '../components/common/Icon.astro';
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-stone-300/80">
             <div class="flex flex-wrap items-center gap-2 min-w-0">
               <span class="text-xs font-mono font-bold px-2 py-0.5 bg-stone-900 text-white rounded-xs">#02</span>
-              <h3 class="font-mono text-sm sm:text-base font-bold text-stone-900 break-all">MegaMenu.astro</h3>
+              <h3 class="font-mono text-base sm:text-lg font-bold text-stone-900 break-all">MegaMenu.astro</h3>
               <button 
                 type="button" 
-                class="copy-btn shrink-0 inline-flex items-center gap-1 px-2.5 py-1 text-xs font-mono text-stone-600 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-xs transition-colors"
+                class="copy-btn shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-medium text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-sm transition-all"
                 data-copy="MegaMenu.astro"
                 title="ファイル名をコピー"
               >
@@ -156,33 +156,33 @@ import Icon from '../components/common/Icon.astro';
             </div>
             <button 
               type="button" 
-              class="copy-btn shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3 py-1 text-xs font-mono text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-xs transition-colors"
+              class="copy-btn shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 text-xs font-mono font-medium text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-sm transition-all"
               data-copy="<MegaMenu />"
               title="タグをコピー"
             >
               <span class="copy-text">&lt;MegaMenu /&gt; タグコピー</span>
             </button>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-stone-600 pt-3">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 text-sm">
             <div class="space-y-1">
-              <span class="font-bold text-stone-900 flex items-center gap-1.5">
+              <span class="text-xs font-bold text-stone-900 flex items-center gap-2 uppercase tracking-wide">
                 <span class="w-1.5 h-1.5 rounded-full bg-stone-400"></span>コンポーネント概要
               </span>
-              <p class="text-stone-600 leading-relaxed pl-3">
+              <p class="text-stone-700 text-sm leading-relaxed pl-3.5 font-light">
                 ホバーやクリックで広がる多階層ナビゲーション。事業内容、施工カテゴリ、会社案内を特集バナー枠付きで一望できる大容量メニュー。
               </p>
             </div>
             <div class="space-y-1">
-              <span class="font-bold text-stone-900 flex items-center gap-1.5">
+              <span class="text-xs font-bold text-stone-900 flex items-center gap-2 uppercase tracking-wide">
                 <span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span>主な用途・推奨シーン
               </span>
-              <p class="text-stone-600 leading-relaxed pl-3">
+              <p class="text-stone-700 text-sm leading-relaxed pl-3.5 font-light">
                 取扱事業や商品数が多い工務店（注文住宅/リフォーム/不動産）、製造業（製品一覧/技術紹介）、総合士業法人のヘッダー展開に最適。
               </p>
             </div>
           </div>
         </div>
-        <div class="text-[11px] font-mono font-bold text-stone-400 uppercase tracking-widest flex items-center gap-1.5 pl-1 pt-1">
+        <div class="text-xs font-mono font-bold text-stone-500 uppercase tracking-widest flex items-center gap-2 pl-1 pt-2">
           <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
           実動プレビュー (Live Component)
         </div>
@@ -197,10 +197,10 @@ import Icon from '../components/common/Icon.astro';
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-stone-300/80">
             <div class="flex flex-wrap items-center gap-2 min-w-0">
               <span class="text-xs font-mono font-bold px-2 py-0.5 bg-stone-900 text-white rounded-xs">#03</span>
-              <h3 class="font-mono text-sm sm:text-base font-bold text-stone-900 break-all">FooterDefault.astro</h3>
+              <h3 class="font-mono text-base sm:text-lg font-bold text-stone-900 break-all">FooterDefault.astro</h3>
               <button 
                 type="button" 
-                class="copy-btn shrink-0 inline-flex items-center gap-1 px-2.5 py-1 text-xs font-mono text-stone-600 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-xs transition-colors"
+                class="copy-btn shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-medium text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-sm transition-all"
                 data-copy="FooterDefault.astro"
                 title="ファイル名をコピー"
               >
@@ -210,33 +210,33 @@ import Icon from '../components/common/Icon.astro';
             </div>
             <button 
               type="button" 
-              class="copy-btn shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3 py-1 text-xs font-mono text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-xs transition-colors"
+              class="copy-btn shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 text-xs font-mono font-medium text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-sm transition-all"
               data-copy={'<FooterDefault brandName="ArCraft Engine" />'}
               title="タグをコピー"
             >
               <span class="copy-text">&lt;FooterDefault /&gt; タグコピー</span>
             </button>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-stone-600 pt-3">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 text-sm">
             <div class="space-y-1">
-              <span class="font-bold text-stone-900 flex items-center gap-1.5">
+              <span class="text-xs font-bold text-stone-900 flex items-center gap-2 uppercase tracking-wide">
                 <span class="w-1.5 h-1.5 rounded-full bg-stone-400"></span>コンポーネント概要
               </span>
-              <p class="text-stone-600 leading-relaxed pl-3">
+              <p class="text-stone-700 text-sm leading-relaxed pl-3.5 font-light">
                 会社概要、所在地、サイトマップ、各種ポリシーリンク、著作権表示を端正にグリッド配置した標準フッター。
               </p>
             </div>
             <div class="space-y-1">
-              <span class="font-bold text-stone-900 flex items-center gap-1.5">
+              <span class="text-xs font-bold text-stone-900 flex items-center gap-2 uppercase tracking-wide">
                 <span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span>主な用途・推奨シーン
               </span>
-              <p class="text-stone-600 leading-relaxed pl-3">
+              <p class="text-stone-700 text-sm leading-relaxed pl-3.5 font-light">
                 サイト全体の共通最下部。信頼性が求められる地域密着企業・中小企業の会社情報・許認可番号・SNSリンクの集約に最適。
               </p>
             </div>
           </div>
         </div>
-        <div class="text-[11px] font-mono font-bold text-stone-400 uppercase tracking-widest flex items-center gap-1.5 pl-1 pt-1">
+        <div class="text-xs font-mono font-bold text-stone-500 uppercase tracking-widest flex items-center gap-2 pl-1 pt-2">
           <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
           実動プレビュー (Live Component)
         </div>
@@ -261,10 +261,10 @@ import Icon from '../components/common/Icon.astro';
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-stone-300/80">
             <div class="flex flex-wrap items-center gap-2 min-w-0">
               <span class="text-xs font-mono font-bold px-2 py-0.5 bg-stone-900 text-white rounded-xs">#04</span>
-              <h3 class="font-mono text-sm sm:text-base font-bold text-stone-900 break-all">HeroCentered.astro</h3>
+              <h3 class="font-mono text-base sm:text-lg font-bold text-stone-900 break-all">HeroCentered.astro</h3>
               <button 
                 type="button" 
-                class="copy-btn shrink-0 inline-flex items-center gap-1 px-2.5 py-1 text-xs font-mono text-stone-600 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-xs transition-colors"
+                class="copy-btn shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-medium text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-sm transition-all"
                 data-copy="HeroCentered.astro"
                 title="ファイル名をコピー"
               >
@@ -274,33 +274,33 @@ import Icon from '../components/common/Icon.astro';
             </div>
             <button 
               type="button" 
-              class="copy-btn shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3 py-1 text-xs font-mono text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-xs transition-colors"
+              class="copy-btn shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 text-xs font-mono font-medium text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-sm transition-all"
               data-copy="<HeroCentered />"
               title="タグをコピー"
             >
               <span class="copy-text">&lt;HeroCentered /&gt; タグコピー</span>
             </button>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-stone-600 pt-3">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 text-sm">
             <div class="space-y-1">
-              <span class="font-bold text-stone-900 flex items-center gap-1.5">
+              <span class="text-xs font-bold text-stone-900 flex items-center gap-2 uppercase tracking-wide">
                 <span class="w-1.5 h-1.5 rounded-full bg-stone-400"></span>コンポーネント概要
               </span>
-              <p class="text-stone-600 leading-relaxed pl-3">
+              <p class="text-stone-700 text-sm leading-relaxed pl-3.5 font-light">
                 実績バッジ、力強い中央揃えキャッチコピー、リード文、2連CTAボタンを配した王道のファーストビュー。
               </p>
             </div>
             <div class="space-y-1">
-              <span class="font-bold text-stone-900 flex items-center gap-1.5">
+              <span class="text-xs font-bold text-stone-900 flex items-center gap-2 uppercase tracking-wide">
                 <span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span>主な用途・推奨シーン
               </span>
-              <p class="text-stone-600 leading-relaxed pl-3">
+              <p class="text-stone-700 text-sm leading-relaxed pl-3.5 font-light">
                 サービスLP、Web診断受付LP、メッセージ性やキャッチコピーを最優先で直感させたいBtoB向けコーポレートトップ。
               </p>
             </div>
           </div>
         </div>
-        <div class="text-[11px] font-mono font-bold text-stone-400 uppercase tracking-widest flex items-center gap-1.5 pl-1 pt-1">
+        <div class="text-xs font-mono font-bold text-stone-500 uppercase tracking-widest flex items-center gap-2 pl-1 pt-2">
           <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
           実動プレビュー (Live Component)
         </div>
@@ -315,10 +315,10 @@ import Icon from '../components/common/Icon.astro';
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-stone-300/80">
             <div class="flex flex-wrap items-center gap-2 min-w-0">
               <span class="text-xs font-mono font-bold px-2 py-0.5 bg-stone-900 text-white rounded-xs">#05</span>
-              <h3 class="font-mono text-sm sm:text-base font-bold text-stone-900 break-all">HeroSplit.astro</h3>
+              <h3 class="font-mono text-base sm:text-lg font-bold text-stone-900 break-all">HeroSplit.astro</h3>
               <button 
                 type="button" 
-                class="copy-btn shrink-0 inline-flex items-center gap-1 px-2.5 py-1 text-xs font-mono text-stone-600 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-xs transition-colors"
+                class="copy-btn shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-medium text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-sm transition-all"
                 data-copy="HeroSplit.astro"
                 title="ファイル名をコピー"
               >
@@ -328,33 +328,33 @@ import Icon from '../components/common/Icon.astro';
             </div>
             <button 
               type="button" 
-              class="copy-btn shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3 py-1 text-xs font-mono text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-xs transition-colors"
+              class="copy-btn shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 text-xs font-mono font-medium text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-sm transition-all"
               data-copy="<HeroSplit />"
               title="タグをコピー"
             >
               <span class="copy-text">&lt;HeroSplit /&gt; タグコピー</span>
             </button>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-stone-600 pt-3">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 text-sm">
             <div class="space-y-1">
-              <span class="font-bold text-stone-900 flex items-center gap-1.5">
+              <span class="text-xs font-bold text-stone-900 flex items-center gap-2 uppercase tracking-wide">
                 <span class="w-1.5 h-1.5 rounded-full bg-stone-400"></span>コンポーネント概要
               </span>
-              <p class="text-stone-600 leading-relaxed pl-3">
+              <p class="text-stone-700 text-sm leading-relaxed pl-3.5 font-light">
                 画面を左右に分割し、左に訴求テキストとCTA、右に高解像度写真を大胆にレイアウトしたビジュアル重視型ヒーロー。
               </p>
             </div>
             <div class="space-y-1">
-              <span class="font-bold text-stone-900 flex items-center gap-1.5">
+              <span class="text-xs font-bold text-stone-900 flex items-center gap-2 uppercase tracking-wide">
                 <span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span>主な用途・推奨シーン
               </span>
-              <p class="text-stone-600 leading-relaxed pl-3">
+              <p class="text-stone-700 text-sm leading-relaxed pl-3.5 font-light">
                 施工事例の写真を見せたい工務店トップ、製品・工場の写真を押し出したい製造業、代表者の写真を添えたい士業サイト。
               </p>
             </div>
           </div>
         </div>
-        <div class="text-[11px] font-mono font-bold text-stone-400 uppercase tracking-widest flex items-center gap-1.5 pl-1 pt-1">
+        <div class="text-xs font-mono font-bold text-stone-500 uppercase tracking-widest flex items-center gap-2 pl-1 pt-2">
           <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
           実動プレビュー (Live Component)
         </div>
@@ -368,10 +368,10 @@ import Icon from '../components/common/Icon.astro';
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-stone-300/80">
             <div class="flex flex-wrap items-center gap-2 min-w-0">
               <span class="text-xs font-mono font-bold px-2 py-0.5 bg-stone-900 text-white rounded-xs">#06</span>
-              <h3 class="font-mono text-sm sm:text-base font-bold text-stone-900 break-all">HeroMinimal.astro</h3>
+              <h3 class="font-mono text-base sm:text-lg font-bold text-stone-900 break-all">HeroMinimal.astro</h3>
               <button 
                 type="button" 
-                class="copy-btn shrink-0 inline-flex items-center gap-1 px-2.5 py-1 text-xs font-mono text-stone-600 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-xs transition-colors"
+                class="copy-btn shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-medium text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-sm transition-all"
                 data-copy="HeroMinimal.astro"
                 title="ファイル名をコピー"
               >
@@ -381,33 +381,33 @@ import Icon from '../components/common/Icon.astro';
             </div>
             <button 
               type="button" 
-              class="copy-btn shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3 py-1 text-xs font-mono text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-xs transition-colors"
+              class="copy-btn shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 text-xs font-mono font-medium text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-sm transition-all"
               data-copy="<HeroMinimal />"
               title="タグをコピー"
             >
               <span class="copy-text">&lt;HeroMinimal /&gt; タグコピー</span>
             </button>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-stone-600 pt-3">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 text-sm">
             <div class="space-y-1">
-              <span class="font-bold text-stone-900 flex items-center gap-1.5">
+              <span class="text-xs font-bold text-stone-900 flex items-center gap-2 uppercase tracking-wide">
                 <span class="w-1.5 h-1.5 rounded-full bg-stone-400"></span>コンポーネント概要
               </span>
-              <p class="text-stone-600 leading-relaxed pl-3">
+              <p class="text-stone-700 text-sm leading-relaxed pl-3.5 font-light">
                 深みのあるダーク背景に研ぎ澄まされたタイポグラフィと設立年・主要指標メタ情報を配置した洗練型ヒーロー。
               </p>
             </div>
             <div class="space-y-1">
-              <span class="font-bold text-stone-900 flex items-center gap-1.5">
+              <span class="text-xs font-bold text-stone-900 flex items-center gap-2 uppercase tracking-wide">
                 <span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span>主な用途・推奨シーン
               </span>
-              <p class="text-stone-600 leading-relaxed pl-3">
+              <p class="text-stone-700 text-sm leading-relaxed pl-3.5 font-light">
                 設計事務所、建築家、ハイエンド向け注文住宅、ブランディングを最重要視するデザイン系企業のトップ。
               </p>
             </div>
           </div>
         </div>
-        <div class="text-[11px] font-mono font-bold text-stone-400 uppercase tracking-widest flex items-center gap-1.5 pl-1 pt-1">
+        <div class="text-xs font-mono font-bold text-stone-500 uppercase tracking-widest flex items-center gap-2 pl-1 pt-2">
           <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
           実動プレビュー (Live Component)
         </div>
@@ -432,10 +432,10 @@ import Icon from '../components/common/Icon.astro';
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-stone-300/80">
             <div class="flex flex-wrap items-center gap-2 min-w-0">
               <span class="text-xs font-mono font-bold px-2 py-0.5 bg-stone-900 text-white rounded-xs">#07</span>
-              <h3 class="font-mono text-sm sm:text-base font-bold text-stone-900 break-all">ProblemCards.astro</h3>
+              <h3 class="font-mono text-base sm:text-lg font-bold text-stone-900 break-all">ProblemCards.astro</h3>
               <button 
                 type="button" 
-                class="copy-btn shrink-0 inline-flex items-center gap-1 px-2.5 py-1 text-xs font-mono text-stone-600 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-xs transition-colors"
+                class="copy-btn shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-medium text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-sm transition-all"
                 data-copy="ProblemCards.astro"
                 title="ファイル名をコピー"
               >
@@ -445,33 +445,33 @@ import Icon from '../components/common/Icon.astro';
             </div>
             <button 
               type="button" 
-              class="copy-btn shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3 py-1 text-xs font-mono text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-xs transition-colors"
+              class="copy-btn shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 text-xs font-mono font-medium text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-sm transition-all"
               data-copy="<ProblemCards />"
               title="タグをコピー"
             >
               <span class="copy-text">&lt;ProblemCards /&gt; タグコピー</span>
             </button>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-stone-600 pt-3">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 text-sm">
             <div class="space-y-1">
-              <span class="font-bold text-stone-900 flex items-center gap-1.5">
+              <span class="text-xs font-bold text-stone-900 flex items-center gap-2 uppercase tracking-wide">
                 <span class="w-1.5 h-1.5 rounded-full bg-stone-400"></span>コンポーネント概要
               </span>
-              <p class="text-stone-600 leading-relaxed pl-3">
+              <p class="text-stone-700 text-sm leading-relaxed pl-3.5 font-light">
                 ターゲット層が抱える「4つの悩み・ボトルネック」をチェックボックスやアラートアイコン付きカードで列挙。
               </p>
             </div>
             <div class="space-y-1">
-              <span class="font-bold text-stone-900 flex items-center gap-1.5">
+              <span class="text-xs font-bold text-stone-900 flex items-center gap-2 uppercase tracking-wide">
                 <span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span>主な用途・推奨シーン
               </span>
-              <p class="text-stone-600 leading-relaxed pl-3">
+              <p class="text-stone-700 text-sm leading-relaxed pl-3.5 font-light">
                 LPやサービスページのファーストビュー直下。「こんなお悩みありませんか？」と見込み客の共感を獲得し離脱を防ぐ導入部。
               </p>
             </div>
           </div>
         </div>
-        <div class="text-[11px] font-mono font-bold text-stone-400 uppercase tracking-widest flex items-center gap-1.5 pl-1 pt-1">
+        <div class="text-xs font-mono font-bold text-stone-500 uppercase tracking-widest flex items-center gap-2 pl-1 pt-2">
           <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
           実動プレビュー (Live Component)
         </div>
@@ -486,10 +486,10 @@ import Icon from '../components/common/Icon.astro';
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-stone-300/80">
             <div class="flex flex-wrap items-center gap-2 min-w-0">
               <span class="text-xs font-mono font-bold px-2 py-0.5 bg-stone-900 text-white rounded-xs">#08</span>
-              <h3 class="font-mono text-sm sm:text-base font-bold text-stone-900 break-all">FeatureGrid.astro</h3>
+              <h3 class="font-mono text-base sm:text-lg font-bold text-stone-900 break-all">FeatureGrid.astro</h3>
               <button 
                 type="button" 
-                class="copy-btn shrink-0 inline-flex items-center gap-1 px-2.5 py-1 text-xs font-mono text-stone-600 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-xs transition-colors"
+                class="copy-btn shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-medium text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-sm transition-all"
                 data-copy="FeatureGrid.astro"
                 title="ファイル名をコピー"
               >
@@ -499,33 +499,33 @@ import Icon from '../components/common/Icon.astro';
             </div>
             <button 
               type="button" 
-              class="copy-btn shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3 py-1 text-xs font-mono text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-xs transition-colors"
+              class="copy-btn shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 text-xs font-mono font-medium text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-sm transition-all"
               data-copy="<FeatureGrid />"
               title="タグをコピー"
             >
               <span class="copy-text">&lt;FeatureGrid /&gt; タグコピー</span>
             </button>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-stone-600 pt-3">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 text-sm">
             <div class="space-y-1">
-              <span class="font-bold text-stone-900 flex items-center gap-1.5">
+              <span class="text-xs font-bold text-stone-900 flex items-center gap-2 uppercase tracking-wide">
                 <span class="w-1.5 h-1.5 rounded-full bg-stone-400"></span>コンポーネント概要
               </span>
-              <p class="text-stone-600 leading-relaxed pl-3">
+              <p class="text-stone-700 text-sm leading-relaxed pl-3.5 font-light">
                 3〜4カラム構成で、自社サービス・商品の強みやコアバリューをアイコンと解説テキストで整然と提示するグリッド。
               </p>
             </div>
             <div class="space-y-1">
-              <span class="font-bold text-stone-900 flex items-center gap-1.5">
+              <span class="text-xs font-bold text-stone-900 flex items-center gap-2 uppercase tracking-wide">
                 <span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span>主な用途・推奨シーン
               </span>
-              <p class="text-stone-600 leading-relaxed pl-3">
+              <p class="text-stone-700 text-sm leading-relaxed pl-3.5 font-light">
                 「選ばれる3つの理由」「当社の強み」。工務店の性能・保証解説、製造業の技術的アドバンテージ提示セクション。
               </p>
             </div>
           </div>
         </div>
-        <div class="text-[11px] font-mono font-bold text-stone-400 uppercase tracking-widest flex items-center gap-1.5 pl-1 pt-1">
+        <div class="text-xs font-mono font-bold text-stone-500 uppercase tracking-widest flex items-center gap-2 pl-1 pt-2">
           <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
           実動プレビュー (Live Component)
         </div>
@@ -539,10 +539,10 @@ import Icon from '../components/common/Icon.astro';
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-stone-300/80">
             <div class="flex flex-wrap items-center gap-2 min-w-0">
               <span class="text-xs font-mono font-bold px-2 py-0.5 bg-stone-900 text-white rounded-xs">#09</span>
-              <h3 class="font-mono text-sm sm:text-base font-bold text-stone-900 break-all">AlternatingRows.astro</h3>
+              <h3 class="font-mono text-base sm:text-lg font-bold text-stone-900 break-all">AlternatingRows.astro</h3>
               <button 
                 type="button" 
-                class="copy-btn shrink-0 inline-flex items-center gap-1 px-2.5 py-1 text-xs font-mono text-stone-600 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-xs transition-colors"
+                class="copy-btn shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-medium text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-sm transition-all"
                 data-copy="AlternatingRows.astro"
                 title="ファイル名をコピー"
               >
@@ -552,33 +552,33 @@ import Icon from '../components/common/Icon.astro';
             </div>
             <button 
               type="button" 
-              class="copy-btn shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3 py-1 text-xs font-mono text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-xs transition-colors"
+              class="copy-btn shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 text-xs font-mono font-medium text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-sm transition-all"
               data-copy="<AlternatingRows />"
               title="タグをコピー"
             >
               <span class="copy-text">&lt;AlternatingRows /&gt; タグコピー</span>
             </button>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-stone-600 pt-3">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 text-sm">
             <div class="space-y-1">
-              <span class="font-bold text-stone-900 flex items-center gap-1.5">
+              <span class="text-xs font-bold text-stone-900 flex items-center gap-2 uppercase tracking-wide">
                 <span class="w-1.5 h-1.5 rounded-full bg-stone-400"></span>コンポーネント概要
               </span>
-              <p class="text-stone-600 leading-relaxed pl-3">
+              <p class="text-stone-700 text-sm leading-relaxed pl-3.5 font-light">
                 写真と詳細テキストが左右交互（ジグザグ）に入れ替わり、1つひとつの特徴を写真付きでじっくり読ませるブロック。
               </p>
             </div>
             <div class="space-y-1">
-              <span class="font-bold text-stone-900 flex items-center gap-1.5">
+              <span class="text-xs font-bold text-stone-900 flex items-center gap-2 uppercase tracking-wide">
                 <span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span>主な用途・推奨シーン
               </span>
-              <p class="text-stone-600 leading-relaxed pl-3">
+              <p class="text-stone-700 text-sm leading-relaxed pl-3.5 font-light">
                 家づくりのこだわり紹介、製品ラインナップ詳細、事業案内詳細ページなど、スクロールしながら丁寧に説明したい箇所。
               </p>
             </div>
           </div>
         </div>
-        <div class="text-[11px] font-mono font-bold text-stone-400 uppercase tracking-widest flex items-center gap-1.5 pl-1 pt-1">
+        <div class="text-xs font-mono font-bold text-stone-500 uppercase tracking-widest flex items-center gap-2 pl-1 pt-2">
           <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
           実動プレビュー (Live Component)
         </div>
@@ -593,10 +593,10 @@ import Icon from '../components/common/Icon.astro';
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-stone-300/80">
             <div class="flex flex-wrap items-center gap-2 min-w-0">
               <span class="text-xs font-mono font-bold px-2 py-0.5 bg-stone-900 text-white rounded-xs">#10</span>
-              <h3 class="font-mono text-sm sm:text-base font-bold text-stone-900 break-all">KeyBenefits.astro</h3>
+              <h3 class="font-mono text-base sm:text-lg font-bold text-stone-900 break-all">KeyBenefits.astro</h3>
               <button 
                 type="button" 
-                class="copy-btn shrink-0 inline-flex items-center gap-1 px-2.5 py-1 text-xs font-mono text-stone-600 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-xs transition-colors"
+                class="copy-btn shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-medium text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-sm transition-all"
                 data-copy="KeyBenefits.astro"
                 title="ファイル名をコピー"
               >
@@ -606,33 +606,33 @@ import Icon from '../components/common/Icon.astro';
             </div>
             <button 
               type="button" 
-              class="copy-btn shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3 py-1 text-xs font-mono text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-xs transition-colors"
+              class="copy-btn shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 text-xs font-mono font-medium text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-sm transition-all"
               data-copy="<KeyBenefits />"
               title="タグをコピー"
             >
               <span class="copy-text">&lt;KeyBenefits /&gt; タグコピー</span>
             </button>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-stone-600 pt-3">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 text-sm">
             <div class="space-y-1">
-              <span class="font-bold text-stone-900 flex items-center gap-1.5">
+              <span class="text-xs font-bold text-stone-900 flex items-center gap-2 uppercase tracking-wide">
                 <span class="w-1.5 h-1.5 rounded-full bg-stone-400"></span>コンポーネント概要
               </span>
-              <p class="text-stone-600 leading-relaxed pl-3">
+              <p class="text-stone-700 text-sm leading-relaxed pl-3.5 font-light">
                 最も強調したい「3大メリット」をナンバリングバッジ付きのワイドカードで訴求する強力なベネフィット提示セクション。
               </p>
             </div>
             <div class="space-y-1">
-              <span class="font-bold text-stone-900 flex items-center gap-1.5">
+              <span class="text-xs font-bold text-stone-900 flex items-center gap-2 uppercase tracking-wide">
                 <span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span>主な用途・推奨シーン
               </span>
-              <p class="text-stone-600 leading-relaxed pl-3">
+              <p class="text-stone-700 text-sm leading-relaxed pl-3.5 font-light">
                 競合他社との決定的な差別化ポイント提示。リニューアルLP、見積・相談検討前の最後の一押し。
               </p>
             </div>
           </div>
         </div>
-        <div class="text-[11px] font-mono font-bold text-stone-400 uppercase tracking-widest flex items-center gap-1.5 pl-1 pt-1">
+        <div class="text-xs font-mono font-bold text-stone-500 uppercase tracking-widest flex items-center gap-2 pl-1 pt-2">
           <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
           実動プレビュー (Live Component)
         </div>
@@ -657,10 +657,10 @@ import Icon from '../components/common/Icon.astro';
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-stone-300/80">
             <div class="flex flex-wrap items-center gap-2 min-w-0">
               <span class="text-xs font-mono font-bold px-2 py-0.5 bg-stone-900 text-white rounded-xs">#11</span>
-              <h3 class="font-mono text-sm sm:text-base font-bold text-stone-900 break-all">PricingCards.astro</h3>
+              <h3 class="font-mono text-base sm:text-lg font-bold text-stone-900 break-all">PricingCards.astro</h3>
               <button 
                 type="button" 
-                class="copy-btn shrink-0 inline-flex items-center gap-1 px-2.5 py-1 text-xs font-mono text-stone-600 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-xs transition-colors"
+                class="copy-btn shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-medium text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-sm transition-all"
                 data-copy="PricingCards.astro"
                 title="ファイル名をコピー"
               >
@@ -670,33 +670,33 @@ import Icon from '../components/common/Icon.astro';
             </div>
             <button 
               type="button" 
-              class="copy-btn shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3 py-1 text-xs font-mono text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-xs transition-colors"
+              class="copy-btn shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 text-xs font-mono font-medium text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-sm transition-all"
               data-copy="<PricingCards />"
               title="タグをコピー"
             >
               <span class="copy-text">&lt;PricingCards /&gt; タグコピー</span>
             </button>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-stone-600 pt-3">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 text-sm">
             <div class="space-y-1">
-              <span class="font-bold text-stone-900 flex items-center gap-1.5">
+              <span class="text-xs font-bold text-stone-900 flex items-center gap-2 uppercase tracking-wide">
                 <span class="w-1.5 h-1.5 rounded-full bg-stone-400"></span>コンポーネント概要
               </span>
-              <p class="text-stone-600 leading-relaxed pl-3">
+              <p class="text-stone-700 text-sm leading-relaxed pl-3.5 font-light">
                 料金プラン（ライト/スタンダード/プレミアム）を3列カード形式で比較し、おすすめプランに「推奨バッジ」を付与した料金表。
               </p>
             </div>
             <div class="space-y-1">
-              <span class="font-bold text-stone-900 flex items-center gap-1.5">
+              <span class="text-xs font-bold text-stone-900 flex items-center gap-2 uppercase tracking-wide">
                 <span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span>主な用途・推奨シーン
               </span>
-              <p class="text-stone-600 leading-relaxed pl-3">
+              <p class="text-stone-700 text-sm leading-relaxed pl-3.5 font-light">
                 月額保守プラン、定額制リフォームパック、士業の顧問料プランなど、複数選択肢から推奨プランへスムーズに誘導したいシーン。
               </p>
             </div>
           </div>
         </div>
-        <div class="text-[11px] font-mono font-bold text-stone-400 uppercase tracking-widest flex items-center gap-1.5 pl-1 pt-1">
+        <div class="text-xs font-mono font-bold text-stone-500 uppercase tracking-widest flex items-center gap-2 pl-1 pt-2">
           <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
           実動プレビュー (Live Component)
         </div>
@@ -711,10 +711,10 @@ import Icon from '../components/common/Icon.astro';
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-stone-300/80">
             <div class="flex flex-wrap items-center gap-2 min-w-0">
               <span class="text-xs font-mono font-bold px-2 py-0.5 bg-stone-900 text-white rounded-xs">#12</span>
-              <h3 class="font-mono text-sm sm:text-base font-bold text-stone-900 break-all">ComparisonTable.astro</h3>
+              <h3 class="font-mono text-base sm:text-lg font-bold text-stone-900 break-all">ComparisonTable.astro</h3>
               <button 
                 type="button" 
-                class="copy-btn shrink-0 inline-flex items-center gap-1 px-2.5 py-1 text-xs font-mono text-stone-600 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-xs transition-colors"
+                class="copy-btn shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-medium text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-sm transition-all"
                 data-copy="ComparisonTable.astro"
                 title="ファイル名をコピー"
               >
@@ -724,33 +724,33 @@ import Icon from '../components/common/Icon.astro';
             </div>
             <button 
               type="button" 
-              class="copy-btn shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3 py-1 text-xs font-mono text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-xs transition-colors"
+              class="copy-btn shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 text-xs font-mono font-medium text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-sm transition-all"
               data-copy="<ComparisonTable />"
               title="タグをコピー"
             >
               <span class="copy-text">&lt;ComparisonTable /&gt; タグコピー</span>
             </button>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-stone-600 pt-3">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 text-sm">
             <div class="space-y-1">
-              <span class="font-bold text-stone-900 flex items-center gap-1.5">
+              <span class="text-xs font-bold text-stone-900 flex items-center gap-2 uppercase tracking-wide">
                 <span class="w-1.5 h-1.5 rounded-full bg-stone-400"></span>コンポーネント概要
               </span>
-              <p class="text-stone-600 leading-relaxed pl-3">
+              <p class="text-stone-700 text-sm leading-relaxed pl-3.5 font-light">
                 「旧来のやり方（競合・WordPress・一般業者等）」vs「自社サービス」を差異や項目別評価で対比する比較テーブル。
               </p>
             </div>
             <div class="space-y-1">
-              <span class="font-bold text-stone-900 flex items-center gap-1.5">
+              <span class="text-xs font-bold text-stone-900 flex items-center gap-2 uppercase tracking-wide">
                 <span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span>主な用途・推奨シーン
               </span>
-              <p class="text-stone-600 leading-relaxed pl-3">
+              <p class="text-stone-700 text-sm leading-relaxed pl-3.5 font-light">
                 サービスLP、相見積もり対策ページ。「なぜ他社ではなく当社を選ぶべきか」を客観的かつ論理的に納得させるシーン。
               </p>
             </div>
           </div>
         </div>
-        <div class="text-[11px] font-mono font-bold text-stone-400 uppercase tracking-widest flex items-center gap-1.5 pl-1 pt-1">
+        <div class="text-xs font-mono font-bold text-stone-500 uppercase tracking-widest flex items-center gap-2 pl-1 pt-2">
           <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
           実動プレビュー (Live Component)
         </div>
@@ -764,10 +764,10 @@ import Icon from '../components/common/Icon.astro';
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-stone-300/80">
             <div class="flex flex-wrap items-center gap-2 min-w-0">
               <span class="text-xs font-mono font-bold px-2 py-0.5 bg-stone-900 text-white rounded-xs">#13</span>
-              <h3 class="font-mono text-sm sm:text-base font-bold text-stone-900 break-all">FeatureChecklist.astro</h3>
+              <h3 class="font-mono text-base sm:text-lg font-bold text-stone-900 break-all">FeatureChecklist.astro</h3>
               <button 
                 type="button" 
-                class="copy-btn shrink-0 inline-flex items-center gap-1 px-2.5 py-1 text-xs font-mono text-stone-600 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-xs transition-colors"
+                class="copy-btn shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-medium text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-sm transition-all"
                 data-copy="FeatureChecklist.astro"
                 title="ファイル名をコピー"
               >
@@ -777,33 +777,33 @@ import Icon from '../components/common/Icon.astro';
             </div>
             <button 
               type="button" 
-              class="copy-btn shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3 py-1 text-xs font-mono text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-xs transition-colors"
+              class="copy-btn shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 text-xs font-mono font-medium text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-sm transition-all"
               data-copy="<FeatureChecklist />"
               title="タグをコピー"
             >
               <span class="copy-text">&lt;FeatureChecklist /&gt; タグコピー</span>
             </button>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-stone-600 pt-3">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 text-sm">
             <div class="space-y-1">
-              <span class="font-bold text-stone-900 flex items-center gap-1.5">
+              <span class="text-xs font-bold text-stone-900 flex items-center gap-2 uppercase tracking-wide">
                 <span class="w-1.5 h-1.5 rounded-full bg-stone-400"></span>コンポーネント概要
               </span>
-              <p class="text-stone-600 leading-relaxed pl-3">
+              <p class="text-stone-700 text-sm leading-relaxed pl-3.5 font-light">
                 提供機能やサポート範囲の「含む・含まない」をチェックマークで一覧化した詳細機能チェックリスト。
               </p>
             </div>
             <div class="space-y-1">
-              <span class="font-bold text-stone-900 flex items-center gap-1.5">
+              <span class="text-xs font-bold text-stone-900 flex items-center gap-2 uppercase tracking-wide">
                 <span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span>主な用途・推奨シーン
               </span>
-              <p class="text-stone-600 leading-relaxed pl-3">
+              <p class="text-stone-700 text-sm leading-relaxed pl-3.5 font-light">
                 見積もり仕様の明確化、契約トラブル防止、高単価プランの充実度をアピールしたいWeb制作・保守料金ページ。
               </p>
             </div>
           </div>
         </div>
-        <div class="text-[11px] font-mono font-bold text-stone-400 uppercase tracking-widest flex items-center gap-1.5 pl-1 pt-1">
+        <div class="text-xs font-mono font-bold text-stone-500 uppercase tracking-widest flex items-center gap-2 pl-1 pt-2">
           <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
           実動プレビュー (Live Component)
         </div>
@@ -828,10 +828,10 @@ import Icon from '../components/common/Icon.astro';
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-stone-300/80">
             <div class="flex flex-wrap items-center gap-2 min-w-0">
               <span class="text-xs font-mono font-bold px-2 py-0.5 bg-stone-900 text-white rounded-xs">#14</span>
-              <h3 class="font-mono text-sm sm:text-base font-bold text-stone-900 break-all">CaseStudies.astro</h3>
+              <h3 class="font-mono text-base sm:text-lg font-bold text-stone-900 break-all">CaseStudies.astro</h3>
               <button 
                 type="button" 
-                class="copy-btn shrink-0 inline-flex items-center gap-1 px-2.5 py-1 text-xs font-mono text-stone-600 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-xs transition-colors"
+                class="copy-btn shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-medium text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-sm transition-all"
                 data-copy="CaseStudies.astro"
                 title="ファイル名をコピー"
               >
@@ -841,33 +841,33 @@ import Icon from '../components/common/Icon.astro';
             </div>
             <button 
               type="button" 
-              class="copy-btn shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3 py-1 text-xs font-mono text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-xs transition-colors"
+              class="copy-btn shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 text-xs font-mono font-medium text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-sm transition-all"
               data-copy="<CaseStudies />"
               title="タグをコピー"
             >
               <span class="copy-text">&lt;CaseStudies /&gt; タグコピー</span>
             </button>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-stone-600 pt-3">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 text-sm">
             <div class="space-y-1">
-              <span class="font-bold text-stone-900 flex items-center gap-1.5">
+              <span class="text-xs font-bold text-stone-900 flex items-center gap-2 uppercase tracking-wide">
                 <span class="w-1.5 h-1.5 rounded-full bg-stone-400"></span>コンポーネント概要
               </span>
-              <p class="text-stone-600 leading-relaxed pl-3">
+              <p class="text-stone-700 text-sm leading-relaxed pl-3.5 font-light">
                 顧客企業名、課題・導入後の定量的成果（改善数値）、写真、タグをまとめた導入実績・施工事例カード一覧。
               </p>
             </div>
             <div class="space-y-1">
-              <span class="font-bold text-stone-900 flex items-center gap-1.5">
+              <span class="text-xs font-bold text-stone-900 flex items-center gap-2 uppercase tracking-wide">
                 <span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span>主な用途・推奨シーン
               </span>
-              <p class="text-stone-600 leading-relaxed pl-3">
+              <p class="text-stone-700 text-sm leading-relaxed pl-3.5 font-light">
                 工務店の新築・リノベ施工例、製造業の納入実績、士業の解決事例。コンバージョン率を高める最重要パーツ。
               </p>
             </div>
           </div>
         </div>
-        <div class="text-[11px] font-mono font-bold text-stone-400 uppercase tracking-widest flex items-center gap-1.5 pl-1 pt-1">
+        <div class="text-xs font-mono font-bold text-stone-500 uppercase tracking-widest flex items-center gap-2 pl-1 pt-2">
           <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
           実動プレビュー (Live Component)
         </div>
@@ -882,10 +882,10 @@ import Icon from '../components/common/Icon.astro';
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-stone-300/80">
             <div class="flex flex-wrap items-center gap-2 min-w-0">
               <span class="text-xs font-mono font-bold px-2 py-0.5 bg-stone-900 text-white rounded-xs">#15</span>
-              <h3 class="font-mono text-sm sm:text-base font-bold text-stone-900 break-all">BentoGrid.astro</h3>
+              <h3 class="font-mono text-base sm:text-lg font-bold text-stone-900 break-all">BentoGrid.astro</h3>
               <button 
                 type="button" 
-                class="copy-btn shrink-0 inline-flex items-center gap-1 px-2.5 py-1 text-xs font-mono text-stone-600 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-xs transition-colors"
+                class="copy-btn shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-medium text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-sm transition-all"
                 data-copy="BentoGrid.astro"
                 title="ファイル名をコピー"
               >
@@ -895,33 +895,33 @@ import Icon from '../components/common/Icon.astro';
             </div>
             <button 
               type="button" 
-              class="copy-btn shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3 py-1 text-xs font-mono text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-xs transition-colors"
+              class="copy-btn shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 text-xs font-mono font-medium text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-sm transition-all"
               data-copy="<BentoGrid />"
               title="タグをコピー"
             >
               <span class="copy-text">&lt;BentoGrid /&gt; タグコピー</span>
             </button>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-stone-600 pt-3">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 text-sm">
             <div class="space-y-1">
-              <span class="font-bold text-stone-900 flex items-center gap-1.5">
+              <span class="text-xs font-bold text-stone-900 flex items-center gap-2 uppercase tracking-wide">
                 <span class="w-1.5 h-1.5 rounded-full bg-stone-400"></span>コンポーネント概要
               </span>
-              <p class="text-stone-600 leading-relaxed pl-3">
+              <p class="text-stone-700 text-sm leading-relaxed pl-3.5 font-light">
                 大小異なる角丸ブロックを組み合わせた、モダンUIによる機能・エコシステム・多角的価値の可視化グリッド。
               </p>
             </div>
             <div class="space-y-1">
-              <span class="font-bold text-stone-900 flex items-center gap-1.5">
+              <span class="text-xs font-bold text-stone-900 flex items-center gap-2 uppercase tracking-wide">
                 <span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span>主な用途・推奨シーン
               </span>
-              <p class="text-stone-600 leading-relaxed pl-3">
+              <p class="text-stone-700 text-sm leading-relaxed pl-3.5 font-light">
                 多面的な技術力・サービス全体像・企業カルチャーを1画面でモダンに俯瞰させたいトップページやサービス紹介。
               </p>
             </div>
           </div>
         </div>
-        <div class="text-[11px] font-mono font-bold text-stone-400 uppercase tracking-widest flex items-center gap-1.5 pl-1 pt-1">
+        <div class="text-xs font-mono font-bold text-stone-500 uppercase tracking-widest flex items-center gap-2 pl-1 pt-2">
           <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
           実動プレビュー (Live Component)
         </div>
@@ -935,10 +935,10 @@ import Icon from '../components/common/Icon.astro';
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-stone-300/80">
             <div class="flex flex-wrap items-center gap-2 min-w-0">
               <span class="text-xs font-mono font-bold px-2 py-0.5 bg-stone-900 text-white rounded-xs">#16</span>
-              <h3 class="font-mono text-sm sm:text-base font-bold text-stone-900 break-all">ImageGallery.astro</h3>
+              <h3 class="font-mono text-base sm:text-lg font-bold text-stone-900 break-all">ImageGallery.astro</h3>
               <button 
                 type="button" 
-                class="copy-btn shrink-0 inline-flex items-center gap-1 px-2.5 py-1 text-xs font-mono text-stone-600 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-xs transition-colors"
+                class="copy-btn shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-medium text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-sm transition-all"
                 data-copy="ImageGallery.astro"
                 title="ファイル名をコピー"
               >
@@ -948,33 +948,33 @@ import Icon from '../components/common/Icon.astro';
             </div>
             <button 
               type="button" 
-              class="copy-btn shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3 py-1 text-xs font-mono text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-xs transition-colors"
+              class="copy-btn shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 text-xs font-mono font-medium text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-sm transition-all"
               data-copy="<ImageGallery />"
               title="タグをコピー"
             >
               <span class="copy-text">&lt;ImageGallery /&gt; タグコピー</span>
             </button>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-stone-600 pt-3">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 text-sm">
             <div class="space-y-1">
-              <span class="font-bold text-stone-900 flex items-center gap-1.5">
+              <span class="text-xs font-bold text-stone-900 flex items-center gap-2 uppercase tracking-wide">
                 <span class="w-1.5 h-1.5 rounded-full bg-stone-400"></span>コンポーネント概要
               </span>
-              <p class="text-stone-600 leading-relaxed pl-3">
+              <p class="text-stone-700 text-sm leading-relaxed pl-3.5 font-light">
                 マウスホバーでタイトルやカテゴリが美しく浮かび上がる、統一アスペクト比の写真・画像ギャラリー。
               </p>
             </div>
             <div class="space-y-1">
-              <span class="font-bold text-stone-900 flex items-center gap-1.5">
+              <span class="text-xs font-bold text-stone-900 flex items-center gap-2 uppercase tracking-wide">
                 <span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span>主な用途・推奨シーン
               </span>
-              <p class="text-stone-600 leading-relaxed pl-3">
+              <p class="text-stone-700 text-sm leading-relaxed pl-3.5 font-light">
                 建築物・内観・外観ギャラリー、職人の作業風景、製造業の精密加工サンプルや製品ラインナップ紹介。
               </p>
             </div>
           </div>
         </div>
-        <div class="text-[11px] font-mono font-bold text-stone-400 uppercase tracking-widest flex items-center gap-1.5 pl-1 pt-1">
+        <div class="text-xs font-mono font-bold text-stone-500 uppercase tracking-widest flex items-center gap-2 pl-1 pt-2">
           <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
           実動プレビュー (Live Component)
         </div>
@@ -999,10 +999,10 @@ import Icon from '../components/common/Icon.astro';
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-stone-300/80">
             <div class="flex flex-wrap items-center gap-2 min-w-0">
               <span class="text-xs font-mono font-bold px-2 py-0.5 bg-stone-900 text-white rounded-xs">#17</span>
-              <h3 class="font-mono text-sm sm:text-base font-bold text-stone-900 break-all">ProfileMessage.astro</h3>
+              <h3 class="font-mono text-base sm:text-lg font-bold text-stone-900 break-all">ProfileMessage.astro</h3>
               <button 
                 type="button" 
-                class="copy-btn shrink-0 inline-flex items-center gap-1 px-2.5 py-1 text-xs font-mono text-stone-600 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-xs transition-colors"
+                class="copy-btn shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-medium text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-sm transition-all"
                 data-copy="ProfileMessage.astro"
                 title="ファイル名をコピー"
               >
@@ -1012,33 +1012,33 @@ import Icon from '../components/common/Icon.astro';
             </div>
             <button 
               type="button" 
-              class="copy-btn shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3 py-1 text-xs font-mono text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-xs transition-colors"
+              class="copy-btn shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 text-xs font-mono font-medium text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-sm transition-all"
               data-copy="<ProfileMessage />"
               title="タグをコピー"
             >
               <span class="copy-text">&lt;ProfileMessage /&gt; タグコピー</span>
             </button>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-stone-600 pt-3">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 text-sm">
             <div class="space-y-1">
-              <span class="font-bold text-stone-900 flex items-center gap-1.5">
+              <span class="text-xs font-bold text-stone-900 flex items-center gap-2 uppercase tracking-wide">
                 <span class="w-1.5 h-1.5 rounded-full bg-stone-400"></span>コンポーネント概要
               </span>
-              <p class="text-stone-600 leading-relaxed pl-3">
+              <p class="text-stone-700 text-sm leading-relaxed pl-3.5 font-light">
                 代表取締役・所長の顔写真、創業の想い・経営ビジョン、略歴、直筆風署名欄を統合した人物メッセージカード。
               </p>
             </div>
             <div class="space-y-1">
-              <span class="font-bold text-stone-900 flex items-center gap-1.5">
+              <span class="text-xs font-bold text-stone-900 flex items-center gap-2 uppercase tracking-wide">
                 <span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span>主な用途・推奨シーン
               </span>
-              <p class="text-stone-600 leading-relaxed pl-3">
+              <p class="text-stone-700 text-sm leading-relaxed pl-3.5 font-light">
                 地域ビジネスで成否を分ける「代表者の人柄・顔の見える安心感」を伝える会社概要、代表挨拶ページ。
               </p>
             </div>
           </div>
         </div>
-        <div class="text-[11px] font-mono font-bold text-stone-400 uppercase tracking-widest flex items-center gap-1.5 pl-1 pt-1">
+        <div class="text-xs font-mono font-bold text-stone-500 uppercase tracking-widest flex items-center gap-2 pl-1 pt-2">
           <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
           実動プレビュー (Live Component)
         </div>
@@ -1053,10 +1053,10 @@ import Icon from '../components/common/Icon.astro';
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-stone-300/80">
             <div class="flex flex-wrap items-center gap-2 min-w-0">
               <span class="text-xs font-mono font-bold px-2 py-0.5 bg-stone-900 text-white rounded-xs">#18</span>
-              <h3 class="font-mono text-sm sm:text-base font-bold text-stone-900 break-all">TimelineHistory.astro</h3>
+              <h3 class="font-mono text-base sm:text-lg font-bold text-stone-900 break-all">TimelineHistory.astro</h3>
               <button 
                 type="button" 
-                class="copy-btn shrink-0 inline-flex items-center gap-1 px-2.5 py-1 text-xs font-mono text-stone-600 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-xs transition-colors"
+                class="copy-btn shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-medium text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-sm transition-all"
                 data-copy="TimelineHistory.astro"
                 title="ファイル名をコピー"
               >
@@ -1066,33 +1066,33 @@ import Icon from '../components/common/Icon.astro';
             </div>
             <button 
               type="button" 
-              class="copy-btn shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3 py-1 text-xs font-mono text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-xs transition-colors"
+              class="copy-btn shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 text-xs font-mono font-medium text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-sm transition-all"
               data-copy="<TimelineHistory />"
               title="タグをコピー"
             >
               <span class="copy-text">&lt;TimelineHistory /&gt; タグコピー</span>
             </button>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-stone-600 pt-3">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 text-sm">
             <div class="space-y-1">
-              <span class="font-bold text-stone-900 flex items-center gap-1.5">
+              <span class="text-xs font-bold text-stone-900 flex items-center gap-2 uppercase tracking-wide">
                 <span class="w-1.5 h-1.5 rounded-full bg-stone-400"></span>コンポーネント概要
               </span>
-              <p class="text-stone-600 leading-relaxed pl-3">
+              <p class="text-stone-700 text-sm leading-relaxed pl-3.5 font-light">
                 創業から現在までの歩み、受賞歴、主要プロジェクトの歴史を縦型軸線で美しく表現した沿革タイムライン。
               </p>
             </div>
             <div class="space-y-1">
-              <span class="font-bold text-stone-900 flex items-center gap-1.5">
+              <span class="text-xs font-bold text-stone-900 flex items-center gap-2 uppercase tracking-wide">
                 <span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span>主な用途・推奨シーン
               </span>
-              <p class="text-stone-600 leading-relaxed pl-3">
+              <p class="text-stone-700 text-sm leading-relaxed pl-3.5 font-light">
                 創業年数が長い老舗工務店、地域で信頼を築いてきた製造業・企業の会社案内・沿革セクション。
               </p>
             </div>
           </div>
         </div>
-        <div class="text-[11px] font-mono font-bold text-stone-400 uppercase tracking-widest flex items-center gap-1.5 pl-1 pt-1">
+        <div class="text-xs font-mono font-bold text-stone-500 uppercase tracking-widest flex items-center gap-2 pl-1 pt-2">
           <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
           実動プレビュー (Live Component)
         </div>
@@ -1106,10 +1106,10 @@ import Icon from '../components/common/Icon.astro';
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-stone-300/80">
             <div class="flex flex-wrap items-center gap-2 min-w-0">
               <span class="text-xs font-mono font-bold px-2 py-0.5 bg-stone-900 text-white rounded-xs">#19</span>
-              <h3 class="font-mono text-sm sm:text-base font-bold text-stone-900 break-all">StatCounters.astro</h3>
+              <h3 class="font-mono text-base sm:text-lg font-bold text-stone-900 break-all">StatCounters.astro</h3>
               <button 
                 type="button" 
-                class="copy-btn shrink-0 inline-flex items-center gap-1 px-2.5 py-1 text-xs font-mono text-stone-600 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-xs transition-colors"
+                class="copy-btn shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-medium text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-sm transition-all"
                 data-copy="StatCounters.astro"
                 title="ファイル名をコピー"
               >
@@ -1119,33 +1119,33 @@ import Icon from '../components/common/Icon.astro';
             </div>
             <button 
               type="button" 
-              class="copy-btn shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3 py-1 text-xs font-mono text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-xs transition-colors"
+              class="copy-btn shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 text-xs font-mono font-medium text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-sm transition-all"
               data-copy="<StatCounters />"
               title="タグをコピー"
             >
               <span class="copy-text">&lt;StatCounters /&gt; タグコピー</span>
             </button>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-stone-600 pt-3">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 text-sm">
             <div class="space-y-1">
-              <span class="font-bold text-stone-900 flex items-center gap-1.5">
+              <span class="text-xs font-bold text-stone-900 flex items-center gap-2 uppercase tracking-wide">
                 <span class="w-1.5 h-1.5 rounded-full bg-stone-400"></span>コンポーネント概要
               </span>
-              <p class="text-stone-600 leading-relaxed pl-3">
+              <p class="text-stone-700 text-sm leading-relaxed pl-3.5 font-light">
                 創業年数、施工件数、顧客満足度、表示速度などの客観的な実績数値を大きく掲げる統計ハイライト。
               </p>
             </div>
             <div class="space-y-1">
-              <span class="font-bold text-stone-900 flex items-center gap-1.5">
+              <span class="text-xs font-bold text-stone-900 flex items-center gap-2 uppercase tracking-wide">
                 <span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span>主な用途・推奨シーン
               </span>
-              <p class="text-stone-600 leading-relaxed pl-3">
+              <p class="text-stone-700 text-sm leading-relaxed pl-3.5 font-light">
                 ファーストビュー直下や事例セクションの前後。「数字で見る当社」として、直感的な説得力・信頼感を与えるシーン。
               </p>
             </div>
           </div>
         </div>
-        <div class="text-[11px] font-mono font-bold text-stone-400 uppercase tracking-widest flex items-center gap-1.5 pl-1 pt-1">
+        <div class="text-xs font-mono font-bold text-stone-500 uppercase tracking-widest flex items-center gap-2 pl-1 pt-2">
           <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
           実動プレビュー (Live Component)
         </div>
@@ -1170,10 +1170,10 @@ import Icon from '../components/common/Icon.astro';
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-stone-300/80">
             <div class="flex flex-wrap items-center gap-2 min-w-0">
               <span class="text-xs font-mono font-bold px-2 py-0.5 bg-stone-900 text-white rounded-xs">#20</span>
-              <h3 class="font-mono text-sm sm:text-base font-bold text-stone-900 break-all">AccordionFAQ.astro</h3>
+              <h3 class="font-mono text-base sm:text-lg font-bold text-stone-900 break-all">AccordionFAQ.astro</h3>
               <button 
                 type="button" 
-                class="copy-btn shrink-0 inline-flex items-center gap-1 px-2.5 py-1 text-xs font-mono text-stone-600 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-xs transition-colors"
+                class="copy-btn shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-medium text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-sm transition-all"
                 data-copy="AccordionFAQ.astro"
                 title="ファイル名をコピー"
               >
@@ -1183,33 +1183,33 @@ import Icon from '../components/common/Icon.astro';
             </div>
             <button 
               type="button" 
-              class="copy-btn shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3 py-1 text-xs font-mono text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-xs transition-colors"
+              class="copy-btn shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 text-xs font-mono font-medium text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-sm transition-all"
               data-copy="<AccordionFAQ />"
               title="タグをコピー"
             >
               <span class="copy-text">&lt;AccordionFAQ /&gt; タグコピー</span>
             </button>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-stone-600 pt-3">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 text-sm">
             <div class="space-y-1">
-              <span class="font-bold text-stone-900 flex items-center gap-1.5">
+              <span class="text-xs font-bold text-stone-900 flex items-center gap-2 uppercase tracking-wide">
                 <span class="w-1.5 h-1.5 rounded-full bg-stone-400"></span>コンポーネント概要
               </span>
-              <p class="text-stone-600 leading-relaxed pl-3">
+              <p class="text-stone-700 text-sm leading-relaxed pl-3.5 font-light">
                 HTMLネイティブ `<details>` を使用し、JS不要で軽量・確実に動作するモダンなQ&Aアコーディオン。
               </p>
             </div>
             <div class="space-y-1">
-              <span class="font-bold text-stone-900 flex items-center gap-1.5">
+              <span class="text-xs font-bold text-stone-900 flex items-center gap-2 uppercase tracking-wide">
                 <span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span>主な用途・推奨シーン
               </span>
-              <p class="text-stone-600 leading-relaxed pl-3">
+              <p class="text-stone-700 text-sm leading-relaxed pl-3.5 font-light">
                 問い合わせ直前の不安・疑問解消。「予算」「工期」「対応エリア」「他社との違い」を整理して離脱防止。
               </p>
             </div>
           </div>
         </div>
-        <div class="text-[11px] font-mono font-bold text-stone-400 uppercase tracking-widest flex items-center gap-1.5 pl-1 pt-1">
+        <div class="text-xs font-mono font-bold text-stone-500 uppercase tracking-widest flex items-center gap-2 pl-1 pt-2">
           <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
           実動プレビュー (Live Component)
         </div>
@@ -1224,10 +1224,10 @@ import Icon from '../components/common/Icon.astro';
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-stone-300/80">
             <div class="flex flex-wrap items-center gap-2 min-w-0">
               <span class="text-xs font-mono font-bold px-2 py-0.5 bg-stone-900 text-white rounded-xs">#21</span>
-              <h3 class="font-mono text-sm sm:text-base font-bold text-stone-900 break-all">TabbedContent.astro</h3>
+              <h3 class="font-mono text-base sm:text-lg font-bold text-stone-900 break-all">TabbedContent.astro</h3>
               <button 
                 type="button" 
-                class="copy-btn shrink-0 inline-flex items-center gap-1 px-2.5 py-1 text-xs font-mono text-stone-600 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-xs transition-colors"
+                class="copy-btn shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-medium text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-sm transition-all"
                 data-copy="TabbedContent.astro"
                 title="ファイル名をコピー"
               >
@@ -1237,33 +1237,33 @@ import Icon from '../components/common/Icon.astro';
             </div>
             <button 
               type="button" 
-              class="copy-btn shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3 py-1 text-xs font-mono text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-xs transition-colors"
+              class="copy-btn shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 text-xs font-mono font-medium text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-sm transition-all"
               data-copy="<TabbedContent />"
               title="タグをコピー"
             >
               <span class="copy-text">&lt;TabbedContent /&gt; タグコピー</span>
             </button>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-stone-600 pt-3">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 text-sm">
             <div class="space-y-1">
-              <span class="font-bold text-stone-900 flex items-center gap-1.5">
+              <span class="text-xs font-bold text-stone-900 flex items-center gap-2 uppercase tracking-wide">
                 <span class="w-1.5 h-1.5 rounded-full bg-stone-400"></span>コンポーネント概要
               </span>
-              <p class="text-stone-600 leading-relaxed pl-3">
+              <p class="text-stone-700 text-sm leading-relaxed pl-3.5 font-light">
                 業種別（工務店/製造業/士業）や対象顧客別に、同一スペースで内容を切り替えられるタブUI。
               </p>
             </div>
             <div class="space-y-1">
-              <span class="font-bold text-stone-900 flex items-center gap-1.5">
+              <span class="text-xs font-bold text-stone-900 flex items-center gap-2 uppercase tracking-wide">
                 <span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span>主な用途・推奨シーン
               </span>
-              <p class="text-stone-600 leading-relaxed pl-3">
+              <p class="text-stone-700 text-sm leading-relaxed pl-3.5 font-light">
                 複数のターゲット層を抱える企業サイト。縦長になりすぎるページをすっきり整理し、目的情報へ素早く誘導。
               </p>
             </div>
           </div>
         </div>
-        <div class="text-[11px] font-mono font-bold text-stone-400 uppercase tracking-widest flex items-center gap-1.5 pl-1 pt-1">
+        <div class="text-xs font-mono font-bold text-stone-500 uppercase tracking-widest flex items-center gap-2 pl-1 pt-2">
           <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
           実動プレビュー (Live Component)
         </div>
@@ -1277,10 +1277,10 @@ import Icon from '../components/common/Icon.astro';
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-stone-300/80">
             <div class="flex flex-wrap items-center gap-2 min-w-0">
               <span class="text-xs font-mono font-bold px-2 py-0.5 bg-stone-900 text-white rounded-xs">#22</span>
-              <h3 class="font-mono text-sm sm:text-base font-bold text-stone-900 break-all">ProcessSteps.astro</h3>
+              <h3 class="font-mono text-base sm:text-lg font-bold text-stone-900 break-all">ProcessSteps.astro</h3>
               <button 
                 type="button" 
-                class="copy-btn shrink-0 inline-flex items-center gap-1 px-2.5 py-1 text-xs font-mono text-stone-600 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-xs transition-colors"
+                class="copy-btn shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-medium text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-sm transition-all"
                 data-copy="ProcessSteps.astro"
                 title="ファイル名をコピー"
               >
@@ -1290,33 +1290,33 @@ import Icon from '../components/common/Icon.astro';
             </div>
             <button 
               type="button" 
-              class="copy-btn shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3 py-1 text-xs font-mono text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-xs transition-colors"
+              class="copy-btn shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 text-xs font-mono font-medium text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-sm transition-all"
               data-copy="<ProcessSteps />"
               title="タグをコピー"
             >
               <span class="copy-text">&lt;ProcessSteps /&gt; タグコピー</span>
             </button>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-stone-600 pt-3">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 text-sm">
             <div class="space-y-1">
-              <span class="font-bold text-stone-900 flex items-center gap-1.5">
+              <span class="text-xs font-bold text-stone-900 flex items-center gap-2 uppercase tracking-wide">
                 <span class="w-1.5 h-1.5 rounded-full bg-stone-400"></span>コンポーネント概要
               </span>
-              <p class="text-stone-600 leading-relaxed pl-3">
+              <p class="text-stone-700 text-sm leading-relaxed pl-3.5 font-light">
                 初回相談からヒアリング、設計・制作、納品、アフターサポートまでの進行フローを5ステップで図解。
               </p>
             </div>
             <div class="space-y-1">
-              <span class="font-bold text-stone-900 flex items-center gap-1.5">
+              <span class="text-xs font-bold text-stone-900 flex items-center gap-2 uppercase tracking-wide">
                 <span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span>主な用途・推奨シーン
               </span>
-              <p class="text-stone-600 leading-relaxed pl-3">
+              <p class="text-stone-700 text-sm leading-relaxed pl-3.5 font-light">
                 「相談したらどう進むのか」の不安を解消するサービス案内、家づくりの流れ、ご依頼の流れページ。
               </p>
             </div>
           </div>
         </div>
-        <div class="text-[11px] font-mono font-bold text-stone-400 uppercase tracking-widest flex items-center gap-1.5 pl-1 pt-1">
+        <div class="text-xs font-mono font-bold text-stone-500 uppercase tracking-widest flex items-center gap-2 pl-1 pt-2">
           <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
           実動プレビュー (Live Component)
         </div>
@@ -1341,10 +1341,10 @@ import Icon from '../components/common/Icon.astro';
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-stone-300/80">
             <div class="flex flex-wrap items-center gap-2 min-w-0">
               <span class="text-xs font-mono font-bold px-2 py-0.5 bg-stone-900 text-white rounded-xs">#23</span>
-              <h3 class="font-mono text-sm sm:text-base font-bold text-stone-900 break-all">LeadCTA.astro</h3>
+              <h3 class="font-mono text-base sm:text-lg font-bold text-stone-900 break-all">LeadCTA.astro</h3>
               <button 
                 type="button" 
-                class="copy-btn shrink-0 inline-flex items-center gap-1 px-2.5 py-1 text-xs font-mono text-stone-600 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-xs transition-colors"
+                class="copy-btn shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-medium text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-sm transition-all"
                 data-copy="LeadCTA.astro"
                 title="ファイル名をコピー"
               >
@@ -1354,33 +1354,33 @@ import Icon from '../components/common/Icon.astro';
             </div>
             <button 
               type="button" 
-              class="copy-btn shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3 py-1 text-xs font-mono text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-xs transition-colors"
+              class="copy-btn shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 text-xs font-mono font-medium text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-sm transition-all"
               data-copy="<LeadCTA />"
               title="タグをコピー"
             >
               <span class="copy-text">&lt;LeadCTA /&gt; タグコピー</span>
             </button>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-stone-600 pt-3">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 text-sm">
             <div class="space-y-1">
-              <span class="font-bold text-stone-900 flex items-center gap-1.5">
+              <span class="text-xs font-bold text-stone-900 flex items-center gap-2 uppercase tracking-wide">
                 <span class="w-1.5 h-1.5 rounded-full bg-stone-400"></span>コンポーネント概要
               </span>
-              <p class="text-stone-600 leading-relaxed pl-3">
+              <p class="text-stone-700 text-sm leading-relaxed pl-3.5 font-light">
                 無料診断、資料請求、電話相談へ強力に誘導するフルワイド・ハイコントラストのアクションバナー。
               </p>
             </div>
             <div class="space-y-1">
-              <span class="font-bold text-stone-900 flex items-center gap-1.5">
+              <span class="text-xs font-bold text-stone-900 flex items-center gap-2 uppercase tracking-wide">
                 <span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span>主な用途・推奨シーン
               </span>
-              <p class="text-stone-600 leading-relaxed pl-3">
+              <p class="text-stone-700 text-sm leading-relaxed pl-3.5 font-light">
                 全固定ページ、ブログ記事末尾、施工事例詳細の最下部。読了ユーザーを確実に反響へ導く最重要パーツ。
               </p>
             </div>
           </div>
         </div>
-        <div class="text-[11px] font-mono font-bold text-stone-400 uppercase tracking-widest flex items-center gap-1.5 pl-1 pt-1">
+        <div class="text-xs font-mono font-bold text-stone-500 uppercase tracking-widest flex items-center gap-2 pl-1 pt-2">
           <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
           実動プレビュー (Live Component)
         </div>
@@ -1395,10 +1395,10 @@ import Icon from '../components/common/Icon.astro';
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-stone-300/80">
             <div class="flex flex-wrap items-center gap-2 min-w-0">
               <span class="text-xs font-mono font-bold px-2 py-0.5 bg-stone-900 text-white rounded-xs">#24</span>
-              <h3 class="font-mono text-sm sm:text-base font-bold text-stone-900 break-all">ContactForm.astro</h3>
+              <h3 class="font-mono text-base sm:text-lg font-bold text-stone-900 break-all">ContactForm.astro</h3>
               <button 
                 type="button" 
-                class="copy-btn shrink-0 inline-flex items-center gap-1 px-2.5 py-1 text-xs font-mono text-stone-600 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-xs transition-colors"
+                class="copy-btn shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-medium text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-sm transition-all"
                 data-copy="ContactForm.astro"
                 title="ファイル名をコピー"
               >
@@ -1408,33 +1408,33 @@ import Icon from '../components/common/Icon.astro';
             </div>
             <button 
               type="button" 
-              class="copy-btn shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3 py-1 text-xs font-mono text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-xs transition-colors"
+              class="copy-btn shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 text-xs font-mono font-medium text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-sm transition-all"
               data-copy="<ContactForm />"
               title="タグをコピー"
             >
               <span class="copy-text">&lt;ContactForm /&gt; タグコピー</span>
             </button>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-stone-600 pt-3">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 text-sm">
             <div class="space-y-1">
-              <span class="font-bold text-stone-900 flex items-center gap-1.5">
+              <span class="text-xs font-bold text-stone-900 flex items-center gap-2 uppercase tracking-wide">
                 <span class="w-1.5 h-1.5 rounded-full bg-stone-400"></span>コンポーネント概要
               </span>
-              <p class="text-stone-600 leading-relaxed pl-3">
+              <p class="text-stone-700 text-sm leading-relaxed pl-3.5 font-light">
                 会社名・氏名・連絡先・相談種別（チェックボックス）・内容欄・プライバシー同意を備えたフル機能フォームUI。
               </p>
             </div>
             <div class="space-y-1">
-              <span class="font-bold text-stone-900 flex items-center gap-1.5">
+              <span class="text-xs font-bold text-stone-900 flex items-center gap-2 uppercase tracking-wide">
                 <span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span>主な用途・推奨シーン
               </span>
-              <p class="text-stone-600 leading-relaxed pl-3">
+              <p class="text-stone-700 text-sm leading-relaxed pl-3.5 font-light">
                 お問い合わせページ、無料診断申し込みページ、資料請求ページ。formrunや各種バックエンドと即時連携可能。
               </p>
             </div>
           </div>
         </div>
-        <div class="text-[11px] font-mono font-bold text-stone-400 uppercase tracking-widest flex items-center gap-1.5 pl-1 pt-1">
+        <div class="text-xs font-mono font-bold text-stone-500 uppercase tracking-widest flex items-center gap-2 pl-1 pt-2">
           <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
           実動プレビュー (Live Component)
         </div>
@@ -1448,10 +1448,10 @@ import Icon from '../components/common/Icon.astro';
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-stone-300/80">
             <div class="flex flex-wrap items-center gap-2 min-w-0">
               <span class="text-xs font-mono font-bold px-2 py-0.5 bg-stone-900 text-white rounded-xs">#25</span>
-              <h3 class="font-mono text-sm sm:text-base font-bold text-stone-900 break-all">FloatingCTA.astro</h3>
+              <h3 class="font-mono text-base sm:text-lg font-bold text-stone-900 break-all">FloatingCTA.astro</h3>
               <button 
                 type="button" 
-                class="copy-btn shrink-0 inline-flex items-center gap-1 px-2.5 py-1 text-xs font-mono text-stone-600 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-xs transition-colors"
+                class="copy-btn shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-medium text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-sm transition-all"
                 data-copy="FloatingCTA.astro"
                 title="ファイル名をコピー"
               >
@@ -1461,33 +1461,33 @@ import Icon from '../components/common/Icon.astro';
             </div>
             <button 
               type="button" 
-              class="copy-btn shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3 py-1 text-xs font-mono text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-xs transition-colors"
+              class="copy-btn shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 text-xs font-mono font-medium text-stone-700 bg-white hover:bg-stone-900 shadow-2xs hover:text-white border border-stone-300 rounded-sm transition-all"
               data-copy="<FloatingCTA />"
               title="タグをコピー"
             >
               <span class="copy-text">&lt;FloatingCTA /&gt; タグコピー</span>
             </button>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-stone-600 pt-3">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 text-sm">
             <div class="space-y-1">
-              <span class="font-bold text-stone-900 flex items-center gap-1.5">
+              <span class="text-xs font-bold text-stone-900 flex items-center gap-2 uppercase tracking-wide">
                 <span class="w-1.5 h-1.5 rounded-full bg-stone-400"></span>コンポーネント概要
               </span>
-              <p class="text-stone-600 leading-relaxed pl-3">
+              <p class="text-stone-700 text-sm leading-relaxed pl-3.5 font-light">
                 スマートフォン閲覧時に画面最下部へ常時追従固定表示される、電話・フォーム直結のフローティングバー。
               </p>
             </div>
             <div class="space-y-1">
-              <span class="font-bold text-stone-900 flex items-center gap-1.5">
+              <span class="text-xs font-bold text-stone-900 flex items-center gap-2 uppercase tracking-wide">
                 <span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span>主な用途・推奨シーン
               </span>
-              <p class="text-stone-600 leading-relaxed pl-3">
+              <p class="text-stone-700 text-sm leading-relaxed pl-3.5 font-light">
                 モバイル流入率が70%〜80%を超える地方BtoC・工務店・リフォームサイトの反響獲得率最大化。
               </p>
             </div>
           </div>
         </div>
-        <div class="text-[11px] font-mono font-bold text-stone-400 uppercase tracking-widest flex items-center gap-1.5 pl-1 pt-1">
+        <div class="text-xs font-mono font-bold text-stone-500 uppercase tracking-widest flex items-center gap-2 pl-1 pt-2">
           <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
           実動プレビュー (Live Component)
         </div>
@@ -1495,7 +1495,7 @@ import Icon from '../components/common/Icon.astro';
           <p class="text-xs text-stone-500 mb-4">※実機スマートフォン閲覧時に画面最下部へ追従固定表示されます（モバイル表示時にも画面下部に常時稼働）。</p>
           <!-- スマートフォン下部バーのシミュレーションプレビュー -->
           <div class="max-w-sm mx-auto bg-white/95 backdrop-blur-md border border-stone-300 rounded-lg p-3 shadow-sm">
-            <div class="text-[10px] font-mono text-stone-400 mb-2 uppercase tracking-wider text-left border-b border-stone-100 pb-1">Mobile Screen Preview</div>
+            <div class="text-xs font-mono text-stone-500 mb-2 uppercase tracking-wider text-left border-b border-stone-200 pb-1">Mobile Screen Preview</div>
             <div class="flex items-center gap-2">
               <a 
                 href="tel:000-000-0000" 

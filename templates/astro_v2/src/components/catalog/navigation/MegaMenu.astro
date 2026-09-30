@@ -42,27 +42,28 @@ const {
 } = Astro.props;
 ---
 
-<div class="w-full bg-white border border-stone-200 rounded-sm shadow-lg p-6 max-w-4xl mx-auto">
-  <div class="flex items-center gap-2 mb-4 pb-3 border-b border-stone-100">
-    <span class="w-2 h-2 rounded-full bg-stone-900"></span>
-    <span class="font-mono text-xs text-stone-500 uppercase tracking-widest">{triggerLabel}</span>
+<div class="w-full bg-white border border-stone-200 rounded-sm shadow-lg p-6 md:p-8 max-w-4xl mx-auto">
+  <!-- メガメニュー ヘッダー見出し (h3) -->
+  <div class="flex items-center gap-2 mb-6 pb-3 border-b border-stone-200">
+    <span class="w-2.5 h-2.5 rounded-full bg-stone-900"></span>
+    <h3 class="font-mono text-base sm:text-lg font-bold text-stone-900 tracking-wide">{triggerLabel}</h3>
   </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
     <!-- カテゴリ別カラム -->
     {categories.map((cat) => (
       <div class="space-y-4">
-        <h4 class="text-xs font-bold text-stone-900 tracking-wider pb-1 border-b border-stone-200">
+        <h4 class="text-sm sm:text-base font-bold text-stone-900 tracking-wide pb-2 border-b border-stone-200">
           {cat.category}
         </h4>
-        <div class="space-y-1">
+        <div class="space-y-2">
           {cat.items.map((item) => (
-            <a href={item.href} class="block group p-2.5 -mx-2.5 rounded-sm hover:bg-stone-50 transition-colors">
-              <span class="text-xs font-semibold text-stone-800 group-hover:text-stone-950 flex items-center justify-between">
+            <a href={item.href} class="block group p-3 -mx-3 rounded-sm hover:bg-stone-50 transition-colors">
+              <span class="text-base font-semibold text-stone-900 group-hover:text-stone-950 flex items-center justify-between">
                 <span>{item.title}</span>
-                <span class="text-stone-400 group-hover:text-stone-900 group-hover:translate-x-1 transition-all text-xs">&rarr;</span>
+                <span class="text-stone-400 group-hover:text-stone-900 group-hover:translate-x-1 transition-all text-sm">&rarr;</span>
               </span>
-              <p class="text-[11px] text-stone-500 font-light mt-0.5 leading-relaxed group-hover:text-stone-600">
+              <p class="text-sm text-stone-600 font-normal mt-1 leading-relaxed group-hover:text-stone-700">
                 {item.description}
               </p>
             </a>
@@ -72,13 +73,13 @@ const {
     ))}
 
     <!-- 特集・バナー枠 -->
-    <div class="bg-stone-50 border border-stone-200 p-5 rounded-sm flex flex-col justify-between hover:border-stone-400 hover:shadow-xs transition-all">
-      <div class="space-y-2">
-        <span class="px-2 py-0.5 bg-stone-900 text-white text-[9px] font-mono tracking-widest uppercase">Recommend</span>
-        <h4 class="text-xs font-bold text-stone-900">{featuredTitle}</h4>
-        <p class="text-[11px] text-stone-600 font-light leading-relaxed">{featuredDesc}</p>
+    <div class="bg-stone-50 border border-stone-200 p-6 rounded-sm flex flex-col justify-between hover:border-stone-400 hover:shadow-xs transition-all">
+      <div class="space-y-3">
+        <span class="inline-block px-2.5 py-1 bg-stone-900 text-white text-xs font-mono tracking-widest uppercase rounded-xs">Recommend</span>
+        <h4 class="text-base font-bold text-stone-900 leading-snug">{featuredTitle}</h4>
+        <p class="text-sm text-stone-600 leading-relaxed font-light">{featuredDesc}</p>
       </div>
-      <a href={featuredHref} class="group mt-4 flex items-center justify-center gap-1.5 py-2.5 bg-stone-900 text-white text-xs font-medium hover:bg-stone-800 hover:shadow-sm active:scale-[0.98] transition-all rounded-xs">
+      <a href={featuredHref} class="group mt-6 flex items-center justify-center gap-2 py-3 px-4 bg-stone-900 text-white text-sm font-medium hover:bg-stone-800 hover:shadow-sm active:scale-[0.98] transition-all rounded-xs">
         <span>詳しく見る</span>
         <span class="inline-block transition-transform duration-200 group-hover:translate-x-1">&rarr;</span>
       </a>

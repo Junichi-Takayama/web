@@ -27,17 +27,17 @@ const {
       <h1 class="font-serif-title text-2xl sm:text-3xl md:text-5xl font-medium tracking-wide leading-snug text-white max-w-3xl">
         {title}
       </h1>
-      <p class="text-xs md:text-sm text-stone-300 font-light leading-relaxed max-w-2xl pt-2">
+      <p class="text-base sm:text-lg text-stone-300 font-light leading-relaxed max-w-2xl pt-2">
         {lead}
       </p>
     </div>
 
     <!-- メタ情報バー -->
     {metaList && (
-      <div class="pt-8 border-t border-stone-800 grid grid-cols-2 sm:grid-cols-3 gap-6 font-mono text-xs">
+      <div class="pt-8 border-t border-stone-800 grid grid-cols-2 sm:grid-cols-3 gap-6 font-mono text-sm">
         {metaList.map((m) => (
           <div>
-            <span class="text-stone-500 block text-[10px] tracking-widest">{m.label}</span>
+            <span class="text-stone-500 block text-xs tracking-widest">{m.label}</span>
             <span class="text-stone-200 font-medium">{m.value}</span>
           </div>
         ))}

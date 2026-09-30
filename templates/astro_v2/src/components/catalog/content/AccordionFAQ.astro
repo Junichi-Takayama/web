@@ -41,24 +41,24 @@ const {
     <div class="text-left md:text-center space-y-3">
       <span class="font-mono text-xs text-stone-400 tracking-widest uppercase block">{eyebrow}</span>
       <h2 class="font-serif-title text-xl sm:text-2xl md:text-3xl font-medium text-stone-900 tracking-wide">{title}</h2>
-      <p class="text-xs md:text-sm text-stone-600 font-light leading-relaxed">{subtitle}</p>
+      <p class="text-sm sm:text-base text-stone-600 font-light leading-relaxed">{subtitle}</p>
     </div>
 
     <!-- ネイティブdetailsを使用したアコーディオン（スムーズアニメーション付き） -->
     <div class="faq-container divide-y divide-stone-200 border-t border-b border-stone-200">
       {faqs.map((faq) => (
         <details class="faq-item group py-3">
-          <summary class="flex items-center justify-between cursor-pointer list-none text-xs sm:text-sm font-medium text-stone-900 select-none p-3 -mx-3 rounded-sm hover:bg-stone-50/80 transition-colors">
+          <summary class="flex items-center justify-between cursor-pointer list-none text-base sm:text-lg font-medium text-stone-900 select-none p-4 -mx-3 rounded-sm hover:bg-stone-50/80 transition-colors">
             <span class="flex items-start gap-3">
               <span class="font-serif-title text-base font-medium text-stone-400 group-hover:text-stone-900 transition-colors">Q.</span>
               <span class="pt-0.5 group-hover:text-stone-700 transition-colors">{faq.question}</span>
             </span>
-            <span class="faq-icon ml-4 w-6 h-6 rounded-full flex items-center justify-center bg-stone-100 group-hover:bg-stone-900 group-hover:text-white text-stone-500 text-[10px] transition-all duration-300 group-open:rotate-180 flex-shrink-0">
+            <span class="faq-icon ml-4 w-6 h-6 rounded-full flex items-center justify-center bg-stone-100 group-hover:bg-stone-900 group-hover:text-white text-stone-500 text-xs transition-all duration-300 group-open:rotate-180 flex-shrink-0">
               ▼
             </span>
           </summary>
           <div class="faq-content overflow-hidden">
-            <div class="pt-3 pb-3 pl-8 pr-4 text-xs text-stone-600 font-light leading-relaxed">
+            <div class="pt-3 pb-3 pl-8 pr-4 text-sm sm:text-base text-stone-700 font-light leading-relaxed">
               <p>{faq.answer}</p>
             </div>
           </div>

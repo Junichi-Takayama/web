@@ -34,14 +34,14 @@ const {
       <h1 class="font-serif-title text-2xl sm:text-3xl md:text-5xl font-medium text-stone-900 leading-snug md:leading-tight">
         {title}
       </h1>
-      <p class="text-xs md:text-sm text-stone-600 font-light leading-relaxed">
+      <p class="text-base sm:text-lg text-stone-600 font-light leading-relaxed">
         {description}
       </p>
 
       <div class="pt-4 flex flex-wrap items-center gap-6">
         <a 
           href={ctaHref} 
-          class="group inline-flex items-center gap-2 px-8 py-3.5 bg-stone-900 text-white font-medium text-xs tracking-widest uppercase hover:bg-stone-800 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] transition-all duration-200 rounded-sm shadow-sm"
+          class="group inline-flex items-center gap-2 px-8 py-4 bg-stone-900 text-white font-medium text-sm tracking-wider uppercase hover:bg-stone-800 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] transition-all duration-200 rounded-sm shadow-sm"
         >
           <span>{ctaLabel}</span>
           <span class="inline-block transition-transform duration-200 group-hover:translate-x-1.5">&rarr;</span>
@@ -50,7 +50,7 @@ const {
         {statNumber && (
           <div class="pl-6 border-l border-stone-200">
             <span class="block font-mono text-2xl font-bold text-stone-900 leading-none">{statNumber}</span>
-            <span class="text-[10px] text-stone-400 uppercase tracking-wider">{statLabel}</span>
+            <span class="text-xs text-stone-400 uppercase tracking-wider">{statLabel}</span>
           </div>
         )}
       </div>
