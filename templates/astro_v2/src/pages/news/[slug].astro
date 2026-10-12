@@ -51,7 +51,10 @@ const post = item.content ? item : ((await getNewsDetail(item.id)) || item);
       )}
 
       <!-- 本文（リッチエディタHTMLレンダリング） -->
-      <div class="space-y-4 prose prose-stone max-w-none text-xs md:text-sm text-stone-600 leading-relaxed font-light" set:html={post.content} />
+      <div 
+        class="prose prose-stone prose-sm md:prose-base max-w-none font-light leading-relaxed prose-headings:font-serif-title prose-headings:font-normal prose-headings:text-stone-900 prose-h2:text-xl md:prose-h2:text-2xl prose-h2:border-b prose-h2:border-stone-200 prose-h2:pb-3 prose-h2:mt-10 prose-h3:text-lg md:prose-h3:text-xl prose-h3:mt-8 prose-h4:text-base prose-h5:text-sm prose-p:text-stone-600 prose-p:leading-loose prose-ul:list-disc prose-ol:list-decimal prose-table:w-full prose-table:border prose-table:border-stone-200 prose-th:border prose-th:border-stone-200 prose-th:bg-stone-100 prose-th:p-2.5 prose-th:text-xs prose-th:font-medium prose-td:border prose-td:border-stone-200 prose-td:p-2.5 prose-td:text-xs prose-blockquote:border-l-2 prose-blockquote:border-stone-400 prose-blockquote:bg-stone-50/70 prose-blockquote:py-2 prose-blockquote:px-4 prose-blockquote:not-italic prose-pre:bg-stone-900 prose-pre:text-stone-100 prose-pre:rounded-sm" 
+        set:html={post.content} 
+      />
     </div>
 
     <div class="pt-8 border-t border-stone-200 flex justify-between items-center">
