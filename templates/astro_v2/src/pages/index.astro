@@ -1,5 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { getNewsList } from '../lib/microcms';
+
+const newsItems = (await getNewsList()).slice(0, 3);
 ---
 
 <Layout title="ArCraft（アルクラフト）| 地方中小企業のための超高速Webエンジン＆伴走支援">
@@ -527,20 +530,17 @@ import Layout from '../layouts/Layout.astro';
     </div>
 
     <div class="divide-y divide-stone-200 border-t border-b border-stone-200 mb-8 bg-white shadow-sm rounded-sm" data-animate="fade-up">
-      <div class="py-4 px-6 flex flex-col sm:flex-row sm:items-center gap-3 text-xs hover:bg-stone-50/80 transition-colors duration-200">
-        <span class="text-stone-400 font-mono text-[11px]">2026.09.20</span>
-        <span class="px-2.5 py-0.5 bg-stone-900 text-white text-[10px] font-medium tracking-wider w-fit">サービス</span>
-        <a href="/news/" class="text-stone-800 font-medium hover:text-stone-600 transition flex-grow">
-          地方中小企業向け超高速Webエンジン「ArCraft」のサービス提供および無料診断を開始しました
-        </a>
-      </div>
-      <div class="py-4 px-6 flex flex-col sm:flex-row sm:items-center gap-3 text-xs hover:bg-stone-50/80 transition-colors duration-200">
-        <span class="text-stone-400 font-mono text-[11px]">2026.09.15</span>
-        <span class="px-2.5 py-0.5 bg-stone-200 text-stone-800 text-[10px] font-medium tracking-wider w-fit">機能追加</span>
-        <a href="/news/" class="text-stone-800 font-medium hover:text-stone-600 transition flex-grow">
-          microCMS連携による更新性強化とAstro Actionsによる高信頼フォーム対応を実装しました
-        </a>
-      </div>
+      {newsItems.map((item) => (
+        <div class="py-4 px-6 flex flex-col sm:flex-row sm:items-center gap-3 text-xs hover:bg-stone-50/80 transition-colors duration-200">
+          <span class="text-stone-400 font-mono text-[11px] w-24 flex-shrink-0">{item.date}</span>
+          <span class="px-2.5 py-0.5 bg-stone-900 text-white text-[10px] font-medium tracking-wider w-fit">
+            {item.category}
+          </span>
+          <a href={`/news/${item.id}/`} class="text-stone-800 font-medium hover:text-stone-600 transition flex-grow">
+            {item.title}
+          </a>
+        </div>
+      ))}
     </div>
 
     <div class="text-center" data-animate="fade-up">
