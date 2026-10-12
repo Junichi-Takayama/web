@@ -1,39 +1,54 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import PageHeader from '../../components/common/PageHeader.astro';
+import { getWorksList, getWorksDetail, type WorkItem } from '../../lib/microcms';
 
-export function getStaticPaths() {
-  return [
-    { params: { slug: 'sample-project' } },
-  ];
+export async function getStaticPaths() {
+  const works = await getWorksList();
+  return works.map((item) => ({
+    params: { slug: item.id },
+    props: { item },
+  }));
 }
 
-// サンプル事例画像＆キャプションデータ（横長・縦長両対応）
-const slides = [
-  { id: 1, title: '外観ファサード', image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80', caption: '1. 外観：杉板張りとガルバリウム鋼板が調和する端正なファサード' },
-  { id: 2, title: 'リビング吹き抜け', image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80', caption: '2. リビング：天井高5.2mの大開口から自然光が降り注ぐLDK' },
-  { id: 3, title: '階段・吹き抜け（縦構図）', image: 'https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=800&q=80', caption: '3. 階段・吹き抜け（縦構図写真）：2階へと視線が抜けるスケルトン階段とハイサイドライト' },
-  { id: 4, title: 'ダイニング・キッチン', image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=80', caption: '4. ダイニング：モールテックス天板の特注アイランドキッチン' },
-  { id: 5, title: '中庭コートヤード', image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80', caption: '5. 中庭：リビングとフラットに繋がるプライベートウッドデッキ' },
-  { id: 6, title: '通り土間・坪庭（縦構図）', image: 'https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&ar=2:3&w=800&q=80', caption: '6. 通り土間（縦構図写真）：視線が奥へと伸びる陰影豊かな縦長空間設計' },
-  { id: 7, title: '主寝室', image: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=80', caption: '7. 主寝室：間接照明と珪藻土の塗り壁が演出する静寂の空間' },
-  { id: 8, title: '造作洗面サニタリー', image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1200&q=80', caption: '8. サニタリー：大谷石と真鍮水栓をあしらったオリジナル造作洗面台' },
-];
+interface Props {
+  item: WorkItem;
+}
+
+const { item } = Astro.props;
+// 詳細APIを叩くか、propsのデータを使用
+const project = item.slides?.length ? item : ((await getWorksDetail(item.id)) || item);
+
+// スライドデータ整形（スライド配列が無い場合はメイン画像から1枚構成を生成）
+const slides = project.slides && project.slides.length > 0 
+  ? project.slides 
+  : [
+      {
+        id: 1,
+        title: project.title,
+        image: project.mainImage,
+        caption: `1. ${project.title}`
+      }
+    ];
+
+const specs = project.specs || [];
 ---
 
-<Layout title="中庭を囲む光のコートハウス | 制作実績・事例 | ArCraft（アルクラフト）">
+<Layout title={`${project.title} | 制作実績・事例 | ArCraft（アルクラフト）`}>
   <PageHeader 
     title="PROJECT DETAIL" 
-    subTitle="Courtyard House in Setagaya"
+    subTitle={project.subTitle || project.title}
     bgImage={slides[0].image}
   />
 
   <section class="py-20 px-4 max-w-4xl mx-auto space-y-12">
     <!-- タイトル＆導入テキスト -->
     <div class="space-y-2" data-animate="fade-up">
-      <span class="font-mono text-xs text-stone-400 uppercase tracking-widest">New Construction / Residence</span>
-      <h1 class="font-serif-title text-2xl md:text-3xl font-medium text-stone-900">中庭を囲む光のコートハウス</h1>
-      <p class="text-xs text-stone-500 font-mono">東京都世田谷区 / 竣工: 2026年3月 / 延床面積: 135.20㎡ / 設計: 高山 潤一</p>
+      <span class="font-mono text-xs text-stone-400 uppercase tracking-widest">{project.tag} / {project.type}</span>
+      <h1 class="font-serif-title text-2xl md:text-3xl font-medium text-stone-900">{project.title}</h1>
+      <p class="text-xs text-stone-500 font-mono">
+        {project.location} {project.designer && `/ 設計: ${project.designer}`}
+      </p>
     </div>
 
     <!-- メインギャラリー（インタラクティブスライダー） -->
@@ -97,43 +112,41 @@ const slides = [
     </div>
 
     <!-- 物件情報テーブル -->
-    <div class="space-y-4" data-animate="fade-up">
-      <h2 class="text-sm font-bold text-stone-900 border-b border-stone-900 pb-2">物件概要</h2>
-      <div class="border-t border-stone-200 divide-y divide-stone-200 text-xs">
-        <div class="grid grid-cols-1 md:grid-cols-4 py-3 px-2 bg-stone-50/50">
-          <dt class="font-medium text-stone-800 md:col-span-1">所在地</dt>
-          <dd class="text-stone-600 md:col-span-3">東京都世田谷区</dd>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-4 py-3 px-2 bg-stone-50/50">
-          <dt class="font-medium text-stone-800 md:col-span-1">構造・規模</dt>
-          <dd class="text-stone-600 md:col-span-3">木造軸組工法（SE構法） 地上2階建て</dd>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-4 py-3 px-2 bg-stone-50/50">
-          <dt class="font-medium text-stone-800 md:col-span-1">敷地・延床面積</dt>
-          <dd class="text-stone-600 md:col-span-3">敷地: 165.40㎡（50.03坪） / 延床: 135.20㎡（40.89坪）</dd>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-4 py-3 px-2 bg-stone-50/50">
-          <dt class="font-medium text-stone-800 md:col-span-1">性能・仕様</dt>
-          <dd class="text-stone-600 md:col-span-3">耐震等級3（許容応力度計算） / 断熱等性能等級6（HEAT20 G2） / C値 0.4</dd>
+    {specs.length > 0 && (
+      <div class="space-y-4" data-animate="fade-up">
+        <h2 class="text-sm font-bold text-stone-900 border-b border-stone-900 pb-2">物件概要・仕様</h2>
+        <div class="border-t border-stone-200 divide-y divide-stone-200 text-xs">
+          {specs.map((spec) => (
+            <div class="grid grid-cols-1 md:grid-cols-4 py-3 px-2 bg-stone-50/50">
+              <dt class="font-medium text-stone-800 md:col-span-1">{spec.label}</dt>
+              <dd class="text-stone-600 md:col-span-3">{spec.value}</dd>
+            </div>
+          ))}
         </div>
       </div>
-    </div>
+    )}
 
     <!-- コンセプト -->
-    <div class="space-y-3" data-animate="fade-up">
-      <h2 class="text-sm font-bold text-stone-900 border-b border-stone-900 pb-2">設計コンセプト</h2>
-      <p class="text-xs text-stone-600 leading-relaxed font-light">
-        閑静な住宅街において、周囲からの視線を遮りながら豊かな光と自然を取り込むため、中庭（コートヤード）を中心としたコの字型のプランニングを採用しました。LDKと中庭の段差を無くすことで内と外が一体化し、都心にいながら自然の潤いを感じられる空間を創出しています。
-      </p>
-    </div>
+    {project.conceptBody && (
+      <div class="space-y-3" data-animate="fade-up">
+        <h2 class="text-sm font-bold text-stone-900 border-b border-stone-900 pb-2">
+          {project.conceptTitle || '設計コンセプト'}
+        </h2>
+        <p class="text-xs text-stone-600 leading-relaxed font-light">
+          {project.conceptBody}
+        </p>
+      </div>
+    )}
 
     <!-- 設計士からのメッセージ -->
-    <div class="space-y-3" data-animate="fade-up">
-      <h2 class="text-sm font-bold text-stone-900 border-b border-stone-900 pb-2">担当建築士より</h2>
-      <p class="text-xs text-stone-600 leading-relaxed font-light">
-        「クライアントが好まれる北欧のヴィンテージ家具と美しく調和するよう、床にはオーク三層無垢材、壁面には左官職人による大谷石調の塗り壁を施しました。光の陰影が時間とともに表情を変える、静謐で飽きのこない空間を目指しました。」（一級建築士 高山 潤一）
-      </p>
-    </div>
+    {project.comment && (
+      <div class="space-y-3" data-animate="fade-up">
+        <h2 class="text-sm font-bold text-stone-900 border-b border-stone-900 pb-2">担当建築士より</h2>
+        <p class="text-xs text-stone-600 leading-relaxed font-light">
+          {project.comment} {project.designer && `（${project.designer}）`}
+        </p>
+      </div>
+    )}
 
     <div class="text-center pt-8 border-t border-stone-200">
       <a href="/works/" class="inline-flex items-center gap-2 px-8 py-3 bg-stone-900 text-white text-xs tracking-widest uppercase font-medium hover:bg-stone-800 transition shadow-sm">

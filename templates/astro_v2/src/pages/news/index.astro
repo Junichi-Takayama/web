@@ -1,33 +1,9 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import PageHeader from '../../components/common/PageHeader.astro';
+import { getNewsList } from '../../lib/microcms';
 
-const newsList = [
-  {
-    date: "2026.09.20",
-    category: "サービス",
-    title: "地方中小企業向け超高速Webエンジン「ArCraft」のサービス提供および無料診断を開始しました",
-    slug: "2026-08-24-sample"
-  },
-  {
-    date: "2026.09.15",
-    category: "機能追加",
-    title: "microCMS連携による更新性強化とAstro Actionsによる高信頼フォーム対応を実装しました",
-    slug: "2026-08-24-sample"
-  },
-  {
-    date: "2026.09.01",
-    category: "お知らせ",
-    title: "地方工務店・中小企業向けWebサイト無料診断の受付枠を拡大いたしました",
-    slug: "2026-08-24-sample"
-  },
-  {
-    date: "2026.08.20",
-    category: "レポート",
-    title: "WordPressからAstroへのエンジン換装による表示速度改善事例（平均0.6秒台達成）を公開",
-    slug: "2026-08-24-sample"
-  }
-];
+const newsList = await getNewsList();
 ---
 
 <Layout title="お知らせ・更新情報 | ArCraft（アルクラフト）">
@@ -45,7 +21,7 @@ const newsList = [
           <span class="px-2.5 py-0.5 bg-stone-900 text-white text-[10px] font-medium tracking-wider w-fit">
             {item.category}
           </span>
-          <a href={`/news/${item.slug}/`} class="text-stone-800 font-medium hover:text-stone-600 transition flex-grow">
+          <a href={`/news/${item.id}/`} class="text-stone-800 font-medium hover:text-stone-600 transition flex-grow">
             {item.title}
           </a>
         </div>
@@ -55,9 +31,9 @@ const newsList = [
     <!-- ページネーション -->
     <div class="flex items-center justify-center gap-2 text-xs font-mono">
       <span class="w-10 h-10 bg-stone-900 text-white flex items-center justify-center font-bold">1</span>
-      <a href="#" class="w-10 h-10 border border-stone-300 flex items-center justify-center hover:bg-stone-100 transition">2</a>
     </div>
   </section>
+</Layout>
 </Layout>
 
 
