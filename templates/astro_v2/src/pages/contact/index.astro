@@ -188,14 +188,8 @@ const ACCESS_KEY = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY || '66e948f7-371b
           const consultationTypes = formData.getAll('consultation_type');
           if (consultationTypes.length > 0) {
             formData.delete('consultation_type');
-            formData.append('ご相談項目', consultationTypes.join(', '));
+            formData.append('consultation_type', consultationTypes.join(', '));
           }
-
-          // 日本語表示用の項目名マッピング
-          formData.append('貴社名', formData.get('company') || '');
-          formData.append('現行WebサイトURL', formData.get('website_url') || '（未記入）');
-          formData.append('電話番号', formData.get('phone') || '');
-          formData.append('現在のお困りごと', formData.get('message') || '');
 
           const response = await fetch('https://api.web3forms.com/submit', {
             method: 'POST',
