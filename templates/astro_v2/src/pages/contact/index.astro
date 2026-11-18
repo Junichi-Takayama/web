@@ -76,91 +76,91 @@ const ACCESS_KEY = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY || '66e948f7-371b
               />
             </div>
 
-          <!-- ご担当者名 -->
-          <div class="grid grid-cols-1 md:grid-cols-4 gap-2 items-center border-b border-stone-200 pb-4">
-            <label for="name" class="font-medium text-stone-800 md:col-span-1">お名前 <span class="text-red-500 text-xs">*</span></label>
-            <input 
-              type="text" 
-              id="name"
-              name="name" 
-              required 
-              placeholder="山田 太郎" 
-              class="md:col-span-3 w-full p-3 border border-stone-300 bg-stone-50/50 rounded-sm focus:outline-none focus:border-stone-800 transition" 
-            />
-          </div>
+            <!-- ご担当者名 -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-2 items-center border-b border-stone-200 pb-4">
+              <label for="name" class="font-medium text-stone-800 md:col-span-1">お名前 <span class="text-red-500 text-xs">*</span></label>
+              <input 
+                type="text" 
+                id="name"
+                name="name" 
+                required 
+                placeholder="山田 太郎" 
+                class="md:col-span-3 w-full p-3 border border-stone-300 bg-stone-50/50 rounded-sm focus:outline-none focus:border-stone-800 transition" 
+              />
+            </div>
 
-          <!-- 現行WebサイトURL -->
-          <div class="grid grid-cols-1 md:grid-cols-4 gap-2 items-center border-b border-stone-200 pb-4">
-            <label for="website_url" class="font-medium text-stone-800 md:col-span-1">現行WebサイトURL</label>
-            <input 
-              type="url" 
-              id="website_url"
-              name="website_url" 
-              placeholder="https://example.com" 
-              class="md:col-span-3 w-full p-3 border border-stone-300 bg-stone-50/50 rounded-sm focus:outline-none focus:border-stone-800 transition" 
-            />
-          </div>
+            <!-- 現行WebサイトURL -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-2 items-center border-b border-stone-200 pb-4">
+              <label for="website_url" class="font-medium text-stone-800 md:col-span-1">現行WebサイトURL</label>
+              <input 
+                type="url" 
+                id="website_url"
+                name="website_url" 
+                placeholder="https://example.com" 
+                class="md:col-span-3 w-full p-3 border border-stone-300 bg-stone-50/50 rounded-sm focus:outline-none focus:border-stone-800 transition" 
+              />
+            </div>
 
-          <!-- 電話番号 -->
-          <div class="grid grid-cols-1 md:grid-cols-4 gap-2 items-center border-b border-stone-200 pb-4">
-            <label for="phone" class="font-medium text-stone-800 md:col-span-1">電話番号 <span class="text-red-500 text-xs">*</span></label>
-            <input 
-              type="tel" 
-              id="phone"
-              name="phone" 
-              required 
-              placeholder="090-0000-0000" 
-              class="md:col-span-3 w-full p-3 border border-stone-300 bg-stone-50/50 rounded-sm focus:outline-none focus:border-stone-800 transition" 
-            />
-          </div>
+            <!-- 電話番号 -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-2 items-center border-b border-stone-200 pb-4">
+              <label for="phone" class="font-medium text-stone-800 md:col-span-1">電話番号 <span class="text-red-500 text-xs">*</span></label>
+              <input 
+                type="tel" 
+                id="phone"
+                name="phone" 
+                required 
+                placeholder="090-0000-0000" 
+                class="md:col-span-3 w-full p-3 border border-stone-300 bg-stone-50/50 rounded-sm focus:outline-none focus:border-stone-800 transition" 
+              />
+            </div>
 
-          <!-- メールアドレス -->
-          <div class="grid grid-cols-1 md:grid-cols-4 gap-2 items-center border-b border-stone-200 pb-4">
-            <label for="email" class="font-medium text-stone-800 md:col-span-1">メールアドレス <span class="text-red-500 text-xs">*</span></label>
-            <input 
-              type="email" 
-              id="email"
-              name="email" 
-              required 
-              placeholder="name@example.com" 
-              class="md:col-span-3 w-full p-3 border border-stone-300 bg-stone-50/50 rounded-sm focus:outline-none focus:border-stone-800 transition" 
-            />
-          </div>
+            <!-- メールアドレス -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-2 items-center border-b border-stone-200 pb-4">
+              <label for="email" class="font-medium text-stone-800 md:col-span-1">メールアドレス <span class="text-red-500 text-xs">*</span></label>
+              <input 
+                type="email" 
+                id="email"
+                name="email" 
+                required 
+                placeholder="name@example.com" 
+                class="md:col-span-3 w-full p-3 border border-stone-300 bg-stone-50/50 rounded-sm focus:outline-none focus:border-stone-800 transition" 
+              />
+            </div>
 
-          <!-- ご相談内容 -->
-          <div class="grid grid-cols-1 md:grid-cols-4 gap-2 items-start pt-2">
-            <label for="message" class="font-medium text-stone-800 md:col-span-1 pt-2">現在のお困りごと <span class="text-red-500 text-xs">*</span></label>
-            <textarea 
-              id="message"
-              name="message" 
-              rows="5" 
-              required 
-              placeholder="「WordPressの更新が止まっている」「スマホ表示が遅い」「リニューアル費用を抑えたい」など、現状のお悩みを率直にお聞かせください。" 
-              class="md:col-span-3 w-full p-3 border border-stone-300 bg-stone-50/50 rounded-sm focus:outline-none focus:border-stone-800 transition"
-            ></textarea>
-          </div>
+            <!-- ご相談内容 -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-2 items-start pt-2">
+              <label for="message" class="font-medium text-stone-800 md:col-span-1 pt-2">現在のお困りごと <span class="text-red-500 text-xs">*</span></label>
+              <textarea 
+                id="message"
+                name="message" 
+                rows="5" 
+                required 
+                placeholder="「WordPressの更新が止まっている」「スマホ表示が遅い」「リニューアル費用を抑えたい」など、現状のお悩みを率直にお聞かせください。" 
+                class="md:col-span-3 w-full p-3 border border-stone-300 bg-stone-50/50 rounded-sm focus:outline-none focus:border-stone-800 transition"
+              ></textarea>
+            </div>
 
-          <!-- エラーメッセージ表示領域 -->
-          <div id="form-error" data-form-error class="hidden p-4 bg-red-50 border border-red-200 text-red-700 text-xs rounded-sm text-center"></div>
+            <!-- エラーメッセージ表示領域 -->
+            <div id="form-error" data-form-error class="hidden p-4 bg-red-50 border border-red-200 text-red-700 text-xs rounded-sm text-center"></div>
 
-          <div class="text-center pt-8">
-            <button 
-              type="submit" 
-              id="submit-button"
-              data-submit-button
-              class="inline-flex items-center justify-center px-14 py-4 bg-stone-900 text-white font-medium text-xs hover:bg-stone-800 transition tracking-widest uppercase shadow-md hover:scale-105 active:scale-95 duration-200 disabled:opacity-50 disabled:pointer-events-none"
-            >
-              <span id="button-text" data-button-text>無料診断を送信する</span>
-              <svg id="loading-spinner" data-loading-spinner class="hidden animate-spin ml-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-              </svg>
-            </button>
-          </div>
-        </form>
+            <div class="text-center pt-8">
+              <button 
+                type="submit" 
+                id="submit-button"
+                data-submit-button
+                class="inline-flex items-center justify-center px-14 py-4 bg-stone-900 text-white font-medium text-xs hover:bg-stone-800 transition tracking-widest uppercase shadow-md hover:scale-105 active:scale-95 duration-200 disabled:opacity-50 disabled:pointer-events-none"
+              >
+                <span id="button-text" data-button-text>無料診断を送信する</span>
+                <svg id="loading-spinner" data-loading-spinner class="hidden animate-spin ml-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                  <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
   </section>
 
   <script is:inline>

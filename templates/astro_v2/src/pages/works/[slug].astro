@@ -113,42 +113,42 @@ const specs = project.specs || [];
         </div>
       </div>
 
-    <!-- 物件情報テーブル -->
-    {specs.length > 0 && (
-      <div class="space-y-4" data-animate="fade-up">
-        <h2 class="text-sm font-bold text-stone-900 border-b border-stone-900 pb-2">物件概要・仕様</h2>
-        <div class="border-t border-stone-200 divide-y divide-stone-200 text-xs">
-          {specs.map((spec) => (
-            <div class="grid grid-cols-1 md:grid-cols-4 py-3 px-2 bg-stone-50/50">
-              <dt class="font-medium text-stone-800 md:col-span-1">{spec.label}</dt>
-              <dd class="text-stone-600 md:col-span-3">{spec.value}</dd>
-            </div>
-          ))}
+      <!-- 物件情報テーブル -->
+      {specs.length > 0 && (
+        <div class="space-y-4" data-animate="fade-up">
+          <h2 class="text-sm font-bold text-stone-900 border-b border-stone-900 pb-2">物件概要・仕様</h2>
+          <div class="border-t border-stone-200 divide-y divide-stone-200 text-xs">
+            {specs.map((spec) => (
+              <div class="grid grid-cols-1 md:grid-cols-4 py-3 px-2 bg-stone-50/50">
+                <dt class="font-medium text-stone-800 md:col-span-1">{spec.label}</dt>
+                <dd class="text-stone-600 md:col-span-3">{spec.value}</dd>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    )}
+      )}
 
-    <!-- コンセプト -->
-    {project.conceptBody && (
-      <div class="space-y-3" data-animate="fade-up">
-        <h2 class="text-sm font-bold text-stone-900 border-b border-stone-900 pb-2">
-          {project.conceptTitle || '設計コンセプト'}
-        </h2>
-        <p class="text-xs text-stone-600 leading-relaxed font-light">
-          {project.conceptBody}
-        </p>
-      </div>
-    )}
+      <!-- コンセプト -->
+      {project.conceptBody && (
+        <div class="space-y-3" data-animate="fade-up">
+          <h2 class="text-sm font-bold text-stone-900 border-b border-stone-900 pb-2">
+            {project.conceptTitle || '設計コンセプト'}
+          </h2>
+          <p class="text-xs text-stone-600 leading-relaxed font-light">
+            {project.conceptBody}
+          </p>
+        </div>
+      )}
 
-    <!-- 設計士からのメッセージ -->
-    {project.comment && (
-      <div class="space-y-3" data-animate="fade-up">
-        <h2 class="text-sm font-bold text-stone-900 border-b border-stone-900 pb-2">担当建築士より</h2>
-        <p class="text-xs text-stone-600 leading-relaxed font-light">
-          {project.comment} {project.designer && `（${project.designer}）`}
-        </p>
-      </div>
-    )}
+      <!-- 設計士からのメッセージ -->
+      {project.comment && (
+        <div class="space-y-3" data-animate="fade-up">
+          <h2 class="text-sm font-bold text-stone-900 border-b border-stone-900 pb-2">担当建築士より</h2>
+          <p class="text-xs text-stone-600 leading-relaxed font-light">
+            {project.comment} {project.designer && `（${project.designer}）`}
+          </p>
+        </div>
+      )}
 
       <div class="text-center pt-8 border-t border-stone-200">
         <a href="/works/" class="inline-flex items-center gap-2 px-8 py-3 bg-stone-900 text-white text-xs tracking-widest uppercase font-medium hover:bg-stone-800 transition shadow-sm">
