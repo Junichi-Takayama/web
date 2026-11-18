@@ -6,6 +6,7 @@ import tailwind from '@astrojs/tailwind';
 export default defineConfig({
   site: 'https://example.com',
   output: 'static',
+  compressHTML: false,
   server: {
     port: 4322,
   },
