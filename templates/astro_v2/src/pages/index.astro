@@ -3,198 +3,326 @@ import Layout from '../layouts/Layout.astro';
 import { getNewsList } from '../lib/microcms';
 
 const newsItems = (await getNewsList()).slice(0, 3);
+
+// 4つのWeb課題データ
+const challenges = [
+  {
+    id: '01',
+    label: 'ISSUE 01',
+    title: '制作会社が撤退・サーバー放置',
+    description: '担当者不在や事業撤退で放置。古いサーバーで突然サイトが消滅する「時限爆弾」を抱えている。'
+  },
+  {
+    id: '02',
+    label: 'ISSUE 02',
+    title: 'WordPress更新恐怖で「塩漬け」',
+    description: '更新するとレイアウトが崩れるリスクから放置され、お知らせや実績の追加が完全ストップ。'
+  },
+  {
+    id: '03',
+    label: 'ISSUE 03',
+    title: 'スマホ表示が遅く見込み客が離脱',
+    description: '表示に5〜10秒以上かかり、検索訪問者や採用候補者が内容を見る前に立ち去ってしまう。'
+  },
+  {
+    id: '04',
+    label: 'ISSUE 04',
+    title: '他社100〜150万提示で二の足',
+    description: 'フルリニューアル提案は費用対効果が見合わず、何年も改善を見送り続けている。'
+  }
+];
+
+// ブランドアイデンティティ：4つの想いデータ
+const brandIdentities = [
+  {
+    number: '01',
+    tag: 'PHILOSOPHY',
+    title: '1. Artek',
+    subtitle: '建築・用の美の思想',
+    description: '冷たいデジタルではなく、巨匠アアルトの思想のように企業の温もりと信頼に寄り添う設計。'
+  },
+  {
+    number: '02',
+    tag: 'CRAFTSMANSHIP',
+    title: '2. Craft',
+    subtitle: '妥協なきクラフトマンシップ',
+    description: '地域を支えるものづくりのこだわりに敬意を払い、妥協のない強固な設計技術で構築。'
+  },
+  {
+    number: '03',
+    tag: 'PARTNERSHIP',
+    title: '3. 歩く（Aruk）',
+    subtitle: '納品で終わらない伴走',
+    description: '都市部の会社に多い納品完了型を排し、公開後も同じ歩幅で成果へと歩み続けます。'
+  },
+  {
+    number: '04',
+    tag: 'SOLIDARITY',
+    title: '4. Raft（筏）',
+    subtitle: '資産の救出と連帯',
+    description: '古いサーバーから会社資産を安全に救出。同じ船に乗るクルーとして成長を支えます。'
+  }
+];
+
+// 比較表データ
+const comparisonItems = [
+  {
+    feature: '提案アプローチ',
+    conventional: '100万円超のフルリニューアル',
+    arcraft: '既存資産を活かしたエンジン換装',
+    highlight: true
+  },
+  {
+    feature: '初期費用',
+    conventional: '100万〜150万円前後',
+    arcraft: '50万〜80万円（約半額）',
+    highlight: true
+  },
+  {
+    feature: 'ページの表示速度',
+    conventional: '5秒〜10秒以上（遅延多発）',
+    arcraft: '0.5秒〜1秒以内（瞬時表示）',
+    highlight: true
+  },
+  {
+    feature: '保守・アップデート',
+    conventional: '毎月更新作業・故障リスク有',
+    arcraft: 'ノーメンテナンス（生涯不壊）',
+    highlight: true
+  },
+  {
+    feature: 'ランニングコスト',
+    conventional: '月額数千円〜1万円（サーバー代）',
+    arcraft: '実質0円枠での運用が可能',
+    highlight: true
+  },
+  {
+    feature: '更新の手間',
+    conventional: '複雑で壊れやすく放置されがち',
+    arcraft: '専用枠に文字を入れるだけ',
+    highlight: false
+  },
+  {
+    feature: '公開後サポート',
+    conventional: '修正ごとに都度見積もり（高額）',
+    arcraft: 'GA4解析をもとに毎月伴走',
+    highlight: false
+  }
+];
+
+// 導入5ステップデータ
+const processSteps = [
+  {
+    step: '01',
+    badge: '無料実施',
+    title: '現状診断',
+    description: '速度・安全性・契約状況を客観レポート。'
+  },
+  {
+    step: '02',
+    badge: '提案フェーズ',
+    title: '構成ご提案',
+    description: '強みが伝わる構成と明確な見積もりを提示。'
+  },
+  {
+    step: '03',
+    badge: '実機確認',
+    title: 'テスト構築',
+    description: '0秒表示と管理画面の使いやすさを実機で確認。'
+  },
+  {
+    step: '04',
+    badge: '時限爆弾解除',
+    title: '安全本番公開',
+    description: '旧サーバーから新インフラへ安全に切り替え。'
+  },
+  {
+    step: '05',
+    badge: '継続改善',
+    title: '月次伴走',
+    description: '同じ歩幅でアクセスと成果を支え続ける',
+    isPrimary: true
+  }
+];
 ---
 
 <Layout title="ArCraft（アルクラフト）| 地方中小企業のための超高速Webエンジン＆伴走支援">
   <!-- 1. メインビジュアル (Hero) -->
-  <section class="relative bg-stone-900 text-white min-h-[90vh] flex items-center justify-center overflow-hidden py-24 md:py-32">
+  <section class="relative bg-stone-900 text-white min-h-[90vh] flex items-center justify-center overflow-hidden py-16 md:py-24">
     <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-stone-800 via-stone-900 to-stone-950 z-0"></div>
 
-    <div data-animate="fade-up" class="relative z-20 text-center px-6 max-w-4xl mx-auto">
-      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-stone-800/80 border border-stone-700 text-stone-300 text-[11px] font-mono tracking-wider mb-6">
-        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-        次世代Webエンジン & 伴走支援
-      </div>
-
-      <h1 class="font-serif-title text-3xl sm:text-5xl md:text-6xl font-medium tracking-widest leading-relaxed mb-6">
-        地方中小企業のための、<br class="sm:hidden" />壊れない超高速Webエンジン
-      </h1>
-
-      <p class="text-xs md:text-sm text-stone-300 tracking-widest font-light max-w-2xl mx-auto leading-relaxed mb-10">
-        一 確かな技術と、横に並んで歩むパートナーシップで。一<br class="hidden sm:inline" />
-        WordPressの更新不安や表示遅延から解放され、会社の強みを一瞬で届けるWeb基盤へ。
-      </p>
-
-      <!-- 3大バッジ -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl mx-auto mb-10 text-xs">
-        <div class="p-3 bg-stone-800/60 border border-stone-700/80 rounded-sm backdrop-blur-sm">
-          <span class="text-stone-400 text-[10px] block font-mono">SPEED</span>
-          <span class="font-bold text-white text-sm">表示速度 0秒台</span>
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 relative z-20 text-center">
+      <div data-animate="fade-up">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-stone-800/80 border border-stone-700 text-stone-300 text-xs font-mono tracking-wider mb-6">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          次世代Webエンジン & 伴走支援
         </div>
-        <div class="p-3 bg-stone-800/60 border border-stone-700/80 rounded-sm backdrop-blur-sm">
-          <span class="text-stone-400 text-[10px] block font-mono">SECURITY</span>
-          <span class="font-bold text-white text-sm">生涯メンテナンスフリー</span>
-        </div>
-        <div class="p-3 bg-stone-800/60 border border-stone-700/80 rounded-sm backdrop-blur-sm">
-          <span class="text-stone-400 text-[10px] block font-mono">PARTNER</span>
-          <span class="font-bold text-white text-sm">月次伴走パートナー</span>
-        </div>
-      </div>
 
-      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-        <a href="/contact/" class="px-8 py-3.5 bg-stone-100 text-stone-900 text-xs tracking-widest uppercase font-bold hover:bg-white hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg">
-          Webサイト無料診断を申し込む
-        </a>
-        <a href="#technology" class="px-8 py-3.5 border border-white/60 text-white text-xs tracking-widest uppercase font-medium hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
-          技術と特徴を見る &darr;
-        </a>
+        <h1 class="font-serif-title text-3xl sm:text-5xl md:text-6xl font-medium tracking-widest leading-relaxed mb-6">
+          地方中小企業のための、<br class="sm:hidden" />壊れない超高速Webエンジン
+        </h1>
+
+        <p class="text-xs md:text-sm text-stone-300 tracking-widest font-light max-w-2xl mx-auto leading-relaxed mb-10">
+          一 確かな技術と、横に並んで歩むパートナーシップで。一<br class="hidden sm:inline" />
+          WordPressの更新不安や表示遅延から解放され、会社の強みを一瞬で届けるWeb基盤へ。
+        </p>
+
+        <!-- 3大バッジ -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl mx-auto mb-10 text-xs">
+          <div class="p-3 bg-stone-800/60 border border-stone-700/80 rounded-sm backdrop-blur-sm">
+            <span class="text-stone-400 text-xs block font-mono">SPEED</span>
+            <span class="font-bold text-white text-sm">表示速度 0秒台</span>
+          </div>
+          <div class="p-3 bg-stone-800/60 border border-stone-700/80 rounded-sm backdrop-blur-sm">
+            <span class="text-stone-400 text-xs block font-mono">SECURITY</span>
+            <span class="font-bold text-white text-sm">生涯メンテナンスフリー</span>
+          </div>
+          <div class="p-3 bg-stone-800/60 border border-stone-700/80 rounded-sm backdrop-blur-sm">
+            <span class="text-stone-400 text-xs block font-mono">PARTNER</span>
+            <span class="font-bold text-white text-sm">月次伴走パートナー</span>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a href="/contact/" class="px-8 py-3.5 bg-stone-100 text-stone-900 text-xs tracking-widest uppercase font-bold hover:bg-white hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg">
+            Webサイト無料診断を申し込む
+          </a>
+          <a href="#technology" class="px-8 py-3.5 border border-white/60 text-white text-xs tracking-widest uppercase font-medium hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
+            技術と特徴を見る &darr;
+          </a>
+        </div>
       </div>
     </div>
 
     <!-- スクロールインジケーター -->
     <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 text-stone-400 opacity-75">
-      <span class="text-[9px] tracking-[0.25em] uppercase font-mono">Scroll</span>
+      <span class="text-xs tracking-widest uppercase font-mono">Scroll</span>
       <div class="w-px h-8 bg-gradient-to-b from-stone-300 to-transparent animate-pulse"></div>
     </div>
   </section>
 
   <!-- 2. はじめに：ArCraftとは -->
-  <section class="py-24 px-6 max-w-4xl mx-auto text-center overflow-hidden">
-    <div data-animate="fade-up">
-      <span class="font-en-serif text-xs text-stone-400 tracking-[0.3em] uppercase block mb-2">Introduction</span>
-      <h2 class="font-serif-title text-2xl md:text-4xl text-stone-900 mb-8 tracking-widest font-medium">
-        地方中小企業特化の<br class="sm:hidden" />「次世代Web構築＆伴走支援」
-      </h2>
-      <div class="w-12 h-px bg-stone-400 mx-auto mb-8"></div>
-      <p class="text-xs md:text-sm text-stone-600 leading-loose mb-10 max-w-2xl mx-auto font-light text-justify sm:text-center">
-        見た目だけの改修ではなく、従来の重いシステム（WordPress等）から最先端エンジン（Astro × microCMS）へと中身を全面換装。<br />
-        貴社の信頼と強みを、スマホやPCへストレスなく一瞬で届けるWeb基盤をご提供します。
-      </p>
+  <section class="bg-white py-16 md:py-24">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+      <div data-animate="fade-up">
+        <span class="font-en-serif text-xs text-stone-400 tracking-widest uppercase block mb-2">Introduction</span>
+        <h2 class="font-serif-title text-2xl md:text-4xl text-stone-900 mb-8 tracking-widest font-medium">
+          地方中小企業特化の<br class="sm:hidden" />「次世代Web構築＆伴走支援」
+        </h2>
+        <div class="w-12 h-px bg-stone-400 mx-auto mb-8"></div>
+        <p class="text-xs md:text-sm text-stone-600 leading-loose mb-10 max-w-2xl mx-auto font-light text-justify sm:text-center">
+          見た目だけの改修ではなく、従来の重いシステム（WordPress等）から最先端エンジン（Astro × microCMS）へと中身を全面換装。<br />
+          貴社の信頼と強みを、スマホやPCへストレスなく一瞬で届けるWeb基盤をご提供します。
+        </p>
 
-      <!-- 対比バナー -->
-      <div class="grid md:grid-cols-2 gap-4 max-w-3xl mx-auto text-left text-xs">
-        <div class="p-6 bg-stone-100 border border-stone-300 rounded-sm">
-          <span class="text-stone-500 font-mono text-[11px] block mb-1">CONVENTIONAL</span>
-          <p class="font-bold text-stone-800 text-sm mb-2">従来の運用（WordPress等）</p>
-          <p class="text-stone-600 leading-relaxed font-light">表示遅延・バージョン更新による崩壊リスク・保守コストの増大</p>
-        </div>
-        <div class="p-6 bg-stone-900 text-white border border-stone-800 rounded-sm shadow-md">
-          <span class="text-stone-400 font-mono text-[11px] block mb-1">ARCRAFT ENGINE</span>
-          <p class="font-bold text-white text-sm mb-2">ArCraft 次世代エンジン</p>
-          <p class="text-stone-300 leading-relaxed font-light">0秒表示・生涯不壊・完全ストレスフリーな伴走支援</p>
+        <!-- 対比バナー -->
+        <div class="grid md:grid-cols-2 gap-4 max-w-3xl mx-auto text-left text-xs">
+          <div class="p-6 bg-stone-100 border border-stone-300 rounded-sm">
+            <span class="text-stone-500 font-mono text-xs block mb-1">CONVENTIONAL</span>
+            <p class="font-bold text-stone-800 text-sm mb-2">従来の運用（WordPress等）</p>
+            <p class="text-stone-600 leading-relaxed font-light">表示遅延・バージョン更新による崩壊リスク・保守コストの増大</p>
+          </div>
+          <div class="p-6 bg-stone-900 text-white border border-stone-800 rounded-sm shadow-md">
+            <span class="text-stone-400 font-mono text-xs block mb-1">ARCRAFT ENGINE</span>
+            <p class="font-bold text-white text-sm mb-2">ArCraft 次世代エンジン</p>
+            <p class="text-stone-300 leading-relaxed font-light">0秒表示・生涯不壊・完全ストレスフリーな伴走支援</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- 3. 課題提起：4つのWeb課題 -->
-  <section class="py-24 px-6 bg-stone-100/70 border-t border-b border-stone-200 overflow-hidden">
-    <div class="max-w-6xl mx-auto space-y-16">
-      <div class="text-center" data-animate="fade-up">
-        <span class="font-en-serif text-xs text-stone-500 tracking-[0.3em] uppercase block mb-2">Current Challenges</span>
+  <section class="bg-stone-100/70 py-16 md:py-24 border-t border-b border-stone-200">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl text-center" data-animate="fade-up">
+        <span class="font-en-serif text-xs text-stone-500 tracking-widest uppercase block mb-2">Current Challenges</span>
         <h2 class="font-serif-title text-2xl md:text-3xl font-medium text-stone-900 tracking-widest">
           多くの地方中小企業が直面している「4つのWeb課題」
         </h2>
         <p class="text-xs text-stone-500 mt-2 font-light">貴社でもこのようなお悩みを抱えていませんか？</p>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <!-- 課題1 -->
-        <div class="p-6 bg-white border border-stone-200 rounded-sm shadow-sm space-y-3" data-animate="fade-up" data-delay="100">
-          <span class="font-mono text-xs text-red-700 bg-red-50 border border-red-200 px-2 py-0.5 rounded-sm inline-block">ISSUE 01</span>
-          <h3 class="font-serif-title text-base font-semibold text-stone-900">制作会社が撤退・サーバー放置</h3>
-          <p class="text-xs text-stone-600 leading-relaxed font-light">
-            担当者不在や事業撤退で放置。古いサーバーで突然サイトが消滅する「時限爆弾」を抱えている。
-          </p>
-        </div>
-
-        <!-- 課題2 -->
-        <div class="p-6 bg-white border border-stone-200 rounded-sm shadow-sm space-y-3" data-animate="fade-up" data-delay="200">
-          <span class="font-mono text-xs text-red-700 bg-red-50 border border-red-200 px-2 py-0.5 rounded-sm inline-block">ISSUE 02</span>
-          <h3 class="font-serif-title text-base font-semibold text-stone-900">WordPress更新恐怖で「塩漬け」</h3>
-          <p class="text-xs text-stone-600 leading-relaxed font-light">
-            更新するとレイアウトが崩れるリスクから放置され、お知らせや実績の追加が完全ストップ。
-          </p>
-        </div>
-
-        <!-- 課題3 -->
-        <div class="p-6 bg-white border border-stone-200 rounded-sm shadow-sm space-y-3" data-animate="fade-up" data-delay="300">
-          <span class="font-mono text-xs text-red-700 bg-red-50 border border-red-200 px-2 py-0.5 rounded-sm inline-block">ISSUE 03</span>
-          <h3 class="font-serif-title text-base font-semibold text-stone-900">スマホ表示が遅く見込み客が離脱</h3>
-          <p class="text-xs text-stone-600 leading-relaxed font-light">
-            表示に5〜10秒以上かかり、検索訪問者や採用候補者が内容を見る前に立ち去ってしまう。
-          </p>
-        </div>
-
-        <!-- 課題4 -->
-        <div class="p-6 bg-white border border-stone-200 rounded-sm shadow-sm space-y-3" data-animate="fade-up" data-delay="400">
-          <span class="font-mono text-xs text-red-700 bg-red-50 border border-red-200 px-2 py-0.5 rounded-sm inline-block">ISSUE 04</span>
-          <h3 class="font-serif-title text-base font-semibold text-stone-900">他社100〜150万提示で二の足</h3>
-          <p class="text-xs text-stone-600 leading-relaxed font-light">
-            フルリニューアル提案は費用対効果が見合わず、何年も改善を見送り続けている。
-          </p>
-        </div>
+      <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {challenges.map((item, index) => (
+          <div 
+            class="p-6 bg-white border border-stone-200 rounded-sm shadow-sm space-y-3" 
+            data-animate="fade-up" 
+            data-delay={String((index + 1) * 100)}
+          >
+            <span class="font-mono text-xs text-red-700 bg-red-50 border border-red-200 px-2 py-0.5 rounded-sm inline-block">
+              {item.label}
+            </span>
+            <h3 class="font-serif-title text-base font-semibold text-stone-900">
+              {item.title}
+            </h3>
+            <p class="text-xs text-stone-600 leading-relaxed font-light">
+              {item.description}
+            </p>
+          </div>
+        ))}
       </div>
     </div>
   </section>
 
   <!-- 4. 技術革新：3つの技術革新 (Technology) -->
-  <section id="technology" class="py-24 px-6 max-w-6xl mx-auto space-y-24 scroll-mt-20">
-    <div class="text-center" data-animate="fade-up">
-      <span class="font-en-serif text-xs text-stone-400 tracking-[0.3em] uppercase block mb-2">Technology & Innovation</span>
-      <h2 class="font-serif-title text-2xl md:text-4xl font-medium text-stone-900 tracking-widest">
-        ArCraft が提供する「3つの技術革新」
-      </h2>
-      <p class="text-xs text-stone-500 mt-2 font-light">従来のWeb制作とは根本的に異なる、次世代アーキテクチャ</p>
-    </div>
+  <section id="technology" class="bg-white py-16 md:py-24 scroll-mt-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-24">
+      <div class="mx-auto max-w-2xl text-center" data-animate="fade-up">
+        <span class="font-en-serif text-xs text-stone-400 tracking-widest uppercase block mb-2">Technology & Innovation</span>
+        <h2 class="font-serif-title text-2xl md:text-4xl font-medium text-stone-900 tracking-widest">
+          ArCraft が提供する「3つの技術革新」
+        </h2>
+        <p class="text-xs text-stone-500 mt-2 font-light">従来のWeb制作とは根本的に異なる、次世代アーキテクチャ</p>
+      </div>
 
-    <!-- 革新1 -->
-    <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
-      <div class="space-y-6" data-animate="slide-left">
-        <span class="text-xs font-mono text-stone-400 tracking-widest block">01 / ULTRA HIGH SPEED</span>
-        <h3 class="font-serif-title text-2xl md:text-3xl font-medium text-stone-900 leading-snug tracking-wider">
-          0秒台の超高速表示<br />
-          <span class="text-base text-stone-500 font-sans font-normal">Astro ✕ 世界最高峰のエッジ配信基盤</span>
-        </h3>
-        <p class="text-xs md:text-sm text-stone-600 leading-relaxed font-light">
-          アクセス時の重い計算を廃止。完成された軽量HTMLを世界最高峰のCloudflareエッジネットワークから瞬時に届けることで、スマホ閲覧時の離脱を徹底的に防ぎます。
-        </p>
-        <ul class="text-xs text-stone-600 space-y-2 font-light">
-          <li class="flex items-center gap-2">✓ LCP（最大コンテンツ描画）0.5秒〜1秒以内</li>
-          <li class="flex items-center gap-2">✓ Lighthouseスコア95点以上の高水準</li>
-          <li class="flex items-center gap-2">✓ 画像の自動WebP化・レスポンシブ最適化</li>
-        </ul>
-      </div>
-      <div class="aspect-[4/3] bg-stone-900 text-stone-200 p-8 rounded-sm shadow-lg flex flex-col justify-center font-mono text-xs" data-animate="slide-right">
-        <div class="border-b border-stone-700 pb-3 mb-4 flex justify-between items-center">
-          <span class="text-emerald-400 font-bold">● SPEED TEST COMPARISON</span>
-          <span class="text-[10px] text-stone-400">Page Load Time</span>
+      <!-- 革新1 -->
+      <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div class="space-y-6" data-animate="slide-left">
+          <span class="text-xs font-mono text-stone-400 tracking-widest block">01 / ULTRA HIGH SPEED</span>
+          <h3 class="font-serif-title text-2xl md:text-3xl font-medium text-stone-900 leading-snug tracking-wider">
+            0秒台の超高速表示<br />
+            <span class="text-base text-stone-500 font-sans font-normal">Astro ✕ 世界最高峰のエッジ配信基盤</span>
+          </h3>
+          <p class="text-xs md:text-sm text-stone-600 leading-relaxed font-light">
+            アクセス時の重い計算を廃止。完成された軽量HTMLを世界最高峰のCloudflareエッジネットワークから瞬時に届けることで、スマホ閲覧時の離脱を徹底的に防ぎます。
+          </p>
+          <ul class="text-xs text-stone-600 space-y-2 font-light">
+            <li class="flex items-center gap-2">✓ LCP（最大コンテンツ描画）0.5秒〜1秒以内</li>
+            <li class="flex items-center gap-2">✓ Lighthouseスコア95点以上の高水準</li>
+            <li class="flex items-center gap-2">✓ 画像の自動WebP化・レスポンシブ最適化</li>
+          </ul>
         </div>
-        <div class="space-y-4">
-          <div>
-            <div class="flex justify-between text-[11px] mb-1">
-              <span>従来型WordPress</span>
-              <span class="text-red-400">5.8s 〜 8.2s（遅延多発）</span>
+        <div class="aspect-[4/3] bg-stone-900 text-stone-200 p-8 rounded-sm shadow-lg flex flex-col justify-center font-mono text-xs" data-animate="slide-right">
+          <div class="border-b border-stone-700 pb-3 mb-4 flex justify-between items-center">
+            <span class="text-emerald-400 font-bold">● SPEED TEST COMPARISON</span>
+            <span class="text-xs text-stone-400">Page Load Time</span>
+          </div>
+          <div class="space-y-4">
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span>従来型WordPress</span>
+                <span class="text-red-400">5.8s 〜 8.2s（遅延多発）</span>
+              </div>
+              <div class="w-full bg-stone-800 h-3 rounded-full overflow-hidden">
+                <div class="bg-red-400/80 h-full w-[85%]"></div>
+              </div>
             </div>
-            <div class="w-full bg-stone-800 h-3 rounded-full overflow-hidden">
-              <div class="bg-red-400/80 h-full w-[85%]"></div>
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span class="text-white font-bold">ArCraft 次世代エンジン</span>
+                <span class="text-emerald-400 font-bold">0.6s（瞬時表示）</span>
+              </div>
+              <div class="w-full bg-stone-800 h-3 rounded-full overflow-hidden">
+                <div class="bg-emerald-400 h-full w-[12%]"></div>
+              </div>
             </div>
           </div>
-          <div>
-            <div class="flex justify-between text-[11px] mb-1">
-              <span class="text-white font-bold">ArCraft 次世代エンジン</span>
-              <span class="text-emerald-400 font-bold">0.6s（瞬時表示）</span>
-            </div>
-            <div class="w-full bg-stone-800 h-3 rounded-full overflow-hidden">
-              <div class="bg-emerald-400 h-full w-[12%]"></div>
-            </div>
-          </div>
+          <p class="text-xs text-stone-400 mt-6 font-sans">
+            ※アクセス時のサーバー処理（PHP実行・DBクエリ）を完全排除したSSG構成による実測値
+          </p>
         </div>
-        <p class="text-[10px] text-stone-400 mt-6 font-sans">
-          ※アクセス時のサーバー処理（PHP実行・DBクエリ）を完全排除したSSG構成による実測値
-        </p>
       </div>
-    </div>
 
     <!-- 革新2 -->
     <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -205,12 +333,12 @@ const newsItems = (await getNewsList()).slice(0, 3);
             <span class="font-bold text-stone-800">microCMS 専用投稿画面</span>
           </div>
           <div class="space-y-1.5">
-            <label class="block text-[11px] text-stone-500 font-medium">タイトル</label>
+            <label class="block text-xs text-stone-500 font-medium">タイトル</label>
             <div class="bg-stone-50 border border-stone-200 p-2 rounded text-stone-700">新着情報を公開しました</div>
           </div>
           <div class="space-y-1.5">
-            <label class="block text-[11px] text-stone-500 font-medium">画像アップロード</label>
-            <div class="bg-stone-50 border border-dashed border-stone-300 p-3 text-center text-stone-400 text-[10px]">
+            <label class="block text-xs text-stone-500 font-medium">画像アップロード</label>
+            <div class="bg-stone-50 border border-dashed border-stone-300 p-3 text-center text-stone-400 text-xs">
               写真をドラッグ＆ドロップ（自動最適化）
             </div>
           </div>
@@ -260,135 +388,91 @@ const newsItems = (await getNewsList()).slice(0, 3);
         </p>
       </div>
     </div>
+  </div>
   </section>
 
   <!-- 5. ブランドアイデンティティ：4つの想い (Brand Identity) -->
-  <section class="py-24 px-6 bg-stone-900 text-white overflow-hidden">
-    <div class="max-w-6xl mx-auto space-y-16">
-      <div class="text-center" data-animate="fade-up">
-        <span class="font-en-serif text-xs text-stone-400 tracking-[0.3em] uppercase block mb-2">Brand Identity</span>
+  <section class="bg-stone-900 text-white py-16 md:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl text-center" data-animate="fade-up">
+        <span class="font-en-serif text-xs text-stone-400 tracking-widest uppercase block mb-2">Brand Identity</span>
         <h2 class="font-serif-title text-2xl md:text-4xl font-medium tracking-widest text-white">
           ブランド名「ArCraft」に込めた4つの想い
         </h2>
         <div class="w-12 h-px bg-stone-600 mx-auto my-6"></div>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <!-- 1. Artek -->
-        <div class="p-8 border border-stone-800 bg-stone-950/50 rounded-sm space-y-4" data-animate="fade-up" data-delay="100">
-          <span class="font-mono text-xs text-stone-400 block">01 / PHILOSOPHY</span>
-          <h3 class="font-serif-title text-xl font-medium text-white">1. Artek</h3>
-          <p class="text-xs text-stone-400 font-semibold">建築・用の美の思想</p>
-          <p class="text-xs text-stone-400 leading-relaxed font-light">
-            冷たいデジタルではなく、巨匠アアルトの思想のように企業の温もりと信頼に寄り添う設計。
-          </p>
-        </div>
-
-        <!-- 2. Craft -->
-        <div class="p-8 border border-stone-800 bg-stone-950/50 rounded-sm space-y-4" data-animate="fade-up" data-delay="200">
-          <span class="font-mono text-xs text-stone-400 block">02 / CRAFTSMANSHIP</span>
-          <h3 class="font-serif-title text-xl font-medium text-white">2. Craft</h3>
-          <p class="text-xs text-stone-400 font-semibold">妥協なきクラフトマンシップ</p>
-          <p class="text-xs text-stone-400 leading-relaxed font-light">
-            地域を支えるものづくりのこだわりに敬意を払い、妥協のない強固な設計技術で構築。
-          </p>
-        </div>
-
-        <!-- 3. 歩く -->
-        <div class="p-8 border border-stone-800 bg-stone-950/50 rounded-sm space-y-4" data-animate="fade-up" data-delay="300">
-          <span class="font-mono text-xs text-stone-400 block">03 / PARTNERSHIP</span>
-          <h3 class="font-serif-title text-xl font-medium text-white">3. 歩く（Aruk）</h3>
-          <p class="text-xs text-stone-400 font-semibold">納品で終わらない伴走</p>
-          <p class="text-xs text-stone-400 leading-relaxed font-light">
-            都市部の会社に多い納品完了型を排し、公開後も同じ歩幅で成果へと歩み続けます。
-          </p>
-        </div>
-
-        <!-- 4. Raft -->
-        <div class="p-8 border border-stone-800 bg-stone-950/50 rounded-sm space-y-4" data-animate="fade-up" data-delay="400">
-          <span class="font-mono text-xs text-stone-400 block">04 / SOLIDARITY</span>
-          <h3 class="font-serif-title text-xl font-medium text-white">4. Raft（筏）</h3>
-          <p class="text-xs text-stone-400 font-semibold">資産の救出と連帯</p>
-          <p class="text-xs text-stone-400 leading-relaxed font-light">
-            古いサーバーから会社資産を安全に救出。同じ船に乗るクルーとして成長を支えます。
-          </p>
-        </div>
+      <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {brandIdentities.map((item, index) => (
+          <div 
+            class="p-8 border border-stone-800 bg-stone-950/50 rounded-sm space-y-4" 
+            data-animate="fade-up" 
+            data-delay={String((index + 1) * 100)}
+          >
+            <span class="font-mono text-xs text-stone-400 block">{item.number} / {item.tag}</span>
+            <h3 class="font-serif-title text-xl font-medium text-white">{item.title}</h3>
+            <p class="text-xs text-stone-400 font-semibold">{item.subtitle}</p>
+            <p class="text-xs text-stone-400 leading-relaxed font-light">
+              {item.description}
+            </p>
+          </div>
+        ))}
       </div>
     </div>
   </section>
 
   <!-- 6. 比較表：従来の制作会社 vs ArCraft (Comparison) -->
-  <section id="comparison" class="py-24 px-6 max-w-5xl mx-auto overflow-hidden scroll-mt-20">
-    <div class="text-center mb-16" data-animate="fade-up">
-      <span class="font-en-serif text-xs text-stone-400 tracking-[0.3em] uppercase block mb-2">Comparison</span>
-      <h2 class="font-serif-title text-2xl md:text-3xl font-medium text-stone-900 tracking-widest">
-        従来のWeb制作・リニューアルとの比較
-      </h2>
-      <p class="text-xs text-stone-500 mt-2 font-light">圧倒的なパフォーマンスと、無駄のないコスト構造</p>
-    </div>
+  <section id="comparison" class="bg-stone-50 py-16 md:py-24 scroll-mt-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl text-center" data-animate="fade-up">
+        <span class="font-en-serif text-xs text-stone-400 tracking-widest uppercase block mb-2">Comparison</span>
+        <h2 class="font-serif-title text-2xl md:text-3xl font-medium text-stone-900 tracking-widest">
+          従来のWeb制作・リニューアルとの比較
+        </h2>
+        <p class="text-xs text-stone-500 mt-2 font-light">圧倒的なパフォーマンスと、無駄のないコスト構造</p>
+      </div>
 
-    <div class="overflow-x-auto shadow-sm border border-stone-200 rounded-sm" data-animate="fade-up">
-      <table class="w-full text-xs text-left border-collapse min-w-[600px]">
-        <thead>
-          <tr class="border-b border-stone-300 bg-stone-100">
-            <th class="py-4 px-6 font-semibold text-stone-700 w-1/4">比較項目</th>
-            <th class="py-4 px-6 font-semibold text-stone-500 w-3/8">従来の制作会社・コンサル</th>
-            <th class="py-4 px-6 font-semibold text-stone-900 bg-stone-200/80 w-3/8">ArCraft（アルクラフト）</th>
-          </tr>
-        </thead>
-        <tbody class="divide-y divide-stone-200 bg-white">
-          <tr>
-            <td class="py-4 px-6 font-medium text-stone-800 bg-stone-50/50">提案アプローチ</td>
-            <td class="py-4 px-6 text-stone-600">100万円超のフルリニューアル</td>
-            <td class="py-4 px-6 font-bold text-stone-900 bg-stone-50">既存資産を活かしたエンジン換装</td>
-          </tr>
-          <tr>
-            <td class="py-4 px-6 font-medium text-stone-800 bg-stone-50/50">初期費用</td>
-            <td class="py-4 px-6 text-stone-600">100万〜150万円前後</td>
-            <td class="py-4 px-6 font-bold text-stone-900 bg-stone-50">50万〜80万円（約半額）</td>
-          </tr>
-          <tr>
-            <td class="py-4 px-6 font-medium text-stone-800 bg-stone-50/50">ページの表示速度</td>
-            <td class="py-4 px-6 text-stone-600">5秒〜10秒以上（遅延多発）</td>
-            <td class="py-4 px-6 font-bold text-emerald-700 bg-stone-50">0.5秒〜1秒以内（瞬時表示）</td>
-          </tr>
-          <tr>
-            <td class="py-4 px-6 font-medium text-stone-800 bg-stone-50/50">保守・アップデート</td>
-            <td class="py-4 px-6 text-stone-600">毎月更新作業・故障リスク有</td>
-            <td class="py-4 px-6 font-bold text-stone-900 bg-stone-50">ノーメンテナンス（生涯不壊）</td>
-          </tr>
-          <tr>
-            <td class="py-4 px-6 font-medium text-stone-800 bg-stone-50/50">ランニングコスト</td>
-            <td class="py-4 px-6 text-stone-600">月額数千円〜1万円（サーバー代）</td>
-            <td class="py-4 px-6 font-bold text-stone-900 bg-stone-50">実質0円枠での運用が可能</td>
-          </tr>
-          <tr>
-            <td class="py-4 px-6 font-medium text-stone-800 bg-stone-50/50">更新の手間</td>
-            <td class="py-4 px-6 text-stone-600">複雑で壊れやすく放置されがち</td>
-            <td class="py-4 px-6 font-bold text-stone-900 bg-stone-50">専用枠に文字を入れるだけ</td>
-          </tr>
-          <tr>
-            <td class="py-4 px-6 font-medium text-stone-800 bg-stone-50/50">公開後サポート</td>
-            <td class="py-4 px-6 text-stone-600">修正ごとに都度見積もり（高額）</td>
-            <td class="py-4 px-6 font-bold text-stone-900 bg-stone-50">GA4解析をもとに毎月伴走</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="mt-12 max-w-4xl mx-auto overflow-x-auto shadow-sm border border-stone-200 rounded-sm" data-animate="fade-up">
+        <table class="w-full text-xs text-left border-collapse min-w-[600px]">
+          <thead>
+            <tr class="border-b border-stone-300 bg-stone-100">
+              <th class="py-4 px-6 font-semibold text-stone-700 w-1/4">比較項目</th>
+              <th class="py-4 px-6 font-semibold text-stone-500 w-3/8">従来の制作会社・コンサル</th>
+              <th class="py-4 px-6 font-semibold text-stone-900 bg-stone-200/80 w-3/8">ArCraft（アルクラフト）</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-stone-200 bg-white">
+            {comparisonItems.map((row) => (
+              <tr>
+                <td class="py-4 px-6 font-medium text-stone-800 bg-stone-50/50">{row.feature}</td>
+                <td class="py-4 px-6 text-stone-600">{row.conventional}</td>
+                <td class="py-4 px-6 font-bold text-stone-900 bg-stone-50">
+                  {row.highlight && row.feature === 'ページの表示速度' ? (
+                    <span class="text-emerald-700">{row.arcraft}</span>
+                  ) : (
+                    row.arcraft
+                  )}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   </section>
 
   <!-- 7. プラン紹介 (Plans) -->
-  <section id="plans" class="py-24 px-6 bg-stone-100/70 border-t border-b border-stone-200 overflow-hidden scroll-mt-20">
-    <div class="max-w-5xl mx-auto space-y-16">
-      <div class="text-center" data-animate="fade-up">
-        <span class="font-en-serif text-xs text-stone-500 tracking-[0.3em] uppercase block mb-2">Pricing & Plans</span>
+  <section id="plans" class="bg-stone-100/70 py-16 md:py-24 border-t border-stone-200 scroll-mt-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl text-center" data-animate="fade-up">
+        <span class="font-en-serif text-xs text-stone-500 tracking-widest uppercase block mb-2">Pricing & Plans</span>
         <h2 class="font-serif-title text-2xl md:text-3xl font-medium text-stone-900 tracking-widest">
           明確でわかりやすい料金体系
         </h2>
         <p class="text-xs text-stone-500 mt-2 font-light">無駄なコストを徹底排除した透明なプラン設計</p>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-8">
+      <div class="mt-12 max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
         <!-- 基本プラン -->
         <div class="p-8 bg-white border border-stone-300 rounded-sm shadow-sm space-y-6 flex flex-col justify-between" data-animate="fade-up" data-delay="150">
           <div class="space-y-4">
@@ -429,7 +513,7 @@ const newsItems = (await getNewsList()).slice(0, 3);
 
         <!-- 月次伴走プラン -->
         <div class="p-8 bg-stone-900 text-white border border-stone-800 rounded-sm shadow-lg space-y-6 flex flex-col justify-between relative" data-animate="fade-up" data-delay="300">
-          <div class="absolute -top-3 right-6 bg-stone-200 text-stone-900 text-[10px] font-bold px-3 py-1 uppercase tracking-wider rounded-sm">
+          <div class="absolute -top-3 right-6 bg-stone-200 text-stone-900 text-xs font-bold px-3 py-1 uppercase tracking-wider rounded-sm">
             RECOMMENDED / 推奨
           </div>
           <div class="space-y-4">
@@ -465,97 +549,73 @@ const newsItems = (await getNewsList()).slice(0, 3);
   </section>
 
   <!-- 8. プロセス：導入の5ステップ (Process) -->
-  <section id="process" class="py-24 px-6 max-w-5xl mx-auto overflow-hidden scroll-mt-20">
-    <div class="text-center mb-16" data-animate="fade-up">
-      <span class="font-en-serif text-xs text-stone-400 tracking-[0.3em] uppercase block mb-2">Process</span>
-      <h2 class="font-serif-title text-2xl md:text-3xl font-medium text-stone-900 tracking-widest">
-        ご相談から公開までの5ステップ
-      </h2>
-      <p class="text-xs text-stone-500 mt-2 font-light">リスクを最小限に抑え、段階的に移行を進めます</p>
-    </div>
-
-    <div class="grid md:grid-cols-5 gap-4 text-xs" data-animate="fade-up">
-      <div class="p-5 bg-white border border-stone-200 rounded-sm space-y-2">
-        <span class="font-mono text-xl font-bold text-stone-300 block">01</span>
-        <span class="px-1.5 py-0.5 bg-stone-100 text-stone-700 text-[10px] inline-block font-mono">無料実施</span>
-        <h3 class="font-bold text-stone-900 text-sm">現状診断</h3>
-        <p class="text-stone-600 font-light leading-relaxed">
-          速度・安全性・契約状況を客観レポート。
-        </p>
+  <section id="process" class="bg-white py-16 md:py-24 scroll-mt-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl text-center mb-16" data-animate="fade-up">
+        <span class="font-en-serif text-xs text-stone-400 tracking-widest uppercase block mb-2">Process</span>
+        <h2 class="font-serif-title text-2xl md:text-3xl font-medium text-stone-900 tracking-widest">
+          ご相談から公開までの5ステップ
+        </h2>
+        <p class="text-xs text-stone-500 mt-2 font-light">リスクを最小限に抑え、段階的に移行を進めます</p>
       </div>
 
-      <div class="p-5 bg-white border border-stone-200 rounded-sm space-y-2">
-        <span class="font-mono text-xl font-bold text-stone-300 block">02</span>
-        <span class="px-1.5 py-0.5 bg-stone-100 text-stone-700 text-[10px] inline-block font-mono">提案フェーズ</span>
-        <h3 class="font-bold text-stone-900 text-sm">構成ご提案</h3>
-        <p class="text-stone-600 font-light leading-relaxed">
-          強みが伝わる構成と明確な見積もりを提示。
-        </p>
-      </div>
-
-      <div class="p-5 bg-white border border-stone-200 rounded-sm space-y-2">
-        <span class="font-mono text-xl font-bold text-stone-300 block">03</span>
-        <span class="px-1.5 py-0.5 bg-stone-100 text-stone-700 text-[10px] inline-block font-mono">実機確認</span>
-        <h3 class="font-bold text-stone-900 text-sm">テスト構築</h3>
-        <p class="text-stone-600 font-light leading-relaxed">
-          0秒表示と管理画面の使いやすさを実機で確認。
-        </p>
-      </div>
-
-      <div class="p-5 bg-white border border-stone-200 rounded-sm space-y-2">
-        <span class="font-mono text-xl font-bold text-stone-300 block">04</span>
-        <span class="px-1.5 py-0.5 bg-stone-100 text-stone-700 text-[10px] inline-block font-mono">時限爆弾解除</span>
-        <h3 class="font-bold text-stone-900 text-sm">安全本番公開</h3>
-        <p class="text-stone-600 font-light leading-relaxed">
-          旧サーバーから新インフラへ安全に切り替え。
-        </p>
-      </div>
-
-      <div class="p-5 bg-stone-900 text-white border border-stone-800 rounded-sm space-y-2">
-        <span class="font-mono text-xl font-bold text-stone-500 block">05</span>
-        <span class="px-1.5 py-0.5 bg-stone-800 text-stone-300 text-[10px] inline-block font-mono">継続改善</span>
-        <h3 class="font-bold text-white text-sm">月次伴走</h3>
-        <p class="text-stone-300 font-light leading-relaxed">
-          同じ歩幅でアクセスと成果を支え続ける。
-        </p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 text-xs" data-animate="fade-up">
+        {processSteps.map((item) => (
+          <div class={`p-5 rounded-sm space-y-2 ${item.isPrimary ? 'bg-stone-900 text-white border border-stone-800' : 'bg-white border border-stone-200'}`}>
+            <span class={`font-mono text-xl font-bold block ${item.isPrimary ? 'text-stone-500' : 'text-stone-300'}`}>
+              {item.step}
+            </span>
+            <span class={`px-1.5 py-0.5 text-xs inline-block font-mono rounded-sm ${item.isPrimary ? 'bg-stone-800 text-stone-300' : 'bg-stone-100 text-stone-700'}`}>
+              {item.badge}
+            </span>
+            <h3 class={`font-bold text-sm ${item.isPrimary ? 'text-white' : 'text-stone-900'}`}>
+              {item.title}
+            </h3>
+            <p class={`font-light leading-relaxed ${item.isPrimary ? 'text-stone-300' : 'text-stone-600'}`}>
+              {item.description}
+            </p>
+          </div>
+        ))}
       </div>
     </div>
   </section>
 
   <!-- 9. お知らせセクション (News) -->
-  <section class="py-20 px-6 max-w-4xl mx-auto overflow-hidden">
-    <div class="text-center mb-10" data-animate="fade-up">
-      <span class="font-en-serif text-xs text-stone-400 tracking-[0.3em] uppercase block mb-1">News & Updates</span>
-      <h2 class="font-serif-title text-2xl font-medium text-stone-900 tracking-wider">最新のお知らせ</h2>
-    </div>
+  <section class="bg-stone-50 py-16 md:py-24 border-t border-stone-200">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10" data-animate="fade-up">
+        <span class="font-en-serif text-xs text-stone-400 tracking-widest uppercase block mb-1">News & Updates</span>
+        <h2 class="font-serif-title text-2xl font-medium text-stone-900 tracking-wider">最新のお知らせ</h2>
+      </div>
 
-    <div class="divide-y divide-stone-200 border-t border-b border-stone-200 mb-8 bg-white shadow-sm rounded-sm" data-animate="fade-up">
-      {newsItems.map((item) => (
-        <div class="py-4 px-6 flex flex-col sm:flex-row sm:items-center gap-3 text-xs hover:bg-stone-50/80 transition-colors duration-200">
-          <span class="text-stone-400 font-mono text-[11px] w-24 flex-shrink-0">{item.date}</span>
-          <span class="px-2.5 py-0.5 bg-stone-900 text-white text-[10px] font-medium tracking-wider w-fit">
-            {item.category}
-          </span>
-          <a href={`/news/${item.id}/`} class="text-stone-800 font-medium hover:text-stone-600 transition flex-grow">
-            {item.title}
-          </a>
-        </div>
-      ))}
-    </div>
+      <div class="divide-y divide-stone-200 border-t border-b border-stone-200 mb-8 bg-white shadow-sm rounded-sm" data-animate="fade-up">
+        {newsItems.map((item) => (
+          <div class="py-4 px-6 flex flex-col sm:flex-row sm:items-center gap-3 text-xs hover:bg-stone-50/80 transition-colors duration-200">
+            <span class="text-stone-400 font-mono text-xs w-24 flex-shrink-0">{item.date}</span>
+            <span class="px-2.5 py-0.5 bg-stone-900 text-white text-xs font-medium tracking-wider w-fit">
+              {item.category}
+            </span>
+            <a href={`/news/${item.id}/`} class="text-stone-800 font-medium hover:text-stone-600 transition flex-grow">
+              {item.title}
+            </a>
+          </div>
+        ))}
+      </div>
 
-    <div class="text-center" data-animate="fade-up">
-      <a href="/news/" class="inline-flex items-center gap-2 px-8 py-3 bg-stone-900 text-stone-100 text-xs tracking-widest uppercase font-medium hover:bg-stone-800 hover:scale-105 transition-all duration-200 shadow-md">
-        <span>お知らせ一覧へ</span>
-        <span>&rarr;</span>
-      </a>
+      <div class="text-center" data-animate="fade-up">
+        <a href="/news/" class="inline-flex items-center gap-2 px-8 py-3 bg-stone-900 text-stone-100 text-xs tracking-widest uppercase font-medium hover:bg-stone-800 hover:scale-105 transition-all duration-200 shadow-md">
+          <span>お知らせ一覧へ</span>
+          <span>&rarr;</span>
+        </a>
+      </div>
     </div>
   </section>
 
   <!-- 10. メインCTAセクション -->
-  <section class="py-24 bg-stone-900 text-white text-center px-6 overflow-hidden">
-    <div class="max-w-3xl mx-auto space-y-8" data-animate="fade-up">
+  <section class="bg-stone-900 text-white py-16 md:py-24 text-center">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 space-y-8" data-animate="fade-up">
       <div class="space-y-3">
-        <span class="font-en-serif text-xs text-stone-400 tracking-[0.3em] uppercase block">Free Consultation</span>
+        <span class="font-en-serif text-xs text-stone-400 tracking-widest uppercase block">Free Consultation</span>
         <h2 class="font-serif-title text-2xl md:text-4xl font-medium tracking-widest text-white leading-relaxed">
           まずはお気軽に「Webサイト無料診断」へ
         </h2>
@@ -569,7 +629,7 @@ const newsItems = (await getNewsList()).slice(0, 3);
           Webサイト無料診断を申し込む &rarr;
         </a>
       </div>
-      <p class="text-[11px] text-stone-400 font-light">
+      <p class="text-xs text-stone-400 font-light">
         強引な営業は一切行いません。貴社の現状を客観的な数値でお伝えします。
       </p>
     </div>

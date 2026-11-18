@@ -27,7 +27,7 @@ const {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Sans+JP:wght@300;400;500;700&family=Shippori+Mincho:wght@400;600;700&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Sans+JP:wght@300;400;500;700&family=Shippori+Mincho:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Sans+JP:wght@300;400;500;700&family=Shippori+Mincho:wght@400;600;700&display=swap" media="print" onload="this.setAttribute('media', 'all')">
     <noscript>
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Sans+JP:wght@300;400;500;700&family=Shippori+Mincho:wght@400;600;700&display=swap">
     </noscript>
@@ -39,12 +39,11 @@ const {
     </main>
     <Footer />
 
-    <!-- JSアニメーション機能スクリプト -->
     <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        // 1. スクロール監視によるアニメーション発火 (IntersectionObserver)
-        const animatedElements = document.querySelectorAll('[data-animate]');
+      // 1. スクロール監視によるアニメーション発火 (IntersectionObserver)
+      const animatedElements = document.querySelectorAll('[data-animate]');
 
+      if (animatedElements.length > 0) {
         const observerOptions = {
           root: null,
           rootMargin: '0px 0px -60px 0px',
@@ -61,24 +60,25 @@ const {
         }, observerOptions);
 
         animatedElements.forEach(el => observer.observe(el));
+      }
 
-        // 2. ヘッダーのスクロール監視（クラス付与）
-        const header = document.querySelector('header');
-        if (header) {
-          const handleScroll = () => {
-            if (window.scrollY > 30) {
-              header.classList.add('is-scrolled');
-            } else {
-              header.classList.remove('is-scrolled');
-            }
-          };
-          window.addEventListener('scroll', handleScroll, { passive: true });
-          handleScroll();
-        }
-      });
+      // 2. ヘッダーのスクロール監視（クラス付与）
+      const header = document.querySelector('[data-site-header]');
+      if (header) {
+        const handleScroll = () => {
+          if (window.scrollY > 30) {
+            header.classList.add('is-scrolled');
+          } else {
+            header.classList.remove('is-scrolled');
+          }
+        };
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        handleScroll();
+      }
     </script>
   </body>
 </html>
+
 
 
 

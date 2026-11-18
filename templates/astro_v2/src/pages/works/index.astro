@@ -13,51 +13,53 @@ const projects = await getWorksList();
     bgImage="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=80"
   />
 
-  <section class="py-20 md:py-24 px-6 max-w-6xl mx-auto">
-    <!-- イントロダクション -->
-    <div class="max-w-2xl mx-auto text-left md:text-center mb-16 space-y-4" data-animate="fade-up">
-      <span class="text-xs font-mono text-stone-400 uppercase tracking-widest block">Featured Showcase</span>
-      <h2 class="font-serif-title text-xl sm:text-2xl md:text-3xl font-medium text-stone-900 leading-snug">
-        美しさと機能を両立する<br class="hidden sm:inline" />事例テンプレート
-      </h2>
-      <p class="text-xs sm:text-sm text-stone-600 leading-relaxed font-light">
-        ArCraft上で稼働する高機能な事例・施工実績のショーケースです。画像スライダー、スペック仕様表、設計コンセプトなど、専門知識がなくてもリッチに訴求できる投稿構造を備えています。
-      </p>
-    </div>
+  <section class="bg-white py-16 md:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <!-- イントロダクション -->
+      <div class="max-w-2xl mx-auto text-left md:text-center mb-16 space-y-4" data-animate="fade-up">
+        <span class="text-xs font-mono text-stone-400 uppercase tracking-widest block">Featured Showcase</span>
+        <h2 class="font-serif-title text-xl sm:text-2xl md:text-3xl font-medium text-stone-900 leading-snug">
+          美しさと機能を両立する<br class="hidden sm:inline" />事例テンプレート
+        </h2>
+        <p class="text-xs sm:text-sm text-stone-600 leading-relaxed font-light">
+          ArCraft上で稼働する高機能な事例・施工実績のショーケースです。画像スライダー、スペック仕様表、設計コンセプトなど、専門知識がなくてもリッチに訴求できる投稿構造を備えています。
+        </p>
+      </div>
 
-    <!-- グリッド一覧 -->
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16" data-animate="fade-up">
-      {projects.map((item) => (
-        <article class="space-y-3 group">
-          <a href={`/works/${item.id}/`} class="block overflow-hidden rounded-sm aspect-[4/3] bg-stone-200 shadow-sm relative">
-            <img 
-              src={item.mainImage} 
-              alt={item.title} 
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
-              loading="lazy"
-            />
-            <span class="absolute top-3 left-3 bg-stone-900/80 text-white text-[10px] px-2.5 py-0.5 tracking-wider backdrop-blur-sm">
-              {item.location}
-            </span>
-          </a>
-          <div class="space-y-1">
-            <div class="flex items-center gap-2">
-              <span class="text-[10px] px-2 py-0.5 bg-stone-100 text-stone-600 font-mono">{item.tag}</span>
-              <span class="text-[11px] text-stone-400 font-mono">{item.type}</span>
+      <!-- グリッド一覧 -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16" data-animate="fade-up">
+        {projects.map((item) => (
+          <article class="space-y-3 group">
+            <a href={`/works/${item.id}/`} class="block overflow-hidden rounded-sm aspect-[4/3] bg-stone-200 shadow-sm relative">
+              <img 
+                src={item.mainImage} 
+                alt={item.title} 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                loading="lazy"
+              />
+              <span class="absolute top-3 left-3 bg-stone-900/80 text-white text-xs px-2.5 py-0.5 tracking-wider backdrop-blur-sm">
+                {item.location}
+              </span>
+            </a>
+            <div class="space-y-1">
+              <div class="flex items-center gap-2">
+                <span class="text-xs px-2 py-0.5 bg-stone-100 text-stone-600 font-mono">{item.tag}</span>
+                <span class="text-xs text-stone-400 font-mono">{item.type}</span>
+              </div>
+              <h3 class="font-serif-title font-medium text-sm text-stone-900 leading-snug group-hover:text-stone-600 transition">
+                <a href={`/works/${item.id}/`}>
+                  {item.title}
+                </a>
+              </h3>
             </div>
-            <h3 class="font-serif-title font-medium text-sm text-stone-900 leading-snug group-hover:text-stone-600 transition">
-              <a href={`/works/${item.id}/`}>
-                {item.title}
-              </a>
-            </h3>
-          </div>
-        </article>
-      ))}
-    </div>
+          </article>
+        ))}
+      </div>
 
-    <!-- ページネーション -->
-    <div class="flex items-center justify-center gap-2 text-xs font-mono">
-      <span class="w-10 h-10 bg-stone-900 text-white flex items-center justify-center font-bold">1</span>
+      <!-- ページネーション -->
+      <div class="flex items-center justify-center gap-2 text-xs font-mono">
+        <span class="w-10 h-10 bg-stone-900 text-white flex items-center justify-center font-bold">1</span>
+      </div>
     </div>
   </section>
 </Layout>

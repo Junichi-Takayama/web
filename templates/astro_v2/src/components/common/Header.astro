@@ -1,11 +1,11 @@
 ---
 ---
-<header class="bg-stone-50/90 backdrop-blur-md border-b border-stone-200 sticky top-0 z-50 transition-all duration-300">
-  <div class="max-w-7xl mx-auto px-4 md:px-8 h-20 flex items-center justify-between">
+<header data-site-header class="bg-stone-50/90 backdrop-blur-md border-b border-stone-200 sticky top-0 z-50 transition-all duration-300">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
     <!-- ロゴ枠 -->
     <a href="/" class="flex flex-col group">
-      <span class="font-en-serif text-xl tracking-[0.25em] font-semibold text-stone-900 group-hover:text-stone-600 transition">ArCraft</span>
-      <span class="text-xs tracking-[0.25em] text-stone-500 uppercase font-sans">Next-Gen Web Engine</span>
+      <span class="font-en-serif text-xl tracking-widest font-semibold text-stone-900 group-hover:text-stone-600 transition">ArCraft</span>
+      <span class="text-xs tracking-widest text-stone-500 uppercase font-sans">Next-Gen Web Engine</span>
     </a>
 
     <!-- デスクトップナビゲーション -->
@@ -32,15 +32,26 @@
     </nav>
 
     <!-- モバイルハンバーガーボタン -->
-    <button id="mobile-menu-btn" class="md:hidden p-2 text-stone-800 focus:outline-none" aria-label="メニューを開く">
+    <button 
+      type="button"
+      data-mobile-menu-btn 
+      class="md:hidden p-2 text-stone-800 focus:outline-none focus:ring-2 focus:ring-stone-400 rounded-sm" 
+      aria-label="メニューを開く"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path id="hamburger-icon" class="transition-all duration-300" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
+        <path class="transition-all duration-300" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
       </svg>
     </button>
   </div>
 
   <!-- モバイルメニュー（ドロワーアニメーション） -->
-  <div id="mobile-menu" class="hidden md:hidden bg-stone-50 border-b border-stone-200 px-6 py-6 transition-all duration-300 opacity-0 -translate-y-4">
+  <div 
+    id="mobile-menu" 
+    data-mobile-menu 
+    class="hidden md:hidden bg-stone-50 border-b border-stone-200 px-4 sm:px-6 py-6 transition-all duration-300 opacity-0 -translate-y-4"
+  >
     <nav class="flex flex-col gap-4 text-xs uppercase tracking-wider font-medium text-stone-800">
       <a href="/" class="py-2 border-b border-stone-200 hover:text-stone-500">Home / トップ</a>
       <a href="/service/" class="py-2 border-b border-stone-200 hover:text-stone-500">Service / サービス・料金</a>
@@ -66,31 +77,35 @@
 </header>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const btn = document.getElementById('mobile-menu-btn');
-    const menu = document.getElementById('mobile-menu');
-    let isOpen = false;
+  const btn = document.querySelector('[data-mobile-menu-btn]');
+  const menu = document.querySelector('[data-mobile-menu]');
+  let isOpen = false;
 
-    if (btn && menu) {
-      btn.addEventListener('click', () => {
-        isOpen = !isOpen;
-        if (isOpen) {
-          menu.classList.remove('hidden');
-          setTimeout(() => {
-            menu.classList.remove('opacity-0', '-translate-y-4');
-            menu.classList.add('opacity-100', 'translate-y-0');
-          }, 10);
-        } else {
-          menu.classList.remove('opacity-100', 'translate-y-0');
-          menu.classList.add('opacity-0', '-translate-y-4');
-          setTimeout(() => {
+  if (btn && menu) {
+    btn.addEventListener('click', () => {
+      isOpen = !isOpen;
+      btn.setAttribute('aria-expanded', String(isOpen));
+      btn.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
+
+      if (isOpen) {
+        menu.classList.remove('hidden');
+        requestAnimationFrame(() => {
+          menu.classList.remove('opacity-0', '-translate-y-4');
+          menu.classList.add('opacity-100', 'translate-y-0');
+        });
+      } else {
+        menu.classList.remove('opacity-100', 'translate-y-0');
+        menu.classList.add('opacity-0', '-translate-y-4');
+        setTimeout(() => {
+          if (!isOpen) {
             menu.classList.add('hidden');
-          }, 300);
-        }
-      });
-    }
-  });
+          }
+        }, 300);
+      }
+    });
+  }
 </script>
+
 
 
 
