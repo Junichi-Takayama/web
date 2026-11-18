@@ -12,71 +12,73 @@ const ACCESS_KEY = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY || '66e948f7-371b
     bgImage="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80"
   />
 
-  <section class="py-24 px-6 max-w-4xl mx-auto space-y-16">
-    <!-- 案内文 -->
-    <div class="text-center space-y-3 bg-stone-100 p-8 rounded-sm border border-stone-200" data-animate="fade-up">
-      <span class="font-en-serif text-xs text-stone-500 tracking-[0.3em] uppercase block">Free Diagnosis</span>
-      <h2 class="font-serif-title text-xl md:text-2xl font-medium text-stone-900">
-        まずは貴社Webサイトの「客観的な現状診断」から
-      </h2>
-      <p class="text-xs text-stone-600 leading-relaxed font-light max-w-2xl mx-auto">
-        「表示速度」「スマートフォンでの快適性」「サーバーの安全性（放置リスクの有無）」をプロが診断し、客観的な数値レポートを添えてご回答します。強引な営業は一切行いませんので安心してお申し込みください。
-      </p>
-    </div>
+  <section class="bg-white py-16 md:py-24">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 space-y-16">
+      <!-- 案内文 -->
+      <div class="text-center space-y-3 bg-stone-100 p-8 rounded-sm border border-stone-200" data-animate="fade-up">
+        <span class="font-en-serif text-xs text-stone-500 tracking-widest uppercase block">Free Diagnosis</span>
+        <h2 class="font-serif-title text-xl md:text-2xl font-medium text-stone-900">
+          まずは貴社Webサイトの「客観的な現状診断」から
+        </h2>
+        <p class="text-xs text-stone-600 leading-relaxed font-light max-w-2xl mx-auto">
+          「表示速度」「スマートフォンでの快適性」「サーバーの安全性（放置リスクの有無）」をプロが診断し、客観的な数値レポートを添えてご回答します。強引な営業は一切行いませんので安心してお申し込みください。
+        </p>
+      </div>
 
-    <!-- メールフォーム -->
-    <div class="space-y-8" data-animate="fade-up">
-      <div class="bg-white p-8 md:p-12 rounded-sm border border-stone-200 shadow-sm">
-        <form 
-          id="contact-form"
-          action="https://api.web3forms.com/submit" 
-          method="POST" 
-          class="space-y-6 text-xs"
-        >
-          <!-- Web3Forms 設定項目 -->
-          <input type="hidden" name="access_key" value={ACCESS_KEY} />
-          <input type="hidden" name="subject" value="【ArCraft】Webサイト無料診断・お問い合わせ" />
-          <input type="hidden" name="from_name" value="ArCraft 公式サイト" />
-          <!-- スパムボット対策（Honeypot） -->
-          <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
-          <!-- フォールバック用リダイレクト -->
-          <input type="hidden" name="redirect" value="/contact/thanks" />
+      <!-- メールフォーム -->
+      <div class="space-y-8" data-animate="fade-up">
+        <div class="bg-white p-8 md:p-12 rounded-sm border border-stone-200 shadow-sm">
+          <form 
+            id="contact-form"
+            data-contact-form
+            action="https://api.web3forms.com/submit" 
+            method="POST" 
+            class="space-y-6 text-xs"
+          >
+            <!-- Web3Forms 設定項目 -->
+            <input type="hidden" name="access_key" value={ACCESS_KEY} />
+            <input type="hidden" name="subject" value="【ArCraft】Webサイト無料診断・お問い合わせ" />
+            <input type="hidden" name="from_name" value="ArCraft 公式サイト" />
+            <!-- スパムボット対策（Honeypot） -->
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
+            <!-- フォールバック用リダイレクト -->
+            <input type="hidden" name="redirect" value="/contact/thanks" />
 
-          <!-- ご相談種別 -->
-          <div class="grid grid-cols-1 md:grid-cols-4 gap-2 items-center border-b border-stone-200 pb-4">
-            <label class="font-medium text-stone-800 md:col-span-1">ご相談項目 <span class="text-red-500 text-[10px]">*</span></label>
-            <div class="md:col-span-3 flex flex-wrap gap-4 text-stone-700">
-              <label class="inline-flex items-center gap-2 cursor-pointer">
-                <input type="checkbox" name="consultation_type" value="Webサイト無料診断" checked class="accent-stone-900" /> Webサイト無料診断
-              </label>
-              <label class="inline-flex items-center gap-2 cursor-pointer">
-                <input type="checkbox" name="consultation_type" value="Webエンジン換装相談" class="accent-stone-900" /> Webエンジン換装相談
-              </label>
-              <label class="inline-flex items-center gap-2 cursor-pointer">
-                <input type="checkbox" name="consultation_type" value="月次伴走サポートについて" class="accent-stone-900" /> 月次伴走サポートについて
-              </label>
-              <label class="inline-flex items-center gap-2 cursor-pointer">
-                <input type="checkbox" name="consultation_type" value="その他ご質問" class="accent-stone-900" /> その他ご質問
-              </label>
+            <!-- ご相談種別 -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-2 items-center border-b border-stone-200 pb-4">
+              <label class="font-medium text-stone-800 md:col-span-1">ご相談項目 <span class="text-red-500 text-xs">*</span></label>
+              <div class="md:col-span-3 flex flex-wrap gap-4 text-stone-700">
+                <label class="inline-flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" name="consultation_type" value="Webサイト無料診断" checked class="accent-stone-900" /> Webサイト無料診断
+                </label>
+                <label class="inline-flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" name="consultation_type" value="Webエンジン換装相談" class="accent-stone-900" /> Webエンジン換装相談
+                </label>
+                <label class="inline-flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" name="consultation_type" value="月次伴走サポートについて" class="accent-stone-900" /> 月次伴走サポートについて
+                </label>
+                <label class="inline-flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" name="consultation_type" value="その他ご質問" class="accent-stone-900" /> その他ご質問
+                </label>
+              </div>
             </div>
-          </div>
 
-          <!-- 貴社名 -->
-          <div class="grid grid-cols-1 md:grid-cols-4 gap-2 items-center border-b border-stone-200 pb-4">
-            <label for="company" class="font-medium text-stone-800 md:col-span-1">貴社名 / 屋号 <span class="text-red-500 text-[10px]">*</span></label>
-            <input 
-              type="text" 
-              id="company"
-              name="company" 
-              required 
-              placeholder="例：株式会社〇〇工務店" 
-              class="md:col-span-3 w-full p-3 border border-stone-300 bg-stone-50/50 rounded-sm focus:outline-none focus:border-stone-800 transition" 
-            />
-          </div>
+            <!-- 貴社名 -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-2 items-center border-b border-stone-200 pb-4">
+              <label for="company" class="font-medium text-stone-800 md:col-span-1">貴社名 / 屋号 <span class="text-red-500 text-xs">*</span></label>
+              <input 
+                type="text" 
+                id="company"
+                name="company" 
+                required 
+                placeholder="例：株式会社〇〇工務店" 
+                class="md:col-span-3 w-full p-3 border border-stone-300 bg-stone-50/50 rounded-sm focus:outline-none focus:border-stone-800 transition" 
+              />
+            </div>
 
           <!-- ご担当者名 -->
           <div class="grid grid-cols-1 md:grid-cols-4 gap-2 items-center border-b border-stone-200 pb-4">
-            <label for="name" class="font-medium text-stone-800 md:col-span-1">お名前 <span class="text-red-500 text-[10px]">*</span></label>
+            <label for="name" class="font-medium text-stone-800 md:col-span-1">お名前 <span class="text-red-500 text-xs">*</span></label>
             <input 
               type="text" 
               id="name"
@@ -101,7 +103,7 @@ const ACCESS_KEY = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY || '66e948f7-371b
 
           <!-- 電話番号 -->
           <div class="grid grid-cols-1 md:grid-cols-4 gap-2 items-center border-b border-stone-200 pb-4">
-            <label for="phone" class="font-medium text-stone-800 md:col-span-1">電話番号 <span class="text-red-500 text-[10px]">*</span></label>
+            <label for="phone" class="font-medium text-stone-800 md:col-span-1">電話番号 <span class="text-red-500 text-xs">*</span></label>
             <input 
               type="tel" 
               id="phone"
@@ -114,7 +116,7 @@ const ACCESS_KEY = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY || '66e948f7-371b
 
           <!-- メールアドレス -->
           <div class="grid grid-cols-1 md:grid-cols-4 gap-2 items-center border-b border-stone-200 pb-4">
-            <label for="email" class="font-medium text-stone-800 md:col-span-1">メールアドレス <span class="text-red-500 text-[10px]">*</span></label>
+            <label for="email" class="font-medium text-stone-800 md:col-span-1">メールアドレス <span class="text-red-500 text-xs">*</span></label>
             <input 
               type="email" 
               id="email"
@@ -127,7 +129,7 @@ const ACCESS_KEY = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY || '66e948f7-371b
 
           <!-- ご相談内容 -->
           <div class="grid grid-cols-1 md:grid-cols-4 gap-2 items-start pt-2">
-            <label for="message" class="font-medium text-stone-800 md:col-span-1 pt-2">現在のお困りごと <span class="text-red-500 text-[10px]">*</span></label>
+            <label for="message" class="font-medium text-stone-800 md:col-span-1 pt-2">現在のお困りごと <span class="text-red-500 text-xs">*</span></label>
             <textarea 
               id="message"
               name="message" 
@@ -139,16 +141,17 @@ const ACCESS_KEY = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY || '66e948f7-371b
           </div>
 
           <!-- エラーメッセージ表示領域 -->
-          <div id="form-error" class="hidden p-4 bg-red-50 border border-red-200 text-red-700 text-xs rounded-sm text-center"></div>
+          <div id="form-error" data-form-error class="hidden p-4 bg-red-50 border border-red-200 text-red-700 text-xs rounded-sm text-center"></div>
 
           <div class="text-center pt-8">
             <button 
               type="submit" 
               id="submit-button"
-              class="inline-flex items-center justify-center px-14 py-4 bg-stone-900 text-white font-medium text-xs hover:bg-stone-800 transition tracking-[0.2em] uppercase shadow-md hover:scale-105 active:scale-95 duration-200 disabled:opacity-50 disabled:pointer-events-none"
+              data-submit-button
+              class="inline-flex items-center justify-center px-14 py-4 bg-stone-900 text-white font-medium text-xs hover:bg-stone-800 transition tracking-widest uppercase shadow-md hover:scale-105 active:scale-95 duration-200 disabled:opacity-50 disabled:pointer-events-none"
             >
-              <span id="button-text">無料診断を送信する</span>
-              <svg id="loading-spinner" class="hidden animate-spin ml-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <span id="button-text" data-button-text>無料診断を送信する</span>
+              <svg id="loading-spinner" data-loading-spinner class="hidden animate-spin ml-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                 <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                 <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
               </svg>
@@ -157,14 +160,15 @@ const ACCESS_KEY = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY || '66e948f7-371b
         </form>
       </div>
     </div>
+  </div>
   </section>
 
   <script is:inline>
-    const form = document.getElementById('contact-form');
-    const submitBtn = document.getElementById('submit-button');
-    const buttonText = document.getElementById('button-text');
-    const spinner = document.getElementById('loading-spinner');
-    const errorDiv = document.getElementById('form-error');
+    const form = document.querySelector('[data-contact-form]');
+    const submitBtn = document.querySelector('[data-submit-button]');
+    const buttonText = document.querySelector('[data-button-text]');
+    const spinner = document.querySelector('[data-loading-spinner]');
+    const errorDiv = document.querySelector('[data-form-error]');
 
     if (form && submitBtn) {
       form.addEventListener('submit', async function (e) {
@@ -216,6 +220,9 @@ const ACCESS_KEY = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY || '66e948f7-371b
           if (buttonText) buttonText.textContent = '無料診断を送信する';
           if (spinner) spinner.classList.add('hidden');
         }
+      });
+    }
+  </script>
       });
     }
   </script>
